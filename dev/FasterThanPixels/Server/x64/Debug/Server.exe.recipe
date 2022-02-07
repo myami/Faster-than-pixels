@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>D:\cours\testprojetsynthese\FasterThanPixels\x64\Release\FasterThanPixels.exe</FullPath>
+      <FullPath>D:\cours\testprojetsynthese\FasterThanPixels\x64\Debug\Server.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />
