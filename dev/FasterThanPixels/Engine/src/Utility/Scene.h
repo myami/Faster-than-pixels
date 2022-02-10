@@ -3,7 +3,7 @@
 #include "../Utility/Action.h"
 namespace Engine {
 	class Scene {
-		EntityManager S_EntityManager;
+		std::unique_ptr<EntityManager> S_EntityManager;
 		std::string S_Name;
 		std::map<int, std::string> ActionScene; // chaque input du clavier et un nombre. le string represente le nom de l action lie a l input. par exemple dans un menu la touche W peux monter
 		// dans un menu alors que dans le jeu il permait d aller de lavant
