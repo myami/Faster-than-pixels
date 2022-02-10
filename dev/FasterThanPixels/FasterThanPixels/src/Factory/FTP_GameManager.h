@@ -1,0 +1,9 @@
+#pragma once
+#include "Engine.h"
+class FTP_GameManager : Engine::GameManager {
+public:
+	 void Game_Init(); // initialiser toutes les donnes du jeu
+	 void GameLoop();// loop principale du jeu
+	 void Quit();
+	 void S_Input(); // gerer les events de sfml (input)
+};

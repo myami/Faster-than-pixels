@@ -143,12 +143,36 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\Application.cpp" />
+    <ClCompile Include="src\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Engine\Engine.vcxproj">
       <Project>{91a0e815-cb61-4ffe-befe-dbaed548d904}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ECS\Components\C_Transform.h" />
+    <ClInclude Include="src\ECS\Entity\Asteroid.h" />
+    <ClInclude Include="src\ECS\Entity\Enemie\Bombardier.h" />
+    <ClInclude Include="src\ECS\Entity\Enemie\Chasseurs.h" />
+    <ClInclude Include="src\ECS\Entity\Enemie.h" />
+    <ClInclude Include="src\ECS\Entity\Enemie\Intercepteur.h" />
+    <ClInclude Include="src\ECS\Entity\Player.h" />
+    <ClInclude Include="src\ECS\Entity\PortesVaisseau.h" />
+    <ClInclude Include="src\ECS\System\S_Transform.h" />
+    <ClInclude Include="src\Factory\FTP_AssetManager.h" />
+    <ClInclude Include="src\Factory\FTP_GameManager.h" />
+    <ClInclude Include="src\Factory\FTP_SceneManager.h" />
+    <ClInclude Include="src\Scene\Authentification.h" />
+    <ClInclude Include="src\Scene\EndGame.h" />
+    <ClInclude Include="src\Scene\Game.h" />
+    <ClInclude Include="src\Scene\LoadingScreen.h" />
+    <ClInclude Include="src\Scene\MainMenu.h" />
+    <ClInclude Include="src\Scene\Option.h" />
+    <ClInclude Include="src\Scene\Pause.h" />
+    <ClInclude Include="src\Scene\PlayerProfile.h" />
+    <ClInclude Include="src\Scene\Starting.h" />
+    <ClInclude Include="src\Scene\Tuto.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
