@@ -13,6 +13,5 @@ namespace Engine {
 		Vector2D operator - (const Vector2D& other) const;
 		void operator -= (const Vector2D& other);
 	
-
 	};
 }

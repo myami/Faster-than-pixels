@@ -183,7 +183,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Engine.cpp" />
+    <ClCompile Include="src\Factory\AssetManager.cpp" />
+    <ClCompile Include="src\Factory\EntityManager.cpp" />
+    <ClCompile Include="src\Factory\SceneManager.cpp" />
+    <ClCompile Include="src\Utility\Action.cpp" />
     <ClCompile Include="src\Utility\MathF.cpp" />
+    <ClCompile Include="src\Utility\Scene.cpp" />
     <ClCompile Include="src\Utility\Utility.cpp" />
     <ClCompile Include="src\Utility\Vector2D.cpp" />
   </ItemGroup>

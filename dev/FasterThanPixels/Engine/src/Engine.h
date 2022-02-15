@@ -12,6 +12,12 @@
 #include "ECS/Entity.h"
 #include "ECS/System.h"
 
+/*! \namespace Engine
+ *
+ * espace de nommage regroupant les classes du moteur de jeu
+ * 
+ */
+
 namespace Engine {
 	void PrintMessage();
 	void ShowWindows();

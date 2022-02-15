@@ -1,6 +1,6 @@
 #pragma once
 #include "Engine.h"
-class FTP_GameManager : Engine::GameManager {
+class FTP_GameManager : public Engine::GameManager {
 public:
 	 void Game_Init(); // initialiser toutes les donnes du jeu
 	 void GameLoop();// loop principale du jeu

@@ -9,17 +9,13 @@ namespace Engine {
 		// dans un menu alors que dans le jeu il permait d aller de lavant
 		bool S_Paused;
 		bool S_End;
-	
-		virtual void S_Syteme() = 0; // tout les systeme de la scene ( tout les system lie au component)
-		virtual void S_Update() = 0; // debut de frame mais a jour tout se qu il doit mettre a jour 1 /4
-		virtual void S_Render() = 0; // fin de frame affiche le resultat de la simulation 4/4
-		virtual void S_Action() = 0; // Input recu 2/4
+		virtual void S_Update() = 0; // debut de frame mais a jour tout se qu il doit mettre a jour 1 /4 ( delete , rajouter de quoi dans les vectors)
+		virtual void S_Action() = 0; // Input recu 2/4 doit etre appeler dans S_Input du gamemanager
 		virtual void S_Simulation() = 0; // milieu de frame (box2d) simule tout se qui est dans la scene 3/4
-		// je sais pas si avec box2D ces un bonne ordre et une bonne maniere de bouger d abord avec les inputs, puis run la simulation, peux t on envoyer la nouvelle position du joueur
-		// dans la simulation box2d avant qu on le fasse avancer de step ?
+		virtual void S_Syteme() = 0; // tout les systeme de la scene ( tout les system lie au component) mais a jour les components de la simulation et des inputs
+		virtual void S_Render() = 0; // fin de frame affiche le resultat de la simulation 4/4 la partie draw
 		void RegisterAction(int key,std::string ActionName); // enregistre dans ActionScene les inputs disponibles pour la scene
-		virtual void S_Action(Action& action); // quand le joueur presse sur X le gamemanager va checker si dans ActionScene il y a une action sur se input et si oui lance l'action ici 
-
-
+		virtual void S_ActionTrigger(Action& action); // quand le joueur presse sur X le gamemanager va checker si dans ActionScene il y a une action sur se input et si oui lance l'action ici  (dans le S_action)
+		// ces un switch qui a toutes les actions possibles de la scene 
 	};
 }

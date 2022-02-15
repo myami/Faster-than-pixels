@@ -1,7 +1,7 @@
 #pragma once
 // cinematique
 #include "Engine.h"
-class Starting : Engine::Scene {
+class Starting : public Engine::Scene {
 
 	 void S_Syteme(); // tout les systeme de la scene ( tout les system lie au component)
 	 void S_Update(); // debut de frame mais a jour tout se qu il doit mettre a jour 1 /4

@@ -2,6 +2,11 @@
 #include <iostream>
 #include <vector>
 #include "Component.h"
+/*!
+ * \file Entity.h
+ * \brief Entite qui apparait dans le jeu, il contient les composants
+ * \version 0.1
+ */
 namespace Engine {
 	class Entity {
 		const int E_Id = 0;
