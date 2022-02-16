@@ -1,7 +1,8 @@
 {
-    "url": "./img/Cinematique.png",
+    "url": "/img/Cinematique.png",
     "tag": "menu",
     "collider": [],
-    "type": "Texture"
+  "type": "Texture",
+  "name": "logoratatoskr"
     
 }

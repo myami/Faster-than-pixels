@@ -2,9 +2,9 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-
+#include "json.hpp"
 
 namespace Engine {
 
-	void LoadAssetFromFile();
+	std::vector<nlohmann::json> LoadAssetFromFile();
 }

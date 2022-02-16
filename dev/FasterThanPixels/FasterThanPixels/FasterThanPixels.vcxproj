@@ -122,7 +122,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)vendor\SFML\include;$(SolutionDir)Engine\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)vendor\nlohmann;$(SolutionDir)vendor\SFML\include;$(SolutionDir)Engine\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -139,7 +140,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)vendor\SFML\include;$(SolutionDir)Engine\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)vendor\nlohmann;$(SolutionDir)vendor\SFML\include;$(SolutionDir)Engine\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -151,7 +153,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\ECS\Components\C_MouvementActif.cpp" />
+    <ClCompile Include="src\ECS\System\S_Transform.cpp" />
     <ClCompile Include="src\Factory\FTP_AssetManager.cpp" />
+    <ClCompile Include="src\Factory\FTP_EntityManager.cpp" />
     <ClCompile Include="src\Factory\FTP_GameManager.cpp" />
     <ClCompile Include="src\Factory\FTP_SceneManager.cpp" />
     <ClCompile Include="src\Main.cpp" />
@@ -163,6 +168,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\ECS\Components\C_MouvementActif.h" />
     <ClInclude Include="src\ECS\Components\C_Transform.h" />
     <ClInclude Include="src\ECS\Entity\Asteroid.h" />
     <ClInclude Include="src\ECS\Entity\Enemie\Bombardier.h" />
@@ -173,6 +179,7 @@
     <ClInclude Include="src\ECS\Entity\PortesVaisseau.h" />
     <ClInclude Include="src\ECS\System\S_Transform.h" />
     <ClInclude Include="src\Factory\FTP_AssetManager.h" />
+    <ClInclude Include="src\Factory\FTP_EntityManager.h" />
     <ClInclude Include="src\Factory\FTP_GameManager.h" />
     <ClInclude Include="src\Factory\FTP_SceneManager.h" />
     <ClInclude Include="src\Scene\Starting.h" />

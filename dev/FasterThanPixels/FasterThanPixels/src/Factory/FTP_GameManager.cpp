@@ -2,14 +2,17 @@
 #include <SFML/Graphics.hpp>
 #include "Engine.h"
 #include "FTP_SceneManager.h"
+#include "FTP_AssetManager.h"
 
 void FTP_GameManager::Game_Init()
 {
 	Windows = new sf::RenderWindow (sf::VideoMode(1020,1080), "Faster Than Pixels");
     G_SceneManager = std::unique_ptr<FTP_SceneManager>(new FTP_SceneManager());
+    G_AssetManager = std::unique_ptr<FTP_AssetManager>(new FTP_AssetManager());
     G_SceneManager->Init();
     CurrentScene = "Cinematique";
-    Engine::LoadAssetFromFile();
+    G_AssetManager->InitAsset();
+    
 }
 
 void FTP_GameManager::GameLoop()

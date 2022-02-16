@@ -2,10 +2,10 @@
 #include <iostream>
 #include <fstream>
 #include <filesystem>
-#include "nlohmann/json.hpp"
+#include <nlohmann/json.hpp>
 
 
-void Engine::LoadAssetFromFile()
+std::vector<nlohmann::json> Engine::LoadAssetFromFile()
 {
     nlohmann::json j;
 
@@ -15,7 +15,7 @@ void Engine::LoadAssetFromFile()
     for (const auto& file : std::filesystem::directory_iterator(path)) { // prend tout les chemins de fichier json dans un vector
         if (!file.is_directory()) {
             fileasset.push_back(file.path());
-            std::cout << "Json for asset available :" << file.path() << std::endl;
+            std::cout << " Json for asset available :" << file.path() << std::endl;
         }
 
         
@@ -30,7 +30,6 @@ void Engine::LoadAssetFromFile()
 
     }
 
-    //std::cout << assets[0]["type"];
-
+    return assets;
 
 }

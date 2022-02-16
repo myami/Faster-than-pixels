@@ -18,6 +18,7 @@ namespace Engine {
 		sf::Texture& GetTexture(std::string name);
 		sf::Sound& GetSound(std::string name);
 		sf::Font& GetFont(std::string name);
+		virtual void InitAsset() = 0;
 
 	};
 }

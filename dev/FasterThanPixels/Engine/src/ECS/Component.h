@@ -7,5 +7,7 @@
 namespace Engine {
 	 class Component  {
 		 //chaque component a seulement des variables
+	 public:
+		 std::vector<std::string> RequireComponent; // Si le component a besoin d autre pour fonctionner correctement
 	};
 }
