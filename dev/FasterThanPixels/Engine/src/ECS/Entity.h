@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <vector>
+#include <map>
 #include "Component.h"
 /*!
  * \file Entity.h

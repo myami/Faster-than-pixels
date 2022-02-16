@@ -14,15 +14,18 @@ void Engine::AssetManager::AddFont(std::string name, std::string path)
 
 sf::Texture& Engine::AssetManager::GetTexture(std::string name)
 {
-	//return  M_Textures.find(name);
+
+	return  M_Textures.find(name)->second;
 }
 
 sf::Sound& Engine::AssetManager::GetSound(std::string name)
 {
-	// TODO: insérer une instruction return ici
+	
+	return M_Sounds.find(name)->second;
 }
 
 sf::Font& Engine::AssetManager::GetFont(std::string name)
 {
-	// TODO: insérer une instruction return ici
+	return M_Fonts.find(name)->second;
+
 }

@@ -9,6 +9,4 @@ class Starting : public Engine::Scene {
 	 void S_Action(); // Input recu 2/4
 	 void S_Simulation() ; // milieu de frame (box2d) simule tout se qui est dans la scene 3/4
 	 void S_Action(Engine::Action& action); // quand le joueur presse sur X le gamemanager va checker si dans ActionScene il y a une action sur se input et si oui lance l'action ici 
-
-
 };

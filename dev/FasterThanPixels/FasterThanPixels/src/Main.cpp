@@ -1,5 +1,6 @@
 #include "Engine.h"
 #include "Factory/FTP_GameManager.h"
+#include "SFML/Graphics.hpp"
 
 int main() {
 	FTP_GameManager game;

@@ -4,9 +4,10 @@
 #include "SFML/Graphics.hpp"
 namespace Engine {
 	class GameManager {
+	public:
 		std::unique_ptr<AssetManager> G_AssetManager;
 		std::unique_ptr<SceneManager> G_SceneManager;
-		sf::RenderWindow Windows;
+		sf::RenderWindow* Windows;
 		std::string CurrentScene;
 		bool Running;
 		virtual void Quit() = 0;
