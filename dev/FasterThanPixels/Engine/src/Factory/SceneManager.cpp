@@ -21,7 +21,7 @@ Engine::Scene& Engine::SceneManager::GetCurrentScene(std::string scene)
 	}
 }
 
-void Engine::SceneManager::AddScene(std::shared_ptr<Engine::Scene> scene)
+void Engine::SceneManager::AddScene(Engine::Scene* scene)
 {
 	M_Scene.push_back(scene);
 }

@@ -3,7 +3,9 @@
 
 void FTP_SceneManager::Init()
 {
-	std::shared_ptr<Starting> st = std::shared_ptr<Starting>();
-	st->S_Name = "Cinematique";
+	Starting* st =  new Starting("Cinematique");
 	AddScene(st);
+
+
+
 }

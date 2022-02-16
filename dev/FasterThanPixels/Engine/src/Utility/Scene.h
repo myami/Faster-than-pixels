@@ -4,6 +4,8 @@
 namespace Engine {
 	class Scene {
 	public:
+		Scene();
+		Scene(std::string name);
 		std::unique_ptr<EntityManager> S_EntityManager;
 		std::string S_Name;
 		std::map<int, std::string> ActionScene; // chaque input du clavier et un nombre. le string represente le nom de l action lie a l input. par exemple dans un menu la touche W peux monter
