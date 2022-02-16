@@ -1,4 +1,6 @@
 {
-    "url":"./font/pilotcommand1_2.ttf",
-    "tag":"menu"
+  "url": "./font/pilotcommand1_2.ttf",
+  "tag": "menu",
+  "type": "Font"
+
 }

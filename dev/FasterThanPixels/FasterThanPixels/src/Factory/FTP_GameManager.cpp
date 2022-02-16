@@ -5,10 +5,11 @@
 
 void FTP_GameManager::Game_Init()
 {
-	Windows = new sf::RenderWindow (sf::VideoMode(200, 200), "Faster Than Pixels");
+	Windows = new sf::RenderWindow (sf::VideoMode(1020,1080), "Faster Than Pixels");
     G_SceneManager = std::unique_ptr<FTP_SceneManager>(new FTP_SceneManager());
     G_SceneManager->Init();
     CurrentScene = "Cinematique";
+    Engine::LoadAssetFromFile();
 }
 
 void FTP_GameManager::GameLoop()
