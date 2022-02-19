@@ -42,9 +42,6 @@
     <ClInclude Include="src\Factory\AssetManager.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="src\Utility\Action.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
     <ClInclude Include="src\Factory\SceneManager.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
@@ -71,9 +68,6 @@
     <ClCompile Include="src\Utility\Scene.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="src\Utility\Action.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
     <ClCompile Include="src\Factory\AssetManager.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
@@ -84,6 +78,9 @@
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="src\ECS\Entity.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Factory\GameManager.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>

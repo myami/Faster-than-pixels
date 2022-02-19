@@ -14,5 +14,6 @@ namespace Engine {
 		virtual void Game_Init() = 0; // initialiser toutes les donnes du jeu
 		virtual void GameLoop() = 0;// loop principale du jeu
 		virtual void S_Input() = 0; // gerer les events de sfml (input) se trouve dans GameLoop
+		void ResizeView(sf::Event event);
 	};
 }

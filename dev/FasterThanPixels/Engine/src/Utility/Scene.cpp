@@ -2,7 +2,8 @@
 
 void Engine::Scene::RegisterAction(int key, std::string ActionName)
 {
-	ActionScene.insert({key,ActionName});
+
+	ActionScene.insert({key,ActionName });
 }
 
 Engine::Scene::Scene()

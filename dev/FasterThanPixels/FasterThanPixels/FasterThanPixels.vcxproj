@@ -168,7 +168,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\ECS\Components\C_Brain.h" />
+    <ClInclude Include="src\ECS\Components\C_Collider.h" />
+    <ClInclude Include="src\ECS\Components\C_Health.h" />
+    <ClInclude Include="src\ECS\Components\C_ItemList.h" />
     <ClInclude Include="src\ECS\Components\C_MouvementActif.h" />
+    <ClInclude Include="src\ECS\Components\C_Pickup.h" />
+    <ClInclude Include="src\ECS\Components\C_Shield.h" />
     <ClInclude Include="src\ECS\Components\C_Transform.h" />
     <ClInclude Include="src\ECS\Entity\Asteroid.h" />
     <ClInclude Include="src\ECS\Entity\Enemie\Bombardier.h" />
@@ -176,7 +182,7 @@
     <ClInclude Include="src\ECS\Entity\Enemie.h" />
     <ClInclude Include="src\ECS\Entity\Enemie\Intercepteur.h" />
     <ClInclude Include="src\ECS\Entity\Player.h" />
-    <ClInclude Include="src\ECS\Entity\PortesVaisseau.h" />
+    <ClInclude Include="src\ECS\Entity\Enemie\PortesVaisseau.h" />
     <ClInclude Include="src\ECS\System\S_Transform.h" />
     <ClInclude Include="src\Factory\FTP_AssetManager.h" />
     <ClInclude Include="src\Factory\FTP_EntityManager.h" />
