@@ -2,6 +2,6 @@
 
 void Engine::GameManager::ResizeView(sf::Event event)
 {
-	sf::FloatRect visiblearea(0, 0, event.size.width, event.size.height);
-	Windows->setView(sf::View(visiblearea));
+	float aspectratio = float(Windows->getSize().x / Windows->getSize().y);
+	View.setSize(View_Height * aspectratio, View_Height);
 }

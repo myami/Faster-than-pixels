@@ -25,11 +25,11 @@ void Starting::S_Render()
 	text.setCharacterSize(130);
 	text.setFillColor(sf::Color::Blue);
 	text.setStyle(sf::Text::Bold | sf::Text::Underlined);
-	text.setPosition(sf::Vector2((sf::VideoMode::getDesktopMode().width - text.getLocalBounds().width) / 2.f, (sf::VideoMode::getDesktopMode().height - text.getLocalBounds().height) / 2.5f));
+	text.setPosition(sf::Vector2((sf::VideoMode::getDesktopMode().width - text.getLocalBounds().width) / 2.f - text.getLocalBounds().width / 3.6f, (sf::VideoMode::getDesktopMode().height - text.getLocalBounds().height) / 2.f  - text.getLocalBounds().height / 0.8f));
 	
 	sf::Sprite logo;
 	logo.setTexture(_GameManager->G_AssetManager->GetTexture("logoratatoskr"));
-	logo.setPosition(sf::Vector2((sf::VideoMode::getDesktopMode().width - logo.getLocalBounds().width) / 2.f, (sf::VideoMode::getDesktopMode().height - logo.getLocalBounds().height) / 2.f));
+	logo.setPosition(sf::Vector2((sf::VideoMode::getDesktopMode().width - logo.getLocalBounds().width) / 2.f - logo.getLocalBounds().width / 3.6f, (sf::VideoMode::getDesktopMode().height - logo.getLocalBounds().height) / 2.f ));
 
 	sf::Time elapsed1 = clock.getElapsedTime();
 
