@@ -12,6 +12,8 @@ namespace Engine {
 		void AddScene(Scene* scene);
 		virtual void Init() =0;
 
+		void ChangeScene();
+
 
 	};
 }

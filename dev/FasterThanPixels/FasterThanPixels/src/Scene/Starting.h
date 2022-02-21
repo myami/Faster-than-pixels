@@ -12,6 +12,8 @@ public:
 	 void S_Action(); // Input recu 2/4 quand le joueur presse sur X le gamemanager va checker si dans ActionScene il y a une action sur se input et si oui lance l'action ici 
 	 void S_Simulation() ; // milieu de frame (box2d) simule tout se qui est dans la scene 3/4
 	 void S_ActionTrigger(std::string ActionName);
+	 void S_Begin_Play();
+	 void S_End_Scene();
 	 sf::Clock clock;
 	 bool pass = false;
 };

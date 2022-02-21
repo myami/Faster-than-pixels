@@ -19,6 +19,8 @@ namespace Engine {
 		void RegisterAction(int key,std::string ActionName); // enregistre dans ActionScene les inputs disponibles pour la scene
 		virtual void S_ActionTrigger(std::string ActionName) = 0; // quand le joueur presse sur X le gamemanager va checker si dans ActionScene il y a une action sur se input et si oui lance l'action ici  (dans le S_action)
 		// ces un switch qui a toutes les actions possibles de la scene 
+		virtual void S_Begin_Play() = 0; // Lancer au debut d'une scene apres un changement de scene
+		virtual void S_End_Scene() = 0; // Appeler juste avant qu'une scene sois remplacer par une autre
 
 	};
 }

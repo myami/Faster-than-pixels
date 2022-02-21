@@ -61,6 +61,14 @@ void Starting::S_ActionTrigger(std::string ActionName)
 	}
 }
 
+void Starting::S_Begin_Play()
+{
+}
+
+void Starting::S_End_Scene()
+{
+}
+
 
 
 void Starting::S_Action()
