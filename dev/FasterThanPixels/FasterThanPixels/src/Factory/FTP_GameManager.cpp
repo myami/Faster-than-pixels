@@ -24,12 +24,12 @@ void FTP_GameManager::GameLoop()
 
     while (Windows->isOpen())
     {
-        G_SceneManager->GetCurrentScene(CurrentScene).S_Update();
+        G_SceneManager->GetCurrentScene().S_Update();
         S_Input();
-        G_SceneManager->GetCurrentScene(CurrentScene).S_Simulation();
-        G_SceneManager->GetCurrentScene(CurrentScene).S_Syteme();
+        G_SceneManager->GetCurrentScene().S_Simulation();
+        G_SceneManager->GetCurrentScene().S_Syteme();
         Windows->clear();
-        G_SceneManager->GetCurrentScene(CurrentScene).S_Render();
+        G_SceneManager->GetCurrentScene().S_Render();
         Windows->display();
     }
 }

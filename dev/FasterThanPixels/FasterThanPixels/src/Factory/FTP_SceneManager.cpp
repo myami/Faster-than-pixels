@@ -3,14 +3,7 @@
 
 void FTP_SceneManager::Init()
 {
-	Starting* st =  new Starting("Cinematique",_GameManager);
+	Starting* st =  new Starting("Cinematique");
 	AddScene(st);
 
-
-
-}
-
-FTP_SceneManager::FTP_SceneManager(FTP_GameManager* gm)
-{
-	this->_GameManager = gm;
 }
