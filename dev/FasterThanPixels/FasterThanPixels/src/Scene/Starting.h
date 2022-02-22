@@ -1,11 +1,11 @@
 #pragma once
 // cinematique
 #include "Engine.h"
-#include "..\Factory\FTP_GameManager.h"
+class FTP_SceneManager;
 class Starting : public Engine::Scene {
 public:
-	 Starting(std::string name,FTP_GameManager* refs);
-	 FTP_GameManager* _GameManager;
+	 Starting(std::string name, FTP_SceneManager* refs);
+	 FTP_SceneManager* _SceneManager;
 	 void S_Syteme(); // tout les systeme de la scene ( tout les system lie au component)
 	 void S_Update(); // debut de frame mais a jour tout se qu il doit mettre a jour 1 /4
 	 void S_Render(); // fin de frame affiche le resultat de la simulation 4/4

@@ -4,6 +4,5 @@
 class FTP_SceneManager : public Engine::SceneManager {
 public:
 	void Init();
-
-
+	FTP_SceneManager(Engine::GameManager* gm);
 };

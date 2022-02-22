@@ -1,10 +1,11 @@
 #include "Starting.h"
-#include "../Factory/FTP_GameManager.h"
+#include "../Factory/FTP_SceneManager.h"
 
-Starting::Starting(std::string name, FTP_GameManager* refs)
+
+
+Starting::Starting(std::string name, FTP_SceneManager* refs):Engine::Scene(name)
 {
-	this->S_Name = name;
-	this->_GameManager = refs;
+	this->_SceneManager = refs;
 	RegisterAction(sf::Keyboard::Space, "PasserCinematique");
 }
 
@@ -20,7 +21,7 @@ void Starting::S_Update()
 void Starting::S_Render()
 {
 	sf::Text text;
-	text.setFont(_GameManager->G_AssetManager->GetFont("FontIntro")); 
+	text.setFont(_SceneManager->_GameManager->G_AssetManager->GetFont("FontIntro"));
 	text.setString("FASTER THAN PIXEL");
 	text.setCharacterSize(130);
 	text.setFillColor(sf::Color::Blue);
@@ -28,21 +29,21 @@ void Starting::S_Render()
 	text.setPosition(sf::Vector2((sf::VideoMode::getDesktopMode().width - text.getLocalBounds().width) / 2.f - text.getLocalBounds().width / 3.6f, (sf::VideoMode::getDesktopMode().height - text.getLocalBounds().height) / 2.f  - text.getLocalBounds().height / 0.8f));
 	
 	sf::Sprite logo;
-	logo.setTexture(_GameManager->G_AssetManager->GetTexture("logoratatoskr"));
+	logo.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("logoratatoskr"));
 	logo.setPosition(sf::Vector2((sf::VideoMode::getDesktopMode().width - logo.getLocalBounds().width) / 2.f - logo.getLocalBounds().width / 3.6f, (sf::VideoMode::getDesktopMode().height - logo.getLocalBounds().height) / 2.f ));
 
 	sf::Time elapsed1 = clock.getElapsedTime();
 
 	if (elapsed1.asSeconds() > 3 && elapsed1.asSeconds() < 6) // a bouger dans S_Update et faire un vector de quoi rendre a chaque frame
 	{
-		_GameManager->Windows->draw(logo);
+		_SceneManager->_GameManager->Windows->draw(logo);
 	}
 
 	else if (elapsed1.asSeconds() > 6 || pass) { // a bouger dans S_Update je pense
 		S_End = true;
 	}
 	else {
-		_GameManager->Windows->draw(text);
+		_SceneManager->_GameManager->Windows->draw(text);
 	}
 	
 	

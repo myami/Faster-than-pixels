@@ -1,4 +1,5 @@
 #include "SceneManager.h"
+#include "GameManager.h"
 #include "../Utility/Scene.h"
 
 Engine::SceneManager::SceneManager()

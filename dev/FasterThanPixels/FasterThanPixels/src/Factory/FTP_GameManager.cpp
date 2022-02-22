@@ -51,5 +51,5 @@ void FTP_GameManager::S_Input()
             ResizeView(event);
         }
     }
-    G_SceneManager->GetCurrentScene(CurrentScene).S_Action();
+    G_SceneManager->GetCurrentScene().S_Action();
 }

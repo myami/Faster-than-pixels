@@ -1,12 +1,12 @@
 #pragma once
-#include "AssetManager.h"
-#include "SceneManager.h"
+
 #include "SFML/Graphics.hpp"
 namespace Engine {
+class AssetManager;
+class SceneManager;
 	static const float View_Height = 1080.f;
 	static const float View_Width = 1920.f;
 	class GameManager {
-
 	public:
 		std::unique_ptr<AssetManager> G_AssetManager;
 		std::unique_ptr<SceneManager> G_SceneManager;

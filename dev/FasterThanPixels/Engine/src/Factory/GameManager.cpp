@@ -1,4 +1,6 @@
 #include "GameManager.h"
+#include "AssetManager.h"
+#include "SceneManager.h"
 
 void Engine::GameManager::ResizeView(sf::Event event)
 {

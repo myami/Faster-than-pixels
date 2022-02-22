@@ -1,9 +1,9 @@
 #pragma once
 #include "../Utility/Scene.h"
-#include "GameManager.h"
 #include <vector>
 
 namespace Engine {
+class GameManager;
 	class SceneManager {
 	public:
 		SceneManager();
