@@ -178,13 +178,14 @@
     <ClInclude Include="src\Factory\GameManager.h" />
     <ClInclude Include="src\Factory\SceneManager.h" />
     <ClInclude Include="src\Utility\MathF.h" />
+    <ClInclude Include="src\Utility\Path.h" />
     <ClInclude Include="src\Utility\Scene.h" />
     <ClInclude Include="src\Utility\Utility.h" />
     <ClInclude Include="src\Utility\Vector2D.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\ECS\Component.cpp" />
     <ClCompile Include="src\ECS\Entity.cpp" />
-    <ClCompile Include="src\Engine.cpp" />
     <ClCompile Include="src\Factory\AssetManager.cpp" />
     <ClCompile Include="src\Factory\EntityManager.cpp" />
     <ClCompile Include="src\Factory\GameManager.cpp" />

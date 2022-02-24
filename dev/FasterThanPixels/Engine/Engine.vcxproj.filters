@@ -51,11 +51,11 @@
     <ClInclude Include="src\Factory\GameManager.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+    <ClInclude Include="src\Utility\Path.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Engine.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
     <ClCompile Include="src\Utility\Vector2D.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
@@ -81,6 +81,9 @@
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="src\Factory\GameManager.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ECS\Component.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>

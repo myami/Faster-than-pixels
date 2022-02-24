@@ -1,0 +1,12 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$class_engine_1_1_component.html" title=" " alt="" coords="5,208,141,235"/>
+<area shape="rect" id="node2" href="$class_c___brain.html" title=" " alt="" coords="225,5,293,32"/>
+<area shape="rect" id="node3" href="$class_c___collider.html" title=" " alt="" coords="219,56,300,83"/>
+<area shape="rect" id="node4" href="$class_c___health.html" title=" " alt="" coords="222,107,297,133"/>
+<area shape="rect" id="node5" href="$class_c___item_list.html" title=" " alt="" coords="217,157,301,184"/>
+<area shape="rect" id="node6" href="$class_c___mouvement_actif.html" title=" " alt="" coords="194,208,325,235"/>
+<area shape="rect" id="node7" href="$class_c___mouvement_passif.html" title=" " alt="" coords="189,259,329,285"/>
+<area shape="rect" id="node8" href="$class_c___pickup.html" title=" " alt="" coords="220,309,299,336"/>
+<area shape="rect" id="node9" href="$class_c___shield.html" title=" " alt="" coords="222,360,297,387"/>
+<area shape="rect" id="node10" href="$class_c___transform.html" title=" " alt="" coords="212,411,307,437"/>
+</map>

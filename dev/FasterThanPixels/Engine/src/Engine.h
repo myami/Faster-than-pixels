@@ -10,6 +10,8 @@
 #include "ECS/Component.h"
 #include "ECS/Entity.h"
 #include "ECS/System.h"
+#include "Utility/Path.h"
+#include "Utility/GameMode.h"
 
 /*! \namespace Engine
  *
@@ -17,8 +19,4 @@
  * 
  */
 
-namespace Engine {
-	void PrintMessage();
-	void ShowWindows();
 
-}
