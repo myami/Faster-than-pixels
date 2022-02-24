@@ -190,6 +190,15 @@
     <ClInclude Include="src\Factory\FTP_EntityManager.h" />
     <ClInclude Include="src\Factory\FTP_GameManager.h" />
     <ClInclude Include="src\Factory\FTP_SceneManager.h" />
+    <ClInclude Include="src\GameMode\FastAction\AttackTheArea.h" />
+    <ClInclude Include="src\GameMode\FastAction\FastAction.h" />
+    <ClInclude Include="src\GameMode\FastAction\FindSurvivor.h" />
+    <ClInclude Include="src\GameMode\FastAction\LastSurvivor.h" />
+    <ClInclude Include="src\GameMode\FastAction\ProtectTheArea.h" />
+    <ClInclude Include="src\GameMode\FastAction\Race.h" />
+    <ClInclude Include="src\GameMode\Training\Easy.h" />
+    <ClInclude Include="src\GameMode\Training\Hard.h" />
+    <ClInclude Include="src\GameMode\Training\Medium.h" />
     <ClInclude Include="src\Scene\Authentification.h" />
     <ClInclude Include="src\Scene\EndGame.h" />
     <ClInclude Include="src\Scene\Game.h" />
