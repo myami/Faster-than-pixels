@@ -3,6 +3,7 @@
 #include <fstream>
 #include <string>
 #include "json.hpp"
+#include "sqlite/sqlite3.h"
 
 
 namespace Engine {
