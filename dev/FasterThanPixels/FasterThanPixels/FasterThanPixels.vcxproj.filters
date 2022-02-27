@@ -164,5 +164,8 @@
     <ClInclude Include="src\GameMode\FastAction\FastAction.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+    <ClInclude Include="src\ECS\Components\C_Shoot.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

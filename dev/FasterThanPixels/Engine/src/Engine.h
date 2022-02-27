@@ -12,6 +12,7 @@
 #include "ECS/System.h"
 #include "Utility/Path.h"
 #include "Utility/GameMode.h"
+#include "Utility/GameStats.h"
 
 /*! \namespace Engine
  *

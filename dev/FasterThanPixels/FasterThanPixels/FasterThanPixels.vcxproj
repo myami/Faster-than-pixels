@@ -175,6 +175,7 @@
     <ClInclude Include="src\ECS\Components\C_MouvementPassif.h" />
     <ClInclude Include="src\ECS\Components\C_Pickup.h" />
     <ClInclude Include="src\ECS\Components\C_Shield.h" />
+    <ClInclude Include="src\ECS\Components\C_Shoot.h" />
     <ClInclude Include="src\ECS\Components\C_Transform.h" />
     <ClInclude Include="src\ECS\Entity\Asteroid.h" />
     <ClInclude Include="src\ECS\Entity\Enemie\Bombardier.h" />

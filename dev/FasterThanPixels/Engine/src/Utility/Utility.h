@@ -8,5 +8,9 @@
 
 namespace Engine {
 	std::vector<nlohmann::json> LoadAssetFromFile();
-	
+	nlohmann::json GetPlayerInfoFromDB(std::string Name);
+	bool LoginUser(std::string name, std::string passwd);
+	void CreateUser(std::string name, std::string passwd);
+	void SetPlayerInfo(nlohmann::json newinfo);
+
 }
