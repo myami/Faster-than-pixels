@@ -21,6 +21,6 @@ namespace Engine {
 		// ces un switch qui a toutes les actions possibles de la scene 
 		virtual void S_Begin_Play() = 0; // Lancer au debut d'une scene apres un changement de scene
 		virtual void S_End_Scene() = 0; // Appeler juste avant qu'une scene sois remplacer par une autre
-
+		
 	};
 }

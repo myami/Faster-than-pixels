@@ -167,23 +167,35 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\ECS\Components\C_Booster.h" />
     <ClInclude Include="src\ECS\Components\C_Brain.h" />
-    <ClInclude Include="src\ECS\Components\C_Collider.h" />
     <ClInclude Include="src\ECS\Components\C_Health.h" />
     <ClInclude Include="src\ECS\Components\C_ItemList.h" />
+    <ClInclude Include="src\ECS\Components\C_Laser.h" />
+    <ClInclude Include="src\ECS\Components\C_Mines.h" />
+    <ClInclude Include="src\ECS\Components\C_Missiles.h" />
     <ClInclude Include="src\ECS\Components\C_MouvementActif.h" />
     <ClInclude Include="src\ECS\Components\C_MouvementPassif.h" />
     <ClInclude Include="src\ECS\Components\C_Pickup.h" />
+    <ClInclude Include="src\ECS\Components\C_Punching.h" />
+    <ClInclude Include="src\ECS\Components\C_Render.h" />
     <ClInclude Include="src\ECS\Components\C_Shield.h" />
     <ClInclude Include="src\ECS\Components\C_Shoot.h" />
+    <ClInclude Include="src\ECS\Components\C_Thunderbolt.h" />
     <ClInclude Include="src\ECS\Components\C_Transform.h" />
+    <ClInclude Include="src\ECS\Components\C_Turret.h" />
+    <ClInclude Include="src\ECS\Components\C_Wrench.h" />
     <ClInclude Include="src\ECS\Entity\Asteroid.h" />
+    <ClInclude Include="src\ECS\Entity\Bonus\Booster.h" />
     <ClInclude Include="src\ECS\Entity\Enemie\Bombardier.h" />
     <ClInclude Include="src\ECS\Entity\Enemie\Chasseurs.h" />
     <ClInclude Include="src\ECS\Entity\Enemie.h" />
     <ClInclude Include="src\ECS\Entity\Enemie\Intercepteur.h" />
     <ClInclude Include="src\ECS\Entity\Player.h" />
     <ClInclude Include="src\ECS\Entity\Enemie\PortesVaisseau.h" />
+    <ClInclude Include="src\ECS\Entity\Bonus\Punching.h" />
+    <ClInclude Include="src\ECS\Entity\Bonus\Thunderbolt.h" />
+    <ClInclude Include="src\ECS\Entity\Bonus\Wrench.h" />
     <ClInclude Include="src\ECS\System\S_Brain.h" />
     <ClInclude Include="src\ECS\System\S_MouvementActif.h" />
     <ClInclude Include="src\ECS\System\S_MouvementPassif.h" />
@@ -197,6 +209,7 @@
     <ClInclude Include="src\GameMode\FastAction\LastSurvivor.h" />
     <ClInclude Include="src\GameMode\FastAction\ProtectTheArea.h" />
     <ClInclude Include="src\GameMode\FastAction\Race.h" />
+    <ClInclude Include="src\GameMode\FTP_GameStats.h" />
     <ClInclude Include="src\GameMode\Training\Easy.h" />
     <ClInclude Include="src\GameMode\Training\Hard.h" />
     <ClInclude Include="src\GameMode\Training\Medium.h" />

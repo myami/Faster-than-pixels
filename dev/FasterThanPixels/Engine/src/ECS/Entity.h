@@ -6,7 +6,6 @@
 /*!
  * \file Entity.h
  * \brief Entite qui apparait dans le jeu, il contient les composants
- * \version 0.1
  */
 namespace Engine {
 	class Entity {
@@ -18,6 +17,7 @@ namespace Engine {
 		
 		std::shared_ptr<Engine::Component> GetComponent(std::string name);
 		void AddComponent(std::string name, std::shared_ptr<Engine::Component> Component);
-		virtual void OnColliderEnter() = 0;
+		
+
 	};
 }

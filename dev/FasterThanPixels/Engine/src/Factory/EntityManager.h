@@ -13,5 +13,6 @@ namespace Engine {
 		void GenerateEntity(); // Genere toutes les entite vide dans le vector par rapport au nombre total
 		void Update(); // Appelle au debut du gameloop pour mettre a jour les etats des entite avant n importe quel calcul pour les modifier dans vector et rajouter dans map (S_Update de scene)
 		void RemoveEntity(); // enleve l entity du map, et enleve toutes sont contenu dans le vector et le rend utilisable a une autre entite (S_Update de scene)
+
 	};
 }

@@ -14,6 +14,7 @@ struct FTP_Game_Info { // les infos qu on va afficher sur le menu de stat a la f
 
 
 
+
 };
 class FTP_GameStats : public Engine::GameStats {
 public :
