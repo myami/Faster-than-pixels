@@ -1,4 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$a00320.html" title="classe representant le jeu, il contient tout les sous&#45;systeme et a la gameloop" alt="" coords="5,5,160,32"/>
-<area shape="rect" id="node2" href="$a00516.html" title="classe enfant de GameManager" alt="" coords="208,5,347,32"/>
+<area shape="rect" id="node1" href="$a00317.html" title="classe representant le jeu, il contient tout les sous&#45;systeme et a la gameloop" alt="" coords="5,5,160,32"/>
+<area shape="rect" id="node2" href="$a00509.html" title="classe enfant de GameManager" alt="" coords="208,5,347,32"/>
 </map>

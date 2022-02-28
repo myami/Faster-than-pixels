@@ -1,6 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$a00308.html" title="classe representant chaque Systeme qui sont lie au component actif" alt="" coords="5,56,120,83"/>
-<area shape="rect" id="node2" href="$a00496.html" title="classe systeme pour le component Brain, il permait de calculer les mouvements par une IA" alt="" coords="204,5,272,32"/>
-<area shape="rect" id="node3" href="$a00504.html" title="classe systeme pour le component Mouvement_Passif, Une fois le vector de direction recalculer il chan..." alt="" coords="168,56,308,83"/>
-<area shape="rect" id="node4" href="$a00500.html" title="classe systeme pour le component Mouvement_Actif, Une fois le vector de direction recalculer il chang..." alt="" coords="169,107,307,133"/>
+<area shape="rect" id="node1" href="$a00305.html" title="classe representant chaque Systeme qui sont lie au component actif" alt="" coords="5,56,120,83"/>
+<area shape="rect" id="node2" href="$a00489.html" title="classe systeme pour le component Brain, il permait de calculer les mouvements par une IA" alt="" coords="204,5,272,32"/>
+<area shape="rect" id="node3" href="$a00497.html" title="classe systeme pour le component Mouvement_Passif, Une fois le vector de direction recalculer il chan..." alt="" coords="168,56,308,83"/>
+<area shape="rect" id="node4" href="$a00493.html" title="classe systeme pour le component Mouvement_Actif, Une fois le vector de direction recalculer il chang..." alt="" coords="169,107,307,133"/>
 </map>

@@ -5,5 +5,6 @@
 *
 */
 class C_Shoot : public Engine::Component {
+public:
 	bool canshoot; /*!< Si l'entite peux tirer ou si on lui bloque comme par exemple si il est trop endommager */
 };

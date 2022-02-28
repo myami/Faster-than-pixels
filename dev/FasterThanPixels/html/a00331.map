@@ -1,4 +1,3 @@
-<map id="Engine::GameStats" name="Engine::GameStats">
-<area shape="rect" id="node1" title="classe qui sauvegardes les infos de la partie en cours" alt="" coords="31,5,167,83"/>
-<area shape="rect" id="node2" href="$a00552.html" title="classe enfant de GameStats" alt="" coords="5,131,192,208"/>
+<map id="Engine::Graph_Gamemodes" name="Engine::Graph_Gamemodes">
+<area shape="rect" id="node1" title="classe qui genere un noeux pour un graphes, Utile pour savoir quel gamemodes peux etre enchainer sans..." alt="" coords="5,5,237,127"/>
 </map>

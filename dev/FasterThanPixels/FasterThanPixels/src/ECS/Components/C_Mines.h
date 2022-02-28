@@ -5,6 +5,7 @@
 *
 */
 class C_Mines : public Engine::Component {
+public:
 	int Amount;  /*!< nombre dans l inventaire */
 	int MaxAmount;  /*!< Maximum qu il peux avoir */
 };

@@ -5,6 +5,7 @@
 *
 */
 class C_Shield : public Engine::Component {
+public:
 	float Health; /*!< Vie du bouclier */
 	float RegenerationSpeed; /*!< Vitesse de regeneration */
 	float RegenerationAmountPerTick; /*!< Regeneration par tick */

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['infogame_0',['InfoGame',['../a00552.html#a648eb08bceb846f1f8c83ba158309530',1,'FTP_GameStats']]],
-  ['istraining_1',['IsTraining',['../a00548.html#aa8edd25212fde978adf02714a1d4375d',1,'FTP_Game_Info']]]
+  ['health_0',['Health',['../a00357.html#ae0bd93e2fd32fafe071b05db3c55ab24',1,'C_Health::Health()'],['../a00393.html#a173675ae0d279c426fe4ccf7e74eb1c3',1,'C_Shield::Health()']]]
 ];

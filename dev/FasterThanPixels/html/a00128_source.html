@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>FTP: D:/githubrepo/Faster-than-pixels/dev/FasterThanPixels/FasterThanPixels/src/ECS/Components/C_Transform.h Source File</title>
+<title>FTP: D:/githubrepo/Faster-than-pixels/dev/FasterThanPixels/FasterThanPixels/src/ECS/Components/C_Turret.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -66,21 +66,33 @@ $(function() {
 </div>
 </div><!-- top -->
 <div class="header">
-  <div class="headertitle"><div class="title">C_Transform.h</div></div>
+  <div class="headertitle"><div class="title">C_Turret.h</div></div>
 </div><!--header-->
 <div class="contents">
 <a href="a00128.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="a00017.html">Engine.h</a>&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="a00412.html">    7</a></span><span class="keyword">class </span><a class="code hl_class" href="a00412.html">C_Transform</a> : <span class="keyword">public</span> <a class="code hl_class" href="a00300.html">Engine::Component</a> {</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <a class="code hl_class" href="a00348.html">Engine::Vector2D</a> Position;  </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <a class="code hl_class" href="a00348.html">Engine::Vector2D</a> Scale;  </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <a class="code hl_class" href="a00348.html">Engine::Vector2D</a> Rotation;  </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <a class="code hl_class" href="a00348.html">Engine::Vector2D</a> Direction;  </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>};</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="a00409.html">    7</a></span><span class="keyword">class </span><a class="code hl_class" href="a00409.html">C_Turret</a> : <span class="keyword">public</span> <a class="code hl_class" href="a00297.html">Engine::Component</a> {</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="a00409.html#a5ef3b839189e88a7d74271cb7c2a6fc6">    9</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="a00409.html#a5ef3b839189e88a7d74271cb7c2a6fc6">AmountOfTurret</a>;  </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="a00409.html#a85e7b51177f46a3123c2c8f8f3d6125d">   10</a></span>    std::vector&lt;Engine::Vector2D&gt; <a class="code hl_variable" href="a00409.html#a85e7b51177f46a3123c2c8f8f3d6125d">TurretPosition</a>;  </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="a00409.html#a8cdcf6cdeadc4dad40393ce3cd5d0b95">   11</a></span>    std::vector&lt;Engine::Vector2D&gt; <a class="code hl_variable" href="a00409.html#a8cdcf6cdeadc4dad40393ce3cd5d0b95">TurretRotation</a>;  </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="a00409.html#aabc5849a2398f17c95f34b707408dd99">   12</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="a00409.html#aabc5849a2398f17c95f34b707408dd99">TurretDamage</a>;  </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="a00409.html#a3b3c7747d7e8be194d211fdd4a4392cd">   13</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="a00409.html#a3b3c7747d7e8be194d211fdd4a4392cd">TurretShootingSpeed</a>;  </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="a00409.html#abf02519e0258687de061c8757ba53f50">   14</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="a00409.html#abf02519e0258687de061c8757ba53f50">TurretTimeToRotate</a>;  </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="a00409.html#a38fbeeaa39ba8f4f99cb3ddf29f9572e">   15</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="a00409.html#a38fbeeaa39ba8f4f99cb3ddf29f9572e">RotateTurret</a>(<span class="keywordtype">int</span> TurrentIndex, <a class="code hl_class" href="a00301.html">Engine::Entity</a> Target);</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>};</div>
 <div class="ttc" id="aa00017_html"><div class="ttname"><a href="a00017.html">Engine.h</a></div></div>
-<div class="ttc" id="aa00300_html"><div class="ttname"><a href="a00300.html">Engine::Component</a></div><div class="ttdoc">classe representant chaque composant que l'entite va avoir</div><div class="ttdef"><b>Definition:</b> Component.h:15</div></div>
-<div class="ttc" id="aa00348_html"><div class="ttname"><a href="a00348.html">Engine::Vector2D</a></div><div class="ttdef"><b>Definition:</b> Vector2D.h:3</div></div>
-<div class="ttc" id="aa00412_html"><div class="ttname"><a href="a00412.html">C_Transform</a></div><div class="ttdoc">classe representant le component Transform, Si l'entite a ce component, cela veux dire que il a des p...</div><div class="ttdef"><b>Definition:</b> C_Transform.h:7</div></div>
+<div class="ttc" id="aa00297_html"><div class="ttname"><a href="a00297.html">Engine::Component</a></div><div class="ttdoc">classe representant chaque composant que l'entite va avoir</div><div class="ttdef"><b>Definition:</b> Component.h:15</div></div>
+<div class="ttc" id="aa00301_html"><div class="ttname"><a href="a00301.html">Engine::Entity</a></div><div class="ttdef"><b>Definition:</b> Entity.h:15</div></div>
+<div class="ttc" id="aa00409_html"><div class="ttname"><a href="a00409.html">C_Turret</a></div><div class="ttdoc">classe representant le component Turret, Si l'entite a ce component, cela veux dire qu'il a des toure...</div><div class="ttdef"><b>Definition:</b> C_Turret.h:7</div></div>
+<div class="ttc" id="aa00409_html_a38fbeeaa39ba8f4f99cb3ddf29f9572e"><div class="ttname"><a href="a00409.html#a38fbeeaa39ba8f4f99cb3ddf29f9572e">C_Turret::RotateTurret</a></div><div class="ttdeci">void RotateTurret(int TurrentIndex, Engine::Entity Target)</div></div>
+<div class="ttc" id="aa00409_html_a3b3c7747d7e8be194d211fdd4a4392cd"><div class="ttname"><a href="a00409.html#a3b3c7747d7e8be194d211fdd4a4392cd">C_Turret::TurretShootingSpeed</a></div><div class="ttdeci">float TurretShootingSpeed</div><div class="ttdef"><b>Definition:</b> C_Turret.h:13</div></div>
+<div class="ttc" id="aa00409_html_a5ef3b839189e88a7d74271cb7c2a6fc6"><div class="ttname"><a href="a00409.html#a5ef3b839189e88a7d74271cb7c2a6fc6">C_Turret::AmountOfTurret</a></div><div class="ttdeci">int AmountOfTurret</div><div class="ttdef"><b>Definition:</b> C_Turret.h:9</div></div>
+<div class="ttc" id="aa00409_html_a85e7b51177f46a3123c2c8f8f3d6125d"><div class="ttname"><a href="a00409.html#a85e7b51177f46a3123c2c8f8f3d6125d">C_Turret::TurretPosition</a></div><div class="ttdeci">std::vector&lt; Engine::Vector2D &gt; TurretPosition</div><div class="ttdef"><b>Definition:</b> C_Turret.h:10</div></div>
+<div class="ttc" id="aa00409_html_a8cdcf6cdeadc4dad40393ce3cd5d0b95"><div class="ttname"><a href="a00409.html#a8cdcf6cdeadc4dad40393ce3cd5d0b95">C_Turret::TurretRotation</a></div><div class="ttdeci">std::vector&lt; Engine::Vector2D &gt; TurretRotation</div><div class="ttdef"><b>Definition:</b> C_Turret.h:11</div></div>
+<div class="ttc" id="aa00409_html_aabc5849a2398f17c95f34b707408dd99"><div class="ttname"><a href="a00409.html#aabc5849a2398f17c95f34b707408dd99">C_Turret::TurretDamage</a></div><div class="ttdeci">float TurretDamage</div><div class="ttdef"><b>Definition:</b> C_Turret.h:12</div></div>
+<div class="ttc" id="aa00409_html_abf02519e0258687de061c8757ba53f50"><div class="ttname"><a href="a00409.html#abf02519e0258687de061c8757ba53f50">C_Turret::TurretTimeToRotate</a></div><div class="ttdeci">float TurretTimeToRotate</div><div class="ttdef"><b>Definition:</b> C_Turret.h:14</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

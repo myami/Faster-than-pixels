@@ -5,6 +5,7 @@
 *
 */
 class C_Laser : public Engine::Component {
+public:
 	int Amount;  /*!< Nombre que l'entite a actuellement dans sont inventaire */
 	int MaxAmount;  /*!< Le maximum qu'il peux avoir */
 };

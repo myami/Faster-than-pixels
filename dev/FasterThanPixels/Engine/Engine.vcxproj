@@ -179,6 +179,7 @@
     <ClInclude Include="src\Factory\SceneManager.h" />
     <ClInclude Include="src\Utility\GameMode.h" />
     <ClInclude Include="src\Utility\GameStats.h" />
+    <ClInclude Include="src\Utility\Graph.h" />
     <ClInclude Include="src\Utility\MathF.h" />
     <ClInclude Include="src\Utility\Path.h" />
     <ClInclude Include="src\Utility\Scene.h" />

@@ -6,6 +6,7 @@
 *
 */
 class C_Brain : public Engine::Component {
+public:
 	/*!
 	*  \brief FindEntity
 	*

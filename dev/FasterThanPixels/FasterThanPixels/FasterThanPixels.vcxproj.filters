@@ -92,9 +92,6 @@
     <ClInclude Include="src\ECS\Components\C_Brain.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="src\ECS\Components\C_ItemList.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
     <ClInclude Include="src\ECS\Components\C_MouvementPassif.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
@@ -204,6 +201,27 @@
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="src\GameMode\FTP_GameStats.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ECS\Entity\Weapon\Laser.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ECS\Entity\Weapon\Mine.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ECS\Entity\Weapon\Missile.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ECS\Entity\GameMode\AttackTheArea\Building_A.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ECS\Entity\GameMode\FindSurvivor\Survivor.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ECS\Entity\GameMode\Race\Checkpoint.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ECS\Entity\GameMode\ProtectTheArea\Building_P.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>

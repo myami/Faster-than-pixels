@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>FTP: D:/githubrepo/Faster-than-pixels/dev/FasterThanPixels/FasterThanPixels/src/ECS/Entity/Bonus/Wrench.h Source File</title>
+<title>FTP: D:/githubrepo/Faster-than-pixels/dev/FasterThanPixels/FasterThanPixels/src/ECS/Entity/Enemie/Bombardier.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,21 +62,22 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_b16918410e5acf2251db7ea006ee105b.html">githubrepo</a></li><li class="navelem"><a class="el" href="dir_7da279721876a949701c864e6892217d.html">Faster-than-pixels</a></li><li class="navelem"><a class="el" href="dir_20b90fc9cfa420bbe2604e55e3b20477.html">dev</a></li><li class="navelem"><a class="el" href="dir_558e293e3fd66370da35062ff559597b.html">FasterThanPixels</a></li><li class="navelem"><a class="el" href="dir_c0ac224a9878f3766c403de3f5342f10.html">FasterThanPixels</a></li><li class="navelem"><a class="el" href="dir_3aea883f561b2c6b988ff8f7b839c9e8.html">src</a></li><li class="navelem"><a class="el" href="dir_582d69b02553daaec4351c63879312d9.html">ECS</a></li><li class="navelem"><a class="el" href="dir_48db6fc16be6d24dabd9ba607f927b1e.html">Entity</a></li><li class="navelem"><a class="el" href="dir_43b7d39fd77ed328f639a4f3f299e5b5.html">Bonus</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_b16918410e5acf2251db7ea006ee105b.html">githubrepo</a></li><li class="navelem"><a class="el" href="dir_7da279721876a949701c864e6892217d.html">Faster-than-pixels</a></li><li class="navelem"><a class="el" href="dir_20b90fc9cfa420bbe2604e55e3b20477.html">dev</a></li><li class="navelem"><a class="el" href="dir_558e293e3fd66370da35062ff559597b.html">FasterThanPixels</a></li><li class="navelem"><a class="el" href="dir_c0ac224a9878f3766c403de3f5342f10.html">FasterThanPixels</a></li><li class="navelem"><a class="el" href="dir_3aea883f561b2c6b988ff8f7b839c9e8.html">src</a></li><li class="navelem"><a class="el" href="dir_582d69b02553daaec4351c63879312d9.html">ECS</a></li><li class="navelem"><a class="el" href="dir_48db6fc16be6d24dabd9ba607f927b1e.html">Entity</a></li><li class="navelem"><a class="el" href="dir_f8059d32324df2518840a20d434bd3fe.html">Enemie</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
-  <div class="headertitle"><div class="title">Wrench.h</div></div>
+  <div class="headertitle"><div class="title">Bombardier.h</div></div>
 </div><!--header-->
 <div class="contents">
 <a href="a00149.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="a00017.html">Engine.h</a>&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="a00440.html">    7</a></span><span class="keyword">class </span><a class="code hl_class" href="a00440.html">Wrench</a> : <span class="keyword">public</span> <a class="code hl_class" href="a00304.html">Engine::Entity</a> {</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>};</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;../Enemie.h&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="a00441.html">    8</a></span><span class="keyword">class </span><a class="code hl_class" href="a00441.html">Bombardier</a> : <span class="keyword">public</span> <a class="code hl_class" href="a00437.html">Enemie</a> {</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>};</div>
 <div class="ttc" id="aa00017_html"><div class="ttname"><a href="a00017.html">Engine.h</a></div></div>
-<div class="ttc" id="aa00304_html"><div class="ttname"><a href="a00304.html">Engine::Entity</a></div><div class="ttdef"><b>Definition:</b> Entity.h:15</div></div>
-<div class="ttc" id="aa00440_html"><div class="ttname"><a href="a00440.html">Wrench</a></div><div class="ttdoc">classe representant l'entite Wrench, elle apparait au sol et attend d'etre ramasser</div><div class="ttdef"><b>Definition:</b> Wrench.h:7</div></div>
+<div class="ttc" id="aa00437_html"><div class="ttname"><a href="a00437.html">Enemie</a></div><div class="ttdoc">classe parent de tout les enemies</div><div class="ttdef"><b>Definition:</b> Enemie.h:7</div></div>
+<div class="ttc" id="aa00441_html"><div class="ttname"><a href="a00441.html">Bombardier</a></div><div class="ttdoc">classe representant l'entite Bombardier, elle est un ennemie du joueur</div><div class="ttdef"><b>Definition:</b> Bombardier.h:8</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

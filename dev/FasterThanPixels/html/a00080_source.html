@@ -71,15 +71,19 @@ $(function() {
 <div class="contents">
 <a href="a00080.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="a00017.html">Engine.h</a>&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="a00352.html">    7</a></span><span class="keyword">class </span><a class="code hl_class" href="a00352.html">C_Booster</a> : <span class="keyword">public</span> <a class="code hl_class" href="a00300.html">Engine::Component</a> {</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keywordtype">float</span> BonusSpeed;  </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keywordtype">bool</span> AddSpeed; <span class="comment">//  /*!&lt; Si on est entrain de l&#39;ajouter */</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordtype">float</span> TimeToGetIt;  </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordtype">float</span> CurrentTime;  </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>};</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="a00349.html">    7</a></span><span class="keyword">class </span><a class="code hl_class" href="a00349.html">C_Booster</a> : <span class="keyword">public</span> <a class="code hl_class" href="a00297.html">Engine::Component</a> {</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="a00349.html#a433a462c1a4780f054f4e56d60931ab7">    9</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="a00349.html#a433a462c1a4780f054f4e56d60931ab7">BonusSpeed</a>;  </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="a00349.html#a1fdc455f51213e8c319f35c5ef6970f2">   10</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="a00349.html#a1fdc455f51213e8c319f35c5ef6970f2">AddSpeed</a>; <span class="comment">//  /*!&lt; Si on est entrain de l&#39;ajouter */</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordtype">float</span> TimeToGetIt;  </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="a00349.html#a2590cc6b93a49cbca4881ce323ae8d3c">   12</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="a00349.html#a2590cc6b93a49cbca4881ce323ae8d3c">CurrentTime</a>;  </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>};</div>
 <div class="ttc" id="aa00017_html"><div class="ttname"><a href="a00017.html">Engine.h</a></div></div>
-<div class="ttc" id="aa00300_html"><div class="ttname"><a href="a00300.html">Engine::Component</a></div><div class="ttdoc">classe representant chaque composant que l'entite va avoir</div><div class="ttdef"><b>Definition:</b> Component.h:15</div></div>
-<div class="ttc" id="aa00352_html"><div class="ttname"><a href="a00352.html">C_Booster</a></div><div class="ttdoc">classe representant le component Booster, Si l'entite l'a est quand il peux l utiliser et de combien ...</div><div class="ttdef"><b>Definition:</b> C_Booster.h:7</div></div>
+<div class="ttc" id="aa00297_html"><div class="ttname"><a href="a00297.html">Engine::Component</a></div><div class="ttdoc">classe representant chaque composant que l'entite va avoir</div><div class="ttdef"><b>Definition:</b> Component.h:15</div></div>
+<div class="ttc" id="aa00349_html"><div class="ttname"><a href="a00349.html">C_Booster</a></div><div class="ttdoc">classe representant le component Booster, Si l'entite l'a est quand il peux l utiliser et de combien ...</div><div class="ttdef"><b>Definition:</b> C_Booster.h:7</div></div>
+<div class="ttc" id="aa00349_html_a1fdc455f51213e8c319f35c5ef6970f2"><div class="ttname"><a href="a00349.html#a1fdc455f51213e8c319f35c5ef6970f2">C_Booster::AddSpeed</a></div><div class="ttdeci">bool AddSpeed</div><div class="ttdef"><b>Definition:</b> C_Booster.h:10</div></div>
+<div class="ttc" id="aa00349_html_a2590cc6b93a49cbca4881ce323ae8d3c"><div class="ttname"><a href="a00349.html#a2590cc6b93a49cbca4881ce323ae8d3c">C_Booster::CurrentTime</a></div><div class="ttdeci">float CurrentTime</div><div class="ttdef"><b>Definition:</b> C_Booster.h:12</div></div>
+<div class="ttc" id="aa00349_html_a433a462c1a4780f054f4e56d60931ab7"><div class="ttname"><a href="a00349.html#a433a462c1a4780f054f4e56d60931ab7">C_Booster::BonusSpeed</a></div><div class="ttdeci">float BonusSpeed</div><div class="ttdef"><b>Definition:</b> C_Booster.h:9</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

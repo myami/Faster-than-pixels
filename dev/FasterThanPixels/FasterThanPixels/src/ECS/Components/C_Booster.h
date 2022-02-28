@@ -5,6 +5,7 @@
 *
 */
 class C_Booster : public Engine::Component {
+public:
 	float BonusSpeed;  /*!< Vitesse a ajouter */
 	bool AddSpeed; //  /*!< Si on est entrain de l'ajouter */
 	float TimeToGetIt;  /*!< La duree pour que le boost sois disponible */

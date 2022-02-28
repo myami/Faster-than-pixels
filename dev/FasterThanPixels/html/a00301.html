@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>FTP: Member List</title>
+<title>FTP: Engine::Entity Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,22 +62,190 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="a00296.html">Engine</a></li><li class="navelem"><a class="el" href="a00304.html">Entity</a></li>  </ul>
+<li class="navelem"><a class="el" href="a00293.html">Engine</a></li><li class="navelem"><a class="el" href="a00301.html">Entity</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
-  <div class="headertitle"><div class="title">Engine::Entity Member List</div></div>
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="a00298.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">Engine::Entity Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a00304.html">Engine::Entity</a>, including all inherited members.</p>
-<table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a00304.html#a57d5b7e25590a6fbb960756e0ba686fb">AddComponent</a>(std::string name, std::shared_ptr&lt; Engine::Component &gt; Component)</td><td class="entry"><a class="el" href="a00304.html">Engine::Entity</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="a00304.html#add4e873fdeffdde21aefab98ef17998d">E_CanBeUsed</a></td><td class="entry"><a class="el" href="a00304.html">Engine::Entity</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00304.html#ad7ebb34b62ce993921957c3aaf887143">E_Id</a></td><td class="entry"><a class="el" href="a00304.html">Engine::Entity</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="a00304.html#a11dd294097063211c15f1aa3d05011ab">E_Tag</a></td><td class="entry"><a class="el" href="a00304.html">Engine::Entity</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00304.html#a968ad7db27d886209f0df072a440d4df">GetComponent</a>(std::string name)</td><td class="entry"><a class="el" href="a00304.html">Engine::Entity</a></td><td class="entry"></td></tr>
-</table></div><!-- contents -->
+<p><code>#include &lt;<a class="el" href="a00011_source.html">Entity.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for Engine::Entity:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00300.png" border="0" usemap="#a_engine_1_1_entity_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_engine_1_1_entity_inherit__map" id="a_engine_1_1_entity_inherit__map">
+<area shape="rect" title=" " alt="" coords="577,5,776,200"/>
+<area shape="rect" href="a00417.html" title="classe representant une entite d&#39;asteroid, qui sont une partie de l&#39;environnement qui est dynamique" alt="" coords="5,248,76,325"/>
+<area shape="rect" href="a00421.html" title="classe representant l&#39;entite booster, elle apparait au sol et attend d&#39;etre ramasser" alt="" coords="101,248,167,325"/>
+<area shape="rect" href="a00457.html" title="classe representant une entite de batiment spatial, le joueur doit l&#39;attaquer dans le mode de jeu &quot;At..." alt="" coords="192,248,276,325"/>
+<area shape="rect" href="a00465.html" title="classe representant une entite de batiment, le joueur doit la proteger dans le mode de jeu &quot;Protect t..." alt="" coords="300,248,384,325"/>
+<area shape="rect" href="a00469.html" title="classe representant une entite de checkpoint, le joueur doit rentrer en collision avec dans le mode d..." alt="" coords="408,248,495,325"/>
+<area shape="rect" href="a00437.html" title="classe parent de tout les enemies" alt="" coords="519,248,586,325"/>
+<area shape="rect" href="a00477.html" title="classe representant une entite de laser, quand le joueur tire avec, celle&#45;ci apparait en jeu et perma..." alt="" coords="611,248,665,325"/>
+<area shape="rect" href="a00481.html" title="classe representant une entite de Mine, quand le joueur la pose dans l&#39;espace , celle&#45;ci apparait en ..." alt="" coords="690,248,741,325"/>
+<area shape="rect" href="a00485.html" title="classe representant une entite de Missile, quand le joueur tire avec, celle&#45;ci apparait en jeu et per..." alt="" coords="765,248,828,325"/>
+<area shape="rect" href="a00473.html" title="classe representant le joueur" alt="" coords="853,248,911,325"/>
+<area shape="rect" href="a00425.html" title="classe representant l&#39;entite Punching, elle apparait au sol et attend d&#39;etre ramasser" alt="" coords="936,248,1012,325"/>
+<area shape="rect" href="a00461.html" title="classe representant une entite de survivant, le joueur doit ramasser se survivant pour le sauver dans..." alt="" coords="1037,248,1103,325"/>
+<area shape="rect" href="a00429.html" title="classe representant l&#39;entite ThunderBolt, elle apparait au sol et attend d&#39;etre ramasser" alt="" coords="1127,248,1218,325"/>
+<area shape="rect" href="a00433.html" title="classe representant l&#39;entite Wrench, elle apparait au sol et attend d&#39;etre ramasser" alt="" coords="1242,248,1309,325"/>
+<area shape="rect" href="a00441.html" title="classe representant l&#39;entite Bombardier, elle est un ennemie du joueur" alt="" coords="342,373,430,451"/>
+<area shape="rect" href="a00445.html" title="classe representant l&#39;entite Chasseurs, elle est un ennemie du joueur" alt="" coords="455,373,539,451"/>
+<area shape="rect" href="a00449.html" title="classe representant l&#39;entite Intercepteur, elle est un ennemie du joueur" alt="" coords="563,373,654,451"/>
+<area shape="rect" href="a00453.html" title="classe representant l&#39;entite Portes&#45;Vaiseau, elle est un ennemie du joueur" alt="" coords="678,373,785,451"/>
+</map>
+</div>
+<div class="dynheader">
+Collaboration diagram for Engine::Entity:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00299.png" border="0" usemap="#a_engine_1_1_entity_coll__map" alt="Collaboration graph"/></div>
+<map name="a_engine_1_1_entity_coll__map" id="a_engine_1_1_entity_coll__map">
+<area shape="rect" title=" " alt="" coords="5,5,204,200"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a968ad7db27d886209f0df072a440d4df"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="a00297.html">Engine::Component</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00301.html#a968ad7db27d886209f0df072a440d4df">GetComponent</a> (std::string name)</td></tr>
+<tr class="memdesc:a968ad7db27d886209f0df072a440d4df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return un component.  <a href="a00301.html#a968ad7db27d886209f0df072a440d4df">More...</a><br /></td></tr>
+<tr class="separator:a968ad7db27d886209f0df072a440d4df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57d5b7e25590a6fbb960756e0ba686fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00301.html#a57d5b7e25590a6fbb960756e0ba686fb">AddComponent</a> (std::string name, std::shared_ptr&lt; <a class="el" href="a00297.html">Engine::Component</a> &gt; <a class="el" href="a00297.html">Component</a>)</td></tr>
+<tr class="memdesc:a57d5b7e25590a6fbb960756e0ba686fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute un component.  <a href="a00301.html#a57d5b7e25590a6fbb960756e0ba686fb">More...</a><br /></td></tr>
+<tr class="separator:a57d5b7e25590a6fbb960756e0ba686fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:ad7ebb34b62ce993921957c3aaf887143"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00301.html#ad7ebb34b62ce993921957c3aaf887143">E_Id</a> = 0</td></tr>
+<tr class="separator:ad7ebb34b62ce993921957c3aaf887143"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11dd294097063211c15f1aa3d05011ab"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00301.html#a11dd294097063211c15f1aa3d05011ab">E_Tag</a> = &quot;Default&quot;</td></tr>
+<tr class="separator:a11dd294097063211c15f1aa3d05011ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add4e873fdeffdde21aefab98ef17998d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00301.html#add4e873fdeffdde21aefab98ef17998d">E_CanBeUsed</a> = true</td></tr>
+<tr class="separator:add4e873fdeffdde21aefab98ef17998d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a57d5b7e25590a6fbb960756e0ba686fb" name="a57d5b7e25590a6fbb960756e0ba686fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57d5b7e25590a6fbb960756e0ba686fb">&#9670;&nbsp;</a></span>AddComponent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Engine::Entity::AddComponent </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="a00297.html">Engine::Component</a> &gt;&#160;</td>
+          <td class="paramname"><em>Component</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ajoute un component. </p>
+<p >Ajoute un component a l'entite dans un map</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>: Le nom du component </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00297.html" title="classe representant chaque composant que l&#39;entite va avoir">Component</a></td><td>: Le component </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a968ad7db27d886209f0df072a440d4df" name="a968ad7db27d886209f0df072a440d4df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a968ad7db27d886209f0df072a440d4df">&#9670;&nbsp;</a></span>GetComponent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="a00297.html">Engine::Component</a> &gt; Engine::Entity::GetComponent </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return un component. </p>
+<p >Return un <a class="el" href="a00297.html" title="classe representant chaque composant que l&#39;entite va avoir">Component</a> que l'entite a</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>: Le nom du component </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>le component qu'on a besoin </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="add4e873fdeffdde21aefab98ef17998d" name="add4e873fdeffdde21aefab98ef17998d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add4e873fdeffdde21aefab98ef17998d">&#9670;&nbsp;</a></span>E_CanBeUsed</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Engine::Entity::E_CanBeUsed = true</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Si on peux utiliser cette entite ou si elle est utiliser actuellement </p>
+
+</div>
+</div>
+<a id="ad7ebb34b62ce993921957c3aaf887143" name="ad7ebb34b62ce993921957c3aaf887143"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7ebb34b62ce993921957c3aaf887143">&#9670;&nbsp;</a></span>E_Id</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int Engine::Entity::E_Id = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >ID de l'entite </p>
+
+</div>
+</div>
+<a id="a11dd294097063211c15f1aa3d05011ab" name="a11dd294097063211c15f1aa3d05011ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11dd294097063211c15f1aa3d05011ab">&#9670;&nbsp;</a></span>E_Tag</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string Engine::Entity::E_Tag = &quot;Default&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Tag de l'entite </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>D:/githubrepo/Faster-than-pixels/dev/FasterThanPixels/Engine/src/ECS/<a class="el" href="a00011_source.html">Entity.h</a></li>
+<li>D:/githubrepo/Faster-than-pixels/dev/FasterThanPixels/Engine/src/ECS/<a class="el" href="a00008.html">Entity.cpp</a></li>
+</ul>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3

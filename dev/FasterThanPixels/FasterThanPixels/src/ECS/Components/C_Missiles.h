@@ -5,6 +5,7 @@
 *
 */
 class C_Missiles : public Engine::Component {
-	int Amount;
-	int MaxAmount;
+public:
+	int Amount; /*!< nombre dans l inventaire */
+	int MaxAmount; /*!< Maximum dans l inventaire */
 };

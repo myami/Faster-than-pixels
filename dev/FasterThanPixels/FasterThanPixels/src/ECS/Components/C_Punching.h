@@ -5,7 +5,8 @@
 *
 */
 class C_Punching : public Engine::Component {
-	int Amount;
-	int MaxAmount;
+public:
+	int Amount; /*!< nombre dans l inventaire */
+	int MaxAmount; /*!< maximum dans l inventaire */
 	float Duration; /*!< Duree du bonus */
 };

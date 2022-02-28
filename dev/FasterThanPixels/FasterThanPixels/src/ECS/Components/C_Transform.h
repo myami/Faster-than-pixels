@@ -5,6 +5,7 @@
 *
 */
 class C_Transform : public Engine::Component {
+public:
 	Engine::Vector2D Position;  /*!< Position de l'entite */
 	Engine::Vector2D Scale;  /*!< Scale de l'entite */
 	Engine::Vector2D Rotation;  /*!< Rotation de l'entite */

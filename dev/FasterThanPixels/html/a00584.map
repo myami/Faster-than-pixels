@@ -1,0 +1,4 @@
+<map id="Pause" name="Pause">
+<area shape="rect" id="node1" title="classe enfant de Scene, represente le menu de pause pendant le jeu" alt="" coords="21,453,205,707"/>
+<area shape="rect" id="node2" href="$a00341.html" title=" " alt="" coords="5,5,221,405"/>
+</map>

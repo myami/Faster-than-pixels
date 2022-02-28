@@ -5,7 +5,8 @@
 *
 */
 class C_Wrench : public Engine::Component {
-	int Amount;
-	int MaxAmount;
+public:
+	int Amount; /*!< nombre dans l inventaire */
+	int MaxAmount; /*!< maximum dans l inventaire */
 	float RepairAmount; /*!< Nombre de point de vie recuperer */
 };

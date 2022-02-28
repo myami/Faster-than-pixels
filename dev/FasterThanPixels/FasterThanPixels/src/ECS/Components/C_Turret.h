@@ -5,6 +5,7 @@
 *
 */
 class C_Turret : public Engine::Component {
+public:
 	int AmountOfTurret;  /*!< Nombre de tourelle */
 	std::vector<Engine::Vector2D> TurretPosition;  /*!< Position des tourelles */
 	std::vector<Engine::Vector2D> TurretRotation;  /*!< Rotation des tourelles */

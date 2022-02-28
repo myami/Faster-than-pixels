@@ -1,4 +1,5 @@
-<map id="FTP_Race" name="FTP_Race">
-<area shape="rect" id="node1" title="classe enfant de Gamemode, represente le mode de jeu &quot;Race&quot;" alt="" coords="33,131,115,208"/>
-<area shape="rect" id="node2" href="$a00328.html" title="classe parentes des modes de jeux" alt="" coords="5,5,143,83"/>
+<map id="FTP_GameStats" name="FTP_GameStats">
+<area shape="rect" id="node1" title="classe enfant de GameStats" alt="" coords="106,277,225,355"/>
+<area shape="rect" id="node2" href="$a00329.html" title="classe qui sauvegardes les infos de la partie en cours" alt="" coords="5,71,141,149"/>
+<area shape="rect" id="node3" href="$a00541.html" title="Une structure qui represente les infos d une partie." alt="" coords="166,5,351,215"/>
 </map>

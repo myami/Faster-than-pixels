@@ -10,8 +10,8 @@ namespace Engine {
 		std::vector<Vector2D> nodes;  /*!< Listes de position */
 		/*!
 	    *  \brief AddNodes
-	    *\param newpos : nouvelles position a ajouter dans le chemins
 	    *  Ajoutes une nodes dans la listes 
+	    *\param newpos : nouvelles position a ajouter dans le chemins
 	    */
 		void AddNodes(Vector2D newpos);
 		/*!
