@@ -1,5 +1,7 @@
 #pragma once
 #include "Engine.h"
+
+
 struct FTP_Game_Info { // les infos qu on va afficher sur le menu de stat a la fin de la game et qu on peux sauvegarder a la fin dans la bdd
 	float ScoreTotal;
 	int NB_Intercepteur_kill;

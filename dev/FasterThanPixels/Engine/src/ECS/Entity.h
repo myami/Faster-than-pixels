@@ -8,14 +8,35 @@
  * \brief Entite qui apparait dans le jeu, il contient les composants
  */
 namespace Engine {
+	/*! \class Entite
+	* \brief classe representant chaque Entite qui est dans le EntityManager
+	*
+	*/
 	class Entity {
+		std::map < std::string, std::shared_ptr<Engine::Component>> E_Component; /*!< Liste des components de l'entite */
 	public:
-		const int E_Id = 0;
-		const std::string E_Tag = "Default";
-		bool E_CanBeUsed = true; // on genere un pool de x entity dans la ram quand une entite meure, on ne la supprime pas mais on la mais dans un coin pour la reutiliser apres
-		std::map < std::string, std::shared_ptr<Engine::Component>> E_Component; // map de tout les composants que l entity utilise
-		
+
+		const int E_Id = 0; /*!< ID de l'entite */
+		const std::string E_Tag = "Default"; /*!< Tag de l'entite */
+		bool E_CanBeUsed = true; /*!< Si on peux utiliser cette entite ou si elle est utiliser actuellement */
+
+		/*!
+		 *  \brief Return un component
+		 *
+		 *	Return un Component que l'entite a 
+		 *
+		 *  \param name : Le nom du component
+		 * \return le component qu'on a besoin
+		 */
 		std::shared_ptr<Engine::Component> GetComponent(std::string name);
+		/*!
+		 *  \brief Ajoute un component
+		 *
+		 *	Ajoute un component a l'entite dans un map
+		 *
+		 *  \param name : Le nom du component 
+		 *  \param Component : Le component
+		 */
 		void AddComponent(std::string name, std::shared_ptr<Engine::Component> Component);
 		
 

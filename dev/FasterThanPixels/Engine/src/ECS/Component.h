@@ -8,10 +8,22 @@
  */
 namespace Engine {
 	class Entity;
+	/*! \class Component
+   * \brief classe representant chaque composant que l'entite va avoir
+   *
+   */
 	 class Component  {
 		 //chaque component a seulement des variables
 	 public:
-		 std::vector<std::string> RequireComponent; // Si le component a besoin d autre pour fonctionner correctement
+		 std::vector<std::string> RequireComponent; /*!< Liste des composant requis si il a des dependances*/
+	/*!
+	 *  \brief A les composants requis
+	 *
+	 *  Check si l'entite a tout les composants requis
+	 *
+	 *  \param entite : sont parent l'entite
+	 * \return true si l'entite a bien tout les composants requis pour que ce component marche
+	 */
 		 bool AsRequireComponent(Entity entite);
 	};
 }

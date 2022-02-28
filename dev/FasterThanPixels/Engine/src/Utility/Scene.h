@@ -1,26 +1,75 @@
 #pragma once
 #include "../Factory/EntityManager.h";
 namespace Engine {
-
+	/*! \class Path
+	* \brief classe qui gere les chemins pour une IA par exemple
+	*/
 	class Scene {
 	public:
 		Scene();
 		Scene(std::string name);
-		std::unique_ptr<EntityManager> S_EntityManager;
-		std::string S_Name;
-		std::map<int, std::string> ActionScene; // chaque input du clavier et un nombre. le string represente le nom de l action lie a l input. par exemple dans un menu la touche W peux monter
-		bool S_Paused;
-		bool S_End;
-		virtual void S_Update() = 0; // debut de frame mais a jour tout se qu il doit mettre a jour 1 /4 ( delete , rajouter de quoi dans les vectors)
-		virtual void S_Action() = 0; // Input recu 2/4 doit etre appeler dans S_Input du gamemanager
-		virtual void S_Simulation() = 0; // milieu de frame (box2d) simule tout se qui est dans la scene 3/4
-		virtual void S_Syteme() = 0; // tout les systeme de la scene ( tout les system lie au component) mais a jour les components de la simulation et des inputs
-		virtual void S_Render() = 0; // fin de frame affiche le resultat de la simulation 4/4 la partie draw
-		void RegisterAction(int key,std::string ActionName); // enregistre dans ActionScene les inputs disponibles pour la scene
-		virtual void S_ActionTrigger(std::string ActionName) = 0; // quand le joueur presse sur X le gamemanager va checker si dans ActionScene il y a une action sur se input et si oui lance l'action ici  (dans le S_action)
-		// ces un switch qui a toutes les actions possibles de la scene 
-		virtual void S_Begin_Play() = 0; // Lancer au debut d'une scene apres un changement de scene
-		virtual void S_End_Scene() = 0; // Appeler juste avant qu'une scene sois remplacer par une autre
+		std::unique_ptr<EntityManager> S_EntityManager;  /*!< Sous syteme qui gere les entite */
+		std::string S_Name;  /*!< Nom de la scene  */
+		std::map<int, std::string> ActionScene;  /*!< Chaque input disponible dans la scene */
+		bool S_Paused; /*!< Si la scene est en pause */
+		bool S_End; /*!< Si la scene est fini d'etre utiliser */
+			/*!
+			*  \brief S_Update
+			*
+			*  Appeler au debut de la gameloop, Cette function call dans l'entityManager pour mettre a jour sont contenu
+			*/
+		virtual void S_Update() = 0; 
+		/*!
+		*  \brief S_Action
+		*
+		*  Appeler dans la gameloop pour ajouter les inputs recus par les events de sfml(mouvement, tir ,....)
+		*/
+		virtual void S_Action() = 0; 
+		/*!
+		*  \brief S_Simulation
+		*
+		*  Appeler dans la gameloop , Appelle la librairie Box2D et sont monde pour savoir ou deplacer les elements lie qui bouge avec la physique
+		*/
+		virtual void S_Simulation() = 0; 
+		/*!
+		*  \brief S_Syteme
+		*
+		*  Appeler dans la gameloop , Certain Component on des systemes qui permette de calculer une position, un mouvement ou autre baser sur des inputs (input joueur et simulation)
+		*/
+		virtual void S_Syteme() = 0;
+		/*!
+		*  \brief S_Render
+		*
+		*  Appeler a la fin de la gameloop, permait d'afficher les elements dans la scene a la fin de la gameloop
+		*/
+		virtual void S_Render() = 0; 
+		/*!
+		*  \brief RegisterAction
+		*
+		*  Enregistre dans la scene les inputs disponible
+		* \param key : represente la touche a appuyer 
+		* \param ActionName : Nom de l'action lie a la touches
+		*/
+		void RegisterAction(int key,std::string ActionName); 
+		/*!
+		*  \brief S_ActionTrigger
+		*
+		*  Verifie que l'input que le joueur appuye existe 
+		* \param ActionName : Nom de l'action lie a la touches
+		*/
+		virtual void S_ActionTrigger(std::string ActionName) = 0; 
+		/*!
+		*  \brief S_Begin_Play
+		*
+		*  Appeler au lancement de la scene apres un changement de scene
+		*/
+		virtual void S_Begin_Play() = 0;
+		/*!
+		*  \brief S_End_Scene
+		*
+		*  Appeler a la fin de la scene juste avant un changement de scene
+		*/
+		virtual void S_End_Scene() = 0; 
 		
 	};
 }

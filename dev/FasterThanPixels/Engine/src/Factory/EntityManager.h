@@ -3,16 +3,34 @@
 #include <map>
 #include <string>
 namespace Engine {
-
+	/*! \class EntityManager
+	* \brief classe representant tout les entite de la scene
+	*
+	*/
 	class EntityManager {
-		std::vector<Engine::Entity>* M_EntityVector; // liste de toutes les entity
-		std::map<std::string, std::vector<std::shared_ptr<Engine::Entity>>> M_EntityMap; // listes des entity par tag
-		size_t M_TotalEntity; // le nombre total de entity qu on fait apparaitre
-		std::vector<std::shared_ptr<Engine::Entity>> M_EntityToChange; // liste de toutes les entite qui doivent etre changer a chaque debut de frame
+		std::vector<Engine::Entity>* M_EntityVector; /*!< Liste des Entite */
+		std::map<std::string, std::vector<std::shared_ptr<Engine::Entity>>> M_EntityMap; /*!< Liste des Entite par tag */
+		size_t M_TotalEntity; /*!< Le nombre total d'entite disponible dans le pool */
+		std::vector<std::shared_ptr<Engine::Entity>> M_EntityToChange; /*!< Liste des entites qui doivent etre changer au debut de la prochaine frame */
 	public:
-		void GenerateEntity(); // Genere toutes les entite vide dans le vector par rapport au nombre total
-		void Update(); // Appelle au debut du gameloop pour mettre a jour les etats des entite avant n importe quel calcul pour les modifier dans vector et rajouter dans map (S_Update de scene)
-		void RemoveEntity(); // enleve l entity du map, et enleve toutes sont contenu dans le vector et le rend utilisable a une autre entite (S_Update de scene)
+		/*!
+	   *  \brief GenerateEntity
+	   *
+	   *  Au debut de la scene, genere toutes els entite disponibles
+	   */
+		void GenerateEntity(); 
+		/*!
+		*  \brief Update
+		*
+		*  Appeler au debut du gameloop, cette function permait de mette a jour toutes les entite de M_EntityToChange, dans M_EntityVector et M_EntityMap avant toute autre utilisation des entites
+		*/
+		void Update(); 
+		/*!
+		*  \brief RemoveEntity
+		*
+		*  Si une entite dans M_EntityToChange la variable "E_CanBeUsed" est differente alors appele cette function et la vide de ces components et change sont etat pour etre utilisable pour une autre entite
+		*/
+		void RemoveEntity(); 
 
 	};
 }
