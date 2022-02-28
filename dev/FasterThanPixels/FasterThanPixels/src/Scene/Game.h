@@ -2,6 +2,10 @@
 
 #include "Engine.h"
 class FTP_SceneManager;
+/*! \class Game
+* \brief classe enfant de Scene, represente le niveau ou le joueur joue
+*
+*/
 class Game : public Engine::Scene {
 public:
 	Game(std::string name, FTP_SceneManager* refs);

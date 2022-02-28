@@ -2,6 +2,10 @@
 
 #include "Engine.h"
 class FTP_SceneManager;
+/*! \class Option
+* \brief classe enfant de Scene, represente le menu d option du jeu
+*
+*/
 class Option : public Engine::Scene {
 public:
 	Option(std::string name, FTP_SceneManager* refs);

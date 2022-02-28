@@ -1,0 +1,12 @@
+<map id="Engine::GameMode" name="Engine::GameMode">
+<area shape="rect" id="node1" title="classe parentes des modes de jeux" alt="" coords="606,5,743,83"/>
+<area shape="rect" id="node2" href="$a00524.html" title="classe enfant de Gamemode, represente le mode de jeu &quot;Attack the area&quot;" alt="" coords="5,131,144,208"/>
+<area shape="rect" id="node3" href="$a00528.html" title="classe enfant de Gamemode, represente le mode de jeu &quot;FastAction&quot;" alt="" coords="169,131,285,208"/>
+<area shape="rect" id="node4" href="$a00532.html" title="classe enfant de Gamemode, represente le mode de jeu &quot;FindSurvivor&quot;" alt="" coords="309,131,432,208"/>
+<area shape="rect" id="node5" href="$a00536.html" title="classe enfant de Gamemode, represente le mode de jeu &quot;LastSurvivor&quot;" alt="" coords="456,131,579,208"/>
+<area shape="rect" id="node6" href="$a00540.html" title="classe enfant de Gamemode, represente le mode de jeu &quot;ProtectTheArea&quot;" alt="" coords="603,131,746,208"/>
+<area shape="rect" id="node7" href="$a00544.html" title="classe enfant de Gamemode, represente le mode de jeu &quot;Race&quot;" alt="" coords="771,131,853,208"/>
+<area shape="rect" id="node8" href="$a00556.html" title="classe enfant de Gamemode, represente le mode de jeu &quot;Training_Easy&quot;" alt="" coords="878,131,1013,208"/>
+<area shape="rect" id="node9" href="$a00560.html" title="classe enfant de Gamemode, represente le mode de jeu &quot;Training_Hard&quot;" alt="" coords="1037,131,1169,208"/>
+<area shape="rect" id="node10" href="$a00564.html" title="classe enfant de Gamemode, represente le mode de jeu &quot;Training_Medium&quot;" alt="" coords="1193,131,1343,208"/>
+</map>

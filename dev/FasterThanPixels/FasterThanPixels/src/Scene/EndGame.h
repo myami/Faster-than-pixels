@@ -2,6 +2,10 @@
 
 #include "Engine.h"
 class FTP_SceneManager;
+/*! \class EndGame
+* \brief classe enfant de Scene, represente le niveau ou le joueur vois les infos de fin de partie
+*
+*/
 class EndGame : public Engine::Scene {
 public:
 	EndGame(std::string name, FTP_SceneManager* refs);

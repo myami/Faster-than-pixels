@@ -2,6 +2,10 @@
 // cinematique
 #include "Engine.h"
 class FTP_SceneManager;
+/*! \class Starting
+* \brief classe enfant de Scene, represente la scene de lancement, il y a des splashcreen pour montrer le nom du jeux et le groupe qui l'a fait
+*
+*/
 class Starting : public Engine::Scene {
 public:
 	 Starting(std::string name, FTP_SceneManager* refs);

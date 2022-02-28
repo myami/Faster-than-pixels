@@ -2,6 +2,10 @@
 
 #include "Engine.h"
 class FTP_SceneManager;
+/*! \class Pause
+* \brief classe enfant de Scene, represente le menu de pause pendant le jeu
+*
+*/
 class Pause : public Engine::Scene {
 public:
 	Pause(std::string name, FTP_SceneManager* refs);

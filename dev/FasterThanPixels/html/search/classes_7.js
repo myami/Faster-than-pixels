@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['mainmenu_0',['MainMenu',['../class_main_menu.html',1,'']]]
+  ['laser_0',['Laser',['../a00484.html',1,'']]],
+  ['loading_1',['Loading',['../a00580.html',1,'']]]
 ];

@@ -2,6 +2,10 @@
 
 #include "Engine.h"
 class FTP_SceneManager;
+/*! \class Loading
+* \brief classe enfant de Scene, represente un menu de chargement
+*
+*/
 class Loading : public Engine::Scene {
 public:
 	Loading(std::string name, FTP_SceneManager* refs);

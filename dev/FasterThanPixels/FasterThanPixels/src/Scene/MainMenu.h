@@ -2,6 +2,10 @@
 
 #include "Engine.h"
 class FTP_SceneManager;
+/*! \class MainMenu
+* \brief classe enfant de Scene, represente le menu principale du jeu
+*
+*/
 class MainMenu : public Engine::Scene {
 public:
 	MainMenu(std::string name, FTP_SceneManager* refs);

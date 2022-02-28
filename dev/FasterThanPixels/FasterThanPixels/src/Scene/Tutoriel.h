@@ -2,9 +2,13 @@
 
 #include "Engine.h"
 class FTP_SceneManager;
-class Starting : public Engine::Scene {
+/*! \class Tutoriel
+* \brief classe enfant de Scene, represente la scene qui a toutes les infos du jeu(compendium)
+*
+*/
+class Tutoriel : public Engine::Scene {
 public:
-	Starting(std::string name, FTP_SceneManager* refs);
+	Tutoriel(std::string name, FTP_SceneManager* refs);
 	FTP_SceneManager* _SceneManager;
 	void S_Syteme(); // tout les systeme de la scene ( tout les system lie au component)
 	void S_Update(); // debut de frame mais a jour tout se qu il doit mettre a jour 1 /4

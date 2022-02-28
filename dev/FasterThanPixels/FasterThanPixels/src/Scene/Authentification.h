@@ -2,6 +2,10 @@
 
 #include "Engine.h"
 class FTP_SceneManager;
+/*! \class Authentification
+* \brief classe enfant de Scene, represente le niveau ou le joueur rentre ces infos pour se connecter au jeu
+*
+*/
 class Authentification : public Engine::Scene {
 public:
 	Authentification(std::string name, FTP_SceneManager* refs);

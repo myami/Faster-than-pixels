@@ -2,6 +2,10 @@
 
 #include "Engine.h"
 class FTP_SceneManager;
+/*! \class PlayerProfile
+* \brief classe enfant de Scene, represente le menu ou le joueur peux voir ces stat globales
+*
+*/
 class PlayerProfile : public Engine::Scene {
 public:
 	PlayerProfile(std::string name, FTP_SceneManager* refs);
