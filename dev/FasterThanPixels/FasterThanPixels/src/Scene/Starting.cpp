@@ -20,17 +20,21 @@ void Starting::S_Update()
 
 void Starting::S_Render()
 {
+	
 	sf::Text text;
 	text.setFont(_SceneManager->_GameManager->G_AssetManager->GetFont("FontIntro"));
 	text.setString("FASTER THAN PIXEL");
 	text.setCharacterSize(130);
 	text.setFillColor(sf::Color::Blue);
 	text.setStyle(sf::Text::Bold | sf::Text::Underlined);
-	text.setPosition(sf::Vector2((sf::VideoMode::getDesktopMode().width - text.getLocalBounds().width) / 2.f - text.getLocalBounds().width / 3.6f, (sf::VideoMode::getDesktopMode().height - text.getLocalBounds().height) / 2.f  - text.getLocalBounds().height / 0.8f));
+	text.setOrigin(text.getGlobalBounds().width / 2.f, text.getGlobalBounds().height / 2.f);
+	text.setPosition(_SceneManager->_GameManager->View.getCenter());
 	
+
 	sf::Sprite logo;
 	logo.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("logoratatoskr"));
-	logo.setPosition(sf::Vector2((sf::VideoMode::getDesktopMode().width - logo.getLocalBounds().width) / 2.f - logo.getLocalBounds().width / 3.6f, (sf::VideoMode::getDesktopMode().height - logo.getLocalBounds().height) / 2.f ));
+	logo.setOrigin(logo.getGlobalBounds().width / 2.f, logo.getGlobalBounds().height / 2.f);
+	logo.setPosition(_SceneManager->_GameManager->View.getCenter());
 
 	sf::Time elapsed1 = clock.getElapsedTime();
 
