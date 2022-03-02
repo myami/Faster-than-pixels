@@ -22,7 +22,7 @@ void Starting::S_Render()
 {
 	
 	sf::Text text;
-	text.setFont(_SceneManager->_GameManager->G_AssetManager->GetFont("FontIntro"));
+	text.setFont(_SceneManager->_GameManager->G_AssetManager->GetFont("FontText"));
 	text.setString("FASTER THAN PIXEL");
 	text.setCharacterSize(130);
 	text.setFillColor(sf::Color::Blue);
@@ -32,7 +32,7 @@ void Starting::S_Render()
 	
 
 	sf::Sprite logo;
-	logo.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("logoratatoskr"));
+	logo.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("LogoRatatoskr"));
 	logo.setOrigin(logo.getGlobalBounds().width / 2.f, logo.getGlobalBounds().height / 2.f);
 	logo.setPosition(_SceneManager->_GameManager->View.getCenter());
 
