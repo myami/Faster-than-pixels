@@ -1,9 +1,0 @@
-<map id="Engine::Entity" name="Engine::Entity">
-<area shape="rect" id="node1" title=" " alt="" coords="95,5,225,141"/>
-<area shape="rect" id="node2" href="$class_asteroid.html" title=" " alt="" coords="22,189,93,267"/>
-<area shape="rect" id="node3" href="$class_enemie.html" title=" " alt="" coords="117,189,203,267"/>
-<area shape="rect" id="node7" href="$class_player.html" title=" " alt="" coords="228,189,287,267"/>
-<area shape="rect" id="node4" href="$class_bombardier.html" title=" " alt="" coords="5,315,93,392"/>
-<area shape="rect" id="node5" href="$class_chasseurs.html" title=" " alt="" coords="118,315,202,392"/>
-<area shape="rect" id="node6" href="$class_portes_vaiseau.html" title=" " alt="" coords="227,315,333,392"/>
-</map>

@@ -1,5 +1,0 @@
-<map id="PortesVaiseau" name="PortesVaiseau">
-<area shape="rect" id="node1" title="classe representant l&#39;entite Portes&#45;Vaiseau, elle est un ennemie du joueur" alt="" coords="51,373,158,451"/>
-<area shape="rect" id="node2" href="$a00444.html" title="classe parent de tout les enemies" alt="" coords="71,248,138,325"/>
-<area shape="rect" id="node3" href="$a00304.html" title=" " alt="" coords="5,5,204,200"/>
-</map>

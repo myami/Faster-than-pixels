@@ -1,5 +1,0 @@
-<map id="FTP_GameStats" name="FTP_GameStats">
-<area shape="rect" id="node1" title="classe enfant de GameStats" alt="" coords="106,277,225,355"/>
-<area shape="rect" id="node2" href="$a00332.html" title="classe qui sauvegardes les infos de la partie en cours" alt="" coords="5,71,141,149"/>
-<area shape="rect" id="node3" href="$a00548.html" title="Une structure qui represente les infos d une partie." alt="" coords="166,5,351,215"/>
-</map>

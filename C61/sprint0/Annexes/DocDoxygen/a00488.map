@@ -1,0 +1,4 @@
+<map id="S_Brain" name="S_Brain">
+<area shape="rect" id="node1" title="classe systeme pour le component Brain, il permait de calculer les mouvements par une IA" alt="" coords="29,131,97,208"/>
+<area shape="rect" id="node2" href="$a00305.html" title="classe representant chaque Systeme qui sont lie au component actif" alt="" coords="5,5,120,83"/>
+</map>

@@ -1,4 +1,0 @@
-<map id="C_Shoot" name="C_Shoot">
-<area shape="rect" id="node1" title="classe representant le component Shoot, Si l&#39;entite a ce component, cela veux dire que il peux tirer" alt="" coords="42,160,157,237"/>
-<area shape="rect" id="node2" href="$a00297.html" title="classe representant chaque composant que l&#39;entite va avoir" alt="" coords="5,5,193,112"/>
-</map>

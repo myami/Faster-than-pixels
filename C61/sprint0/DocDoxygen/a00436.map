@@ -1,8 +1,0 @@
-<map id="Enemie" name="Enemie">
-<area shape="rect" id="node1" title="classe parent de tout les enemies" alt="" coords="183,248,249,325"/>
-<area shape="rect" id="node3" href="$a00441.html" title="classe representant l&#39;entite Bombardier, elle est un ennemie du joueur" alt="" coords="5,373,93,451"/>
-<area shape="rect" id="node4" href="$a00445.html" title="classe representant l&#39;entite Chasseurs, elle est un ennemie du joueur" alt="" coords="118,373,202,451"/>
-<area shape="rect" id="node5" href="$a00449.html" title="classe representant l&#39;entite Intercepteur, elle est un ennemie du joueur" alt="" coords="227,373,317,451"/>
-<area shape="rect" id="node6" href="$a00453.html" title="classe representant l&#39;entite Portes&#45;Vaiseau, elle est un ennemie du joueur" alt="" coords="341,373,448,451"/>
-<area shape="rect" id="node2" href="$a00301.html" title=" " alt="" coords="117,5,315,200"/>
-</map>

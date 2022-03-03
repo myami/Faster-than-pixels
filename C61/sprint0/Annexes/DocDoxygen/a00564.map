@@ -1,0 +1,4 @@
+<map id="EndGame" name="EndGame">
+<area shape="rect" id="node1" title="classe enfant de Scene, represente le niveau ou le joueur vois les infos de fin de partie" alt="" coords="21,453,205,707"/>
+<area shape="rect" id="node2" href="$a00341.html" title=" " alt="" coords="5,5,221,405"/>
+</map>

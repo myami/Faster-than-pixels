@@ -1,0 +1,4 @@
+<map id="Asteroid" name="Asteroid">
+<area shape="rect" id="node1" title="classe representant une entite d&#39;asteroid, qui sont une partie de l&#39;environnement qui est dynamique" alt="" coords="69,248,140,325"/>
+<area shape="rect" id="node2" href="$a00301.html" title=" " alt="" coords="5,5,204,200"/>
+</map>

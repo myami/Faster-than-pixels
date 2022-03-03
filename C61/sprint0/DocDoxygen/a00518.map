@@ -1,5 +1,0 @@
-<map id="FTP_SceneManager" name="FTP_SceneManager">
-<area shape="rect" id="node1" title="classe enfant de SceneManager" alt="" coords="17,609,213,716"/>
-<area shape="rect" id="node2" href="$a00324.html" title="classe representant les scenes dans le jeu" alt="" coords="17,365,213,560"/>
-<area shape="rect" id="node3" href="$a00320.html" title="classe representant le jeu, il contient tout les sous&#45;systeme et a la gameloop" alt="" coords="5,5,224,303"/>
-</map>

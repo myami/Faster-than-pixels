@@ -1,0 +1,4 @@
+<map id="C_Health" name="C_Health">
+<area shape="rect" id="node1" title="classe representant le component Health, Si l&#39;entite l&#39;a cela lui permait d&#39;avoir une barre de vie et..." alt="" coords="50,160,149,237"/>
+<area shape="rect" id="node2" href="$a00297.html" title="classe representant chaque composant que l&#39;entite va avoir" alt="" coords="5,5,193,112"/>
+</map>

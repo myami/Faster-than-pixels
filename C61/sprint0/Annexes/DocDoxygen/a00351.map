@@ -1,0 +1,5 @@
+<map id="C_Brain" name="C_Brain">
+<area shape="rect" id="node1" title="classe representant le component Brain, Si l&#39;entite l&#39;a cela lui permait de calculer son vector de di..." alt="" coords="83,204,324,443"/>
+<area shape="rect" id="node2" href="$a00297.html" title="classe representant chaque composant que l&#39;entite va avoir" alt="" coords="5,20,193,127"/>
+<area shape="rect" id="node3" href="$a00337.html" title="classe qui gere les chemins pour une IA par exemple" alt="" coords="218,5,397,141"/>
+</map>

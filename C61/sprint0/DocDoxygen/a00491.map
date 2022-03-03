@@ -1,4 +1,0 @@
-<map id="S_Mouvement_Actif" name="S_Mouvement_Actif">
-<area shape="rect" id="node1" title="classe systeme pour le component Mouvement_Actif, Une fois le vector de direction recalculer il chang..." alt="" coords="5,131,143,208"/>
-<area shape="rect" id="node2" href="$a00305.html" title="classe representant chaque Systeme qui sont lie au component actif" alt="" coords="17,5,131,83"/>
-</map>
