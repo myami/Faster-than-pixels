@@ -13,6 +13,10 @@
 #include "Utility/Path.h"
 #include "Utility/GameMode.h"
 #include "Utility/GameStats.h"
+#include "Utility/GUI/Button.h"
+#include "Utility/GUI/Input.h"
+#include "Utility/GUI/Slider.h"
+
 
 /*! \namespace Engine
  *
