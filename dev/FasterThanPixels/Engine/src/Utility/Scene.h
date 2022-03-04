@@ -26,7 +26,7 @@ namespace Engine {
 		*
 		*  Appeler dans la gameloop pour ajouter les inputs recus par les events de sfml(mouvement, tir ,....)
 		*/
-		virtual void S_Action(sf::Event event) = 0; 
+		void S_Action(sf::Event event); 
 		/*!
 		*  \brief S_Simulation
 		*
@@ -72,6 +72,11 @@ namespace Engine {
 		*  Appeler a la fin de la scene juste avant un changement de scene
 		*/
 		virtual void S_End_Scene() = 0; 
+
+		virtual void S_Input_Mouse(sf::Event event) = 0;
+		
+
+
 		
 	};
 }

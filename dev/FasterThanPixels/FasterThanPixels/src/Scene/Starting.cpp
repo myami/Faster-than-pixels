@@ -79,31 +79,9 @@ void Starting::S_End_Scene()
 
 
 
-void Starting::S_Action(sf::Event event)
+void Starting::S_Input_Mouse(sf::Event event)
 {
-	if (event.KeyPressed) {
-		for (const auto& action : ActionScene) {
-			sf::Keyboard::Key val = static_cast<sf::Keyboard::Key>(action.first);
-			if (event.key.code == val && sf::Keyboard::isKeyPressed(val))
-				S_ActionTrigger(action.second);
-			
-		}
-	}
-
-	if (event.type == sf::Event::MouseButtonPressed)
-	{
-		if (event.mouseButton.button == sf::Mouse::Right)
-		{
-			std::cout << "the right button was pressed" << std::endl;
-			std::cout << "mouse x: " << event.mouseButton.x << std::endl;
-			std::cout << "mouse y: " << event.mouseButton.y << std::endl;
-		}
-		if (event.mouseButton.button == sf::Mouse::Left)
-		{
-			std::cout << "the left button was pressed" << std::endl;
-			std::cout << "mouse x: " << event.mouseButton.x << std::endl;
-			std::cout << "mouse y: " << event.mouseButton.y << std::endl;
-		}
-	}
-	
 }
+
+
+
