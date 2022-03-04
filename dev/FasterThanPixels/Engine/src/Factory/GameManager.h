@@ -24,7 +24,6 @@ class SceneManager;
 		std::unique_ptr<SceneManager> G_SceneManager;/*!< Sous-systeme qui gere les scenes */
 		sf::RenderWindow* Windows; /*!< La fenetre */
 		sf::View View; /*!< La vue dans la fenetre(camera ) */
-		std::string CurrentScene; /*!< La scene actuelle */
 		bool Running; /*!< Si le programme tourne */
 		 /*!
 		 *  \brief Quit
@@ -37,7 +36,7 @@ class SceneManager;
 		*
 		*  Initialise les sous-systemes pour avoir toutes les donneer necessaires pour que le jeu marche
 		*/
-		virtual void Game_Init(std::string NameOfTheGame, std::string FistScene) = 0; // initialiser toutes les donnes du jeu
+		virtual void Game_Init(std::string NameOfTheGame,std::string FirstScene) = 0; // initialiser toutes les donnes du jeu
 		/*!
 		*  \brief GameLoop
 		*
@@ -57,13 +56,7 @@ class SceneManager;
 		* \param event : event de sfml
 		*/
 		void ResizeView(sf::Event event);
-		/*!
-		*  \brief ChangeScene
-		*
-		*  Change de niveaux
-		* \param newscene : Nom niveaux a charger
-		*/
-		void ChangeScene(std::string newscene);
+
 
 
 	};

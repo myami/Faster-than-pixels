@@ -7,6 +7,6 @@
 */
 class FTP_SceneManager : public Engine::SceneManager {
 public:
-	void Init();
+	void Init(std::string FirstScene);
 	FTP_SceneManager(Engine::GameManager* gm);
 };

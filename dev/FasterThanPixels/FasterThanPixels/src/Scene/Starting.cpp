@@ -16,7 +16,7 @@ void Starting::S_Syteme()
 void Starting::S_Update()
 {
 	if (S_End) {
-
+		
 	}
 }
 

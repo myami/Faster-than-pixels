@@ -11,6 +11,8 @@ class GameManager;
 	class SceneManager {
 		std::vector <Scene*> M_Scene; /*!< Liste de toutes les scenes disponible */
 	public:
+		std::string CurrentScene; /*!< La scene actuelle */
+
 		/*!
 		*  \brief SceneManager
 		*
@@ -54,7 +56,14 @@ class GameManager;
 		*  Initialise le scene_manager, il charge toutes les scenes disponibles dans la listes
 		* 
 		*/
-		virtual void Init() =0;
+		virtual void Init(std::string FirstScene) =0;
+		/*!
+		*  \brief ChangeScene
+		*
+		*  Change de niveaux
+		* \param newscene : Nom niveaux a charger
+		*/
+		void ChangeScene(std::string newscene);
 
 
 
