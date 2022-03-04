@@ -50,6 +50,6 @@ void FTP_GameManager::S_Input()
         else if (event.type == sf::Event::Resized) {
             ResizeView(event);
         }
+    G_SceneManager->GetCurrentScene().S_Action(event);
     }
-    G_SceneManager->GetCurrentScene().S_Action();
 }

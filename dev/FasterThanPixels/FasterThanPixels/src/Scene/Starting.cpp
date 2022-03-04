@@ -15,7 +15,9 @@ void Starting::S_Syteme()
 
 void Starting::S_Update()
 {
-	// if S_End change de scene
+	if (S_End) {
+
+	}
 }
 
 void Starting::S_Render()
@@ -38,12 +40,12 @@ void Starting::S_Render()
 
 	sf::Time elapsed1 = clock.getElapsedTime();
 
-	if (elapsed1.asSeconds() > 3 && elapsed1.asSeconds() < 6) // a bouger dans S_Update et faire un vector de quoi rendre a chaque frame
+	if (elapsed1.asSeconds() > 3 && elapsed1.asSeconds() < 6) 
 	{
 		_SceneManager->_GameManager->Windows->draw(logo);
 	}
 
-	else if (elapsed1.asSeconds() > 6 || pass) { // a bouger dans S_Update je pense
+	else if (elapsed1.asSeconds() > 6 || pass) { 
 		S_End = true;
 	}
 	else {
@@ -63,6 +65,7 @@ void Starting::S_ActionTrigger(std::string ActionName)
 {
 	if (ActionName == "PasserCinematique") {
 		pass = true;
+		std::cout << "Patate" << std::endl;
 	}
 }
 
@@ -76,12 +79,31 @@ void Starting::S_End_Scene()
 
 
 
-void Starting::S_Action()
+void Starting::S_Action(sf::Event event)
 {
-	for (const auto& action : ActionScene) {
-		sf::Keyboard::Key val = static_cast<sf::Keyboard::Key>(action.first); // transforme le int en enum
-		if (sf::Keyboard::isKeyPressed(val)) {
-			S_ActionTrigger(action.second);
+	if (event.KeyPressed) {
+		for (const auto& action : ActionScene) {
+			sf::Keyboard::Key val = static_cast<sf::Keyboard::Key>(action.first);
+			if (event.key.code == val && sf::Keyboard::isKeyPressed(val))
+				S_ActionTrigger(action.second);
+			
 		}
 	}
+
+	if (event.type == sf::Event::MouseButtonPressed)
+	{
+		if (event.mouseButton.button == sf::Mouse::Right)
+		{
+			std::cout << "the right button was pressed" << std::endl;
+			std::cout << "mouse x: " << event.mouseButton.x << std::endl;
+			std::cout << "mouse y: " << event.mouseButton.y << std::endl;
+		}
+		if (event.mouseButton.button == sf::Mouse::Left)
+		{
+			std::cout << "the left button was pressed" << std::endl;
+			std::cout << "mouse x: " << event.mouseButton.x << std::endl;
+			std::cout << "mouse y: " << event.mouseButton.y << std::endl;
+		}
+	}
+	
 }

@@ -1,5 +1,7 @@
 #pragma once
 #include "../Factory/EntityManager.h";
+#include "SFML/Graphics.hpp"
+
 namespace Engine {
 	/*! \class Path
 	* \brief classe qui gere les chemins pour une IA par exemple
@@ -24,7 +26,7 @@ namespace Engine {
 		*
 		*  Appeler dans la gameloop pour ajouter les inputs recus par les events de sfml(mouvement, tir ,....)
 		*/
-		virtual void S_Action() = 0; 
+		virtual void S_Action(sf::Event event) = 0; 
 		/*!
 		*  \brief S_Simulation
 		*
