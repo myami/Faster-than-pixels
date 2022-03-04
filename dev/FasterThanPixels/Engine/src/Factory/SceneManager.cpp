@@ -44,6 +44,5 @@ void Engine::SceneManager::ChangeScene(std::string newscene)
 {
 	GetCurrentScene()->S_End_Scene();
 	CurrentScene = newscene;
-	std::cout << GetCurrentScene()->S_Name;
 	GetCurrentScene()->S_Begin_Play();
 }

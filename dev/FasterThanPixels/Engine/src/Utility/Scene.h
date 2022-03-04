@@ -1,7 +1,8 @@
 #pragma once
-#include "../Factory/EntityManager.h";
 #include "SFML/Graphics.hpp"
+#include "../Factory/EntityManager.h"
 
+	class SceneManager;
 namespace Engine {
 	/*! \class Path
 	* \brief classe qui gere les chemins pour une IA par exemple
@@ -13,6 +14,8 @@ namespace Engine {
 		std::unique_ptr<EntityManager> S_EntityManager;  /*!< Sous syteme qui gere les entite */
 		std::string S_Name;  /*!< Nom de la scene  */
 		std::map<int, std::string> ActionScene;  /*!< Chaque input disponible dans la scene */
+		SceneManager* _SceneManager;
+
 		bool S_Paused; /*!< Si la scene est en pause */
 		bool S_End; /*!< Si la scene est fini d'etre utiliser */
 			/*!
