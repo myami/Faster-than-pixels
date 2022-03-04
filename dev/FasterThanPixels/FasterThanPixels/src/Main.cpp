@@ -4,6 +4,6 @@
 
 int main() {
 	FTP_GameManager game;
-	game.Game_Init();
+	game.Game_Init("Faster than Pixels", "Cinematique");
 	game.GameLoop();
 }

@@ -31,25 +31,25 @@ class SceneManager;
 		 *
 		 *  Quitte le jeu
 		 */
-		virtual void Quit() = 0;
+		 void Quit();
 		/*!
 		*  \brief Game_Init
 		*
 		*  Initialise les sous-systemes pour avoir toutes les donneer necessaires pour que le jeu marche
 		*/
-		virtual void Game_Init() = 0; // initialiser toutes les donnes du jeu
+		virtual void Game_Init(std::string NameOfTheGame, std::string FistScene) = 0; // initialiser toutes les donnes du jeu
 		/*!
 		*  \brief GameLoop
 		*
 		*  La loop du jeux, elle est appeler a chaque frame pour mettre a jour le contenu du jeu
 		*/
-		virtual void GameLoop() = 0;// loop principale du jeu
+		void GameLoop();// loop principale du jeu
 		/*!
 		*  \brief S_Input
 		*
 		*  Gere les events de SFML pour recevoir les inputs, cette function se trouve dans la gameloop
 		*/
-		virtual void S_Input() = 0; 
+		void S_Input(); 
 		/*!
 		*  \brief ResizeView
 		*

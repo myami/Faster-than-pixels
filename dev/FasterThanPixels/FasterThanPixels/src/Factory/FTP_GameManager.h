@@ -6,8 +6,5 @@
 */
 class FTP_GameManager : public Engine::GameManager {
 public:
-	 void Game_Init(); // initialiser toutes les donnes du jeu
-	 void GameLoop();// loop principale du jeu
-	 void Quit();
-	 void S_Input(); // gerer les events de sfml (input)
+	 void Game_Init(std::string NameOfTheGame, std::string FistScene); // initialiser toutes les donnes du jeu
 };
