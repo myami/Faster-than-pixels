@@ -36,6 +36,9 @@
     <ClCompile Include="src\ECS\Components\C_MouvementActif.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="src\Scene\Authentification.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Factory\FTP_GameManager.h">

@@ -16,7 +16,7 @@ void Starting::S_Syteme()
 void Starting::S_Update()
 {
 	if (S_End) {
-		
+		_SceneManager->ChangeScene("Authentification");
 	}
 }
 
@@ -65,7 +65,6 @@ void Starting::S_ActionTrigger(std::string ActionName)
 {
 	if (ActionName == "PasserCinematique") {
 		pass = true;
-		std::cout << "Patate" << std::endl;
 	}
 }
 

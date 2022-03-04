@@ -159,6 +159,7 @@
     <ClCompile Include="src\Factory\FTP_GameManager.cpp" />
     <ClCompile Include="src\Factory\FTP_SceneManager.cpp" />
     <ClCompile Include="src\Main.cpp" />
+    <ClCompile Include="src\Scene\Authentification.cpp" />
     <ClCompile Include="src\Scene\Starting.cpp" />
   </ItemGroup>
   <ItemGroup>

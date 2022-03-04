@@ -14,13 +14,15 @@ void Engine::GameManager::GameLoop()
 
     while (Windows->isOpen())
     {
-        G_SceneManager->GetCurrentScene().S_Update();
+ 
+        G_SceneManager->GetCurrentScene()->S_Update();
         S_Input();
-        G_SceneManager->GetCurrentScene().S_Simulation();
-        G_SceneManager->GetCurrentScene().S_Syteme();
+        G_SceneManager->GetCurrentScene()->S_Simulation();
+        G_SceneManager->GetCurrentScene()->S_Syteme();
         Windows->clear();
-        G_SceneManager->GetCurrentScene().S_Render();
+        G_SceneManager->GetCurrentScene()->S_Render();
         Windows->display();
+
     }
 }
 
@@ -34,7 +36,7 @@ void Engine::GameManager::S_Input()
         else if (event.type == sf::Event::Resized) {
             ResizeView(event);
         }
-        G_SceneManager->GetCurrentScene().S_Action(event);
+        G_SceneManager->GetCurrentScene()->S_Action(event);
     }
 }
 

@@ -42,7 +42,7 @@ class GameManager;
 		*  Return la scene actuellement entrain de tourner
 		* \return la scene actuelle
 		*/
-		Scene& GetCurrentScene();
+		Scene* GetCurrentScene();
 		/*!
 		*  \brief AddScene
 		*

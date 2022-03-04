@@ -17,5 +17,7 @@ public:
 	void S_ActionTrigger(std::string ActionName);
 	void S_Begin_Play();
 	void S_End_Scene();
+	void S_Input_Mouse(sf::Event event);
+
 
 };
