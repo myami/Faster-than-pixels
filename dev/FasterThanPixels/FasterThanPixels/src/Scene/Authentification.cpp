@@ -118,6 +118,8 @@ void Authentification::S_Input_Mouse(sf::Event event)
 
 		if (Login.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {
 			std::cout << "login";
+			_SceneManager->ChangeScene("MainMenu");
+
 		}
 		if (Register.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {
 			std::cout << "register";
