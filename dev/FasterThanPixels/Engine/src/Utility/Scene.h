@@ -77,6 +77,8 @@ namespace Engine {
 		virtual void S_End_Scene() = 0; 
 
 		virtual void S_Input_Mouse(sf::Event event) = 0;
+
+		virtual void S_Input_Text(sf::Event event) = 0;
 		
 
 

@@ -11,6 +11,9 @@ void FTP_SceneManager::Init(std::string FirstScene)
 	AddScene(authentification);
 	CurrentScene = FirstScene;
 
+	GetCurrentScene()->S_Begin_Play();
+
+
 
 }
 

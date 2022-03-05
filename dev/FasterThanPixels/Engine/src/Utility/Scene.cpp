@@ -33,4 +33,7 @@ void Engine::Scene::S_Action(sf::Event event)
 			S_Input_Mouse(event);
 		}
 	}
+	else if (event.type == sf::Event::TextEntered) {
+		S_Input_Text(event);
+	}
 }

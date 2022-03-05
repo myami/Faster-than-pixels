@@ -17,6 +17,13 @@ public:
 	void S_Begin_Play();
 	void S_End_Scene();
 	void S_Input_Mouse(sf::Event event);
-
+	void S_Input_Text(sf::Event event);
+	sf::Sprite Background;
+	Button Login;
+	Button Register;
+	sf::Sprite ButtonBackground;
+	sf::Sprite Title;
+	Input UserName;
+	Input PassWord;
 
 };

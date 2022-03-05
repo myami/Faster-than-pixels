@@ -1,6 +1,8 @@
 #pragma once
 #include"SFML/Graphics.hpp"
 class Button {
-	sf::Sprite* ButtonSprite;
+public:
+	sf::Sprite ButtonSprite;
 	bool IsSpriteClicked(sf::RenderWindow* render);
+	Button();
 };

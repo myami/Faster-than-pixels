@@ -13,8 +13,9 @@ void FTP_GameManager::Game_Init(std::string NameOfTheGame, std::string FirstScen
 
     G_SceneManager = std::unique_ptr<FTP_SceneManager>(new FTP_SceneManager(this));
     G_AssetManager = std::unique_ptr<FTP_AssetManager>(new FTP_AssetManager());
-    G_SceneManager->Init(FirstScene);
     G_AssetManager->InitAsset();
+    G_SceneManager->Init(FirstScene);
+
     
 }
 

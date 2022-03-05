@@ -197,6 +197,7 @@
     <ClCompile Include="src\Factory\GameManager.cpp" />
     <ClCompile Include="src\Factory\SceneManager.cpp" />
     <ClCompile Include="src\Utility\GUI\Button.cpp" />
+    <ClCompile Include="src\Utility\GUI\Input.cpp" />
     <ClCompile Include="src\Utility\MathF.cpp" />
     <ClCompile Include="src\Utility\Scene.cpp" />
     <ClCompile Include="src\Utility\Utility.cpp" />
