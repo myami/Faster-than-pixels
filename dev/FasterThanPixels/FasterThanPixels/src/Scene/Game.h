@@ -20,4 +20,15 @@ public:
 	void S_Input_Text(sf::Event event);
 
 
+	sf::RectangleShape shape;
+
+
+	float viewspeed = 100.f;
+	float dt = 0.f;
+	sf::Clock cloackdt;
+	sf::Vector2i MousePosScreen;
+	sf::Vector2i MousePosWindow;
+	sf::Vector2f MousePosView;
+	sf::Text text;
+
 };

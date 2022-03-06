@@ -9,6 +9,7 @@ void FTP_GameManager::Game_Init(std::string NameOfTheGame, std::string FirstScen
     sf::VideoMode desktop = sf::VideoMode::getDesktopMode();
 	Windows = new sf::RenderWindow (sf::VideoMode(desktop.width, desktop.height), NameOfTheGame);
     View.setSize(desktop.width, desktop.height);
+    View.setCenter(Windows->getSize().x / 2.f, Windows->getSize().y / 2.f);
     Windows->setView(View);
 
     G_SceneManager = std::unique_ptr<FTP_SceneManager>(new FTP_SceneManager(this));
