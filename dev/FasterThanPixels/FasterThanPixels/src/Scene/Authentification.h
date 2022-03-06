@@ -18,12 +18,12 @@ public:
 	void S_End_Scene();
 	void S_Input_Mouse(sf::Event event);
 	void S_Input_Text(sf::Event event);
-	sf::Sprite Background;
-	Button Login;
-	Button Register;
-	sf::Sprite ButtonBackground;
-	sf::Sprite Title;
-	Input UserName;
-	Input PassWord;
+	sf::Sprite Background;  /*!< Sprite du background */
+	Button Login;  /*!< bouton login */
+	Button Register;  /*!< bouton register */
+	sf::Sprite ButtonBackground;  /*!< Sprite du background des boutons */
+	sf::Sprite Title;  /*!< Sprite du titre */
+	Input UserName;  /*!< input du username */
+	Input PassWord;  /*!< input du mot de passe */
 
 };

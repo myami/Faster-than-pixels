@@ -35,6 +35,8 @@ class SceneManager;
 		*  \brief Game_Init
 		*
 		*  Initialise les sous-systemes pour avoir toutes les donneer necessaires pour que le jeu marche
+		* \param NameOfTheGame : Nom du jeu
+		* \param FirstScene : Nom de la premiere scene a lancer
 		*/
 		virtual void Game_Init(std::string NameOfTheGame,std::string FirstScene) = 0; // initialiser toutes les donnes du jeu
 		/*!

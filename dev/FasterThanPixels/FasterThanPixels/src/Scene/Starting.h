@@ -19,8 +19,8 @@ public:
 	 void S_Input_Mouse(sf::Event event);
 	 void S_Input_Text(sf::Event event);
 
-	 sf::Clock clock;
-	 bool pass = false;
-	 sf::Text text;
-	 sf::Sprite logo;
+	 sf::Clock clock;  /*!< horloge pour la duree des images et de la scene */
+	 bool pass = false;  /*!< Si le joueur passe la cinematique */
+	 sf::Text text;  /*!< texte de la cinematique */
+	 sf::Sprite logo;  /*!< logo ratatoskr */
 };

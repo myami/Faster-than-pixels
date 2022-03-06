@@ -75,9 +75,17 @@ namespace Engine {
 		*  Appeler a la fin de la scene juste avant un changement de scene
 		*/
 		virtual void S_End_Scene() = 0; 
-
+		/*!
+		*  \brief S_Input_Mouse
+		*
+		*  Appeler quand le joueur clique quelque part dans le jeu
+		*/
 		virtual void S_Input_Mouse(sf::Event event) = 0;
-
+		/*!
+		*  \brief S_Input_Text
+		*
+		*  Appeler quand le joueur ecrit du texte dans le jeu
+		*/
 		virtual void S_Input_Text(sf::Event event) = 0;
 		
 
