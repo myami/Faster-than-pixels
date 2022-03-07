@@ -18,6 +18,12 @@ public:
 	void S_End_Scene();
 	void S_Input_Mouse(sf::Event event);
 	void S_Input_Text(sf::Event event);
-
-
+		
+	sf::Sprite Background;  /*!< Sprite du background */
+	sf::Sprite Title; /*!< Sprite du titre du jeu */
+	Button Play;  /*!< bouton Play, envoie vers la scene Starting */
+	Button Compendium;  /*!< bouton Compendium, envoie vers la scene Compendium */
+	Button Profile;  /*!< bouton Profile, envoie vers la scene PlayerProfile*/
+	Button Settings;  /*!< bouton Settings, envoie vers la scene Option */
+	Button Exit;  /*!< bouton register, appelle la fonction Quit() */
 };

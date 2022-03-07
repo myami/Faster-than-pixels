@@ -158,10 +158,14 @@
     <ClCompile Include="src\Factory\FTP_EntityManager.cpp" />
     <ClCompile Include="src\Factory\FTP_GameManager.cpp" />
     <ClCompile Include="src\Factory\FTP_SceneManager.cpp" />
+    <ClCompile Include="src\Scene\Profile.cpp" />
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\Scene\Authentification.cpp" />
+    <ClCompile Include="src\Scene\Compendium.cpp" />
     <ClCompile Include="src\Scene\Game.cpp" />
+    <ClCompile Include="src\Scene\GameModeSelection.cpp" />
     <ClCompile Include="src\Scene\MainMenu.cpp" />
+    <ClCompile Include="src\Scene\Settings.cpp" />
     <ClCompile Include="src\Scene\Starting.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -223,11 +227,14 @@
     <ClInclude Include="src\GameMode\Training\Hard.h" />
     <ClInclude Include="src\GameMode\Training\Medium.h" />
     <ClInclude Include="src\Scene\Authentification.h" />
+    <ClInclude Include="src\Scene\Compendium.h" />
     <ClInclude Include="src\Scene\EndGame.h" />
     <ClInclude Include="src\Scene\Game.h" />
+    <ClInclude Include="src\Scene\GameModeSelection.h" />
     <ClInclude Include="src\Scene\Loading.h" />
     <ClInclude Include="src\Scene\MainMenu.h" />
-    <ClInclude Include="src\Scene\Option.h" />
+    <ClInclude Include="src\Scene\Profile.h" />
+    <ClInclude Include="src\Scene\Settings.h" />
     <ClInclude Include="src\Scene\Pause.h" />
     <ClInclude Include="src\Scene\PlayerProfile.h" />
     <ClInclude Include="src\Scene\Starting.h" />

@@ -3,6 +3,11 @@
 #include "../Scene/Authentification.h"
 #include "../Scene/MainMenu.h"
 #include "../Scene/Game.h"
+#include "../Scene/GameModeSelection.h"
+#include "../Scene/Settings.h"
+#include "../Scene/Compendium.h"
+#include "../Scene/Profile.h"
+
 
 void FTP_SceneManager::Init(std::string FirstScene)
 {
@@ -10,14 +15,24 @@ void FTP_SceneManager::Init(std::string FirstScene)
 	Authentification* authentification = new Authentification("Authentification", this);
 	MainMenu* mainmenu = new MainMenu("MainMenu", this);
 	Game* game = new Game("Game", this);
+	GameModeSelection* gms = new GameModeSelection("GameModeSelection", this);
+	Settings* settings = new Settings("Settings", this);
+	Compendium* compendium = new Compendium("Compendium", this);
+	Profile* profile = new Profile("Profile", this);
+
 
 
 	AddScene(st);
 	AddScene(authentification);
 	AddScene(mainmenu);
 	AddScene(game);
+	AddScene(gms);
+	AddScene(settings);
+	AddScene(compendium);
+	AddScene(profile);
 
-	CurrentScene = FirstScene;
+
+	CurrentScene = "GameModeSelection";
 
 	GetCurrentScene()->S_Begin_Play();
 
