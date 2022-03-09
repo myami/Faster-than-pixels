@@ -1,18 +1,12 @@
 #include "GameModeSelection.h"
 #include "../Factory/FTP_SceneManager.h"
 
-GameModeSelection::GameModeSelection(std::string name, FTP_SceneManager* refs) : Engine::Scene(name)
+GameModeSelection::GameModeSelection(std::string name, FTP_SceneManager* refs) : Engine::BlankScene(name)
 {
 	_SceneManager = refs;
 }
 
-void GameModeSelection::S_Syteme()
-{
-}
 
-void GameModeSelection::S_Update()
-{
-}
 
 void GameModeSelection::S_Render()
 {
@@ -34,13 +28,6 @@ void GameModeSelection::S_Render()
 
 }
 
-void GameModeSelection::S_Simulation()
-{
-}
-
-void GameModeSelection::S_ActionTrigger(std::string ActionName)
-{
-}
 
 void GameModeSelection::S_Begin_Play()
 {

@@ -6,7 +6,7 @@ class FTP_SceneManager;
 * \brief classe enfant de Scene, represente le niveau ou le joueur vois les infos de fin de partie
 *
 */
-class EndGame : public Engine::Scene {
+class EndGame : public Engine::BlankScene {
 public:
 	EndGame(std::string name, FTP_SceneManager* refs);
 	void S_Syteme(); // tout les systeme de la scene ( tout les system lie au component)

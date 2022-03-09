@@ -4,7 +4,7 @@
 
 
 
-Game::Game(std::string name, FTP_SceneManager* refs) : Engine::Scene(name)
+Game::Game(std::string name, FTP_SceneManager* refs) : Engine::BlankScene(name)
 {
 	_SceneManager = refs;
 	RegisterAction(sf::Keyboard::W, "Forward");

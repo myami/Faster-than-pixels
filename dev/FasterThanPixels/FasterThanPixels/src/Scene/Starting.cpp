@@ -3,15 +3,13 @@
 
 
 
-Starting::Starting(std::string name, FTP_SceneManager* refs):Engine::Scene(name)
+Starting::Starting(std::string name, FTP_SceneManager* refs):Engine::BlankScene(name)
 {
 	this->_SceneManager = refs;
 	RegisterAction(sf::Keyboard::Space, "PasserCinematique");
 }
 
-void Starting::S_Syteme()
-{
-}
+
 
 void Starting::S_Update()
 {
@@ -41,9 +39,6 @@ void Starting::S_Render()
 
 
 
-void Starting::S_Simulation()
-{
-}
 
 void Starting::S_ActionTrigger(std::string ActionName)
 {
@@ -72,16 +67,5 @@ void Starting::S_Begin_Play()
 void Starting::S_End_Scene()
 {
 }
-
-
-
-void Starting::S_Input_Mouse(sf::Event event)
-{
-}
-
-void Starting::S_Input_Text(sf::Event event)
-{
-}
-
 
 

@@ -6,7 +6,7 @@
 #include "../Scene/GameModeSelection.h"
 #include "../Scene/Settings.h"
 #include "../Scene/Compendium.h"
-#include "../Scene/Profile.h"
+#include "../Scene/PlayerProfile.h"
 
 
 void FTP_SceneManager::Init(std::string FirstScene)
@@ -18,7 +18,7 @@ void FTP_SceneManager::Init(std::string FirstScene)
 	GameModeSelection* gms = new GameModeSelection("GameModeSelection", this);
 	Settings* settings = new Settings("Settings", this);
 	Compendium* compendium = new Compendium("Compendium", this);
-	Profile* profile = new Profile("Profile", this);
+	PlayerProfile* profile = new PlayerProfile("PlayerProfile", this);
 
 
 
