@@ -14,9 +14,7 @@ void PlayerProfile::S_Begin_Play()
 {
 }
 
-void PlayerProfile::S_End_Scene()
-{
-}
+
 
 void PlayerProfile::S_Input_Mouse(sf::Event event)
 {

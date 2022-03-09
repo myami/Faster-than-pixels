@@ -64,8 +64,3 @@ void Starting::S_Begin_Play()
 
 }
 
-void Starting::S_End_Scene()
-{
-}
-
-

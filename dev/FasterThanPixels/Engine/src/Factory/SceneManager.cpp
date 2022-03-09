@@ -46,3 +46,10 @@ void Engine::SceneManager::ChangeScene(std::string newscene)
 	CurrentScene = newscene;
 	GetCurrentScene()->S_Begin_Play();
 }
+
+Engine::SceneManager::~SceneManager()
+{
+	for (auto s : M_Scene) {
+		delete s;
+	}
+}

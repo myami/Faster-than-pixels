@@ -12,7 +12,6 @@ public:
 
 	void S_Render() override; // fin de frame affiche le resultat de la simulation 4/4
 	void S_Begin_Play() override;
-	void S_End_Scene() override;
 	void S_Input_Mouse(sf::Event event) override;
 		
 	sf::Sprite Background;  /*!< Sprite du background */

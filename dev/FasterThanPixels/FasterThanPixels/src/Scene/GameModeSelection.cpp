@@ -140,9 +140,7 @@ void GameModeSelection::S_Begin_Play()
 #pragma endregion
 }
 
-void GameModeSelection::S_End_Scene()
-{
-}
+
 
 void GameModeSelection::S_Input_Mouse(sf::Event event)
 {

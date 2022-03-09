@@ -12,7 +12,6 @@ public:
 	void S_Render() override; 
 	void S_ActionTrigger(std::string ActionName) override;
 	void S_Begin_Play() override;
-	void S_End_Scene() override;
 	void S_Input_Mouse(sf::Event event) override;
 	void S_Input_Text(sf::Event event) override;
 

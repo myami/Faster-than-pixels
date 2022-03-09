@@ -21,9 +21,7 @@ void Compendium::S_Begin_Play()
 {
 }
 
-void Compendium::S_End_Scene()
-{
-}
+
 
 void Compendium::S_Input_Mouse(sf::Event event)
 {

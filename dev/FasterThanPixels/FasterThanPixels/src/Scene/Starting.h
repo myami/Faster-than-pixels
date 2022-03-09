@@ -13,7 +13,6 @@ public:
 	 void S_Render() override; // fin de frame affiche le resultat de la simulation 4/4
 	 void S_ActionTrigger(std::string ActionName) override;
 	 void S_Begin_Play() override;
-	 void S_End_Scene() override;
 
 
 	 sf::Clock clock;  /*!< horloge pour la duree des images et de la scene */

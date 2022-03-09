@@ -84,9 +84,7 @@ void Game::S_Begin_Play()
 
 }
 
-void Game::S_End_Scene()
-{
-}
+
 
 void Game::S_Input_Mouse(sf::Event event)
 {

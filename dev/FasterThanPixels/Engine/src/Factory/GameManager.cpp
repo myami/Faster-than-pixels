@@ -4,7 +4,9 @@
 
 void Engine::GameManager::Quit()
 {
+
     Windows->close();
+    exit(0);
 }
 
 

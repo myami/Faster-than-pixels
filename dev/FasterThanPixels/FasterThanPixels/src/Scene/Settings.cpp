@@ -16,9 +16,7 @@ void Settings::S_Begin_Play()
 {
 }
 
-void Settings::S_End_Scene()
-{
-}
+
 
 void Settings::S_Input_Mouse(sf::Event event)
 {

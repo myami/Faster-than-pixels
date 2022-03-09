@@ -102,6 +102,7 @@ void Authentification::S_Begin_Play()
 
 
 
+
 void Authentification::S_Input_Mouse(sf::Event event)
 {
 	if (event.type == sf::Event::MouseButtonPressed) {

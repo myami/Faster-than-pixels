@@ -75,9 +75,7 @@ void MainMenu::S_Begin_Play()
 #pragma endregion
 }
 
-void MainMenu::S_End_Scene()
-{
-}
+
 
 void MainMenu::S_Input_Mouse(sf::Event event)
 {

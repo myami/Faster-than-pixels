@@ -33,6 +33,8 @@ void Engine::BlankScene::S_Begin_Play()
 
 void Engine::BlankScene::S_End_Scene()
 {
+	delete _SceneManager;
+
 }
 
 void Engine::BlankScene::S_Input_Mouse(sf::Event event)

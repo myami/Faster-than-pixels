@@ -65,7 +65,7 @@ class GameManager;
 		*/
 		void ChangeScene(std::string newscene);
 
-
+		~SceneManager();
 
 	};
 }
