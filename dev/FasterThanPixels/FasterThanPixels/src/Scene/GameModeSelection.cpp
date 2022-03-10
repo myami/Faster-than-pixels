@@ -25,6 +25,8 @@ void GameModeSelection::S_Render()
 	_SceneManager->_GameManager->Windows->draw(Seed.textbox);
 	_SceneManager->_GameManager->Windows->draw(MenuTitle);
 	_SceneManager->_GameManager->Windows->draw(Borders);
+	_SceneManager->_GameManager->Windows->draw(DifficultySelection);
+
 
 }
 
@@ -138,6 +140,17 @@ void GameModeSelection::S_Begin_Play()
 	MenuTitle.setPosition(_SceneManager->_GameManager->View.getCenter());
 	MenuTitle.move(sf::Vector2(0.f, -325.f));
 #pragma endregion
+
+
+#pragma region DifficultySelection
+	DifficultySelection.setSize(sf::Vector2f(150, 5));
+	DifficultySelection.setFillColor(sf::Color(52,106,232));
+	DifficultySelection.setOrigin(DifficultySelection.getGlobalBounds().width / 2.f, DifficultySelection.getGlobalBounds().height / 2.f);
+	DifficultySelection.setPosition(_SceneManager->_GameManager->View.getCenter());
+	DifficultySelection.move(sf::Vector2(-225.f, -215.f));
+
+#pragma endregion
+
 }
 
 
@@ -148,15 +161,23 @@ void GameModeSelection::S_Input_Mouse(sf::Event event)
 
 		if (Easy.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {
 			std::cout << "Easy";
-			_SceneManager->ChangeScene("MainMenu");
+			DifficultySelection.setPosition(_SceneManager->_GameManager->View.getCenter());
+			DifficultySelection.move(sf::Vector2(-225.f, -215.f));
+			CurrentDifficulte = 0;
+
 		}
 		if (Medium.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {
 			std::cout << "Medium";
-			_SceneManager->ChangeScene("MainMenu");
+			DifficultySelection.setPosition(_SceneManager->_GameManager->View.getCenter());
+			CurrentDifficulte = 1;
+			DifficultySelection.move(sf::Vector2(0.f, -215.f));
+
 		}
 		if (Hard.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {
 			std::cout << "Hard";
-			_SceneManager->ChangeScene("MainMenu");
+			CurrentDifficulte = 2;
+			DifficultySelection.setPosition(_SceneManager->_GameManager->View.getCenter());
+			DifficultySelection.move(sf::Vector2(225.f, -215.f));
 		}
 		if (Back.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {
 			std::cout << "Back";
@@ -164,7 +185,7 @@ void GameModeSelection::S_Input_Mouse(sf::Event event)
 		}
 		if (StartGame.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {
 			std::cout << "Start";
-			_SceneManager->ChangeScene("MainMenu");
+			_SceneManager->ChangeScene("Game");
 		}
 
 		if (Seed.IsInputClicked(_SceneManager->_GameManager->Windows)) {

@@ -45,6 +45,8 @@ void Game::S_Render()
 
 	// render game
 	_SceneManager->_GameManager->Windows->draw(shape);
+	_SceneManager->_GameManager->Windows->draw(testSprite);
+
 
 	_SceneManager->_GameManager->Windows->setView(_SceneManager->_GameManager->Windows->getDefaultView());
 
@@ -81,6 +83,11 @@ void Game::S_Begin_Play()
 	text.setCharacterSize(30);
 	text.setPosition(20.f, 20.f);
 	text.setString("TEST");
+
+	testSprite.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("PlayButton"));
+	testSprite.setOrigin(testSprite.getGlobalBounds().width / 2.f, testSprite.getGlobalBounds().height / 2.f);
+	testSprite.setPosition(-500,0.f);
+
 
 }
 

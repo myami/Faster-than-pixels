@@ -9,9 +9,9 @@ namespace Engine {
 	*/
 	class EntityManager {
 		std::vector<Engine::Entity>* M_EntityVector; /*!< Liste des Entite */
-		std::map<std::string, std::vector<std::shared_ptr<Engine::Entity>>> M_EntityMap; /*!< Liste des Entite par tag */
+		std::map<std::string, std::vector<Engine::Entity*>> M_EntityMap; /*!< Liste des Entite par tag */
 		size_t M_TotalEntity; /*!< Le nombre total d'entite disponible dans le pool */
-		std::vector<std::shared_ptr<Engine::Entity>> M_EntityToChange; /*!< Liste des entites qui doivent etre changer au debut de la prochaine frame */
+		std::vector<Engine::Entity*> M_EntityToChange; /*!< Liste des entites qui doivent etre changer au debut de la prochaine frame */
 	public:
 		/*!
 	   *  \brief GenerateEntity

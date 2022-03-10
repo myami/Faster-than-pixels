@@ -13,11 +13,14 @@ public:
 	void S_Begin_Play() override;
 	void S_Input_Mouse(sf::Event event) override;
 	void S_Input_Text(sf::Event event) override;
+	int CurrentDifficulte = 0;
 
 	sf::Sprite Background;  /*!< Sprite du background */
 	sf::Sprite Title; /*!< Sprite du titre du jeu */
 
 	sf::RectangleShape Borders; /*!< Debug only */
+	sf::RectangleShape DifficultySelection; /*!< ligne rouge sous la difficulte selectionner */
+
 
 	sf::Text MenuTitle;
 	Button Easy;  /*!< bouton Play, modifie la difficulte pour facile */

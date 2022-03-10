@@ -20,8 +20,8 @@ class SceneManager;
 	*/
 	class GameManager {
 	public:
-		std::unique_ptr<AssetManager> G_AssetManager; /*!< Sous-systeme qui gere les assets */
-		std::unique_ptr<SceneManager> G_SceneManager;/*!< Sous-systeme qui gere les scenes */
+		AssetManager* G_AssetManager; /*!< Sous-systeme qui gere les assets */
+		SceneManager* G_SceneManager;/*!< Sous-systeme qui gere les scenes */
 		sf::RenderWindow* Windows; /*!< La fenetre */
 		sf::View View; /*!< La vue dans la fenetre(camera ) */
 		bool Running; /*!< Si le programme tourne */

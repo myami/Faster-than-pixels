@@ -29,5 +29,6 @@ public:
 	sf::Vector2i MousePosWindow;
 	sf::Vector2f MousePosView;
 	sf::Text text;
+	sf::Sprite testSprite;
 
 };

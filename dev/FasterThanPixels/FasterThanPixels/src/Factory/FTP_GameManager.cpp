@@ -12,8 +12,8 @@ void FTP_GameManager::Game_Init(std::string NameOfTheGame, std::string FirstScen
     View.setCenter(Windows->getSize().x / 2.f, Windows->getSize().y / 2.f);
     Windows->setView(View);
 
-    G_SceneManager = std::unique_ptr<FTP_SceneManager>(new FTP_SceneManager(this));
-    G_AssetManager = std::unique_ptr<FTP_AssetManager>(new FTP_AssetManager());
+    G_SceneManager = new FTP_SceneManager(this);
+    G_AssetManager = new FTP_AssetManager();
     G_AssetManager->InitAsset();
     G_SceneManager->Init(FirstScene);
 
