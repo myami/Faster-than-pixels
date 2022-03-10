@@ -13,13 +13,15 @@ public:
 	void S_Begin_Play() override;
 	void S_Input_Mouse(sf::Event event) override;
 	void S_Input_Text(sf::Event event) override;
-	int CurrentDifficulte = 0;
+	int CurrentDifficulty = 0;
+	int CurrentModes = 0;
 
 	sf::Sprite Background;  /*!< Sprite du background */
 	sf::Sprite Title; /*!< Sprite du titre du jeu */
 
 	sf::RectangleShape Borders; /*!< Debug only */
 	sf::RectangleShape DifficultySelection; /*!< ligne rouge sous la difficulte selectionner */
+	sf::RectangleShape ModesSelection; /*!< Contour autour du gamemodes */
 
 
 	sf::Text MenuTitle;

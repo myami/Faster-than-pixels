@@ -13,6 +13,7 @@ void GameModeSelection::S_Render()
 	_SceneManager->_GameManager->Windows->draw(Background);
 	_SceneManager->_GameManager->Windows->draw(Title);
 	_SceneManager->_GameManager->Windows->draw(Borders);
+	_SceneManager->_GameManager->Windows->draw(ModesSelection);
 	_SceneManager->_GameManager->Windows->draw(Easy.ButtonSprite);
 	_SceneManager->_GameManager->Windows->draw(Medium.ButtonSprite);
 	_SceneManager->_GameManager->Windows->draw(Hard.ButtonSprite);
@@ -26,6 +27,7 @@ void GameModeSelection::S_Render()
 	_SceneManager->_GameManager->Windows->draw(MenuTitle);
 	_SceneManager->_GameManager->Windows->draw(Borders);
 	_SceneManager->_GameManager->Windows->draw(DifficultySelection);
+
 
 
 }
@@ -143,11 +145,24 @@ void GameModeSelection::S_Begin_Play()
 
 
 #pragma region DifficultySelection
+
 	DifficultySelection.setSize(sf::Vector2f(150, 5));
 	DifficultySelection.setFillColor(sf::Color(52,106,232));
 	DifficultySelection.setOrigin(DifficultySelection.getGlobalBounds().width / 2.f, DifficultySelection.getGlobalBounds().height / 2.f);
 	DifficultySelection.setPosition(_SceneManager->_GameManager->View.getCenter());
 	DifficultySelection.move(sf::Vector2(-225.f, -215.f));
+
+#pragma endregion
+
+
+#pragma region ModesSelection
+	ModesSelection.setSize(sf::Vector2f(250, 500));
+	ModesSelection.setOutlineColor(sf::Color(52, 106, 232));
+	ModesSelection.setOutlineThickness(10.f);
+	ModesSelection.setOrigin(ModesSelection.getGlobalBounds().width / 2.f, ModesSelection.getGlobalBounds().height / 2.f);
+	ModesSelection.setPosition(_SceneManager->_GameManager->View.getCenter());
+	ModesSelection.move(sf::Vector2(-265.f, 160.f));
+	ModesSelection.setFillColor(sf::Color::Transparent);
 
 #pragma endregion
 
@@ -163,25 +178,37 @@ void GameModeSelection::S_Input_Mouse(sf::Event event)
 			std::cout << "Easy";
 			DifficultySelection.setPosition(_SceneManager->_GameManager->View.getCenter());
 			DifficultySelection.move(sf::Vector2(-225.f, -215.f));
-			CurrentDifficulte = 0;
+			CurrentDifficulty = 0;
 
 		}
 		if (Medium.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {
 			std::cout << "Medium";
 			DifficultySelection.setPosition(_SceneManager->_GameManager->View.getCenter());
-			CurrentDifficulte = 1;
+			CurrentDifficulty = 1;
 			DifficultySelection.move(sf::Vector2(0.f, -215.f));
 
 		}
 		if (Hard.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {
 			std::cout << "Hard";
-			CurrentDifficulte = 2;
+			CurrentDifficulty = 2;
 			DifficultySelection.setPosition(_SceneManager->_GameManager->View.getCenter());
 			DifficultySelection.move(sf::Vector2(225.f, -215.f));
 		}
 		if (Back.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {
 			std::cout << "Back";
 			_SceneManager->ChangeScene("MainMenu");
+		}
+		if (Training.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {
+			std::cout << "Training";
+			ModesSelection.setPosition(_SceneManager->_GameManager->View.getCenter());
+			ModesSelection.move(sf::Vector2(-265.f, 160.f));
+			CurrentModes = 0;
+		}
+		if (FastAction.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {
+			std::cout << "FastAction";
+			CurrentModes = 1;
+			ModesSelection.setPosition(_SceneManager->_GameManager->View.getCenter());
+			ModesSelection.move(sf::Vector2(10.f, 160.f));
 		}
 		if (StartGame.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {
 			std::cout << "Start";
