@@ -33,7 +33,7 @@ void Engine::BlankScene::S_Begin_Play()
 
 void Engine::BlankScene::S_End_Scene()
 {
-	delete _SceneManager;
+//	delete _SceneManager;
 
 }
 

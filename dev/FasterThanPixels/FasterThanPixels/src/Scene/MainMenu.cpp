@@ -91,7 +91,7 @@ void MainMenu::S_Input_Mouse(sf::Event event)
 		}
 		if (Profile.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {
 			std::cout << "Profile";
-			_SceneManager->ChangeScene("Profile");
+			_SceneManager->ChangeScene("PlayerProfile");
 		}
 		if (Settings.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {
 			std::cout << "Settings";
