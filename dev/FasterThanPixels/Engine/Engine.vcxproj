@@ -177,6 +177,7 @@
     <ClInclude Include="src\Factory\EntityManager.h" />
     <ClInclude Include="src\Factory\GameManager.h" />
     <ClInclude Include="src\Factory\SceneManager.h" />
+    <ClInclude Include="src\Utility\Animation.h" />
     <ClInclude Include="src\Utility\BlankScene.h" />
     <ClInclude Include="src\Utility\GameMode.h" />
     <ClInclude Include="src\Utility\GameStats.h" />
@@ -186,6 +187,7 @@
     <ClInclude Include="src\Utility\GUI\Slider.h" />
     <ClInclude Include="src\Utility\MathF.h" />
     <ClInclude Include="src\Utility\Path.h" />
+    <ClInclude Include="src\Utility\Random.h" />
     <ClInclude Include="src\Utility\Scene.h" />
     <ClInclude Include="src\Utility\Utility.h" />
     <ClInclude Include="src\Utility\Vector2D.h" />
@@ -197,10 +199,12 @@
     <ClCompile Include="src\Factory\EntityManager.cpp" />
     <ClCompile Include="src\Factory\GameManager.cpp" />
     <ClCompile Include="src\Factory\SceneManager.cpp" />
+    <ClCompile Include="src\Utility\Animation.cpp" />
     <ClCompile Include="src\Utility\BlankScene.cpp" />
     <ClCompile Include="src\Utility\GUI\Button.cpp" />
     <ClCompile Include="src\Utility\GUI\Input.cpp" />
     <ClCompile Include="src\Utility\MathF.cpp" />
+    <ClCompile Include="src\Utility\Random.cpp" />
     <ClCompile Include="src\Utility\Scene.cpp" />
     <ClCompile Include="src\Utility\Utility.cpp" />
     <ClCompile Include="src\Utility\Vector2D.cpp" />

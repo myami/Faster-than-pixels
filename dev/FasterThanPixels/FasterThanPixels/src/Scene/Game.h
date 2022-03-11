@@ -1,6 +1,8 @@
 #pragma once
 
 #include "Engine.h"
+
+
 class FTP_SceneManager;
 /*! \class Game
 * \brief classe enfant de Scene, represente le niveau ou le joueur joue
@@ -30,5 +32,8 @@ public:
 	sf::Vector2f MousePosView;
 	sf::Text text;
 	sf::Sprite testSprite;
+
+	Engine::Animation BlackHole;
+	
 
 };

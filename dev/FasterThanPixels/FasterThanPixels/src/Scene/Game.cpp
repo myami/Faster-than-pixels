@@ -36,6 +36,7 @@ void Game::S_Update()
 		<< " View : " << MousePosView.x << " " << MousePosView.y << "\n";
 
 	text.setString(ss.str());
+	BlackHole.updateSprites(dt);
 }
 
 void Game::S_Render()
@@ -46,6 +47,8 @@ void Game::S_Render()
 	// render game
 	_SceneManager->_GameManager->Windows->draw(shape);
 	_SceneManager->_GameManager->Windows->draw(testSprite);
+	_SceneManager->_GameManager->Windows->draw(BlackHole.FrameToDraw());
+
 
 
 	_SceneManager->_GameManager->Windows->setView(_SceneManager->_GameManager->Windows->getDefaultView());
@@ -88,6 +91,10 @@ void Game::S_Begin_Play()
 	testSprite.setOrigin(testSprite.getGlobalBounds().width / 2.f, testSprite.getGlobalBounds().height / 2.f);
 	testSprite.setPosition(-500,0.f);
 
+	BlackHole.SetupAnimation(_SceneManager->_GameManager->G_AssetManager->GetTexture("BlackHole"), 3 / 60.f, { 50,1 },sf::Vector2f(0.f,0.f));
+
+	BlackHole.MoveSprite({ 0,0 });
+	BlackHole.ScaleAnimation(3.f);
 
 }
 

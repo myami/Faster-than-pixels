@@ -17,6 +17,9 @@
 #include "Utility/GUI/Input.h"
 #include "Utility/GUI/Slider.h"
 #include "Utility/BlankScene.h"
+#include "Utility/Random.h"
+#include "Utility/Animation.h"
+
 
 
 /*! \namespace Engine
