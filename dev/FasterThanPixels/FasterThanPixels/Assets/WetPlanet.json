@@ -1,6 +1,6 @@
 {
-  "name": "BlackHole",
-  "url": "/img/Gameplay/Environnement/Planete/BlackHole.png",
+  "name": "WetPlanet",
+  "url": "/img/Gameplay/Environnement/Planete/WetPlanet.png",
   "type": "Texture",
   "collider": [
     {

@@ -1,6 +1,6 @@
 {
-  "name": "BlackHole",
-  "url": "/img/Gameplay/Environnement/Planete/BlackHole.png",
+  "name": "Asteroid2",
+  "url": "/img/Gameplay/Environnement/Planete/Asteroid2.png",
   "type": "Texture",
   "collider": [
     {

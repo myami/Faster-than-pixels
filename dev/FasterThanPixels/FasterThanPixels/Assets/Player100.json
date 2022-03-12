@@ -1,6 +1,6 @@
 {
   "name": "Player100",
-  "url": "/img/Gameplay/Player.png",
+  "url": "/img/Gameplay/Player/Player.png",
   "type": "Texture",
   "collider": [
     {
