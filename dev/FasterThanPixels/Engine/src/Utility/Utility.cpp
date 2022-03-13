@@ -35,7 +35,7 @@ std::vector<nlohmann::json> Engine::LoadAssetFromFile(std::string path)
 
 }
 
-void Engine::InitEnvironnement(int seed, Engine::EntityManager entman)
+void Engine::InitEnvironnement(int seed, Engine::EntityManager* entman)
 {
     srand(seed / 2);
     int Amount_Planet = rand();
@@ -44,19 +44,19 @@ void Engine::InitEnvironnement(int seed, Engine::EntityManager entman)
 
     for (size_t i = 0; i < Amount_Planet; i++)
     {
-       Entity* newplanet =  entman.RequestEntity();
+       Entity* newplanet =  entman->RequestEntity();
        newplanet->E_CanBeUsed = false;
        newplanet->E_Tag = "Planet";
-       entman.EntityChangeMap(newplanet, "Default", "Planet");
+       entman->EntityChangeMap(newplanet, "Default", "Planet");
 
     }
 
     for (size_t i = 0; i < Amount_Asteroid; i++)
     {
-        Entity* newasteroid = entman.RequestEntity();
+        Entity* newasteroid = entman->RequestEntity();
         newasteroid->E_CanBeUsed = false;
         newasteroid->E_Tag = "Asteroid";
-        entman.EntityChangeMap(newasteroid, "Default", "Asteroid");
+        entman->EntityChangeMap(newasteroid, "Default", "Asteroid");
     }
 
 

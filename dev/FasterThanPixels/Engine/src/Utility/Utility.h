@@ -68,6 +68,6 @@ namespace Engine {
 	* \return liste d'entite
 	*/
 
-	void InitEnvironnement(int seed, Engine::EntityManager entman);
+	void InitEnvironnement(int seed, Engine::EntityManager* entman);
 
 }
