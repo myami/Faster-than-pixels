@@ -190,7 +190,6 @@
     <ClInclude Include="src\Utility\Random.h" />
     <ClInclude Include="src\Utility\Scene.h" />
     <ClInclude Include="src\Utility\Utility.h" />
-    <ClInclude Include="src\Utility\Vector2D.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ECS\Component.cpp" />
@@ -207,7 +206,6 @@
     <ClCompile Include="src\Utility\Random.cpp" />
     <ClCompile Include="src\Utility\Scene.cpp" />
     <ClCompile Include="src\Utility\Utility.cpp" />
-    <ClCompile Include="src\Utility\Vector2D.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

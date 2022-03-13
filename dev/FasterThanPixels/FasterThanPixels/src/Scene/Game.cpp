@@ -96,6 +96,9 @@ void Game::S_Begin_Play()
 	BlackHole.MoveSprite({ 0,0 });
 	BlackHole.ScaleAnimation(1.f);
 
+	S_EntityManager->M_TotalEntity = 500; // on veux 500 entite dans le jeu
+	S_EntityManager->GenerateEntity();
+
 }
 
 

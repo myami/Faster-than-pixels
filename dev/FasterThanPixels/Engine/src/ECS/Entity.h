@@ -13,13 +13,16 @@ namespace Engine {
 	*
 	*/
 	class Entity {
-		std::map < std::string, std::shared_ptr<Engine::Component>> E_Component; /*!< Liste des components de l'entite */
+		std::map < std::string, Engine::Component*> E_Component; /*!< Liste des components de l'entite */
 	public:
 
 		const int E_Id = 0; /*!< ID de l'entite */
 		const std::string E_Tag = "Default"; /*!< Tag de l'entite */
 		bool E_CanBeUsed = true; /*!< Si on peux utiliser cette entite ou si elle est utiliser actuellement */
 
+
+		std::map<std::string, std::any> ValueToChange;/*!< Valeur a changer sur les variables entity au update de la gameloop(Tag ou CanBeUsed) */
+		 
 		/*!
 		 *  \brief Return un component
 		 *
@@ -28,7 +31,7 @@ namespace Engine {
 		 *  \param name : Le nom du component
 		 * \return le component qu'on a besoin
 		 */
-		std::shared_ptr<Engine::Component> GetComponent(std::string name);
+		Engine::Component* GetComponent(std::string name);
 		/*!
 		 *  \brief Ajoute un component
 		 *
@@ -37,7 +40,7 @@ namespace Engine {
 		 *  \param name : Le nom du component 
 		 *  \param Component : Le component
 		 */
-		void AddComponent(std::string name, std::shared_ptr<Engine::Component> Component);
+		void AddComponent(std::string name, Engine::Component* Component);
 		
 
 	};

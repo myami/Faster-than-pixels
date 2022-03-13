@@ -7,7 +7,7 @@
 
 void FTP_AssetManager::InitAsset()
 {
-	std::vector<nlohmann::json> tmpassetfile = Engine::LoadAssetFromFile();
+	std::vector<nlohmann::json> tmpassetfile = Engine::LoadAssetFromFile("./Assets");
 	for (size_t i = 0; i < tmpassetfile.size(); i++)
 	{
 		std::string type = tmpassetfile[i]["type"].get<std::string>();

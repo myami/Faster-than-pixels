@@ -1,6 +1,8 @@
 #pragma once
 #include <vector>
+#include <any>
 #include <string>
+#include <map>
 /*!
  * \file Component.h
  * \brief Composant d une entite qui sauvegarde des variables
@@ -16,6 +18,7 @@ namespace Engine {
 		 //chaque component a seulement des variables
 	 public:
 		 std::vector<std::string> RequireComponent; /*!< Liste des composant requis si il a des dependances*/
+		 std::map<std::string, std::any> ValueToChange; /*!< Valeur a changer sur les variables du component au prochain update du gameloop */
 	/*!
 	 *  \brief A les composants requis
 	 *

@@ -1,5 +1,5 @@
 #pragma once
-#include "Vector2D.h"
+#include "SFML/Graphics.hpp"
 namespace Engine {
 	/*!
 	*  \brief DistanceBetweenVector
@@ -9,7 +9,7 @@ namespace Engine {
 	* \param destination : Seconde position
 	* \return un float qui est la distance entre 2 objet
 	*/
-	float DistanceBetweenVector(Engine::Vector2D origin, Engine::Vector2D destination);
+	float DistanceBetweenVector(sf::Vector2f origin, sf::Vector2f destination);
 	/*!
 	*  \brief AngleBetweenVector
 	*
@@ -18,7 +18,7 @@ namespace Engine {
 	* \param destination : Seconde position
 	* \return un float qui est un angle entre 2 objet
 	*/
-	float AngleBetweenVector(Engine::Vector2D origin, Engine::Vector2D destination);
+	float AngleBetweenVector(sf::Vector2f origin, sf::Vector2f destination);
 	/*!
 	*  \brief NormalizeVector
 	*
@@ -26,5 +26,5 @@ namespace Engine {
 	* \param origin : vecteur a normaliser
 	* \return le vecteur normaliser
 	*/
-	Vector2D NormalizeVector(Vector2D origin);
+	sf::Vector2f NormalizeVector(sf::Vector2f origin);
 }

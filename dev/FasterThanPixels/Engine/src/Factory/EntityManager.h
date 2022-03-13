@@ -8,11 +8,11 @@ namespace Engine {
 	*
 	*/
 	class EntityManager {
-		std::vector<Engine::Entity>* M_EntityVector; /*!< Liste des Entite */
-		std::map<std::string, std::vector<Engine::Entity*>> M_EntityMap; /*!< Liste des Entite par tag */
-		size_t M_TotalEntity; /*!< Le nombre total d'entite disponible dans le pool */
-		std::vector<Engine::Entity*> M_EntityToChange; /*!< Liste des entites qui doivent etre changer au debut de la prochaine frame */
 	public:
+		std::vector<Engine::Entity*> M_EntityVector; /*!< Liste des Entite */
+		std::map<std::string, std::vector<Engine::Entity*>> M_EntityMap; /*!< Liste des Entite par tag */
+		std::vector<Engine::Entity*> M_EntityToChange; /*!< Liste des entites qui doivent etre changer au debut de la prochaine frame */
+		size_t M_TotalEntity; /*!< Le nombre total d'entite disponible dans le pool */
 		/*!
 	   *  \brief GenerateEntity
 	   *
@@ -31,6 +31,13 @@ namespace Engine {
 		*  Si une entite dans M_EntityToChange la variable "E_CanBeUsed" est differente alors appele cette function et la vide de ces components et change sont etat pour etre utilisable pour une autre entite
 		*/
 		void RemoveEntity(); 
+		/*!
+		*  \brief RequestEntity
+		*
+		*  Demande une entite libre 
+		* \return une entite libre d utilisatation
+		*/
+		Engine::Entity* RequestEntity();
 
 	};
 }

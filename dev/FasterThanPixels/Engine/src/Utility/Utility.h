@@ -4,6 +4,7 @@
 #include <string>
 #include "json.hpp"
 #include "../Sqlite/include/sqlite/sqlite3.h" // Fix temporaire
+#include "SFML/Graphics.hpp"
 
 
 namespace Engine {
@@ -14,7 +15,10 @@ namespace Engine {
 	*  Charge tout les assets du dossier assets dans un vector de JSON
 	* \return liste de tout les JSON dispo dans le dossier Assets
 	*/
-	std::vector<nlohmann::json> LoadAssetFromFile();
+	std::vector<nlohmann::json> LoadAssetFromFile(std::string Path);
+
+
+
 	/*!
 	*  \brief GetPlayerInfoFromDB
 	*
@@ -55,5 +59,14 @@ namespace Engine {
 	*/
 
 	std::vector<Entity> ObjectCollide();
+	/*!
+	*  \brief GenerateEnvironnement
+	*
+	*  Return une liste d'entite qui sont l environnement de la map
+	* \param seed : le seed du joueur
+	* \return liste d'entite
+	*/
+
+	std::vector<Entity> GenerateEnvironnement(int seed,std::map<std::string,sf::Texture> EnvironementTexture);
 
 }

@@ -153,7 +153,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\ECS\Components\C_MouvementActif.cpp" />
+    <ClCompile Include="src\ECS\Components\C_Mouvement_Actif.cpp" />
     <ClCompile Include="src\Factory\FTP_AssetManager.cpp" />
     <ClCompile Include="src\Factory\FTP_EntityManager.cpp" />
     <ClCompile Include="src\Factory\FTP_GameManager.cpp" />
@@ -176,17 +176,20 @@
   <ItemGroup>
     <ClInclude Include="src\ECS\Components\C_Booster.h" />
     <ClInclude Include="src\ECS\Components\C_Brain.h" />
+    <ClInclude Include="src\ECS\Components\C_Dynamic_Collider_Sphere.h" />
     <ClInclude Include="src\ECS\Components\C_Health.h" />
+    <ClInclude Include="src\ECS\Components\C_Kynematic_Collider_Vertex.h" />
     <ClInclude Include="src\ECS\Components\C_Laser.h" />
     <ClInclude Include="src\ECS\Components\C_Mines.h" />
     <ClInclude Include="src\ECS\Components\C_Missiles.h" />
-    <ClInclude Include="src\ECS\Components\C_MouvementActif.h" />
-    <ClInclude Include="src\ECS\Components\C_MouvementPassif.h" />
+    <ClInclude Include="src\ECS\Components\C_Mouvement_Actif.h" />
+    <ClInclude Include="src\ECS\Components\C_Mouvement_Passif.h" />
     <ClInclude Include="src\ECS\Components\C_Pickup.h" />
     <ClInclude Include="src\ECS\Components\C_Punching.h" />
     <ClInclude Include="src\ECS\Components\C_Render.h" />
     <ClInclude Include="src\ECS\Components\C_Shield.h" />
     <ClInclude Include="src\ECS\Components\C_Shoot.h" />
+    <ClInclude Include="src\ECS\Components\C_Static_Collider_Sphere.h" />
     <ClInclude Include="src\ECS\Components\C_Thunderbolt.h" />
     <ClInclude Include="src\ECS\Components\C_Transform.h" />
     <ClInclude Include="src\ECS\Components\C_Turret.h" />

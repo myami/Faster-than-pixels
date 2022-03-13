@@ -33,7 +33,7 @@
     <ClCompile Include="src\Factory\FTP_EntityManager.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="src\ECS\Components\C_MouvementActif.cpp">
+    <ClCompile Include="src\ECS\Components\C_Mouvement_Actif.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="src\Scene\Authentification.cpp">
@@ -98,7 +98,7 @@
     <ClInclude Include="src\Factory\FTP_EntityManager.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="src\ECS\Components\C_MouvementActif.h">
+    <ClInclude Include="src\ECS\Components\C_Mouvement_Actif.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="src\ECS\Components\C_Health.h">
@@ -113,7 +113,7 @@
     <ClInclude Include="src\ECS\Components\C_Brain.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="src\ECS\Components\C_MouvementPassif.h">
+    <ClInclude Include="src\ECS\Components\C_Mouvement_Passif.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="src\Scene\Authentification.h">
@@ -246,6 +246,15 @@
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="src\Scene\Compendium.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ECS\Components\C_Static_Collider_Sphere.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ECS\Components\C_Kynematic_Collider_Vertex.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ECS\Components\C_Dynamic_Collider_Sphere.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>

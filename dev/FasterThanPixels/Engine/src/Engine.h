@@ -1,6 +1,5 @@
 #pragma once
 
-#include "Utility/Vector2D.h"
 #include "Utility/Utility.h"
 #include "Utility/MathF.h"
 #include "Factory/AssetManager.h"
