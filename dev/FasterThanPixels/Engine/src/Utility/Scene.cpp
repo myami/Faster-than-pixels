@@ -8,11 +8,14 @@ void Engine::Scene::RegisterAction(int key, std::string ActionName)
 
 Engine::Scene::Scene()
 {
+
 }
 
 Engine::Scene::Scene(std::string name)
 {
 	this->S_Name = name;
+	S_EntityManager = new EntityManager();
+
 }
 
 void Engine::Scene::S_Action(sf::Event event)

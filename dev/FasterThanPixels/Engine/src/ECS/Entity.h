@@ -15,9 +15,9 @@ namespace Engine {
 	class Entity {
 		std::map < std::string, Engine::Component*> E_Component; /*!< Liste des components de l'entite */
 	public:
-
-		const int E_Id = 0; /*!< ID de l'entite */
-		const std::string E_Tag = "Default"; /*!< Tag de l'entite */
+		Entity(int id);
+		int E_Id = 0; /*!< ID de l'entite */
+		std::string E_Tag = "Default"; /*!< Tag de l'entite */
 		bool E_CanBeUsed = true; /*!< Si on peux utiliser cette entite ou si elle est utiliser actuellement */
 
 

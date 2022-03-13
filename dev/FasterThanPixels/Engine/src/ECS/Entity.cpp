@@ -1,5 +1,10 @@
 #include "Entity.h"
 
+Engine::Entity::Entity(int id)
+{
+	E_Id = id;
+}
+
 Engine::Component* Engine::Entity::GetComponent(std::string name)
 {
 

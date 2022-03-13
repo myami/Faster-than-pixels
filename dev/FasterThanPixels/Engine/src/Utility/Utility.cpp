@@ -35,14 +35,30 @@ std::vector<nlohmann::json> Engine::LoadAssetFromFile(std::string path)
 
 }
 
-std::vector<Engine::Entity> Engine::GenerateEnvironnement(int seed, std::map<std::string, sf::Texture> EnvironementTexture)
+void Engine::InitEnvironnement(int seed, Engine::EntityManager entman)
 {
     srand(seed / 2);
     int Amount_Planet = rand();
     srand(seed / 5);
     int Amount_Asteroid = rand();
-    std::vector<Engine::Entity> Environnement;
+
+    for (size_t i = 0; i < Amount_Planet; i++)
+    {
+       Entity* newplanet =  entman.RequestEntity();
+       newplanet->E_CanBeUsed = false;
+       newplanet->E_Tag = "Planet";
+       entman.EntityChangeMap(newplanet, "Default", "Planet");
+
+    }
+
+    for (size_t i = 0; i < Amount_Asteroid; i++)
+    {
+        Entity* newasteroid = entman.RequestEntity();
+        newasteroid->E_CanBeUsed = false;
+        newasteroid->E_Tag = "Asteroid";
+        entman.EntityChangeMap(newasteroid, "Default", "Asteroid");
+    }
 
 
-    return Environnement;
+
 }

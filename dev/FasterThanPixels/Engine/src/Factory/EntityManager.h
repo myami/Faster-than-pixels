@@ -12,7 +12,7 @@ namespace Engine {
 		std::vector<Engine::Entity*> M_EntityVector; /*!< Liste des Entite */
 		std::map<std::string, std::vector<Engine::Entity*>> M_EntityMap; /*!< Liste des Entite par tag */
 		std::vector<Engine::Entity*> M_EntityToChange; /*!< Liste des entites qui doivent etre changer au debut de la prochaine frame */
-		size_t M_TotalEntity; /*!< Le nombre total d'entite disponible dans le pool */
+		int M_TotalEntity; /*!< Le nombre total d'entite disponible dans le pool */
 		/*!
 	   *  \brief GenerateEntity
 	   *
@@ -38,6 +38,8 @@ namespace Engine {
 		* \return une entite libre d utilisatation
 		*/
 		Engine::Entity* RequestEntity();
+
+		void EntityChangeMap(Engine::Entity* entite,std::string oldmap, std::string newmap);
 
 	};
 }

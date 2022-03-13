@@ -4,7 +4,6 @@
 
 Engine::BlankScene::BlankScene(std::string name) : Engine::Scene(name)
 {
-	
 }
 
 void Engine::BlankScene::S_Syteme()

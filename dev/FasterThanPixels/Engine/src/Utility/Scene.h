@@ -11,7 +11,7 @@ namespace Engine {
 	public:
 		Scene();
 		Scene(std::string name);
-		std::unique_ptr<EntityManager> S_EntityManager;  /*!< Sous syteme qui gere les entite */
+		EntityManager* S_EntityManager;  /*!< Sous syteme qui gere les entite */
 		std::string S_Name;  /*!< Nom de la scene  */
 		std::map<int, std::string> ActionScene;  /*!< Chaque input disponible dans la scene */
 		SceneManager* _SceneManager;

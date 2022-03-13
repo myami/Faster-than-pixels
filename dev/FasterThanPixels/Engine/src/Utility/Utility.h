@@ -5,6 +5,7 @@
 #include "json.hpp"
 #include "../Sqlite/include/sqlite/sqlite3.h" // Fix temporaire
 #include "SFML/Graphics.hpp"
+#include "../Factory/EntityManager.h"
 
 
 namespace Engine {
@@ -67,6 +68,6 @@ namespace Engine {
 	* \return liste d'entite
 	*/
 
-	std::vector<Entity> GenerateEnvironnement(int seed,std::map<std::string,sf::Texture> EnvironementTexture);
+	void InitEnvironnement(int seed, Engine::EntityManager entman);
 
 }
