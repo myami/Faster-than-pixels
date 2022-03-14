@@ -1,6 +1,10 @@
 #include "Game.h"
 #include "../Factory/FTP_SceneManager.h"
 #include <sstream>
+#include "../ECS/Components/C_Animated_Render.h"
+#include "../ECS/Components/C_Static_Collider_Sphere.h"
+#include "../ECS/Components/C_Transform.h"
+#include "../ECS/Components/C_Static_Render.h"
 
 
 
@@ -36,7 +40,13 @@ void Game::S_Update()
 		<< " View : " << MousePosView.x << " " << MousePosView.y << "\n";
 
 	text.setString(ss.str());
-	BlackHole.updateSprites(dt);
+	for (size_t i = 0; i < S_EntityManager->GetAllEntityWithComponent("Render").size(); i++)
+	{
+		C_Animated_Render* CheckAnimatation = (C_Animated_Render*)S_EntityManager->GetAllEntityWithComponent("Render")[i]->GetComponent("Render");
+		if (CheckAnimatation != nullptr) {
+			CheckAnimatation->AnimatedSprite.updateSprites(dt); // mais a jour le sprite des animations
+		}
+	}
 }
 
 void Game::S_Render()
@@ -46,10 +56,21 @@ void Game::S_Render()
 
 	// render game
 	_SceneManager->_GameManager->Windows->draw(shape);
-	_SceneManager->_GameManager->Windows->draw(testSprite);
-	_SceneManager->_GameManager->Windows->draw(BlackHole.FrameToDraw());
 
 
+	std::vector<Engine::Entity*> EntityToDraw = S_EntityManager->EntityToDraw();
+	for (size_t i = 0; i < EntityToDraw.size(); i++)
+	{
+		C_Animated_Render* CheckAnimatation = (C_Animated_Render*)EntityToDraw[i]->GetComponent("Render");
+		if (CheckAnimatation != nullptr) {
+			_SceneManager->_GameManager->Windows->draw(CheckAnimatation->AnimatedSprite.FrameToDraw());
+		}
+		else {
+			C_Static_Render* Static = (C_Static_Render*)EntityToDraw[i]->GetComponent("Render");
+			_SceneManager->_GameManager->Windows->draw(Static->Sprite);
+		}
+	
+	}
 
 	_SceneManager->_GameManager->Windows->setView(_SceneManager->_GameManager->Windows->getDefaultView());
 
@@ -87,19 +108,13 @@ void Game::S_Begin_Play()
 	text.setPosition(20.f, 20.f);
 	text.setString("TEST");
 
-	testSprite.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("PlayButton"));
-	testSprite.setOrigin(testSprite.getGlobalBounds().width / 2.f, testSprite.getGlobalBounds().height / 2.f);
-	testSprite.setPosition(-500,0.f);
 
-	BlackHole.SetupAnimation(_SceneManager->_GameManager->G_AssetManager->GetTexture("BlackHole"), 15 / 60.f, { 10,1 },sf::Vector2f(0.f,0.f));
 
-	BlackHole.MoveSprite({ 0,0 });
-	BlackHole.ScaleAnimation(1.f);
 	S_EntityManager->M_TotalEntity = 500; // on veux 500 entite dans le jeu
 	S_EntityManager->GenerateEntity();
 
 	Engine::InitEnvironnement(525615,S_EntityManager);
-
+	InitPlanet();
 }
 
 
@@ -110,4 +125,63 @@ void Game::S_Input_Mouse(sf::Event event)
 
 void Game::S_Input_Text(sf::Event event)
 {
+}
+
+void Game::InitPlanet()
+{
+	Engine::Animation BlackHole;
+	BlackHole.SetupAnimation(_SceneManager->_GameManager->G_AssetManager->GetTexture("BlackHole"), 15 / 60.f, { 10,1 }, sf::Vector2f(0.f, 0.f));
+	AvailablePlanet.push_back(BlackHole);
+
+	Engine::Animation DryPlanet;
+	DryPlanet.SetupAnimation(_SceneManager->_GameManager->G_AssetManager->GetTexture("DryPlanet"), 15 / 60.f, { 10,1 }, sf::Vector2f(0.f, 0.f));
+	AvailablePlanet.push_back(DryPlanet);
+
+	Engine::Animation GazPlanet;
+	GazPlanet.SetupAnimation(_SceneManager->_GameManager->G_AssetManager->GetTexture("GazPlanet"), 15 / 60.f, { 10,1 }, sf::Vector2f(0.f, 0.f));
+	AvailablePlanet.push_back(GazPlanet);
+
+	Engine::Animation GazPlanetTwo;
+	GazPlanetTwo.SetupAnimation(_SceneManager->_GameManager->G_AssetManager->GetTexture("GazPlanet2"), 15 / 60.f, { 10,1 }, sf::Vector2f(0.f, 0.f));
+	AvailablePlanet.push_back(GazPlanetTwo);
+
+	Engine::Animation IcePlanet;
+	IcePlanet.SetupAnimation(_SceneManager->_GameManager->G_AssetManager->GetTexture("IcePlanet"), 15 / 60.f, { 10,1 }, sf::Vector2f(0.f, 0.f));
+	AvailablePlanet.push_back(IcePlanet);
+
+	Engine::Animation IslandPlanet;
+	IslandPlanet.SetupAnimation(_SceneManager->_GameManager->G_AssetManager->GetTexture("IslandPlanet"), 15 / 60.f, { 10,1 }, sf::Vector2f(0.f, 0.f));
+	AvailablePlanet.push_back(IslandPlanet);
+
+	Engine::Animation LavaPlanet;
+	LavaPlanet.SetupAnimation(_SceneManager->_GameManager->G_AssetManager->GetTexture("LavaPlanet"), 15 / 60.f, { 10,1 }, sf::Vector2f(0.f, 0.f));
+	AvailablePlanet.push_back(IslandPlanet);
+
+	Engine::Animation Moon;
+	Moon.SetupAnimation(_SceneManager->_GameManager->G_AssetManager->GetTexture("MoonPlanet"), 15 / 60.f, { 10,1 }, sf::Vector2f(0.f, 0.f));
+	AvailablePlanet.push_back(Moon);
+
+	Engine::Animation Star;
+	Star.SetupAnimation(_SceneManager->_GameManager->G_AssetManager->GetTexture("StarPlanet"), 15 / 60.f, { 10,1 }, sf::Vector2f(0.f, 0.f));
+	AvailablePlanet.push_back(Star);
+
+	Engine::Animation WetPlanet;
+	WetPlanet.SetupAnimation(_SceneManager->_GameManager->G_AssetManager->GetTexture("WetPlanet"), 15 / 60.f, { 10,1 }, sf::Vector2f(0.f, 0.f));
+	AvailablePlanet.push_back(WetPlanet);
+
+
+
+	for (size_t i = 0; i < S_EntityManager->M_EntityMap["Planet"].size(); i++)
+	{
+		S_EntityManager->M_EntityMap["Planet"][i]->AddComponent("Render", new C_Animated_Render());
+		S_EntityManager->M_EntityMap["Planet"][i]->AddComponent("Collider", new C_Static_Collider_Sphere());
+
+		C_Animated_Render* test = (C_Animated_Render*)S_EntityManager->M_EntityMap["Planet"][i]->GetComponent("Render");
+		test->AnimatedSprite = WetPlanet;
+		float randomx = rand() % 5000 + -5000;
+		float randomy = rand() % 5000 + -5000;
+
+		test->AnimatedSprite.MoveSprite(sf::Vector2f(randomx, randomy));
+
+	}
 }

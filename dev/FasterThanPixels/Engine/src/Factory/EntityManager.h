@@ -41,5 +41,9 @@ namespace Engine {
 
 		void EntityChangeMap(Engine::Entity* entite,std::string oldmap, std::string newmap);
 
+		std::vector<Engine::Entity*> EntityToDraw();
+
+		std::vector<Engine::Entity*> GetAllEntityWithComponent(std::string Component);
+
 	};
 }

@@ -58,8 +58,6 @@ void Engine::Animation::SetupAnimation(sf::Texture textures, float DureeAnimatio
 	spriteSize.x = spriteTexture.getSize().x / numSprites.x;
 	spriteSize.y = spriteTexture.getSize().y / numSprites.y;
 
-	std::cout << "x = " << spriteSize.x << " y = " << spriteSize.y << "\n";
-
 	Random rand;
 	float xPos = rand.getFloatInRange(0, 500);
 	float yPos = rand.getFloatInRange(0, 500);

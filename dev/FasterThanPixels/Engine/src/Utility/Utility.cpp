@@ -39,10 +39,8 @@ void Engine::InitEnvironnement(int seed, Engine::EntityManager* entman)
 {
     srand(seed / 2);
     int Amount_Planet = rand() % 10 + 3;
-    std::cout << Amount_Planet;
     srand(seed / 5);
     int Amount_Asteroid = rand() % 100 + 30;
-    std::cout << Amount_Asteroid;
 
 
     for (size_t i = 0; i < Amount_Planet; i++)

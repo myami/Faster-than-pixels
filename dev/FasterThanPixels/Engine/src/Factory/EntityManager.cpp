@@ -38,6 +38,18 @@ Engine::Entity* Engine::EntityManager::RequestEntity()
 	
 }
 
+std::vector<Engine::Entity*> Engine::EntityManager::EntityToDraw()
+{
+	std::vector<Engine::Entity*> todraw;
+	for (size_t i = 0; i < M_EntityVector.size(); i++)
+	{
+		if (!M_EntityVector[i]->E_CanBeUsed) {
+			todraw.push_back(M_EntityVector[i]);
+		}
+	}
+	return todraw;
+}
+
 void Engine::EntityManager::EntityChangeMap(Engine::Entity* entite, std::string oldmap, std::string newmap)
 {
 	
