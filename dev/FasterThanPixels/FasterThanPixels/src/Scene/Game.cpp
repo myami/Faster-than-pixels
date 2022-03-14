@@ -91,7 +91,7 @@ void Game::S_Begin_Play()
 	testSprite.setOrigin(testSprite.getGlobalBounds().width / 2.f, testSprite.getGlobalBounds().height / 2.f);
 	testSprite.setPosition(-500,0.f);
 
-	BlackHole.SetupAnimation(_SceneManager->_GameManager->G_AssetManager->GetTexture("BlackHole"), 3 / 60.f, { 15,1 },sf::Vector2f(0.f,0.f));
+	BlackHole.SetupAnimation(_SceneManager->_GameManager->G_AssetManager->GetTexture("BlackHole"), 15 / 60.f, { 10,1 },sf::Vector2f(0.f,0.f));
 
 	BlackHole.MoveSprite({ 0,0 });
 	BlackHole.ScaleAnimation(1.f);

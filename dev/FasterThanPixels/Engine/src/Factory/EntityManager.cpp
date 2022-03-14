@@ -5,6 +5,7 @@ void Engine::EntityManager::GenerateEntity()
 	for (size_t i = 0; i < M_TotalEntity; i++)
 	{
 		Entity* en = new Entity(i);
+		en->E_CanBeUsed = true;
 		M_EntityVector.push_back(en);
 		M_EntityMap["Empty"].push_back(en);
 	}
@@ -24,13 +25,14 @@ void Engine::EntityManager::RemoveEntity()
 
 Engine::Entity* Engine::EntityManager::RequestEntity()
 {
-
 	for (size_t i = 0; i < M_EntityVector.size(); i++)
 	{
 		if (M_EntityVector[i]->E_CanBeUsed) {
 			return M_EntityVector[i];
 		}
 	}
+
+
 	std::cout << "Aucune entite est libre d'utilisation" << std::endl;
 	return nullptr; // si il y en a aucune de dispo
 	
