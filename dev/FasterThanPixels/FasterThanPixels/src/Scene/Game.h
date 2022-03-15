@@ -24,9 +24,8 @@ public:
 	sf::RectangleShape shape;
 
 
-	float viewspeed = 100.f;
-	float dt = 0.f;
-	sf::Clock cloackdt;
+	float viewspeed = 150.f;
+
 	sf::Vector2i MousePosScreen;
 	sf::Vector2i MousePosWindow;
 	sf::Vector2f MousePosView;

@@ -27,7 +27,6 @@ void Game::S_Syteme()
 
 void Game::S_Update()
 {
-	dt = cloackdt.restart().asSeconds();
 	MousePosScreen = sf::Mouse::getPosition();
 	MousePosWindow = sf::Mouse::getPosition(*_SceneManager->_GameManager->Windows);
 	_SceneManager->_GameManager->Windows->setView(_SceneManager->_GameManager->View);
@@ -35,16 +34,14 @@ void Game::S_Update()
 	_SceneManager->_GameManager->Windows->setView(_SceneManager->_GameManager->Windows->getDefaultView());
 
 	std::stringstream ss;
-	ss << "Screen : " << MousePosScreen.x << " " << MousePosScreen.y << "\n"
-		<< " Windows : " << MousePosWindow.x << " " << MousePosWindow.y << "\n"
-		<< " View : " << MousePosView.x << " " << MousePosView.y << "\n";
+	ss << " Coord \n X : " << MousePosView.x << "\n Y : " << MousePosView.y << "\n";
 
 	text.setString(ss.str());
 	for (size_t i = 0; i < S_EntityManager->GetAllEntityWithComponent("Render").size(); i++)
 	{
 		C_Animated_Render* CheckAnimatation = (C_Animated_Render*)S_EntityManager->GetAllEntityWithComponent("Render")[i]->GetComponent("Render");
 		if (CheckAnimatation != nullptr) {
-			CheckAnimatation->AnimatedSprite.updateSprites(dt); // mais a jour le sprite des animations
+			CheckAnimatation->AnimatedSprite.updateSprites(_SceneManager->_GameManager->DeltaTime); // mais a jour le sprite des animations
 		}
 	}
 }
@@ -89,16 +86,16 @@ void Game::S_Simulation()
 void Game::S_ActionTrigger(std::string ActionName)
 {
 	if (ActionName == "Forward") {
-		_SceneManager->_GameManager->View.move(0.f,-viewspeed * dt * 100);
+		_SceneManager->_GameManager->View.move(0.f,-viewspeed * _SceneManager->_GameManager->DeltaTime );
 	}
 	if (ActionName == "Backward") {
-		_SceneManager->_GameManager->View.move(0.f, viewspeed * dt * 100);
+		_SceneManager->_GameManager->View.move(0.f, viewspeed * _SceneManager->_GameManager->DeltaTime );
 	}
 	if (ActionName == "Left") {
-		_SceneManager->_GameManager->View.move( -viewspeed * dt * 100,0.f);
+		_SceneManager->_GameManager->View.move( -viewspeed * _SceneManager->_GameManager->DeltaTime ,0.f);
 	}
 	if (ActionName == "Right") {
-		_SceneManager->_GameManager->View.move( viewspeed * dt * 100,0.f);
+		_SceneManager->_GameManager->View.move( viewspeed * _SceneManager->_GameManager->DeltaTime , 0.f);
 	}
 }
 
@@ -108,7 +105,7 @@ void Game::S_Begin_Play()
 	text.setFont(_SceneManager->_GameManager->G_AssetManager->GetFont("FontText"));
 	text.setCharacterSize(30);
 	text.setPosition(20.f, 20.f);
-	text.setString("TEST");
+	text.setString("Coord");
 
 
 

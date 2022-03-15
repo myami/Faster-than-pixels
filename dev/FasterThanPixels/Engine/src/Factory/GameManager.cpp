@@ -16,7 +16,9 @@ void Engine::GameManager::GameLoop()
 
     while (Windows->isOpen())
     {
- 
+        
+        DeltaTime = ClockDeltaTime.restart().asSeconds();
+
         G_SceneManager->GetCurrentScene()->S_Update();
         S_Input();
         G_SceneManager->GetCurrentScene()->S_Simulation();

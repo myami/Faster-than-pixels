@@ -19,12 +19,14 @@ class SceneManager;
 	*
 	*/
 	class GameManager {
+		sf::Clock ClockDeltaTime;
 	public:
 		AssetManager* G_AssetManager; /*!< Sous-systeme qui gere les assets */
 		SceneManager* G_SceneManager;/*!< Sous-systeme qui gere les scenes */
 		sf::RenderWindow* Windows; /*!< La fenetre */
 		sf::View View; /*!< La vue dans la fenetre(camera ) */
 		bool Running; /*!< Si le programme tourne */
+		float DeltaTime = 0.f;
 		 /*!
 		 *  \brief Quit
 		 *
