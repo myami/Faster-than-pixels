@@ -7,7 +7,7 @@ namespace Engine {
 	*  Return la distance entre deux position
 	* \param origin : Premiere position
 	* \param destination : Seconde position
-	* \return un float qui est la distance entre 2 objet
+	* \return un float qui est la distance entre 2 objetz
 	*/
 	float DistanceBetweenVector(sf::Vector2f origin, sf::Vector2f destination);
 	/*!

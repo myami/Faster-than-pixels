@@ -17,4 +17,6 @@ public:
 
 	sf::Sprite Background;  /*!< Sprite du background */
 	sf::Sprite Title; /*!< Sprite du titre du jeu */
+
+
 };

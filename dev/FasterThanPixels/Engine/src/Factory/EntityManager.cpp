@@ -50,6 +50,20 @@ std::vector<Engine::Entity*> Engine::EntityManager::EntityToDraw()
 	return todraw;
 }
 
+std::vector<Engine::Entity*> Engine::EntityManager::GetAllEntityWithComponent(std::string Component)
+{
+	std::vector<Engine::Entity*> Entity;
+
+	for (size_t i = 0; i < M_EntityVector.size(); i++)
+	{
+		if (M_EntityVector[i]->GetComponent(Component) != nullptr) {
+			Entity.push_back(M_EntityVector[i]);
+		}
+	}
+
+	return Entity;
+}
+
 void Engine::EntityManager::EntityChangeMap(Engine::Entity* entite, std::string oldmap, std::string newmap)
 {
 	

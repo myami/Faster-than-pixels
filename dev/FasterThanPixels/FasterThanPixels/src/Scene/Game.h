@@ -34,6 +34,6 @@ public:
 
 	void InitPlanet();
 
-	std::vector < Engine::Animation > AvailablePlanet;
+	std::vector<std::string> AvailablePlanet;
 
 };

@@ -38,9 +38,9 @@ std::vector<nlohmann::json> Engine::LoadAssetFromFile(std::string path)
 void Engine::InitEnvironnement(int seed, Engine::EntityManager* entman)
 {
     srand(seed / 2);
-    int Amount_Planet = rand() % 10 + 3;
+    int Amount_Planet = rand() % 40 + 15;
     srand(seed / 5);
-    int Amount_Asteroid = rand() % 100 + 30;
+    int Amount_Asteroid = rand() % 200 + 100;
 
 
     for (size_t i = 0; i < Amount_Planet; i++)

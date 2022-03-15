@@ -18,7 +18,7 @@ public:
 
 	void scaleSpriteSheet(const sf::Vector2u& numSprites);
 
-	sf::Texture spriteTexture;
+	//sf::Texture spriteTexture;
 	std::vector<sf::Sprite> spritesToAnimate;
 	int currentFrame;
 	float currentTime;
@@ -27,7 +27,7 @@ public:
 	//Time in seconds a singe sprite will stay on the screen.
 	float SPRITE_LENGTH_TIME;
 
-	void SetupAnimation(sf::Texture textures, float DureeAnimation,const sf::Vector2u& numSprites,sf::Vector2f InitialPosition);
+	void SetupAnimation(sf::Texture& textures, float DureeAnimation,const sf::Vector2u& numSprites,sf::Vector2f InitialPosition);
 	void MoveSprite(const sf::Vector2f& direction);
 
 	void ScaleAnimation(float sc);

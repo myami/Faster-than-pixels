@@ -59,15 +59,24 @@ void Game::S_Render()
 
 
 	std::vector<Engine::Entity*> EntityToDraw = S_EntityManager->EntityToDraw();
+	std::cout << EntityToDraw[11]->E_Id << std::endl;
 	for (size_t i = 0; i < EntityToDraw.size(); i++)
 	{
 		C_Animated_Render* CheckAnimatation = (C_Animated_Render*)EntityToDraw[i]->GetComponent("Render");
 		if (CheckAnimatation != nullptr) {
 			_SceneManager->_GameManager->Windows->draw(CheckAnimatation->AnimatedSprite.FrameToDraw());
+
 		}
 		else {
 			C_Static_Render* Static = (C_Static_Render*)EntityToDraw[i]->GetComponent("Render");
-			_SceneManager->_GameManager->Windows->draw(Static->Sprite);
+			if (Static != nullptr) {
+				_SceneManager->_GameManager->Windows->draw(Static->Sprite);
+			}
+			else {
+				std::cout << "L'entite n'a rien a render" << EntityToDraw[i]->E_Id << std::endl;
+			}
+
+
 		}
 	
 	}
@@ -129,46 +138,20 @@ void Game::S_Input_Text(sf::Event event)
 
 void Game::InitPlanet()
 {
-	Engine::Animation BlackHole;
-	BlackHole.SetupAnimation(_SceneManager->_GameManager->G_AssetManager->GetTexture("BlackHole"), 15 / 60.f, { 10,1 }, sf::Vector2f(0.f, 0.f));
-	AvailablePlanet.push_back(BlackHole);
-
-	Engine::Animation DryPlanet;
-	DryPlanet.SetupAnimation(_SceneManager->_GameManager->G_AssetManager->GetTexture("DryPlanet"), 15 / 60.f, { 10,1 }, sf::Vector2f(0.f, 0.f));
-	AvailablePlanet.push_back(DryPlanet);
-
-	Engine::Animation GazPlanet;
-	GazPlanet.SetupAnimation(_SceneManager->_GameManager->G_AssetManager->GetTexture("GazPlanet"), 15 / 60.f, { 10,1 }, sf::Vector2f(0.f, 0.f));
-	AvailablePlanet.push_back(GazPlanet);
-
-	Engine::Animation GazPlanetTwo;
-	GazPlanetTwo.SetupAnimation(_SceneManager->_GameManager->G_AssetManager->GetTexture("GazPlanet2"), 15 / 60.f, { 10,1 }, sf::Vector2f(0.f, 0.f));
-	AvailablePlanet.push_back(GazPlanetTwo);
-
-	Engine::Animation IcePlanet;
-	IcePlanet.SetupAnimation(_SceneManager->_GameManager->G_AssetManager->GetTexture("IcePlanet"), 15 / 60.f, { 10,1 }, sf::Vector2f(0.f, 0.f));
-	AvailablePlanet.push_back(IcePlanet);
-
-	Engine::Animation IslandPlanet;
-	IslandPlanet.SetupAnimation(_SceneManager->_GameManager->G_AssetManager->GetTexture("IslandPlanet"), 15 / 60.f, { 10,1 }, sf::Vector2f(0.f, 0.f));
-	AvailablePlanet.push_back(IslandPlanet);
-
-	Engine::Animation LavaPlanet;
-	LavaPlanet.SetupAnimation(_SceneManager->_GameManager->G_AssetManager->GetTexture("LavaPlanet"), 15 / 60.f, { 10,1 }, sf::Vector2f(0.f, 0.f));
-	AvailablePlanet.push_back(IslandPlanet);
-
-	Engine::Animation Moon;
-	Moon.SetupAnimation(_SceneManager->_GameManager->G_AssetManager->GetTexture("MoonPlanet"), 15 / 60.f, { 10,1 }, sf::Vector2f(0.f, 0.f));
-	AvailablePlanet.push_back(Moon);
-
-	Engine::Animation Star;
-	Star.SetupAnimation(_SceneManager->_GameManager->G_AssetManager->GetTexture("StarPlanet"), 15 / 60.f, { 10,1 }, sf::Vector2f(0.f, 0.f));
-	AvailablePlanet.push_back(Star);
-
-	Engine::Animation WetPlanet;
-	WetPlanet.SetupAnimation(_SceneManager->_GameManager->G_AssetManager->GetTexture("WetPlanet"), 15 / 60.f, { 10,1 }, sf::Vector2f(0.f, 0.f));
-	AvailablePlanet.push_back(WetPlanet);
-
+	
+	AvailablePlanet.push_back("BlackHole");
+	AvailablePlanet.push_back("DryPlanet");
+	AvailablePlanet.push_back("GazPlanet");
+	AvailablePlanet.push_back("GazPlanet2");
+	AvailablePlanet.push_back("IcePlanet");
+	AvailablePlanet.push_back("IslandPlanet");
+	AvailablePlanet.push_back("LavaPlanet");
+	AvailablePlanet.push_back("MoonPlanet");
+	AvailablePlanet.push_back("StarPlanet");
+	AvailablePlanet.push_back("WetPlanet");
+	
+	
+	
 
 
 	for (size_t i = 0; i < S_EntityManager->M_EntityMap["Planet"].size(); i++)
@@ -177,9 +160,10 @@ void Game::InitPlanet()
 		S_EntityManager->M_EntityMap["Planet"][i]->AddComponent("Collider", new C_Static_Collider_Sphere());
 
 		C_Animated_Render* test = (C_Animated_Render*)S_EntityManager->M_EntityMap["Planet"][i]->GetComponent("Render");
-		test->AnimatedSprite = WetPlanet;
-		float randomx = rand() % 5000 + -5000;
-		float randomy = rand() % 5000 + -5000;
+		int randomplanet = rand() % AvailablePlanet.size() + 0;
+		test->AnimatedSprite.SetupAnimation(_SceneManager->_GameManager->G_AssetManager->GetTexture(AvailablePlanet[randomplanet]), 15 / 60.f, {10,1}, sf::Vector2f(0.f, 0.f));
+		float randomx = rand() % 3000 + -3000;
+		float randomy = rand() % 3000 + -3000;
 
 		test->AnimatedSprite.MoveSprite(sf::Vector2f(randomx, randomy));
 
