@@ -1,0 +1,15 @@
+{
+  "name": "CadenceIcon",
+  "url": "/img/Gameplay/FixUI/Cadence.png",
+  "type": "Texture",
+  "collider": [
+    {
+      "x": 0,
+      "y": 0
+    },
+    {
+      "x": 0,
+      "y": 0
+    }
+  ]
+}
