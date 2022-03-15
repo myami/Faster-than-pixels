@@ -1,6 +1,6 @@
 {
   "name": "Asteroid11",
-  "url": "/img/Gameplay/Environnement/Planete/Asteroid11.png",
+  "url": "/img/Gameplay/Environnement/Asteroid/Asteroid11.png",
   "type": "Texture",
   "collider": [
     {

@@ -33,7 +33,10 @@ public:
 	sf::Text text;
 
 	void InitPlanet();
+	void InitAsteroid();
 
 	std::vector<std::string> AvailablePlanet;
+	std::vector<std::string> AvailableAsteroid;
+
 
 };

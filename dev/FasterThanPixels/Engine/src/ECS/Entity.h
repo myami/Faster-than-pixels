@@ -19,6 +19,7 @@ namespace Engine {
 		int E_Id = 0; /*!< ID de l'entite */
 		std::string E_Tag = "Default"; /*!< Tag de l'entite */
 		bool E_CanBeUsed = true; /*!< Si on peux utiliser cette entite ou si elle est utiliser actuellement */
+		bool E_IsAnimated = false;
 
 
 		std::map<std::string, std::any> ValueToChange;/*!< Valeur a changer sur les variables entity au update de la gameloop(Tag ou CanBeUsed) */

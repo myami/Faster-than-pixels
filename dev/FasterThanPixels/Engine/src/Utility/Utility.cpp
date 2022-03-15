@@ -48,6 +48,7 @@ void Engine::InitEnvironnement(int seed, Engine::EntityManager* entman)
        Entity* newplanet = entman->RequestEntity();
        newplanet->E_CanBeUsed = false;
        newplanet->E_Tag = "Planet";
+       newplanet->E_IsAnimated = true;
        entman->EntityChangeMap(newplanet, "Empty", "Planet");
 
     }

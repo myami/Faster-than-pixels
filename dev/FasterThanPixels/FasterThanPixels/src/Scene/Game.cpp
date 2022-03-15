@@ -59,24 +59,17 @@ void Game::S_Render()
 
 
 	std::vector<Engine::Entity*> EntityToDraw = S_EntityManager->EntityToDraw();
-	std::cout << EntityToDraw[11]->E_Id << std::endl;
 	for (size_t i = 0; i < EntityToDraw.size(); i++)
 	{
-		C_Animated_Render* CheckAnimatation = (C_Animated_Render*)EntityToDraw[i]->GetComponent("Render");
-		if (CheckAnimatation != nullptr) {
+		if (EntityToDraw[i]->E_IsAnimated) {
+			C_Animated_Render* CheckAnimatation = (C_Animated_Render*)EntityToDraw[i]->GetComponent("Render");
 			_SceneManager->_GameManager->Windows->draw(CheckAnimatation->AnimatedSprite.FrameToDraw());
 
 		}
 		else {
 			C_Static_Render* Static = (C_Static_Render*)EntityToDraw[i]->GetComponent("Render");
-			if (Static != nullptr) {
 				_SceneManager->_GameManager->Windows->draw(Static->Sprite);
-			}
-			else {
-				std::cout << "L'entite n'a rien a render" << EntityToDraw[i]->E_Id << std::endl;
-			}
-
-
+	
 		}
 	
 	}
@@ -124,6 +117,7 @@ void Game::S_Begin_Play()
 
 	Engine::InitEnvironnement(525615,S_EntityManager);
 	InitPlanet();
+	InitAsteroid();
 }
 
 
@@ -162,10 +156,56 @@ void Game::InitPlanet()
 		C_Animated_Render* test = (C_Animated_Render*)S_EntityManager->M_EntityMap["Planet"][i]->GetComponent("Render");
 		int randomplanet = rand() % AvailablePlanet.size() + 0;
 		test->AnimatedSprite.SetupAnimation(_SceneManager->_GameManager->G_AssetManager->GetTexture(AvailablePlanet[randomplanet]), 15 / 60.f, {10,1}, sf::Vector2f(0.f, 0.f));
-		float randomx = rand() % 3000 + -3000;
-		float randomy = rand() % 3000 + -3000;
+		float randomx = rand() % 20000 + -20000;
+		float randomy = rand() % 20000 + -20000;
 
 		test->AnimatedSprite.MoveSprite(sf::Vector2f(randomx, randomy));
 
 	}
+}
+
+
+void Game::InitAsteroid()
+{
+	AvailableAsteroid.push_back("Asteroid0");
+	AvailableAsteroid.push_back("Asteroid1");
+	AvailableAsteroid.push_back("Asteroid2");
+	AvailableAsteroid.push_back("Asteroid3");
+	AvailableAsteroid.push_back("Asteroid4");
+	AvailableAsteroid.push_back("Asteroid5");
+	AvailableAsteroid.push_back("Asteroid6");
+	AvailableAsteroid.push_back("Asteroid7");
+	AvailableAsteroid.push_back("Asteroid8");
+	AvailableAsteroid.push_back("Asteroid9");
+	AvailableAsteroid.push_back("Asteroid10");
+	AvailableAsteroid.push_back("Asteroid11");
+	AvailableAsteroid.push_back("Asteroid12");
+	
+
+	
+	
+	
+	for (size_t i = 0; i < S_EntityManager->M_EntityMap["Asteroid"].size(); i++) 
+	{
+		
+		S_EntityManager->M_EntityMap["Asteroid"][i]->AddComponent("Render", new C_Static_Render());
+		S_EntityManager->M_EntityMap["Asteroid"][i]->AddComponent("Collider", new C_Static_Collider_Sphere());
+		
+		C_Static_Render* test = (C_Static_Render*)S_EntityManager->M_EntityMap["Asteroid"][i]->GetComponent("Render");
+		int randomasteroid = rand() % AvailableAsteroid.size() + 0;
+		float randomx = rand() % 20000 + -20000;
+		float randomy = rand() % 20000 + -20000;
+		test->Sprite.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture(AvailableAsteroid[randomasteroid]));
+		test->Sprite.setOrigin(test->Sprite.getGlobalBounds().width / 2.f, test->Sprite.getGlobalBounds().height / 2.f);
+		test->Sprite.setPosition(_SceneManager->_GameManager->View.getCenter());
+		test->Sprite.move(sf::Vector2f(randomx, randomy));
+
+	}
+
+
+
+
+
+
+
 }
