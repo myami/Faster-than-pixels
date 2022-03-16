@@ -5,7 +5,7 @@
 * \brief classe representant le component Brain, Si l'entite l'a cela lui permait de calculer son vector de direction par rapport a une autre entite
 *
 */
-class C_Brain : public Engine::Component {
+class C_Brain : public Engine::BlankComponent {
 public:
 	/*!
 	*  \brief FindEntity
@@ -14,7 +14,7 @@ public:
 	* \param entite : Entite a suivre
 	* \return le vecteur de direction
 	*/
-	Engine::Vector2D FindEntity(Engine::Entity entite);
+	sf::Vector2f FindEntity(Engine::Entity entite);
 	/*!
 	*  \brief ObstacleOnPath
 	*
@@ -34,21 +34,21 @@ public:
 	*  ajoute un peux de random pour que les mouvements de l'enemie sois plus naturel et moins straigt forward
 	* \return un vector de direction
 	*/
-	Engine::Vector2D Wander(); 
+	sf::Vector2f Wander(); 
 	/*!
 	*  \brief Pursuit
 	*
 	* essaye de predire ou l'entite qu il suis va etre en gettant sont vecteur de direction
 	* \return un vector de position
 	*/
-	Engine::Vector2D Pursuit(); 
+	sf::Vector2f Pursuit(); 
 	/*!
 	*  \brief AvoidObstacle
 	*
 	* si il y a un obstacle , calcule le meilleur chemin pour l'eviter
 	* \return un vector de direction
 	*/
-	Engine::Vector2D AvoidObstacle(); 
+	sf::Vector2f AvoidObstacle(); 
 	/*!
 	*  \brief FindMostThreateningObstacle
 	*

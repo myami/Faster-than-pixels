@@ -29,6 +29,10 @@ void Engine::Scene::S_Action(sf::Event event)
 		}
 	}
 
+	if (event.KeyReleased) {
+
+	}
+
 	if (event.type == sf::Event::MouseButtonPressed)
 	{
 		if (event.mouseButton.button == sf::Mouse::Left)

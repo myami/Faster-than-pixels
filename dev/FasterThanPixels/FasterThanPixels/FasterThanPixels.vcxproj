@@ -154,6 +154,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\ECS\Components\C_Mouvement_Actif.cpp" />
+    <ClCompile Include="src\ECS\System\S_MouvementActif.cpp" />
     <ClCompile Include="src\Factory\FTP_AssetManager.cpp" />
     <ClCompile Include="src\Factory\FTP_EntityManager.cpp" />
     <ClCompile Include="src\Factory\FTP_GameManager.cpp" />
@@ -179,7 +180,7 @@
     <ClInclude Include="src\ECS\Components\C_Brain.h" />
     <ClInclude Include="src\ECS\Components\C_Dynamic_Collider_Sphere.h" />
     <ClInclude Include="src\ECS\Components\C_Health.h" />
-    <ClInclude Include="src\ECS\Components\C_Kynematic_Collider_Vertex.h" />
+    <ClInclude Include="src\ECS\Components\C_Kynematic_Collider_Sphere.h" />
     <ClInclude Include="src\ECS\Components\C_Laser.h" />
     <ClInclude Include="src\ECS\Components\C_Mines.h" />
     <ClInclude Include="src\ECS\Components\C_Missiles.h" />

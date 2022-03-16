@@ -28,5 +28,6 @@ namespace Engine {
 	 * \return true si l'entite a bien tout les composants requis pour que ce component marche
 	 */
 		 bool AsRequireComponent(Entity entite);
+		 virtual void PrintName() = 0;
 	};
 }

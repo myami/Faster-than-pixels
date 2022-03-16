@@ -4,7 +4,7 @@
 * \brief classe representant le component Shoot, Si l'entite a ce component, cela veux dire que il peux tirer
 *
 */
-class C_Shoot : public Engine::Component {
+class C_Shoot : public Engine::BlankComponent {
 public:
 	bool canshoot; /*!< Si l'entite peux tirer ou si on lui bloque comme par exemple si il est trop endommager */
 };

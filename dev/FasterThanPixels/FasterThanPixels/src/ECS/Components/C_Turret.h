@@ -4,7 +4,7 @@
 * \brief classe representant le component Turret, Si l'entite a ce component, cela veux dire qu'il a des tourelles
 *
 */
-class C_Turret : public Engine::Component {
+class C_Turret : public Engine::BlankComponent {
 public:
 	int AmountOfTurret;  /*!< Nombre de tourelle */
 	std::vector<Engine::Vector2D> TurretPosition;  /*!< Position des tourelles */

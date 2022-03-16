@@ -1,9 +1,11 @@
 #pragma once
 
 #include "Engine.h"
+#include "box2d/box2d.h"
 
 
 class FTP_SceneManager;
+class S_Mouvement_Actif;
 /*! \class Game
 * \brief classe enfant de Scene, represente le niveau ou le joueur joue
 *
@@ -24,7 +26,14 @@ public:
 	sf::RectangleShape shape;
 
 
-	float viewspeed = 150.f;
+	float viewspeed = 200.f;
+	int seed = 524524;
+
+	sf::Vector2f MapSize = { 3000.f,3000.f };
+
+	/** Box2d */
+	b2Vec2 Gravity;
+	b2World* World;
 
 	sf::Vector2i MousePosScreen;
 	sf::Vector2i MousePosWindow;
@@ -33,9 +42,11 @@ public:
 
 	void InitPlanet();
 	void InitAsteroid();
-
+	void InitPlayer();
 	std::vector<std::string> AvailablePlanet;
 	std::vector<std::string> AvailableAsteroid;
+
+	S_Mouvement_Actif* System_Mouvement_Actif;
 
 
 };

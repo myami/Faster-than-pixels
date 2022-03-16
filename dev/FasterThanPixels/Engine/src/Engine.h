@@ -18,6 +18,7 @@
 #include "Utility/BlankScene.h"
 #include "Utility/Random.h"
 #include "Utility/Animation.h"
+#include "ECS/BlankComponent.h"
 
 
 

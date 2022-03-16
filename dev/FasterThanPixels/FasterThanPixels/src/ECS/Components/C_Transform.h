@@ -5,7 +5,7 @@
 * \brief classe representant le component Transform, Si l'entite a ce component, cela veux dire que il a des positions et peux apparaitre dans le jeu
 *
 */
-class C_Transform : public Engine::Component {
+class C_Transform : public Engine::BlankComponent {
 public:
 	sf::Vector2f Direction;  /*!< Direction de l'entite */
 

@@ -4,7 +4,7 @@
 * \brief classe representant le component Booster, Si l'entite l'a est quand il peux l utiliser et de combien sa ajoute a la vitesse de base
 *
 */
-class C_Booster : public Engine::Component {
+class C_Booster : public Engine::BlankComponent {
 public:
 	float BonusSpeed;  /*!< Vitesse a ajouter */
 	bool AddSpeed; //  /*!< Si on est entrain de l'ajouter */

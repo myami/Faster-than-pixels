@@ -57,6 +57,9 @@
     <ClCompile Include="src\Scene\PlayerProfile.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="src\ECS\System\S_MouvementActif.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Factory\FTP_GameManager.h">
@@ -251,7 +254,7 @@
     <ClInclude Include="src\ECS\Components\C_Static_Collider_Sphere.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="src\ECS\Components\C_Kynematic_Collider_Vertex.h">
+    <ClInclude Include="src\ECS\Components\C_Kynematic_Collider_Sphere.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="src\ECS\Components\C_Dynamic_Collider_Sphere.h">

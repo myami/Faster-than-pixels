@@ -6,7 +6,7 @@
 * \brief classe representant le component MouvementPassif, Si l'entite l'a cela lui permait de recevori des inputs de la simulation de physic
 *
 */
-class C_MouvementPassif : public Engine::Component {
+class C_MouvementPassif : public Engine::BlankComponent {
 public:
 	b2BodyDef def;  /*!< Box2D TODO */
 	b2Body body; /*!< Box2D TODO */

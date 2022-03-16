@@ -4,7 +4,7 @@
 * \brief classe representant le component MouvementActif, Si l'entite l'a cela lui permait de recevori des inputs d un controlleur
 *
 */
-class C_MouvementActif : public Engine::Component {
+class C_MouvementActif : public Engine::BlankComponent {
 public:
 	C_MouvementActif();
 

@@ -169,6 +169,7 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\ECS\BlankComponent.h" />
     <ClInclude Include="src\ECS\Component.h" />
     <ClInclude Include="src\ECS\Entity.h" />
     <ClInclude Include="src\ECS\System.h" />
@@ -192,6 +193,7 @@
     <ClInclude Include="src\Utility\Utility.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\ECS\BlankComponent.cpp" />
     <ClCompile Include="src\ECS\Component.cpp" />
     <ClCompile Include="src\ECS\Entity.cpp" />
     <ClCompile Include="src\Factory\AssetManager.cpp" />

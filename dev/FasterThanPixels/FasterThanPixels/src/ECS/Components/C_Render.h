@@ -4,6 +4,6 @@
 * \brief classe representant le component Render, Si l'entite a ce component, cela veux dire que il a une texture
 *
 */
-class C_Render : public Engine::Component {
+class C_Render : public Engine::BlankComponent {
 
 };
