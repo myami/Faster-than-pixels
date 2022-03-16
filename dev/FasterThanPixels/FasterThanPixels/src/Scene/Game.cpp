@@ -33,28 +33,25 @@ void Game::S_Update()
 	ss << " Coord \n X : " << MousePosView.x << "\n Y : " << MousePosView.y << "\n";
 
 	text.setString(ss.str());
-	for (size_t i = 0; i < S_EntityManager->GetAllEntityWithComponent("Render").size(); i++)
+
+	auto EntitiesRender = S_EntityManager->GetAllEntityWithComponent("Render");
+	for (auto Entity : EntitiesRender)
 	{
-		C_Animated_Render* CheckAnimatation = dynamic_cast<C_Animated_Render*>(S_EntityManager->GetAllEntityWithComponent("Render")[i]->GetComponent("Render"));
+		C_Animated_Render* CheckAnimatation = dynamic_cast<C_Animated_Render*>(Entity->GetComponent("Render"));
 		if (CheckAnimatation) {
 			CheckAnimatation->AnimatedSprite.updateSprites(_SceneManager->_GameManager->DeltaTime); // mais a jour le sprite des animations
 		}
 	}
-	for (size_t i = 0; i < S_EntityManager->GetAllEntityWithComponent("Mouvement").size(); i++) 
+
+	auto Entities = S_EntityManager->GetAllEntityWithComponent("Mouvement");
+	for (auto Entity : Entities)
 	{
-		C_MouvementActif* CheckMovement = dynamic_cast<C_MouvementActif*>(S_EntityManager->GetAllEntityWithComponent("Mouvement")[i]->GetComponent("Mouvement"));
-
+		C_MouvementActif* CheckMovement = dynamic_cast<C_MouvementActif*>(Entity->GetComponent("Mouvement"));
 		if (CheckMovement) {
-
-			C_Static_Render* Static = dynamic_cast<C_Static_Render*>(S_EntityManager->GetAllEntityWithComponent("Mouvement")[i]->GetComponent("Render"));
-			C_Transform* PlayerTransform = dynamic_cast<C_Transform*>(S_EntityManager->GetAllEntityWithComponent("Mouvement")[i]->GetComponent("Transform"));
-
-			//Static->Sprite.move(sf::Vector2f(PlayerTransform->Direction * _SceneManager->_GameManager->DeltaTime ));
-			//std::cout << "Position : X : " << Static->Sprite.getPosition().x << " Y : " << Static->Sprite.getPosition().y << " DT : " << _SceneManager->_GameManager->DeltaTime << std::endl;
-
-			System_Mouvement_Actif->RunSystem(S_EntityManager->GetAllEntityWithComponent("Mouvement")[i], _SceneManager->_GameManager->DeltaTime);
+			C_Static_Render* Static = dynamic_cast<C_Static_Render*>(Entity->GetComponent("Render"));
+			C_Transform* PlayerTransform = dynamic_cast<C_Transform*>(Entity->GetComponent("Transform"));
+			System_Mouvement_Actif->RunSystem(Entity, _SceneManager->_GameManager->DeltaTime);
 		}
-
 	}
 
 
@@ -67,19 +64,16 @@ void Game::S_Render()
 	// render game
 
 
-	std::vector<Engine::Entity*> EntityToDraw = S_EntityManager->EntityToDraw();
-	for (size_t i = 0; i < EntityToDraw.size(); i++)
+	auto EntityToDraw = S_EntityManager->EntityToDraw();
+	for (auto Entity : EntityToDraw)
 	{
-		if (EntityToDraw[i]->E_IsAnimated) {
-			C_Animated_Render* CheckAnimatation = dynamic_cast<C_Animated_Render*>(EntityToDraw[i]->GetComponent("Render"));
+		if (Entity->E_IsAnimated) {
+			C_Animated_Render* CheckAnimatation = dynamic_cast<C_Animated_Render*>(Entity->GetComponent("Render"));
 			_SceneManager->_GameManager->Windows->draw(CheckAnimatation->AnimatedSprite.FrameToDraw());
-
 		}
 		else {
-			C_Static_Render* Static = dynamic_cast<C_Static_Render*>(EntityToDraw[i]->GetComponent("Render"));
+			C_Static_Render* Static = dynamic_cast<C_Static_Render*>(Entity->GetComponent("Render"));
 				_SceneManager->_GameManager->Windows->draw(Static->Sprite);
-
-	
 		}
 	
 	}
@@ -182,20 +176,20 @@ void Game::InitPlanet()
 	
 	
 
+	auto PlanetEntity = S_EntityManager->M_EntityMap["Planet"];
 
-	for (size_t i = 0; i < S_EntityManager->M_EntityMap["Planet"].size(); i++)
+	for (size_t i = 0; i < PlanetEntity.size(); i++)
 	{
-		S_EntityManager->M_EntityMap["Planet"][i]->AddComponent("Render", new C_Animated_Render());
-		S_EntityManager->M_EntityMap["Planet"][i]->AddComponent("Collider", new C_Static_Collider_Sphere());
+		PlanetEntity[i]->AddComponent("Render", new C_Animated_Render());
+		PlanetEntity[i]->AddComponent("Collider", new C_Static_Collider_Sphere());
 
-		C_Animated_Render* PlanetRender = dynamic_cast<C_Animated_Render*>(S_EntityManager->M_EntityMap["Planet"][i]->GetComponent("Render"));
+		C_Animated_Render* PlanetRender = dynamic_cast<C_Animated_Render*>(PlanetEntity[i]->GetComponent("Render"));
 		srand(seed  + i );
 		int randomplanet = rand() % AvailablePlanet.size() + 0;
 		std::cout << randomplanet;
 		PlanetRender->AnimatedSprite.SetupAnimation(_SceneManager->_GameManager->G_AssetManager->GetTexture(AvailablePlanet[randomplanet]), 15 / 60.f, {10,1}, sf::Vector2f(0.f, 0.f));
 		float randomx = rand() % (int)MapSize.x + -MapSize.x;
 		float randomy = rand() % (int)MapSize.y + -MapSize.y;
-
 		PlanetRender->AnimatedSprite.MoveSprite(sf::Vector2f(randomx, randomy));
 
 	}
@@ -221,14 +215,15 @@ void Game::InitAsteroid()
 
 	
 	
-	
-	for (size_t i = 0; i < S_EntityManager->M_EntityMap["Asteroid"].size(); i++) 
+	auto AsteroidEntity = S_EntityManager->M_EntityMap["Asteroid"];
+
+	for (size_t i = 0; i < AsteroidEntity.size(); i++)
 	{
 		
-		S_EntityManager->M_EntityMap["Asteroid"][i]->AddComponent("Render", new C_Static_Render());
-		S_EntityManager->M_EntityMap["Asteroid"][i]->AddComponent("Collider", new C_Static_Collider_Sphere());
+		AsteroidEntity[i]->AddComponent("Render", new C_Static_Render());
+		AsteroidEntity[i]->AddComponent("Collider", new C_Static_Collider_Sphere());
 		
-		C_Static_Render* AsteroidRender = dynamic_cast<C_Static_Render*>(S_EntityManager->M_EntityMap["Asteroid"][i]->GetComponent("Render"));
+		C_Static_Render* AsteroidRender = dynamic_cast<C_Static_Render*>(AsteroidEntity[i]->GetComponent("Render"));
 		srand(seed / 2 + i);
 		int randomasteroid = rand() % AvailableAsteroid.size() + 0;
 		float randomx = rand() % (int)MapSize.x + -MapSize.x;
