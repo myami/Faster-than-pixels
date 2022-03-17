@@ -34,32 +34,14 @@ void Game::S_Update()
 
 	text.setString(ss.str());
 
-	auto EntitiesRender = S_EntityManager->GetAllEntityWithComponent("Render");
-	for (auto Entity : EntitiesRender)
-	{
-		C_Animated_Render* CheckAnimatation = dynamic_cast<C_Animated_Render*>(Entity->GetComponent("Render"));
-		if (CheckAnimatation) {
-			CheckAnimatation->AnimatedSprite.updateSprites(_SceneManager->_GameManager->DeltaTime); // mais a jour le sprite des animations
-		}
-	}
-
-	auto Entities = S_EntityManager->GetAllEntityWithComponent("Mouvement");
-	for (auto Entity : Entities)
-	{
-		C_MouvementActif* CheckMovement = dynamic_cast<C_MouvementActif*>(Entity->GetComponent("Mouvement"));
-		if (CheckMovement) {
-			C_Static_Render* Static = dynamic_cast<C_Static_Render*>(Entity->GetComponent("Render"));
-			C_Transform* PlayerTransform = dynamic_cast<C_Transform*>(Entity->GetComponent("Transform"));
-			System_Mouvement_Actif->RunSystem(Entity, _SceneManager->_GameManager->DeltaTime);
-		}
-	}
-
+	UpdateEntity();
 
 }
 
 void Game::S_Render()
 {
 	_SceneManager->_GameManager->Windows->setView(_SceneManager->_GameManager->View);
+
 
 	// render game
 
@@ -83,8 +65,15 @@ void Game::S_Render()
 	// render ui
 	_SceneManager->_GameManager->Windows->draw(text);
 
+	// center UI on player
+
+
+
+
 
 }
+
+
 
 void Game::S_Simulation()
 {
@@ -114,6 +103,15 @@ void Game::S_ActionTrigger(std::string ActionName)
 
 	}
 
+	if (ActionName == "RotLeft") {
+		PlayerTransform->RotationDirection = -rotationspeed;
+
+	}
+	if (ActionName == "RotRight") {
+		PlayerTransform->RotationDirection = rotationspeed;
+
+	}
+
 
 
 }
@@ -139,8 +137,10 @@ void Game::S_Begin_Play()
 
 	RegisterAction(sf::Keyboard::W, "Forward");
 	RegisterAction(sf::Keyboard::S, "Backward");
-	RegisterAction(sf::Keyboard::A, "Left");
-	RegisterAction(sf::Keyboard::D, "Right");
+	RegisterAction(sf::Keyboard::Q, "Left");
+	RegisterAction(sf::Keyboard::E, "Right");
+	RegisterAction(sf::Keyboard::A, "RotLeft");
+	RegisterAction(sf::Keyboard::D, "RotRight");
 
 	Gravity = b2Vec2(0, 0);
 	World = new b2World(Gravity);
@@ -158,6 +158,39 @@ void Game::S_Input_Mouse(sf::Event event)
 void Game::S_Input_Text(sf::Event event)
 {
 }
+
+void Game::UpdateEntity()
+{
+
+	auto EntitiesRender = S_EntityManager->GetAllEntityWithComponent("Render");
+	for (auto Entity : EntitiesRender)
+	{
+		C_Animated_Render* CheckAnimatation = dynamic_cast<C_Animated_Render*>(Entity->GetComponent("Render"));
+		if (CheckAnimatation) {
+			CheckAnimatation->AnimatedSprite.updateSprites(_SceneManager->_GameManager->DeltaTime); // mais a jour le sprite des animations
+		}
+	}
+
+	auto Entities = S_EntityManager->GetAllEntityWithComponent("Mouvement");
+	for (auto Entity : Entities)
+	{
+		C_MouvementActif* CheckMovement = dynamic_cast<C_MouvementActif*>(Entity->GetComponent("Mouvement"));
+		if (CheckMovement) {
+			C_Static_Render* Static = dynamic_cast<C_Static_Render*>(Entity->GetComponent("Render"));
+			C_Transform* PlayerTransform = dynamic_cast<C_Transform*>(Entity->GetComponent("Transform"));
+			System_Mouvement_Actif->RunSystem(Entity, _SceneManager->_GameManager->DeltaTime);
+		}
+	}
+
+	C_Static_Render* Static = dynamic_cast<C_Static_Render*>(S_EntityManager->M_EntityMap["Player"][0]->GetComponent("Render"));
+	if (Static) {
+
+
+		_SceneManager->_GameManager->View.setCenter(Static->Sprite.getPosition());
+	}
+}
+
+
 
 void Game::InitPlanet()
 {
@@ -237,12 +270,6 @@ void Game::InitAsteroid()
 
 	}
 
-
-
-
-
-
-
 }
 
 void Game::InitPlayer()
@@ -261,9 +288,10 @@ void Game::InitPlayer()
 
 	Render->Sprite.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("Player100"));
 	Render->Sprite.setScale(sf::Vector2f(.2f, .2f));
-	Render->Sprite.setOrigin(Render->Sprite.getGlobalBounds().width / 2.f, Render->Sprite.getGlobalBounds().height / 2.f);
+	Render->Sprite.setOrigin(Render->Sprite.getLocalBounds().width / 2.f, Render->Sprite.getLocalBounds().height / 2.f);
 	Render->Sprite.setPosition(_SceneManager->_GameManager->View.getCenter());
 	std::cout <<"Default X : " << _SceneManager->_GameManager->View.getCenter().x << " Y : " <<_SceneManager->_GameManager->View.getCenter().y << std::endl;
+
 
 
 

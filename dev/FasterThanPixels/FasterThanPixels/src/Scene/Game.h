@@ -22,11 +22,14 @@ public:
 	void S_Input_Mouse(sf::Event event) override;
 	void S_Input_Text(sf::Event event) override;
 
+	void UpdateEntity();
+
 
 	sf::RectangleShape shape;
 
 
 	float viewspeed = 200.f;
+	float rotationspeed = 2.f;
 	int seed = 524524;
 
 	sf::Vector2f MapSize = { 3000.f,3000.f };

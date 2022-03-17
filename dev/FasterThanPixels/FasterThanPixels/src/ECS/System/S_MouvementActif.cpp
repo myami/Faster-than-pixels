@@ -19,6 +19,8 @@ void S_Mouvement_Actif::RunSystem(Engine::Entity* Entity, float dt)
 			Static->Sprite.move(sf::Vector2f(PlayerTransform->Direction * dt));
 			std::cout << "Position : X : " << Static->Sprite.getPosition().x << " Y : " << Static->Sprite.getPosition().y << " DT : " << dt << std::endl;
 			//PlayerTransform->Direction = { 0.,0. };
+			Static->Sprite.setOrigin(Static->Sprite.getLocalBounds().width / 2.f, Static->Sprite.getLocalBounds().height / 2.f);
+			Static->Sprite.setRotation(Static->Sprite.getRotation() + PlayerTransform->RotationDirection);
 		}
 
 
