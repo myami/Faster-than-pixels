@@ -46,6 +46,7 @@ public:
 	void InitPlanet();
 	void InitAsteroid();
 	void InitPlayer();
+	void CheckPlayerLimit(Engine::Entity* entity);
 	std::vector<std::string> AvailablePlanet;
 	std::vector<std::string> AvailableAsteroid;
 

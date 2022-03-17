@@ -181,6 +181,7 @@ void Game::UpdateEntity()
 			System_Mouvement_Actif->RunSystem(Entity, _SceneManager->_GameManager->DeltaTime);
 		}
 	}
+	CheckPlayerLimit(S_EntityManager->M_EntityMap["Player"][0]);
 
 	C_Static_Render* Static = dynamic_cast<C_Static_Render*>(S_EntityManager->M_EntityMap["Player"][0]->GetComponent("Render"));
 	if (Static) {
@@ -261,6 +262,7 @@ void Game::InitAsteroid()
 		int randomasteroid = rand() % AvailableAsteroid.size() + 0;
 		float randomx = rand() % (int)MapSize.x + -MapSize.x;
 		float randomy = rand() % (int)MapSize.y + -MapSize.y;
+		std::cout << -MapSize.y << std::endl;
 		float randomscale = rand() % 1 + 0.3;
 		AsteroidRender->Sprite.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture(AvailableAsteroid[randomasteroid]));
 		AsteroidRender->Sprite.setOrigin(AsteroidRender->Sprite.getGlobalBounds().width / 2.f, AsteroidRender->Sprite.getGlobalBounds().height / 2.f);
@@ -292,6 +294,40 @@ void Game::InitPlayer()
 	Render->Sprite.setPosition(_SceneManager->_GameManager->View.getCenter());
 	std::cout <<"Default X : " << _SceneManager->_GameManager->View.getCenter().x << " Y : " <<_SceneManager->_GameManager->View.getCenter().y << std::endl;
 
+
+
+
+}
+
+void Game::CheckPlayerLimit(Engine::Entity* entity)
+{
+
+	C_Static_Render* Render = dynamic_cast<C_Static_Render*>(entity->GetComponent("Render"));
+
+	if (Render->Sprite.getPosition().x > MapSize.x - 5)
+	{
+		Render->Sprite.setPosition(sf::Vector2f(-MapSize.x + 5 , Render->Sprite.getPosition().y));
+		return;
+	}
+	if (Render->Sprite.getPosition().x < -MapSize.x + 5)
+	{
+		Render->Sprite.setPosition(sf::Vector2f(MapSize.x - 5, Render->Sprite.getPosition().y));
+		return;
+
+	}
+
+	if (Render->Sprite.getPosition().y < -MapSize.y + 5)
+	{
+		Render->Sprite.setPosition(sf::Vector2f(Render->Sprite.getPosition().x, MapSize.y - 5));
+		return;
+
+	}
+	if (Render->Sprite.getPosition().y > MapSize.y - 5)
+	{
+		Render->Sprite.setPosition(sf::Vector2f(Render->Sprite.getPosition().x, -MapSize.y + 5));
+		return;
+
+	}
 
 
 
