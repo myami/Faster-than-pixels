@@ -2,6 +2,8 @@
 
 void Engine::EntityManager::GenerateEntity()
 {
+
+
 	for (size_t i = 0; i < M_TotalEntity; i++)
 	{
 		Entity* en = new Entity(i);
@@ -25,13 +27,11 @@ void Engine::EntityManager::RemoveEntity()
 
 Engine::Entity* Engine::EntityManager::RequestEntity()
 {
-	for (size_t i = 0; i < M_EntityVector.size(); i++)
-	{
-		if (M_EntityVector[i]->E_CanBeUsed) {
-			return M_EntityVector[i];
+	for (auto entity : M_EntityVector) {
+		if (entity->E_CanBeUsed) {
+			return entity;
 		}
 	}
-
 
 	std::cout << "Aucune entite est libre d'utilisation" << std::endl;
 	return nullptr; // si il y en a aucune de dispo
@@ -41,10 +41,12 @@ Engine::Entity* Engine::EntityManager::RequestEntity()
 std::vector<Engine::Entity*> Engine::EntityManager::EntityToDraw()
 {
 	std::vector<Engine::Entity*> todraw;
-	for (size_t i = 0; i < M_EntityVector.size(); i++)
+
+	for (auto entity : M_EntityVector) 
 	{
-		if (!M_EntityVector[i]->E_CanBeUsed) {
-			todraw.push_back(M_EntityVector[i]);
+		if (!entity->E_CanBeUsed) 
+		{
+			todraw.push_back(entity);
 		}
 	}
 	return todraw;
@@ -53,11 +55,10 @@ std::vector<Engine::Entity*> Engine::EntityManager::EntityToDraw()
 std::vector<Engine::Entity*> Engine::EntityManager::GetAllEntityWithComponent(std::string Component)
 {
 	std::vector<Engine::Entity*> Entity;
-
-	for (size_t i = 0; i < M_EntityVector.size(); i++)
+	for (auto entity : M_EntityVector)
 	{
-		if (M_EntityVector[i]->GetComponent(Component) != nullptr) {
-			Entity.push_back(M_EntityVector[i]);
+		if (entity->GetComponent(Component) != nullptr) {
+			Entity.push_back(entity);
 		}
 	}
 
@@ -66,7 +67,6 @@ std::vector<Engine::Entity*> Engine::EntityManager::GetAllEntityWithComponent(st
 
 void Engine::EntityManager::EntityChangeMap(Engine::Entity* entite, std::string oldmap, std::string newmap)
 {
-	
 		for (size_t i = 0; i < M_EntityMap[oldmap].size(); i++)
 		{
 			if (M_EntityMap[oldmap][i]->E_Id == entite->E_Id) {

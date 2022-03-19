@@ -14,22 +14,21 @@ Engine::SceneManager::SceneManager(Engine::GameManager* gm)
 
 Engine::Scene& Engine::SceneManager::GetScene(std::string sc)
 {
-	for (size_t i = 0; i < M_Scene.size(); i++)
+	for (auto scene : M_Scene)
 	{
-		if (M_Scene[i]->S_Name == sc) {
-			return *M_Scene[i];
+		if (scene->S_Name == sc) {
+			return *scene;
 		}
 	}
 }
 
 Engine::Scene* Engine::SceneManager::GetCurrentScene()
 {
-	for (size_t i = 0; i < M_Scene.size(); i++)
+	for (auto scene : M_Scene)
 	{
-	
-		if (M_Scene[i]->S_Name == CurrentScene) {
+		if (scene->S_Name == CurrentScene) {
 			
-			return M_Scene[i];
+			return scene;
 		}
 	}
 }

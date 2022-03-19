@@ -259,10 +259,9 @@ void Game::InitAsteroid()
 		
 		C_Static_Render* AsteroidRender = dynamic_cast<C_Static_Render*>(AsteroidEntity[i]->GetComponent("Render"));
 		srand(seed / 2 + i);
-		int randomasteroid = rand() % AvailableAsteroid.size() + 0;
+		int randomasteroid = rand() % AvailableAsteroid.size() + 0; // selection texture
 		float randomx = rand() % (int)MapSize.x + -MapSize.x;
 		float randomy = rand() % (int)MapSize.y + -MapSize.y;
-		std::cout << -MapSize.y << std::endl;
 		float randomscale = rand() % 1 + 0.3;
 		AsteroidRender->Sprite.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture(AvailableAsteroid[randomasteroid]));
 		AsteroidRender->Sprite.setOrigin(AsteroidRender->Sprite.getGlobalBounds().width / 2.f, AsteroidRender->Sprite.getGlobalBounds().height / 2.f);
