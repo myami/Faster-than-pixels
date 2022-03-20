@@ -14,11 +14,10 @@ void S_Mouvement_Actif::RunSystem(Engine::Entity* Entity, float dt)
 
 	}
 	else {
-		if (PlayerTransform->Direction.x != 0 || PlayerTransform->Direction.y != 0) {
+		if (PlayerTransform->Direction.x != 0 || PlayerTransform->Direction.y != 0 || PlayerTransform->RotationDirection != 0) {
 			C_Static_Render* Static = (C_Static_Render*)Entity->GetComponent("Render");
 			Static->Sprite.move(sf::Vector2f(PlayerTransform->Direction * dt));
 			std::cout << "Position : X : " << Static->Sprite.getPosition().x << " Y : " << Static->Sprite.getPosition().y << " DT : " << dt << std::endl;
-			//PlayerTransform->Direction = { 0.,0. };
 			Static->Sprite.setOrigin(Static->Sprite.getLocalBounds().width / 2.f, Static->Sprite.getLocalBounds().height / 2.f);
 			Static->Sprite.setRotation(Static->Sprite.getRotation() + PlayerTransform->RotationDirection);
 		}

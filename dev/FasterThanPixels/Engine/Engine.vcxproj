@@ -186,6 +186,7 @@
     <ClInclude Include="src\Utility\GUI\Button.h" />
     <ClInclude Include="src\Utility\GUI\Input.h" />
     <ClInclude Include="src\Utility\GUI\Slider.h" />
+    <ClInclude Include="src\Utility\InputAction.h" />
     <ClInclude Include="src\Utility\MathF.h" />
     <ClInclude Include="src\Utility\Path.h" />
     <ClInclude Include="src\Utility\Random.h" />
@@ -204,6 +205,7 @@
     <ClCompile Include="src\Utility\BlankScene.cpp" />
     <ClCompile Include="src\Utility\GUI\Button.cpp" />
     <ClCompile Include="src\Utility\GUI\Input.cpp" />
+    <ClCompile Include="src\Utility\InputAction.cpp" />
     <ClCompile Include="src\Utility\MathF.cpp" />
     <ClCompile Include="src\Utility\Random.cpp" />
     <ClCompile Include="src\Utility\Scene.cpp" />

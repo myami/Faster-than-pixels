@@ -6,7 +6,11 @@
 Starting::Starting(std::string name, FTP_SceneManager* refs):Engine::BlankScene(name)
 {
 	this->_SceneManager = refs;
-	RegisterAction(sf::Keyboard::Space, "PasserCinematique");
+	Engine::InputAction passcinematique;
+	passcinematique.Keycode = sf::Keyboard::Space;
+	passcinematique.Name = "PasserCinematique";
+	passcinematique.TriggerEvent = Engine::Trigger::KeyDown;
+	RegisterAction(passcinematique);
 }
 
 

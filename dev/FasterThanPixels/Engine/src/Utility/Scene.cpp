@@ -1,9 +1,21 @@
 #include "Scene.h"
 
-void Engine::Scene::RegisterAction(int key, std::string ActionName)
+void Engine::Scene::RegisterAction(Engine::InputAction Action)
 {
 
-	ActionScene.insert({key,ActionName });
+	ActionScene.push_back(Action);
+}
+
+std::vector<Engine::InputAction> Engine::Scene::GetKeyInput(Engine::Trigger inputype)
+{
+	std::vector<Engine::InputAction> key;
+	for (const auto & action : ActionScene)
+	{
+		if (action.TriggerEvent == inputype) {
+			key.push_back(action);
+		}
+	}
+	return key;
 }
 
 Engine::Scene::Scene()
@@ -20,17 +32,36 @@ Engine::Scene::Scene(std::string name)
 
 void Engine::Scene::S_Action(sf::Event event)
 {
-	if (event.KeyPressed) {
-		for (const auto& action : ActionScene) {
-			sf::Keyboard::Key val = static_cast<sf::Keyboard::Key>(action.first);
-			if (event.key.code == val && sf::Keyboard::isKeyPressed(val))
-				S_ActionTrigger(action.second);
+	if ( event.type == event.KeyPressed)
+	{
+		auto keydown = GetKeyInput(Engine::Trigger::KeyDown);
+		for (const auto& action : keydown)
+		{
+			InputAction in = action;
 
+			sf::Keyboard::Key val = static_cast<sf::Keyboard::Key>(in.Keycode);
+
+			if (event.key.code == val) {
+				S_ActionTrigger(action.Name);
+
+			} 
 		}
 	}
 
-	if (event.KeyReleased) {
+	if (event.type == event.KeyReleased) {
 
+		auto keydown = GetKeyInput(Engine::Trigger::KeyUp);
+		for (const auto& action : keydown)
+		{
+			InputAction in = action;
+
+			sf::Keyboard::Key val = static_cast<sf::Keyboard::Key>(in.Keycode);
+
+			if (event.key.code == val) {
+				S_ActionTrigger(action.Name);
+
+			}
+		}
 	}
 
 	if (event.type == sf::Event::MouseButtonPressed)

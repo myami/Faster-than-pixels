@@ -82,34 +82,52 @@ void Game::S_Simulation()
 void Game::S_ActionTrigger(std::string ActionName)
 {
 	C_Transform* PlayerTransform = dynamic_cast<C_Transform*>(S_EntityManager->M_EntityMap["Player"][0]->GetComponent("Transform"));
-
+	std::cout << ActionName << std::endl;
 	if (ActionName == "Forward") {
 		_SceneManager->_GameManager->View.move(0.f,-viewspeed * _SceneManager->_GameManager->DeltaTime );
 		PlayerTransform->Direction = sf::Vector2f(0, -viewspeed);
+	}
+	if (ActionName == "ForwardRelease") {
+		PlayerTransform->Direction = sf::Vector2f(0, 0);
 	}
 	if (ActionName == "Backward") {
 		_SceneManager->_GameManager->View.move(0.f, viewspeed * _SceneManager->_GameManager->DeltaTime );
 		PlayerTransform->Direction = sf::Vector2f(0, viewspeed);
 
 	}
+	if (ActionName == "BackwardRelease") {
+		PlayerTransform->Direction = sf::Vector2f(0, 0);
+	}
 	if (ActionName == "Left") {
 		_SceneManager->_GameManager->View.move( -viewspeed * _SceneManager->_GameManager->DeltaTime ,0.f);
 		PlayerTransform->Direction = sf::Vector2f(-viewspeed,0);
 
+	}
+	if (ActionName == "LeftRelease") {
+		PlayerTransform->Direction = sf::Vector2f(0, 0);
 	}
 	if (ActionName == "Right") {
 		_SceneManager->_GameManager->View.move( viewspeed * _SceneManager->_GameManager->DeltaTime , 0.f);
 		PlayerTransform->Direction = sf::Vector2f(viewspeed, 0);
 
 	}
+	if (ActionName == "RightRelease") {
+		PlayerTransform->Direction = sf::Vector2f(0, 0);
+	}
 
 	if (ActionName == "RotLeft") {
 		PlayerTransform->RotationDirection = -rotationspeed;
 
 	}
+	if (ActionName == "RotLeftRelease") {
+		PlayerTransform->RotationDirection = 0;
+	}
 	if (ActionName == "RotRight") {
 		PlayerTransform->RotationDirection = rotationspeed;
 
+	}
+	if (ActionName == "RotRightRelease") {
+		PlayerTransform->RotationDirection = 0;
 	}
 
 
@@ -134,13 +152,39 @@ void Game::S_Begin_Play()
 	InitPlanet();
 	InitAsteroid();
 
+	Engine::InputAction Forward(Engine::Trigger::KeyDown,"Forward", sf::Keyboard::W);
+	Engine::InputAction Backward(Engine::Trigger::KeyDown, "Backward", sf::Keyboard::S);
+	Engine::InputAction Left(Engine::Trigger::KeyDown, "Left", sf::Keyboard::Q);
+	Engine::InputAction Right(Engine::Trigger::KeyDown, "Right", sf::Keyboard::E);
+	Engine::InputAction RotLeft(Engine::Trigger::KeyDown, "RotLeft", sf::Keyboard::A);
+	Engine::InputAction RotRight(Engine::Trigger::KeyDown, "RotRight", sf::Keyboard::D);
 
-	RegisterAction(sf::Keyboard::W, "Forward");
-	RegisterAction(sf::Keyboard::S, "Backward");
-	RegisterAction(sf::Keyboard::Q, "Left");
-	RegisterAction(sf::Keyboard::E, "Right");
-	RegisterAction(sf::Keyboard::A, "RotLeft");
-	RegisterAction(sf::Keyboard::D, "RotRight");
+	Engine::InputAction ForwardRelease(Engine::Trigger::KeyUp, "ForwardRelease", sf::Keyboard::W);
+	Engine::InputAction BackwardRelease(Engine::Trigger::KeyUp, "BackwardRelease", sf::Keyboard::S);
+	Engine::InputAction LeftRelease(Engine::Trigger::KeyUp, "LeftRelease", sf::Keyboard::Q);
+	Engine::InputAction RightRelease(Engine::Trigger::KeyUp, "RightRelease", sf::Keyboard::E);
+	Engine::InputAction RotLeftRelease(Engine::Trigger::KeyUp, "RotLeftRelease", sf::Keyboard::A);
+	Engine::InputAction RotRightRelease(Engine::Trigger::KeyUp, "RotRightRelease", sf::Keyboard::D);
+
+
+
+
+	RegisterAction(Forward);
+	RegisterAction(Backward);
+	RegisterAction(Left);
+	RegisterAction(Right);
+	RegisterAction(RotLeft);
+	RegisterAction(RotRight);
+	RegisterAction(ForwardRelease);
+	RegisterAction(BackwardRelease);
+	RegisterAction(LeftRelease);
+	RegisterAction(RightRelease);
+	RegisterAction(RotLeftRelease);
+	RegisterAction(RotRightRelease);
+
+
+
+
 
 	Gravity = b2Vec2(0, 0);
 	World = new b2World(Gravity);

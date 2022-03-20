@@ -1,6 +1,7 @@
 #pragma once
 #include "SFML/Graphics.hpp"
 #include "../Factory/EntityManager.h"
+#include "InputAction.h"
 
 	class SceneManager;
 namespace Engine {
@@ -13,8 +14,10 @@ namespace Engine {
 		Scene(std::string name);
 		EntityManager* S_EntityManager;  /*!< Sous syteme qui gere les entite */
 		std::string S_Name;  /*!< Nom de la scene  */
-		std::map<int, std::string> ActionScene;  /*!< Chaque input disponible dans la scene */
+		std::vector<Engine::InputAction> ActionScene;  /*!< Chaque input disponible dans la scene */
 		SceneManager* _SceneManager;
+
+
 
 		bool S_Paused; /*!< Si la scene est en pause */
 		bool S_End; /*!< Si la scene est fini d'etre utiliser */
@@ -55,7 +58,7 @@ namespace Engine {
 		* \param key : represente la touche a appuyer 
 		* \param ActionName : Nom de l'action lie a la touches
 		*/
-		void RegisterAction(int key,std::string ActionName); 
+		void RegisterAction(Engine::InputAction Action); 
 		/*!
 		*  \brief S_ActionTrigger
 		*
@@ -88,7 +91,7 @@ namespace Engine {
 		*/
 		virtual void S_Input_Text(sf::Event event) = 0;
 		
-
+		std::vector<Engine::InputAction> GetKeyInput(Engine::Trigger inputype);
 
 		
 	};
