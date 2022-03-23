@@ -5,6 +5,7 @@
 #include <nlohmann/json.hpp>
 #include <vector>
 #include "../ECS/Entity.h"
+#include "../ECS/Component.h"
 
 
 std::vector<nlohmann::json> Engine::LoadAssetFromFile(std::string path)
@@ -64,3 +65,5 @@ void Engine::InitEnvironnement(int seed, Engine::EntityManager* entman)
 
 
 }
+
+

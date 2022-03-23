@@ -37,6 +37,8 @@ public:
 	/** Box2d */
 	b2Vec2 Gravity;
 	b2World* World;
+	const int SCALE = 30;
+
 
 	sf::Vector2i MousePosScreen;
 	sf::Vector2i MousePosWindow;
@@ -51,6 +53,9 @@ public:
 	std::vector<std::string> AvailableAsteroid;
 
 	S_Mouvement_Actif* System_Mouvement_Actif;
+
+	void CreateAsteroidPhysic(std::vector<Engine::Entity*> Asteroids); //https://veendeta.wordpress.com/2012/02/16/tutorial-getting-started-with-box2d/
+
 
 
 };

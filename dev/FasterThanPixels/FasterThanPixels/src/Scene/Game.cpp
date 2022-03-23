@@ -9,6 +9,7 @@
 #include "../ECS/Components/C_Transform.h"
 #include "../ECS/Components/C_Mouvement_Actif.h"
 #include "../ECS/System/S_MouvementActif.h"
+#include <map>
 
 
 Game::Game(std::string name, FTP_SceneManager* refs) : Engine::BlankScene(name)
@@ -77,12 +78,26 @@ void Game::S_Render()
 
 void Game::S_Simulation()
 {
+	for (b2Body* BodyIterator = World->GetBodyList(); BodyIterator != 0; BodyIterator = BodyIterator->GetNext()) 
+	{
+		if (BodyIterator->GetType() == b2_dynamicBody) {
+			if (S_EntityManager->M_PhysicMap[BodyIterator] != nullptr){
+				//std::cout << S_EntityManager->M_PhysicMap[BodyIterator]->E_Id << std::endl;
+			
+			}
+			
+		}
+	}
+
+			// trouve le entity lie a ce body
+			// appelle le systeme pour changer sa position
+			//Sprite.SetPosition(SCALE * BodyIterator->GetPosition().x, SCALE * BodyIterator->GetPosition().y);
+			//Sprite.SetRotation(BodyIterator->GetAngle() * 180 / b2_pi);
 }
 
 void Game::S_ActionTrigger(std::string ActionName)
 {
 	C_Transform* PlayerTransform = dynamic_cast<C_Transform*>(S_EntityManager->M_EntityMap["Player"][0]->GetComponent("Transform"));
-	std::cout << ActionName << std::endl;
 	if (ActionName == "Forward") {
 		_SceneManager->_GameManager->View.move(0.f,-viewspeed * _SceneManager->_GameManager->DeltaTime );
 		PlayerTransform->Direction = sf::Vector2f(0, -viewspeed);
@@ -142,7 +157,8 @@ void Game::S_Begin_Play()
 	text.setString("Coord");
 
 
-
+	Gravity = b2Vec2(0, 0);
+	World = new b2World(Gravity);
 
 
 	S_EntityManager->M_TotalEntity = 500; // on veux 500 entite dans le jeu
@@ -186,13 +202,35 @@ void Game::S_Begin_Play()
 
 
 
-	Gravity = b2Vec2(0, 0);
-	World = new b2World(Gravity);
+
 	System_Mouvement_Actif = new S_Mouvement_Actif();
 	InitPlayer();
 
-}
 
+}
+void Game::CreateAsteroidPhysic( std::vector<Engine::Entity*> Asteroids)
+{
+	for (auto entity : Asteroids)
+	{
+		C_Static_Render* Static = dynamic_cast<C_Static_Render*>(entity->GetComponent("Render"));
+
+		b2BodyDef BodyDef =  b2BodyDef();
+		
+		BodyDef.position = b2Vec2(Static->Sprite.getPosition().x / SCALE, Static->Sprite.getPosition().y / SCALE);
+		BodyDef.type = b2_dynamicBody;
+		b2Body* Body = World->CreateBody(&BodyDef);
+		S_EntityManager->M_PhysicMap.insert({Body,entity});
+		b2CircleShape circle;
+		circle.m_p.Set(Static->Sprite.getGlobalBounds().width / 2.f, Static->Sprite.getGlobalBounds().height / 2.f);
+		circle.m_radius = 0.5f;
+		b2FixtureDef FixtureDef;
+		FixtureDef.density = 1.f;
+		FixtureDef.friction = 0.7f;
+		FixtureDef.shape = &circle;
+		Body->CreateFixture(&FixtureDef);
+		
+	}
+}
 
 
 void Game::S_Input_Mouse(sf::Event event)
@@ -314,6 +352,7 @@ void Game::InitAsteroid()
 		AsteroidRender->Sprite.move(sf::Vector2f(randomx, randomy));
 
 	}
+	CreateAsteroidPhysic(S_EntityManager->M_EntityMap["Asteroid"]);
 
 }
 

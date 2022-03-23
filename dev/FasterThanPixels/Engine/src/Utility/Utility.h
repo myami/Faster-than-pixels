@@ -6,6 +6,7 @@
 #include "../Sqlite/include/sqlite/sqlite3.h" // Fix temporaire
 #include "SFML/Graphics.hpp"
 #include "../Factory/EntityManager.h"
+#include "box2d/box2d.h"
 
 
 namespace Engine {
@@ -69,5 +70,8 @@ namespace Engine {
 	*/
 
 	void InitEnvironnement(int seed, Engine::EntityManager* entman);
+
+
+
 
 }

@@ -2,6 +2,7 @@
 #include "../ECS/Entity.h"
 #include <map>
 #include <string>
+#include "box2d/box2d.h"
 namespace Engine {
 	/*! \class EntityManager
 	* \brief classe representant tout les entite de la scene
@@ -13,6 +14,8 @@ namespace Engine {
 		std::map<std::string, std::vector<Engine::Entity*>> M_EntityMap; /*!< Liste des Entite par tag */
 		std::vector<Engine::Entity*> M_EntityToChange; /*!< Liste des entites qui doivent etre changer au debut de la prochaine frame */
 		int M_TotalEntity; /*!< Le nombre total d'entite disponible dans le pool */
+		std::map<b2Body*, Engine::Entity*> M_PhysicMap;  /*!< Liste des body de la simulation relie a leur entite */
+
 		/*!
 	   *  \brief GenerateEntity
 	   *
