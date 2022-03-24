@@ -155,6 +155,7 @@
   <ItemGroup>
     <ClCompile Include="src\ECS\Components\C_Mouvement_Actif.cpp" />
     <ClCompile Include="src\ECS\System\S_MouvementActif.cpp" />
+    <ClCompile Include="src\ECS\System\S_MouvementPassif.cpp" />
     <ClCompile Include="src\Factory\FTP_AssetManager.cpp" />
     <ClCompile Include="src\Factory\FTP_EntityManager.cpp" />
     <ClCompile Include="src\Factory\FTP_GameManager.cpp" />

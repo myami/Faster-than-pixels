@@ -78,21 +78,33 @@ void Game::S_Render()
 
 void Game::S_Simulation()
 {
+	World->Step(1 / 60.f, 8, 3);
 	for (b2Body* BodyIterator = World->GetBodyList(); BodyIterator != 0; BodyIterator = BodyIterator->GetNext()) 
 	{
-		if (BodyIterator->GetType() == b2_dynamicBody) {
-			if (S_EntityManager->M_PhysicMap[BodyIterator] != nullptr){
-				//std::cout << S_EntityManager->M_PhysicMap[BodyIterator]->E_Id << std::endl;
+		if (BodyIterator->GetType() == b2_dynamicBody) 
+		{
+			if (S_EntityManager->M_PhysicMap[BodyIterator] != nullptr)
+			{
+				Engine::Entity* entity = S_EntityManager->M_PhysicMap[BodyIterator];
+				C_Static_Render* Static = (C_Static_Render*)entity->GetComponent("Render");
+				Static->Sprite.setPosition(SCALE * BodyIterator->GetPosition().x, SCALE * BodyIterator->GetPosition().y);
+				Static->Sprite.setRotation(BodyIterator->GetAngle() * 180 / b2_pi);
+
+
 			
 			}
 			
 		}
+		else if (BodyIterator->GetType() == b2_staticBody) 
+		{
+			Engine::Entity* entity = S_EntityManager->M_PhysicMap[BodyIterator];
+			C_Static_Render* Static = (C_Static_Render*)entity->GetComponent("Render");
+			Static->Sprite.setPosition(SCALE * BodyIterator->GetPosition().x, SCALE * BodyIterator->GetPosition().y);
+			Static->Sprite.setRotation(BodyIterator->GetAngle() * 180 / b2_pi);
+		}
 	}
 
-			// trouve le entity lie a ce body
-			// appelle le systeme pour changer sa position
-			//Sprite.SetPosition(SCALE * BodyIterator->GetPosition().x, SCALE * BodyIterator->GetPosition().y);
-			//Sprite.SetRotation(BodyIterator->GetAngle() * 180 / b2_pi);
+
 }
 
 void Game::S_ActionTrigger(std::string ActionName)
@@ -222,13 +234,37 @@ void Game::CreateAsteroidPhysic( std::vector<Engine::Entity*> Asteroids)
 		S_EntityManager->M_PhysicMap.insert({Body,entity});
 		b2CircleShape circle;
 		circle.m_p.Set(Static->Sprite.getGlobalBounds().width / 2.f, Static->Sprite.getGlobalBounds().height / 2.f);
-		circle.m_radius = 0.5f;
+		circle.m_radius = 10.f;
 		b2FixtureDef FixtureDef;
-		FixtureDef.density = 1.f;
-		FixtureDef.friction = 0.7f;
+		FixtureDef.density = 100.f;
+		FixtureDef.friction = 0.f;
 		FixtureDef.shape = &circle;
 		Body->CreateFixture(&FixtureDef);
 		
+	}
+}
+
+void Game::CreatePlanetPhysic(std::vector<Engine::Entity*> Planets)
+{
+	for (auto entity : Planets)
+	{
+		C_Animated_Render* AnimatedRender = dynamic_cast<C_Animated_Render*>(entity->GetComponent("Render"));
+
+		b2BodyDef BodyDef = b2BodyDef();
+
+		BodyDef.position = b2Vec2(AnimatedRender->AnimatedSprite.FrameToDraw().getPosition().x / SCALE, AnimatedRender->AnimatedSprite.FrameToDraw().getPosition().y / SCALE);
+		BodyDef.type = b2_staticBody;
+		b2Body* Body = World->CreateBody(&BodyDef);
+		S_EntityManager->M_PhysicMap.insert({ Body,entity }); 
+		b2CircleShape circle;
+		circle.m_p.Set(AnimatedRender->AnimatedSprite.FrameToDraw().getGlobalBounds().width / 2.f, AnimatedRender->AnimatedSprite.FrameToDraw().getGlobalBounds().height / 2.f);
+		circle.m_radius = 100.f;
+		b2FixtureDef FixtureDef;
+		FixtureDef.density = 100.f;
+		FixtureDef.friction = 0.f;
+		FixtureDef.shape = &circle;
+		Body->CreateFixture(&FixtureDef);
+
 	}
 }
 
@@ -309,6 +345,8 @@ void Game::InitPlanet()
 		PlanetRender->AnimatedSprite.MoveSprite(sf::Vector2f(randomx, randomy));
 
 	}
+
+	CreatePlanetPhysic(S_EntityManager->M_EntityMap["Planet"]);
 }
 
 
