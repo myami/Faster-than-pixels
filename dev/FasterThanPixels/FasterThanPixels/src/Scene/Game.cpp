@@ -268,6 +268,11 @@ void Game::CreatePlanetPhysic(std::vector<Engine::Entity*> Planets)
 	}
 }
 
+void Game::GenerateUI()
+{
+
+}
+
 
 void Game::S_Input_Mouse(sf::Event event)
 {

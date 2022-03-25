@@ -45,6 +45,7 @@ void Authentification::S_Begin_Play()
 	Login.ButtonSprite.setOrigin(Login.ButtonSprite.getGlobalBounds().width / 2.f, Login.ButtonSprite.getGlobalBounds().height / 2.f);
 	Login.ButtonSprite.setPosition(_SceneManager->_GameManager->View.getCenter());
 	Login.ButtonSprite.move(sf::Vector2(200.f, 400.f));
+	Login.ButtonSprite.setScale(sf::Vector2f(_SceneManager->_GameManager->View.getSize().x / _SceneManager->_GameManager->Windows->getSize().x, _SceneManager->_GameManager->View.getSize().y / _SceneManager->_GameManager->Windows->getSize().y));
 
 	Register.ButtonSprite.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("RegisterButton"));
 	Register.ButtonSprite.setOrigin(Register.ButtonSprite.getGlobalBounds().width / 2.f, Register.ButtonSprite.getGlobalBounds().height / 2.f);

@@ -57,6 +57,8 @@ public:
 	void CreateAsteroidPhysic(std::vector<Engine::Entity*> Asteroids); //https://veendeta.wordpress.com/2012/02/16/tutorial-getting-started-with-box2d/
 	void CreatePlanetPhysic(std::vector<Engine::Entity*> Planets);
 
+	void GenerateUI();
+
 
 
 };
