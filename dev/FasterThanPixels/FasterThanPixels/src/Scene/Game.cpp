@@ -65,6 +65,35 @@ void Game::S_Render()
 
 	// render ui
 	_SceneManager->_GameManager->Windows->draw(text);
+	_SceneManager->_GameManager->Windows->draw(BottomBackground);
+	_SceneManager->_GameManager->Windows->draw(LeftBackground);
+
+	_SceneManager->_GameManager->Windows->draw(RepairIcon);
+	_SceneManager->_GameManager->Windows->draw(CurrentRepair);
+	_SceneManager->_GameManager->Windows->draw(MaximumRepair);
+
+	_SceneManager->_GameManager->Windows->draw(MineIcon);
+	_SceneManager->_GameManager->Windows->draw(CurrentMine);
+	_SceneManager->_GameManager->Windows->draw(MaximumMine);
+
+	_SceneManager->_GameManager->Windows->draw(MissileIcon);
+	_SceneManager->_GameManager->Windows->draw(CurrentMissile);
+	_SceneManager->_GameManager->Windows->draw(MaximumMissile);
+
+	_SceneManager->_GameManager->Windows->draw(PerforationIcon);
+	_SceneManager->_GameManager->Windows->draw(CurrentPerforation);
+	_SceneManager->_GameManager->Windows->draw(MaximumPerforation);
+
+	_SceneManager->_GameManager->Windows->draw(CadenceIcon);
+	_SceneManager->_GameManager->Windows->draw(CurrentCadence);
+	_SceneManager->_GameManager->Windows->draw(MaximumCadence);
+
+	_SceneManager->_GameManager->Windows->draw(BoostIcon);
+
+
+
+
+
 
 	// center UI on player
 
@@ -218,6 +247,8 @@ void Game::S_Begin_Play()
 	System_Mouvement_Actif = new S_Mouvement_Actif();
 	InitPlayer();
 
+	GenerateUI();
+
 
 }
 void Game::CreateAsteroidPhysic( std::vector<Engine::Entity*> Asteroids)
@@ -270,7 +301,99 @@ void Game::CreatePlanetPhysic(std::vector<Engine::Entity*> Planets)
 
 void Game::GenerateUI()
 {
+	BottomBackground.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("BottomBackground"));
+	BottomBackground.setOrigin(BottomBackground.getGlobalBounds().width / 2.f, BottomBackground.getGlobalBounds().height / 2.f);
+	BottomBackground.setPosition(30,_SceneManager->_GameManager->View.getCenter().y +150);
 
+	LeftBackground.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("LeftBackground"));
+	LeftBackground.setOrigin(LeftBackground.getGlobalBounds().width / 2.f, LeftBackground.getGlobalBounds().height / 2.f);
+	LeftBackground.setPosition(450, _SceneManager->_GameManager->View.getCenter().y + 450);
+
+	RepairIcon.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("RepairIcon"));
+	RepairIcon.setOrigin(RepairIcon.getGlobalBounds().width / 2.f, RepairIcon.getGlobalBounds().height / 2.f);
+	RepairIcon.setPosition(100, _SceneManager->_GameManager->View.getCenter().y +440);
+
+	CurrentRepair.setFont(_SceneManager->_GameManager->G_AssetManager->GetFont("FontText"));
+	CurrentRepair.setCharacterSize(20);
+	CurrentRepair.setOrigin(CurrentRepair.getGlobalBounds().width / 2.f, CurrentRepair.getGlobalBounds().height / 2.f);
+	CurrentRepair.setPosition(130, _SceneManager->_GameManager->View.getCenter().y + 430);
+	CurrentRepair.setString("0");
+
+	MaximumRepair.setFont(_SceneManager->_GameManager->G_AssetManager->GetFont("FontText"));
+	MaximumRepair.setCharacterSize(20);
+	MaximumRepair.setOrigin(MaximumRepair.getGlobalBounds().width / 2.f, MaximumRepair.getGlobalBounds().height / 2.f);
+	MaximumRepair.setPosition(150, _SceneManager->_GameManager->View.getCenter().y + 430);
+	MaximumRepair.setString("/ 3");
+
+	MineIcon.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("MineIcon"));
+	MineIcon.setOrigin(MineIcon.getGlobalBounds().width / 2.f, MineIcon.getGlobalBounds().height / 2.f);
+	MineIcon.setPosition(210, _SceneManager->_GameManager->View.getCenter().y + 440);
+
+	CurrentMine.setFont(_SceneManager->_GameManager->G_AssetManager->GetFont("FontText"));
+	CurrentMine.setCharacterSize(20);
+	CurrentMine.setOrigin(CurrentMine.getGlobalBounds().width / 2.f, CurrentMine.getGlobalBounds().height / 2.f);
+	CurrentMine.setPosition(240, _SceneManager->_GameManager->View.getCenter().y + 430);
+	CurrentMine.setString("0");
+
+	MaximumMine.setFont(_SceneManager->_GameManager->G_AssetManager->GetFont("FontText"));
+	MaximumMine.setCharacterSize(20);
+	MaximumMine.setOrigin(MaximumMine.getGlobalBounds().width / 2.f, MaximumMine.getGlobalBounds().height / 2.f);
+	MaximumMine.setPosition(260, _SceneManager->_GameManager->View.getCenter().y + 430);
+	MaximumMine.setString("/ 3");
+
+	MissileIcon.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("MissilesIcon"));
+	MissileIcon.setOrigin(MissileIcon.getGlobalBounds().width / 2.f, MissileIcon.getGlobalBounds().height / 2.f);
+	MissileIcon.setPosition(330, _SceneManager->_GameManager->View.getCenter().y + 440);
+
+	CurrentMissile.setFont(_SceneManager->_GameManager->G_AssetManager->GetFont("FontText"));
+	CurrentMissile.setCharacterSize(20);
+	CurrentMissile.setOrigin(CurrentMissile.getGlobalBounds().width / 2.f, CurrentMissile.getGlobalBounds().height / 2.f);
+	CurrentMissile.setPosition(350, _SceneManager->_GameManager->View.getCenter().y + 430);
+	CurrentMissile.setString("0");
+
+	MaximumMissile.setFont(_SceneManager->_GameManager->G_AssetManager->GetFont("FontText"));
+	MaximumMissile.setCharacterSize(20);
+	MaximumMissile.setOrigin(MaximumMissile.getGlobalBounds().width / 2.f, MaximumMissile.getGlobalBounds().height / 2.f);
+	MaximumMissile.setPosition(370, _SceneManager->_GameManager->View.getCenter().y + 430);
+	MaximumMissile.setString("/ 3");
+
+	PerforationIcon.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("PerforingIcon"));
+	PerforationIcon.setOrigin(PerforationIcon.getGlobalBounds().width / 2.f, PerforationIcon.getGlobalBounds().height / 2.f);
+	PerforationIcon.setPosition(430, _SceneManager->_GameManager->View.getCenter().y + 440);
+
+	CurrentPerforation.setFont(_SceneManager->_GameManager->G_AssetManager->GetFont("FontText"));
+	CurrentPerforation.setCharacterSize(20);
+	CurrentPerforation.setOrigin(CurrentPerforation.getGlobalBounds().width / 2.f, CurrentPerforation.getGlobalBounds().height / 2.f);
+	CurrentPerforation.setPosition(450, _SceneManager->_GameManager->View.getCenter().y + 430);
+	CurrentPerforation.setString("0");
+
+	MaximumPerforation.setFont(_SceneManager->_GameManager->G_AssetManager->GetFont("FontText"));
+	MaximumPerforation.setCharacterSize(20);
+	MaximumPerforation.setOrigin(MaximumPerforation.getGlobalBounds().width / 2.f, MaximumPerforation.getGlobalBounds().height / 2.f);
+	MaximumPerforation.setPosition(470, _SceneManager->_GameManager->View.getCenter().y + 430);
+	MaximumPerforation.setString("/ 3");
+
+
+	CadenceIcon.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("CadenceIcon"));
+	CadenceIcon.setOrigin(CadenceIcon.getGlobalBounds().width / 2.f, CadenceIcon.getGlobalBounds().height / 2.f);
+	CadenceIcon.setPosition(530, _SceneManager->_GameManager->View.getCenter().y + 440);
+
+	CurrentCadence.setFont(_SceneManager->_GameManager->G_AssetManager->GetFont("FontText"));
+	CurrentCadence.setCharacterSize(20);
+	CurrentCadence.setOrigin(CurrentCadence.getGlobalBounds().width / 2.f, CurrentCadence.getGlobalBounds().height / 2.f);
+	CurrentCadence.setPosition(550, _SceneManager->_GameManager->View.getCenter().y + 430);
+	CurrentCadence.setString("0");
+
+	MaximumCadence.setFont(_SceneManager->_GameManager->G_AssetManager->GetFont("FontText"));
+	MaximumCadence.setCharacterSize(20);
+	MaximumCadence.setOrigin(MaximumCadence.getGlobalBounds().width / 2.f, MaximumCadence.getGlobalBounds().height / 2.f);
+	MaximumCadence.setPosition(570, _SceneManager->_GameManager->View.getCenter().y + 430);
+	MaximumCadence.setString("/ 3");
+
+	BoostIcon.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("BoostIcon"));
+	BoostIcon.setOrigin(BoostIcon.getGlobalBounds().width / 2.f, BoostIcon.getGlobalBounds().height / 2.f);
+	BoostIcon.setPosition(650, _SceneManager->_GameManager->View.getCenter().y + 443);
+	
 }
 
 

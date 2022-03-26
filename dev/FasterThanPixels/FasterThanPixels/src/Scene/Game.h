@@ -58,6 +58,33 @@ public:
 	void CreatePlanetPhysic(std::vector<Engine::Entity*> Planets);
 
 	void GenerateUI();
+	//UI
+	sf::Sprite BottomBackground;
+	sf::Sprite LeftBackground;
+
+	sf::Sprite RepairIcon;
+	sf::Text MaximumRepair;
+	sf::Text CurrentRepair;
+
+	sf::Sprite MineIcon;
+	sf::Text MaximumMine;
+	sf::Text CurrentMine;
+
+	sf::Sprite MissileIcon; // todo remplacer par une classe qui contient ces 3 element
+	sf::Text MaximumMissile;
+	sf::Text CurrentMissile;
+
+	sf::Sprite PerforationIcon;
+	sf::Text MaximumPerforation;
+	sf::Text CurrentPerforation;
+
+	sf::Sprite CadenceIcon;
+	sf::Text MaximumCadence;
+	sf::Text CurrentCadence;
+
+	sf::Sprite BoostIcon;
+
+
 
 
 
