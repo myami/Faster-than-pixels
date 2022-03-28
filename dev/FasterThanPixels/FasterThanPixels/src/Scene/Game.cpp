@@ -90,6 +90,15 @@ void Game::S_Render()
 
 	_SceneManager->_GameManager->Windows->draw(BoostIcon);
 
+	_SceneManager->_GameManager->Windows->draw(Health.Background);
+	_SceneManager->_GameManager->Windows->draw(Health.SliderBar);
+
+	_SceneManager->_GameManager->Windows->draw(Shield.Background);
+	_SceneManager->_GameManager->Windows->draw(Shield.SliderBar);
+
+	_SceneManager->_GameManager->Windows->draw(Boost.Background);
+	_SceneManager->_GameManager->Windows->draw(Boost.SliderBar);
+
 
 
 
@@ -392,7 +401,34 @@ void Game::GenerateUI()
 
 	BoostIcon.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("BoostIcon"));
 	BoostIcon.setOrigin(BoostIcon.getGlobalBounds().width / 2.f, BoostIcon.getGlobalBounds().height / 2.f);
-	BoostIcon.setPosition(650, _SceneManager->_GameManager->View.getCenter().y + 443);
+	BoostIcon.setPosition(630, _SceneManager->_GameManager->View.getCenter().y + 443);
+
+
+	Health.Background.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("BackgroundHealth"));
+	Health.Background.setOrigin(Health.Background.getGlobalBounds().width / 2.f, Health.Background.getGlobalBounds().height / 2.f);
+	Health.Background.setPosition(10, _SceneManager->_GameManager->View.getCenter().y + 150);
+
+	Health.SliderBar.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("SliderHealth"));
+	Health.SliderBar.setOrigin(Health.SliderBar.getGlobalBounds().width / 2.f, Health.SliderBar.getGlobalBounds().height / 2.f);
+	Health.SliderBar.setPosition(10, _SceneManager->_GameManager->View.getCenter().y + 150);
+	Health.InitSlider(0, 100, 1, true, 100);
+
+	Shield.Background.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("BackgroundShield"));
+	Shield.Background.setOrigin(Shield.Background.getGlobalBounds().width / 2.f, Shield.Background.getGlobalBounds().height / 2.f);
+	Shield.Background.setPosition(40, _SceneManager->_GameManager->View.getCenter().y + 150);
+
+	Shield.SliderBar.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("SliderShield"));
+	Shield.SliderBar.setOrigin(Shield.SliderBar.getGlobalBounds().width / 2.f, Shield.SliderBar.getGlobalBounds().height / 2.f);
+	Shield.SliderBar.setPosition(40, _SceneManager->_GameManager->View.getCenter().y + 150);
+
+	Boost.Background.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("BackgroundSlider"));
+	Boost.Background.setOrigin(Boost.Background.getGlobalBounds().width / 2.f, Boost.Background.getGlobalBounds().height / 2.f);
+	Boost.Background.setPosition(750, _SceneManager->_GameManager->View.getCenter().y + 443);
+
+	Boost.SliderBar.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("SliderBoost"));
+	Boost.SliderBar.setOrigin(Boost.SliderBar.getGlobalBounds().width / 2.f, Boost.SliderBar.getGlobalBounds().height / 2.f);
+	Boost.SliderBar.setPosition(750, _SceneManager->_GameManager->View.getCenter().y + 443);
+
 	
 }
 

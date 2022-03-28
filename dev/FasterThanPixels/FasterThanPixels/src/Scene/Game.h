@@ -84,6 +84,10 @@ public:
 
 	sf::Sprite BoostIcon;
 
+	Engine::Slider Health;
+	Engine::Slider Shield;
+	Engine::Slider Boost;
+
 
 
 
