@@ -159,6 +159,7 @@ void Game::S_ActionTrigger(std::string ActionName)
 		_SceneManager->_GameManager->View.move(0.f, viewspeed * _SceneManager->_GameManager->DeltaTime );
 		PlayerTransform->Direction = sf::Vector2f(0, viewspeed);
 
+
 	}
 	if (ActionName == "BackwardRelease") {
 		PlayerTransform->Direction = sf::Vector2f(0, 0);
@@ -167,9 +168,11 @@ void Game::S_ActionTrigger(std::string ActionName)
 		_SceneManager->_GameManager->View.move( -viewspeed * _SceneManager->_GameManager->DeltaTime ,0.f);
 		PlayerTransform->Direction = sf::Vector2f(-viewspeed,0);
 
+
 	}
 	if (ActionName == "LeftRelease") {
 		PlayerTransform->Direction = sf::Vector2f(0, 0);
+
 	}
 	if (ActionName == "Right") {
 		_SceneManager->_GameManager->View.move( viewspeed * _SceneManager->_GameManager->DeltaTime , 0.f);
@@ -420,6 +423,7 @@ void Game::GenerateUI()
 	Shield.SliderBar.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("SliderShield"));
 	Shield.SliderBar.setOrigin(Shield.SliderBar.getGlobalBounds().width / 2.f, Shield.SliderBar.getGlobalBounds().height / 2.f);
 	Shield.SliderBar.setPosition(40, _SceneManager->_GameManager->View.getCenter().y + 150);
+	Shield.InitSlider(0, 100, 1, true, 100);
 
 	Boost.Background.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("BackgroundSlider"));
 	Boost.Background.setOrigin(Boost.Background.getGlobalBounds().width / 2.f, Boost.Background.getGlobalBounds().height / 2.f);
@@ -428,6 +432,8 @@ void Game::GenerateUI()
 	Boost.SliderBar.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("SliderBoost"));
 	Boost.SliderBar.setOrigin(Boost.SliderBar.getGlobalBounds().width / 2.f, Boost.SliderBar.getGlobalBounds().height / 2.f);
 	Boost.SliderBar.setPosition(750, _SceneManager->_GameManager->View.getCenter().y + 443);
+	Boost.InitSlider(0, 100, 1, false, 100);
+
 
 	
 }

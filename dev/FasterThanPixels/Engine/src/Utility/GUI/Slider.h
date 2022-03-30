@@ -8,14 +8,23 @@ public:
 	sf::Sprite Background;
 	sf::Sprite SliderBar;
 	Slider();
-	int step;
-	int min;
-	int max;
 	bool orientation; // true == horizontal, false = vertical
-
+		/**
+	 * @def SetSlider
+	 * @brief transforme la valeur en une valeur entre 0 et 1. on prend en entree une valeur entre 0 et 100 et on la divise pour etre entre 0 et 1
+	 * 	\param position : doit etre un entier entre 0 et 100
+	*/
 	void InitSlider(int min, int max, int step, bool orientation, int current);
-
-	void SetSlider(float position);
+	/**
+	 * @def SetSlider
+	 * @brief transforme la valeur en une valeur entre 0 et 1. on prend en entree une valeur entre 0 et 100 et on la divise pour etre entre 0 et 1
+	 * 	\param position : doit etre un entier entre 0 et 100 
+	*/
+	void SetSlider(int position);
+	/**
+ * @def GetSliderPosition
+ * @brief retourne la position du slider entre 0 et 100
+*/
 	float GetSliderPosition();
 
 
