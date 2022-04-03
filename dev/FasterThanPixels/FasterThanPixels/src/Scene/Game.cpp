@@ -469,6 +469,7 @@ void Game::DamagePlayer(int amount)
 
 void Game::S_Input_Mouse(sf::Event event)
 {
+
 }
 
 void Game::S_Input_Text(sf::Event event)
