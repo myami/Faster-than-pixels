@@ -8,7 +8,15 @@
 #include "../ECS/Components/C_Kynematic_Collider_Sphere.h"
 #include "../ECS/Components/C_Transform.h"
 #include "../ECS/Components/C_Mouvement_Actif.h"
+#include "../ECS/Components/C_Health.h"
+#include "../ECS/Components/C_Shield.h"
+
+
 #include "../ECS/System/S_MouvementActif.h"
+#include "../ECS/System/S_Health.h"
+#include "../ECS/System/S_Shield.h"
+
+
 #include <map>
 
 
@@ -151,6 +159,9 @@ void Game::S_ActionTrigger(std::string ActionName)
 	if (ActionName == "Forward") {
 		_SceneManager->_GameManager->View.move(0.f,-viewspeed * _SceneManager->_GameManager->DeltaTime );
 		PlayerTransform->Direction = sf::Vector2f(0, -viewspeed);
+		
+
+		
 	}
 	if (ActionName == "ForwardRelease") {
 		PlayerTransform->Direction = sf::Vector2f(0, 0);
@@ -260,6 +271,9 @@ void Game::S_Begin_Play()
 	InitPlayer();
 
 	GenerateUI();
+
+	Health_Manager = new S_Health();
+	Shield_Manager = new S_Shield();
 
 
 }
@@ -438,6 +452,20 @@ void Game::GenerateUI()
 	
 }
 
+void Game::DamagePlayer(int amount)
+{
+	if (!Shield_Manager->AsShield(S_EntityManager->M_EntityMap["Player"][0]))
+	{
+		Health_Manager->DoDamage(amount, S_EntityManager->M_EntityMap["Player"][0]);
+		Health.SetSlider(Health_Manager->GetHealth(S_EntityManager->M_EntityMap["Player"][0]));
+	}
+	else {
+		Shield_Manager->DamageShield(amount, S_EntityManager->M_EntityMap["Player"][0]);
+		Shield.SetSlider(Shield_Manager->GetShield(S_EntityManager->M_EntityMap["Player"][0]));
+	}
+}
+
+
 
 void Game::S_Input_Mouse(sf::Event event)
 {
@@ -477,6 +505,26 @@ void Game::UpdateEntity()
 
 		_SceneManager->_GameManager->View.setCenter(Static->Sprite.getPosition());
 	}
+
+	auto EntitieShield = S_EntityManager->GetAllEntityWithComponent("Shield");
+	for (auto Entity : EntitieShield) 
+	{
+		C_Shield* CheckShield = dynamic_cast<C_Shield*>(Entity->GetComponent("Shield"));
+		if (CheckShield)
+			Shield_Manager->RunSystem(Entity, _SceneManager->_GameManager->DeltaTime);
+			Shield.SetSlider(Shield_Manager->GetShield(S_EntityManager->M_EntityMap["Player"][0]));
+
+	}
+
+	auto EntitieHealth = S_EntityManager->GetAllEntityWithComponent("Health");
+	for (auto Entity : EntitieHealth)
+	{
+		C_Health* CheckHealth = dynamic_cast<C_Health*>(Entity->GetComponent("Health"));
+		if (CheckHealth)
+			Health_Manager->RunSystem(Entity, _SceneManager->_GameManager->DeltaTime);
+
+	}
+
 }
 
 
@@ -575,6 +623,16 @@ void Game::InitPlayer()
 	Player->AddComponent("Collider", new C_Kynematic_Collider_Sphere());
 	Player->AddComponent("Transform", new C_Transform());
 	Player->AddComponent("Mouvement", new C_MouvementActif());
+	Player->AddComponent("Health", new C_Health());
+	Player->AddComponent("Shield", new C_Shield());
+
+	dynamic_cast<C_Health*>(Player->GetComponent("Health"))->Health = 100;
+	dynamic_cast<C_Shield*>(Player->GetComponent("Shield"))->HealthShield = 100;
+	dynamic_cast<C_Shield*>(Player->GetComponent("Shield"))->RegenerationAmountPerTick = 10;
+	dynamic_cast<C_Shield*>(Player->GetComponent("Shield"))->RegenerationSpeed = 3000;
+
+
+
 
 	C_Static_Render* Render = dynamic_cast<C_Static_Render*>(Player->GetComponent("Render"));
 
@@ -583,8 +641,25 @@ void Game::InitPlayer()
 	Render->Sprite.setOrigin(Render->Sprite.getLocalBounds().width / 2.f, Render->Sprite.getLocalBounds().height / 2.f);
 	Render->Sprite.setPosition(_SceneManager->_GameManager->View.getCenter());
 	std::cout <<"Default X : " << _SceneManager->_GameManager->View.getCenter().x << " Y : " <<_SceneManager->_GameManager->View.getCenter().y << std::endl;
+	/*
+	 ajout du player dans la simulation , a decider si ont fais kynematic qui fait un vecteur de velocite ou si il suit un joint ou si on force le kynematic a set position
 
+	b2BodyDef BodyDef = b2BodyDef();
 
+	BodyDef.position = b2Vec2(_SceneManager->_GameManager->View.getCenter().x / SCALE, _SceneManager->_GameManager->View.getCenter().y / SCALE);
+	BodyDef.type = b2_kinematicBody;
+	b2Body* Body = World->CreateBody(&BodyDef);
+	S_EntityManager->M_PhysicMap.insert({ Body,Player });
+	b2CircleShape circle;
+	circle.m_p.Set(Render->Sprite.getLocalBounds().width / 2.f, Render->Sprite.getLocalBounds().height / 2.f);
+	circle.m_radius = 100.f;
+	b2FixtureDef FixtureDef;
+	FixtureDef.density = 100.f;
+	FixtureDef.friction = 0.f;
+	FixtureDef.shape = &circle;
+	Body->CreateFixture(&FixtureDef);
+
+	*/
 
 
 }

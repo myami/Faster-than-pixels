@@ -154,8 +154,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\ECS\Components\C_Mouvement_Actif.cpp" />
+    <ClCompile Include="src\ECS\Components\C_Shield.cpp" />
+    <ClCompile Include="src\ECS\System\S_Health.cpp" />
     <ClCompile Include="src\ECS\System\S_MouvementActif.cpp" />
     <ClCompile Include="src\ECS\System\S_MouvementPassif.cpp" />
+    <ClCompile Include="src\ECS\System\S_Shield.cpp" />
     <ClCompile Include="src\Factory\FTP_AssetManager.cpp" />
     <ClCompile Include="src\Factory\FTP_EntityManager.cpp" />
     <ClCompile Include="src\Factory\FTP_GameManager.cpp" />
@@ -217,8 +220,10 @@
     <ClInclude Include="src\ECS\Entity\Weapon\Mine.h" />
     <ClInclude Include="src\ECS\Entity\Weapon\Missile.h" />
     <ClInclude Include="src\ECS\System\S_Brain.h" />
+    <ClInclude Include="src\ECS\System\S_Health.h" />
     <ClInclude Include="src\ECS\System\S_MouvementActif.h" />
     <ClInclude Include="src\ECS\System\S_MouvementPassif.h" />
+    <ClInclude Include="src\ECS\System\S_Shield.h" />
     <ClInclude Include="src\Factory\FTP_AssetManager.h" />
     <ClInclude Include="src\Factory\FTP_EntityManager.h" />
     <ClInclude Include="src\Factory\FTP_GameManager.h" />

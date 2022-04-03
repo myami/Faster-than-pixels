@@ -6,6 +6,9 @@
 
 class FTP_SceneManager;
 class S_Mouvement_Actif;
+class S_Health;
+class S_Shield;
+
 /*! \class Game
 * \brief classe enfant de Scene, represente le niveau ou le joueur joue
 *
@@ -52,7 +55,6 @@ public:
 	std::vector<std::string> AvailablePlanet;
 	std::vector<std::string> AvailableAsteroid;
 
-	S_Mouvement_Actif* System_Mouvement_Actif;
 
 	void CreateAsteroidPhysic(std::vector<Engine::Entity*> Asteroids); //https://veendeta.wordpress.com/2012/02/16/tutorial-getting-started-with-box2d/
 	void CreatePlanetPhysic(std::vector<Engine::Entity*> Planets);
@@ -88,7 +90,12 @@ public:
 	Engine::Slider Shield;
 	Engine::Slider Boost;
 
+	// systeme global
+	S_Mouvement_Actif* System_Mouvement_Actif;
+	S_Health* Health_Manager; 
+	S_Shield* Shield_Manager;
 
+	void DamagePlayer(int amount);
 
 
 

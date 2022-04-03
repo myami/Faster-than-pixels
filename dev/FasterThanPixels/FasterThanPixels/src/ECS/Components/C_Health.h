@@ -7,5 +7,7 @@
 */
 class C_Health : public Engine::BlankComponent {
 public:
-	float Health;  /*!< Vie de l'entite */
+	int Health;  /*!< Vie de l'entite */
 };
+
+//
