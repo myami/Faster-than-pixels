@@ -159,9 +159,7 @@ void Game::S_ActionTrigger(std::string ActionName)
 	if (ActionName == "Forward") {
 		_SceneManager->_GameManager->View.move(0.f,-viewspeed * _SceneManager->_GameManager->DeltaTime );
 		PlayerTransform->Direction = sf::Vector2f(0, -viewspeed);
-		
-
-		
+			
 	}
 	if (ActionName == "ForwardRelease") {
 		PlayerTransform->Direction = sf::Vector2f(0, 0);
@@ -208,6 +206,35 @@ void Game::S_ActionTrigger(std::string ActionName)
 	if (ActionName == "RotRightRelease") {
 		PlayerTransform->RotationDirection = 0;
 	}
+	if (ActionName == "Turbo") {
+	}	
+	if (ActionName == "TurboRelease") {
+	}
+	if (ActionName == "Shoot") {
+		SpawnLaser(S_EntityManager->M_EntityMap["Player"][0]);
+	}
+	if (ActionName == "ShootRelease") {
+	}
+	if (ActionName == "Mines") {
+	}
+	if (ActionName == "MinesRelease") {
+	}
+	if (ActionName == "Missiles") {
+	}
+	if (ActionName == "MissilesRelease") {
+	}
+	if (ActionName == "Reparation") {
+	}
+	if (ActionName == "ReparationRelease") {
+	}
+	if (ActionName == "Perforation") {
+	}
+	if (ActionName == "PerforationRelease") {
+	}
+	if (ActionName == "Surfrequencage") {
+	}
+	if (ActionName == "SurfrequencageRelease") {
+	}
 
 
 
@@ -238,6 +265,20 @@ void Game::S_Begin_Play()
 	Engine::InputAction Right(Engine::Trigger::KeyDown, "Right", sf::Keyboard::E);
 	Engine::InputAction RotLeft(Engine::Trigger::KeyDown, "RotLeft", sf::Keyboard::A);
 	Engine::InputAction RotRight(Engine::Trigger::KeyDown, "RotRight", sf::Keyboard::D);
+	Engine::InputAction Turbo(Engine::Trigger::KeyDown, "Turbo", sf::Keyboard::LShift);
+	Engine::InputAction Shoot(Engine::Trigger::KeyDown, "Shoot", sf::Keyboard::Space);
+	Engine::InputAction Mines(Engine::Trigger::KeyDown, "Mines", sf::Keyboard::LControl);
+	Engine::InputAction Missiles(Engine::Trigger::KeyDown, "Missiles", sf::Keyboard::F);
+	Engine::InputAction Reparation(Engine::Trigger::KeyDown, "Reparation", sf::Keyboard::Num1);
+	Engine::InputAction Perforation(Engine::Trigger::KeyDown, "Perforation", sf::Keyboard::Num2);
+	Engine::InputAction Surfrequencage(Engine::Trigger::KeyDown, "Surfrequencage", sf::Keyboard::Num3);
+
+
+
+
+
+
+
 
 	Engine::InputAction ForwardRelease(Engine::Trigger::KeyUp, "ForwardRelease", sf::Keyboard::W);
 	Engine::InputAction BackwardRelease(Engine::Trigger::KeyUp, "BackwardRelease", sf::Keyboard::S);
@@ -245,6 +286,19 @@ void Game::S_Begin_Play()
 	Engine::InputAction RightRelease(Engine::Trigger::KeyUp, "RightRelease", sf::Keyboard::E);
 	Engine::InputAction RotLeftRelease(Engine::Trigger::KeyUp, "RotLeftRelease", sf::Keyboard::A);
 	Engine::InputAction RotRightRelease(Engine::Trigger::KeyUp, "RotRightRelease", sf::Keyboard::D);
+	Engine::InputAction TurboRelease(Engine::Trigger::KeyUp, "TurboRelease", sf::Keyboard::LShift);
+	Engine::InputAction ShootRelease(Engine::Trigger::KeyUp, "ShootRelease", sf::Keyboard::Space);
+	Engine::InputAction MinesRelease(Engine::Trigger::KeyUp, "MinesRelease", sf::Keyboard::LControl);
+	Engine::InputAction MissilesRelease(Engine::Trigger::KeyUp, "MissilesRelease", sf::Keyboard::F);
+	Engine::InputAction ReparationRelease(Engine::Trigger::KeyUp, "ReparationRelease", sf::Keyboard::Num1);
+	Engine::InputAction PerforationRelease(Engine::Trigger::KeyUp, "PerforationRelease", sf::Keyboard::Num2);
+	Engine::InputAction SurfrequencageRelease(Engine::Trigger::KeyUp, "SurfrequencageRelease", sf::Keyboard::Num3);
+
+
+
+
+
+
 
 
 
@@ -261,6 +315,22 @@ void Game::S_Begin_Play()
 	RegisterAction(RightRelease);
 	RegisterAction(RotLeftRelease);
 	RegisterAction(RotRightRelease);
+
+	RegisterAction(Turbo);
+	RegisterAction(Shoot);
+	RegisterAction(Mines);
+	RegisterAction(Missiles);
+	RegisterAction(Reparation);
+	RegisterAction(Perforation);
+	RegisterAction(Surfrequencage);
+	RegisterAction(TurboRelease);
+	RegisterAction(ShootRelease);
+	RegisterAction(MinesRelease);
+	RegisterAction(MissilesRelease);
+	RegisterAction(ReparationRelease);
+	RegisterAction(PerforationRelease);
+	RegisterAction(SurfrequencageRelease);
+
 
 
 
@@ -284,9 +354,13 @@ void Game::CreateAsteroidPhysic( std::vector<Engine::Entity*> Asteroids)
 		C_Static_Render* Static = dynamic_cast<C_Static_Render*>(entity->GetComponent("Render"));
 
 		b2BodyDef BodyDef =  b2BodyDef();
+		srand(seed / 4 + entity->E_Id);
+		float randomx = rand() % (int)-15 + 15;
+		float randomy = rand() % (int)-15 + 15;
 		
 		BodyDef.position = b2Vec2(Static->Sprite.getPosition().x / SCALE, Static->Sprite.getPosition().y / SCALE);
 		BodyDef.type = b2_dynamicBody;
+		BodyDef.linearVelocity = b2Vec2(randomx, randomy);
 		b2Body* Body = World->CreateBody(&BodyDef);
 		S_EntityManager->M_PhysicMap.insert({Body,entity});
 		b2CircleShape circle;
@@ -463,6 +537,25 @@ void Game::DamagePlayer(int amount)
 		Shield_Manager->DamageShield(amount, S_EntityManager->M_EntityMap["Player"][0]);
 		Shield.SetSlider(Shield_Manager->GetShield(S_EntityManager->M_EntityMap["Player"][0]));
 	}
+}
+
+void Game::SpawnLaser(Engine::Entity* Shooter)
+{
+	C_Static_Render* ShooterRender = dynamic_cast<C_Static_Render*>(Shooter->GetComponent("Render"));
+
+
+	auto laser = Engine::GenerateEntity(S_EntityManager, "Laser");
+	laser->AddComponent("Render", new C_Static_Render());
+
+	/*
+	 C_Static_Render* LaserRender = dynamic_cast<C_Static_Render*>(laser->GetComponent("Render"));
+	if(LaserRender)
+		LaserRender->Sprite.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("WeaponLaser"));
+		LaserRender->Sprite.setOrigin(LaserRender->Sprite.getGlobalBounds().width / 2.f, LaserRender->Sprite.getGlobalBounds().height / 2.f);
+		LaserRender->Sprite.setPosition(ShooterRender->Sprite.getOrigin().x + 5.f, ShooterRender->Sprite.getOrigin().y);
+		LaserRender->Sprite.setRotation(ShooterRender->Sprite.getRotation());
+	*/
+
 }
 
 

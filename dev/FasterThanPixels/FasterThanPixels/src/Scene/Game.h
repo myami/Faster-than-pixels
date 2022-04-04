@@ -96,7 +96,7 @@ public:
 	S_Shield* Shield_Manager;
 
 	void DamagePlayer(int amount);
-
+	void SpawnLaser(Engine::Entity* Shooter);
 
 
 };

@@ -66,4 +66,15 @@ void Engine::InitEnvironnement(int seed, Engine::EntityManager* entman)
 
 }
 
+Engine::Entity* Engine::GenerateEntity(Engine::EntityManager* entman, std::string Tag)
+{
+    Entity* newentity = entman->RequestEntity();
+    newentity->E_CanBeUsed = false;
+    newentity->E_Tag = Tag;
+    newentity->E_IsAnimated = false;
+
+    entman->EntityChangeMap(newentity, "Empty", Tag);
+    return newentity;
+}
+
 

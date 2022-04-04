@@ -71,6 +71,7 @@ namespace Engine {
 
 	void InitEnvironnement(int seed, Engine::EntityManager* entman);
 
+	Engine::Entity* GenerateEntity(Engine::EntityManager* entman, std::string Tag);
 
 
 
