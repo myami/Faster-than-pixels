@@ -2,6 +2,7 @@
 #include "SFML/Graphics.hpp"
 #include "../Factory/EntityManager.h"
 #include "InputAction.h"
+#include "box2d/box2d.h"
 
 	class SceneManager;
 namespace Engine {
@@ -16,6 +17,7 @@ namespace Engine {
 		std::string S_Name;  /*!< Nom de la scene  */
 		std::vector<Engine::InputAction> ActionScene;  /*!< Chaque input disponible dans la scene */
 		SceneManager* _SceneManager;
+		b2World* World;
 
 
 
@@ -38,7 +40,7 @@ namespace Engine {
 		*
 		*  Appeler dans la gameloop , Appelle la librairie Box2D et sont monde pour savoir ou deplacer les elements lie qui bouge avec la physique
 		*/
-		virtual void S_Simulation() = 0; 
+		void S_Simulation(); 
 		/*!
 		*  \brief S_Syteme
 		*
@@ -92,6 +94,11 @@ namespace Engine {
 		virtual void S_Input_Text(sf::Event event) = 0;
 		
 		std::vector<Engine::InputAction> GetKeyInput(Engine::Trigger inputype);
+
+
+		virtual void S_Static_Physic(b2Body* body) = 0;
+		virtual void S_Dynamic_Physic(b2Body* body) = 0;
+		virtual void S_Kynematic_Physic(b2Body* body) = 0;
 
 		
 	};

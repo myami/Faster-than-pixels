@@ -32,6 +32,7 @@ void Game::S_Syteme()
 
 void Game::S_Update()
 {
+	S_EntityManager->Update(); // mais a jour la waiting list
 	MousePosScreen = sf::Mouse::getPosition();
 	MousePosWindow = sf::Mouse::getPosition(*_SceneManager->_GameManager->Windows);
 	_SceneManager->_GameManager->Windows->setView(_SceneManager->_GameManager->View);
@@ -122,36 +123,7 @@ void Game::S_Render()
 
 
 
-void Game::S_Simulation()
-{
-	World->Step(1 / 60.f, 8, 3);
-	for (b2Body* BodyIterator = World->GetBodyList(); BodyIterator != 0; BodyIterator = BodyIterator->GetNext()) 
-	{
-		if (BodyIterator->GetType() == b2_dynamicBody) 
-		{
-			if (S_EntityManager->M_PhysicMap[BodyIterator] != nullptr)
-			{
-				Engine::Entity* entity = S_EntityManager->M_PhysicMap[BodyIterator];
-				C_Static_Render* Static = (C_Static_Render*)entity->GetComponent("Render");
-				Static->Sprite.setPosition(SCALE * BodyIterator->GetPosition().x, SCALE * BodyIterator->GetPosition().y);
-				Static->Sprite.setRotation(BodyIterator->GetAngle() * 180 / b2_pi);
 
-
-			
-			}
-			
-		}
-		else if (BodyIterator->GetType() == b2_staticBody) 
-		{
-			Engine::Entity* entity = S_EntityManager->M_PhysicMap[BodyIterator];
-			C_Static_Render* Static = (C_Static_Render*)entity->GetComponent("Render");
-			Static->Sprite.setPosition(SCALE * BodyIterator->GetPosition().x, SCALE * BodyIterator->GetPosition().y);
-			Static->Sprite.setRotation(BodyIterator->GetAngle() * 180 / b2_pi);
-		}
-	}
-
-
-}
 
 void Game::S_ActionTrigger(std::string ActionName)
 {
@@ -211,7 +183,7 @@ void Game::S_ActionTrigger(std::string ActionName)
 	if (ActionName == "TurboRelease") {
 	}
 	if (ActionName == "Shoot") {
-		SpawnLaser(S_EntityManager->M_EntityMap["Player"][0]);
+		//SpawnLaser(S_EntityManager->M_EntityMap["Player"][0]);
 	}
 	if (ActionName == "ShootRelease") {
 	}
@@ -618,6 +590,28 @@ void Game::UpdateEntity()
 			Health_Manager->RunSystem(Entity, _SceneManager->_GameManager->DeltaTime);
 
 	}
+
+}
+
+void Game::S_Static_Physic(b2Body* body)
+{
+	Engine::Entity* entity = S_EntityManager->M_PhysicMap[body];
+	C_Static_Render* Static = (C_Static_Render*)entity->GetComponent("Render");
+	Static->Sprite.setPosition(SCALE * body->GetPosition().x, SCALE * body->GetPosition().y);
+	Static->Sprite.setRotation(body->GetAngle() * 180 / b2_pi);
+}
+
+void Game::S_Dynamic_Physic(b2Body* body)
+{
+	Engine::Entity* entity = S_EntityManager->M_PhysicMap[body];
+	C_Static_Render* Static = (C_Static_Render*)entity->GetComponent("Render");
+	Static->Sprite.setPosition(SCALE * body->GetPosition().x, SCALE * body->GetPosition().y);
+	Static->Sprite.setRotation(body->GetAngle() * 180 / b2_pi);
+
+}
+
+void Game::S_Kynematic_Physic(b2Body* body)
+{
 
 }
 

@@ -75,3 +75,29 @@ void Engine::Scene::S_Action(sf::Event event)
 		S_Input_Text(event);
 	}
 }
+
+void Engine::Scene::S_Simulation()
+{
+	if (World != nullptr) {
+		World->Step(1 / 60.f, 8, 3);
+		for (b2Body* BodyIterator = World->GetBodyList(); BodyIterator != 0; BodyIterator = BodyIterator->GetNext())
+		{
+			if (BodyIterator->GetType() == b2_dynamicBody)
+			{
+				if (S_EntityManager->M_PhysicMap[BodyIterator] != nullptr)
+				{
+					S_Dynamic_Physic(BodyIterator);
+				}
+
+			}
+			else if (BodyIterator->GetType() == b2_staticBody)
+			{
+				S_Static_Physic(BodyIterator);
+			}
+			else if (BodyIterator->GetType() == b2_kinematicBody) 
+			{
+				S_Kynematic_Physic(BodyIterator);
+			}
+		}
+	}
+}
