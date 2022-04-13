@@ -7,10 +7,11 @@ namespace Engine {
 	
 		sf::Font Font;
 		sf::Vector2f PositionOrigin;
-	public:
 		sf::Sprite Icon;
 		sf::Text CurrentValue;
 		sf::Text MaxValue;
+	public:
+
 		Hud_Bonus();
 
 		void InitHudBonus(sf::Texture IconTexture, std::string BonusMaxValue, std::string BonusCurrentValue, sf::Font FontAddress, int CharacterSize, sf::Vector2f PositionOrigin);

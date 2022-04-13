@@ -80,9 +80,9 @@ void Game::S_Render()
 	_SceneManager->_GameManager->Windows->draw(BottomBackground);
 	_SceneManager->_GameManager->Windows->draw(LeftBackground);
 
-	_SceneManager->_GameManager->Windows->draw(Repair.Icon);
-	_SceneManager->_GameManager->Windows->draw(Repair.CurrentValue);
-	_SceneManager->_GameManager->Windows->draw(Repair.MaxValue);
+	_SceneManager->_GameManager->Windows->draw(Repair.GetIcon());
+	_SceneManager->_GameManager->Windows->draw(Repair.GetCurrentValue());
+	_SceneManager->_GameManager->Windows->draw(Repair.GetMaxValue());
 
 	_SceneManager->_GameManager->Windows->draw(MineIcon);
 	_SceneManager->_GameManager->Windows->draw(CurrentMine);
