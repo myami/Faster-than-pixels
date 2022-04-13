@@ -20,6 +20,7 @@
 #include "Utility/Animation.h"
 #include "ECS/BlankComponent.h"
 #include "Utility/InputAction.h"
+#include "Utility/GUI/Hud_Bonus.h"
 
 
 
