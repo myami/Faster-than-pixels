@@ -8,14 +8,29 @@ namespace Engine {
 	* \brief classe representant tout les entite de la scene
 	*
 	*/
+	enum class EntityState {
+		None,
+		Add,
+		Delete,
+		AddComponent,
+		DeleteComponent
+	};
+
+	struct S_Delay_Entity {
+		int E_ID;
+		EntityState E_State;
+		std::map < std::string, Engine::Component*> E_Component; /*!< Liste des components de l'entite . si deletecomponent on check juste les strings et pas le contenu. */
+		std::string E_Tag;
+	};
+
 	class EntityManager {
 	public:
 		std::vector<Engine::Entity*> M_EntityVector; /*!< Liste des Entite */
-		std::map<std::string, std::vector<Engine::Entity*>> M_EntityMap; /*!< Liste des Entite par tag */
-		std::vector<Engine::Entity*> M_EntityToChange; /*!< Liste des entites qui doivent etre changer au debut de la prochaine frame */
+		//std::map<std::string, std::vector<Engine::Entity*>> M_EntityMap; /*!< Liste des Entite par tag */
+		std::vector<S_Delay_Entity> M_EntityToChange; /*!< Liste des entites qui doivent etre changer au debut de la prochaine frame */
 		int M_TotalEntity; /*!< Le nombre total d'entite disponible dans le pool */
 		std::map<b2Body*, Engine::Entity*> M_PhysicMap;  /*!< Liste des body de la simulation relie a leur entite */
-
+		EntityManager();
 		/*!
 	   *  \brief GenerateEntity
 	   *
@@ -29,24 +44,45 @@ namespace Engine {
 		*/
 		void Update(); 
 		/*!
-		*  \brief RemoveEntity
-		*
-		*  Si une entite dans M_EntityToChange la variable "E_CanBeUsed" est differente alors appele cette function et la vide de ces components et change sont etat pour etre utilisable pour une autre entite
-		*/
-		void RemoveEntity(); 
-		/*!
 		*  \brief RequestEntity
 		*
 		*  Demande une entite libre 
 		* \return une entite libre d utilisatation
 		*/
-		Engine::Entity* RequestEntity();
+		int RequestEntity();
 
-		void EntityChangeMap(Engine::Entity* entite,std::string oldmap, std::string newmap);
+
 
 		std::vector<Engine::Entity*> EntityToDraw();
 
 		std::vector<Engine::Entity*> GetAllEntityWithComponent(std::string Component);
+
+		bool AsEntityWaiting();
+
+		void AddToWaiting(S_Delay_Entity entite);
+		std::vector<Engine::Entity*> GetAllEntityWithTag(std::string Tag);
+
+		Engine::Entity* GetPlayer();
+
+	private:
+		/*!
+		* \brief EntityWaitingListDispatch
+		* Prend struct par struct dans la waiting list et call la function qu elle a besoin entre les 4 disponibles
+		* 
+		*/
+		void EntityWaitingListDispatch();
+		/*!
+		*  \brief RemoveEntity
+		*
+		*  Si une entite dans M_EntityToChange la variable "E_CanBeUsed" est differente alors appele cette function et la vide de ces components et change sont etat pour etre utilisable pour une autre entite
+		*/
+		void RemoveEntity(S_Delay_Entity entite);
+		/*
+		* \brief AddEntity Ajoute une entite a partir de la struct 
+		*/
+		void AddEntity(S_Delay_Entity entite);
+		void AddComponent(S_Delay_Entity entite);
+		void DeleteComponent(S_Delay_Entity entite);
 
 	};
 }

@@ -57,18 +57,21 @@ void Game::S_Render()
 
 
 	auto EntityToDraw = S_EntityManager->EntityToDraw();
-	for (auto Entity : EntityToDraw)
-	{
-		if (Entity->E_IsAnimated) {
-			C_Animated_Render* CheckAnimatation = dynamic_cast<C_Animated_Render*>(Entity->GetComponent("Render"));
-			_SceneManager->_GameManager->Windows->draw(CheckAnimatation->AnimatedSprite.FrameToDraw());
-		}
-		else {
-			C_Static_Render* Static = dynamic_cast<C_Static_Render*>(Entity->GetComponent("Render"));
+	if (EntityToDraw.size() != 0) {
+		for (auto Entity : EntityToDraw)
+		{
+			if (Entity->E_IsAnimated) {
+				C_Animated_Render* CheckAnimatation = dynamic_cast<C_Animated_Render*>(Entity->GetComponent("Render"));
+				_SceneManager->_GameManager->Windows->draw(CheckAnimatation->AnimatedSprite.FrameToDraw());
+			}
+			else {
+				C_Static_Render* Static = dynamic_cast<C_Static_Render*>(Entity->GetComponent("Render"));
 				_SceneManager->_GameManager->Windows->draw(Static->Sprite);
+			}
+
 		}
-	
 	}
+
 
 	_SceneManager->_GameManager->Windows->setView(_SceneManager->_GameManager->Windows->getDefaultView());
 
@@ -127,7 +130,7 @@ void Game::S_Render()
 
 void Game::S_ActionTrigger(std::string ActionName)
 {
-	C_Transform* PlayerTransform = dynamic_cast<C_Transform*>(S_EntityManager->M_EntityMap["Player"][0]->GetComponent("Transform"));
+	C_Transform* PlayerTransform = dynamic_cast<C_Transform*>(S_EntityManager->GetPlayer()->GetComponent("Transform"));
 	if (ActionName == "Forward") {
 		_SceneManager->_GameManager->View.move(0.f,-viewspeed * _SceneManager->_GameManager->DeltaTime );
 		PlayerTransform->Direction = sf::Vector2f(0, -viewspeed);
@@ -227,7 +230,6 @@ void Game::S_Begin_Play()
 	S_EntityManager->M_TotalEntity = 500; // on veux 500 entite dans le jeu
 	S_EntityManager->GenerateEntity();
 
-	Engine::InitEnvironnement(seed,S_EntityManager);
 	InitPlanet();
 	InitAsteroid();
 
@@ -500,14 +502,14 @@ void Game::GenerateUI()
 
 void Game::DamagePlayer(int amount)
 {
-	if (!Shield_Manager->AsShield(S_EntityManager->M_EntityMap["Player"][0]))
+	if (!Shield_Manager->AsShield(S_EntityManager->GetPlayer()))
 	{
-		Health_Manager->DoDamage(amount, S_EntityManager->M_EntityMap["Player"][0]);
-		Health.SetSlider(Health_Manager->GetHealth(S_EntityManager->M_EntityMap["Player"][0]));
+		Health_Manager->DoDamage(amount, S_EntityManager->GetPlayer());
+		Health.SetSlider(Health_Manager->GetHealth(S_EntityManager->GetPlayer()));
 	}
 	else {
-		Shield_Manager->DamageShield(amount, S_EntityManager->M_EntityMap["Player"][0]);
-		Shield.SetSlider(Shield_Manager->GetShield(S_EntityManager->M_EntityMap["Player"][0]));
+		Shield_Manager->DamageShield(amount, S_EntityManager->GetPlayer());
+		Shield.SetSlider(Shield_Manager->GetShield(S_EntityManager->GetPlayer()));
 	}
 }
 
@@ -517,16 +519,19 @@ void Game::SpawnLaser(Engine::Entity* Shooter)
 
 
 	auto laser = Engine::GenerateEntity(S_EntityManager, "Laser");
-	laser->AddComponent("Render", new C_Static_Render());
+	std::map < std::string, Engine::Component*> ComponentLaser;
+	ComponentLaser.insert(std::pair<std::string, Engine::Component*>("Render", new C_Static_Render()));
+	ComponentLaser.insert(std::pair<std::string, Engine::Component*>("Transform", new C_Transform()));
+	ComponentLaser.insert(std::pair<std::string, Engine::Component*>("Collider", new C_Static_Collider_Sphere()));
+	laser.E_Component = ComponentLaser;
 
-	/*
-	 C_Static_Render* LaserRender = dynamic_cast<C_Static_Render*>(laser->GetComponent("Render"));
+	 C_Static_Render* LaserRender = dynamic_cast<C_Static_Render*>(ComponentLaser["Render"]);
 	if(LaserRender)
 		LaserRender->Sprite.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("WeaponLaser"));
 		LaserRender->Sprite.setOrigin(LaserRender->Sprite.getGlobalBounds().width / 2.f, LaserRender->Sprite.getGlobalBounds().height / 2.f);
 		LaserRender->Sprite.setPosition(ShooterRender->Sprite.getOrigin().x + 5.f, ShooterRender->Sprite.getOrigin().y);
 		LaserRender->Sprite.setRotation(ShooterRender->Sprite.getRotation());
-	*/
+	
 
 }
 
@@ -563,9 +568,9 @@ void Game::UpdateEntity()
 			System_Mouvement_Actif->RunSystem(Entity, _SceneManager->_GameManager->DeltaTime);
 		}
 	}
-	CheckPlayerLimit(S_EntityManager->M_EntityMap["Player"][0]);
+	//CheckPlayerLimit(S_EntityManager->GetPlayer());
 
-	C_Static_Render* Static = dynamic_cast<C_Static_Render*>(S_EntityManager->M_EntityMap["Player"][0]->GetComponent("Render"));
+	C_Static_Render* Static = dynamic_cast<C_Static_Render*>(S_EntityManager->GetPlayer()->GetComponent("Render"));
 	if (Static) {
 
 
@@ -578,7 +583,7 @@ void Game::UpdateEntity()
 		C_Shield* CheckShield = dynamic_cast<C_Shield*>(Entity->GetComponent("Shield"));
 		if (CheckShield)
 			Shield_Manager->RunSystem(Entity, _SceneManager->_GameManager->DeltaTime);
-			Shield.SetSlider(Shield_Manager->GetShield(S_EntityManager->M_EntityMap["Player"][0]));
+			Shield.SetSlider(Shield_Manager->GetShield(S_EntityManager->GetPlayer()));
 
 	}
 
@@ -632,16 +637,27 @@ void Game::InitPlanet()
 	AvailablePlanet.push_back("WetPlanet");
 	
 	
+	srand(seed / 2);
+	int Amount_Planet = rand() % 40 + 15;
+
+
 	
 
-	auto PlanetEntity = S_EntityManager->M_EntityMap["Planet"];
-
-	for (size_t i = 0; i < PlanetEntity.size(); i++)
+	for (size_t i = 0; i < Amount_Planet; i++)
 	{
-		PlanetEntity[i]->AddComponent("Render", new C_Animated_Render());
-		PlanetEntity[i]->AddComponent("Collider", new C_Static_Collider_Sphere());
 
-		C_Animated_Render* PlanetRender = dynamic_cast<C_Animated_Render*>(PlanetEntity[i]->GetComponent("Render"));
+		Engine::S_Delay_Entity Planet;
+		Planet.E_State = Engine::EntityState::Add;
+		Planet.E_ID = S_EntityManager->RequestEntity();
+		Planet.E_Tag = "Planet";
+
+
+		std::map < std::string, Engine::Component*> ComponentPlanet;
+		ComponentPlanet.insert(std::pair<std::string, Engine::Component*>("Render", new C_Animated_Render()));
+		ComponentPlanet.insert(std::pair<std::string, Engine::Component*>("Collider", new C_Static_Collider_Sphere()));
+		Planet.E_Component = ComponentPlanet;
+
+		C_Animated_Render* PlanetRender = dynamic_cast<C_Animated_Render*>(ComponentPlanet["Render"]);
 		srand(seed  + i );
 		int randomplanet = rand() % AvailablePlanet.size() + 0;
 		std::cout << randomplanet;
@@ -649,10 +665,12 @@ void Game::InitPlanet()
 		float randomx = rand() % (int)MapSize.x + -MapSize.x;
 		float randomy = rand() % (int)MapSize.y + -MapSize.y;
 		PlanetRender->AnimatedSprite.MoveSprite(sf::Vector2f(randomx, randomy));
+		S_EntityManager->AddToWaiting(Planet);
+
 
 	}
 
-	CreatePlanetPhysic(S_EntityManager->M_EntityMap["Planet"]);
+	CreatePlanetPhysic(S_EntityManager->GetAllEntityWithTag("Planet"));
 }
 
 
@@ -673,17 +691,28 @@ void Game::InitAsteroid()
 	AvailableAsteroid.push_back("Asteroid12");
 	
 
+	srand(seed / 5);
+	int Amount_Asteroid = rand() % 200 + 100;
 	
 	
-	auto AsteroidEntity = S_EntityManager->M_EntityMap["Asteroid"];
 
-	for (size_t i = 0; i < AsteroidEntity.size(); i++)
+	for (size_t i = 0; i < Amount_Asteroid; i++)
 	{
+		Engine::S_Delay_Entity Asteroid;
+		Asteroid.E_State = Engine::EntityState::Add;
+
+		Asteroid.E_ID = S_EntityManager->RequestEntity();
+		Asteroid.E_Tag = "Asteroid";
+
+
+		std::map < std::string, Engine::Component*> ComponentAsteroid;
+		ComponentAsteroid.insert(std::pair<std::string, Engine::Component*>("Render", new C_Static_Render()));
+		ComponentAsteroid.insert(std::pair<std::string, Engine::Component*>("Collider", new C_Static_Collider_Sphere()));
+		Asteroid.E_Component = ComponentAsteroid;
+
+
 		
-		AsteroidEntity[i]->AddComponent("Render", new C_Static_Render());
-		AsteroidEntity[i]->AddComponent("Collider", new C_Static_Collider_Sphere());
-		
-		C_Static_Render* AsteroidRender = dynamic_cast<C_Static_Render*>(AsteroidEntity[i]->GetComponent("Render"));
+		C_Static_Render* AsteroidRender = dynamic_cast<C_Static_Render*>(ComponentAsteroid["Render"]);
 		srand(seed / 2 + i);
 		int randomasteroid = rand() % AvailableAsteroid.size() + 0; // selection texture
 		float randomx = rand() % (int)MapSize.x + -MapSize.x;
@@ -695,34 +724,42 @@ void Game::InitAsteroid()
 		AsteroidRender->Sprite.setPosition(_SceneManager->_GameManager->View.getCenter());
 		AsteroidRender->Sprite.move(sf::Vector2f(randomx, randomy));
 
+		S_EntityManager->AddToWaiting(Asteroid);
+
+
 	}
-	CreateAsteroidPhysic(S_EntityManager->M_EntityMap["Asteroid"]);
+	CreateAsteroidPhysic(S_EntityManager->GetAllEntityWithTag("Asteroid"));
 
 }
 
 void Game::InitPlayer()
 {
-	Engine::Entity* Player = S_EntityManager->RequestEntity();
-	Player->E_CanBeUsed = false;
-	Player->E_Tag = "Player";
-	Player->E_IsAnimated = false;
-	S_EntityManager->EntityChangeMap(Player, "Empty", "Player");
-	Player->AddComponent("Render", new C_Static_Render());
-	Player->AddComponent("Collider", new C_Kynematic_Collider_Sphere());
-	Player->AddComponent("Transform", new C_Transform());
-	Player->AddComponent("Mouvement", new C_MouvementActif());
-	Player->AddComponent("Health", new C_Health());
-	Player->AddComponent("Shield", new C_Shield());
 
-	dynamic_cast<C_Health*>(Player->GetComponent("Health"))->Health = 100;
-	dynamic_cast<C_Shield*>(Player->GetComponent("Shield"))->HealthShield = 100;
-	dynamic_cast<C_Shield*>(Player->GetComponent("Shield"))->RegenerationAmountPerTick = 10;
-	dynamic_cast<C_Shield*>(Player->GetComponent("Shield"))->RegenerationSpeed = 3000;
+	Engine::S_Delay_Entity Player;
+	Player.E_ID = S_EntityManager->RequestEntity();
+	Player.E_State = Engine::EntityState::Add;
+
+	Player.E_Tag = "Player";
+
+	std::map < std::string, Engine::Component*> ComponentPlayer;
+	ComponentPlayer.insert(std::pair<std::string, Engine::Component*>("Render", new C_Static_Render()));
+	ComponentPlayer.insert(std::pair<std::string, Engine::Component*>("Collider", new C_Kynematic_Collider_Sphere()));
+	ComponentPlayer.insert(std::pair<std::string, Engine::Component*>("Transform", new C_Transform()));
+	ComponentPlayer.insert(std::pair<std::string, Engine::Component*>("Mouvement", new C_MouvementActif()));
+	ComponentPlayer.insert(std::pair<std::string, Engine::Component*>("Health", new C_Health()));
+	ComponentPlayer.insert(std::pair<std::string, Engine::Component*>("Shield", new C_Shield()));
+
+	Player.E_Component = ComponentPlayer;
+
+	dynamic_cast<C_Health*>(ComponentPlayer["Health"])->Health = 100;
+	dynamic_cast<C_Shield*>(ComponentPlayer["Shield"])->HealthShield = 100;
+	dynamic_cast<C_Shield*>(ComponentPlayer["Shield"])->RegenerationAmountPerTick = 10;
+	dynamic_cast<C_Shield*>(ComponentPlayer["Shield"])->RegenerationSpeed = 3000;
 
 
 
 
-	C_Static_Render* Render = dynamic_cast<C_Static_Render*>(Player->GetComponent("Render"));
+	C_Static_Render* Render = dynamic_cast<C_Static_Render*>(ComponentPlayer["Render"]);
 
 	Render->Sprite.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("Player100"));
 	Render->Sprite.setScale(sf::Vector2f(.2f, .2f));
@@ -748,7 +785,7 @@ void Game::InitPlayer()
 	Body->CreateFixture(&FixtureDef);
 
 	*/
-
+	S_EntityManager->AddToWaiting(Player);
 
 }
 

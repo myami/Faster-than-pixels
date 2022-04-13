@@ -42,6 +42,10 @@ namespace Engine {
 		 *  \param Component : Le component
 		 */
 		void AddComponent(std::string name, Engine::Component* Component);
+
+		void Reset();
+
+		void DeleteComponent(const std::string name);
 		
 
 	};

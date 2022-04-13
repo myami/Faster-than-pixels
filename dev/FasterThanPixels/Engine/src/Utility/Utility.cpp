@@ -6,6 +6,7 @@
 #include <vector>
 #include "../ECS/Entity.h"
 #include "../ECS/Component.h"
+#include "../Factory/EntityManager.h"
 
 
 std::vector<nlohmann::json> Engine::LoadAssetFromFile(std::string path)
@@ -36,45 +37,15 @@ std::vector<nlohmann::json> Engine::LoadAssetFromFile(std::string path)
 
 }
 
-void Engine::InitEnvironnement(int seed, Engine::EntityManager* entman)
+
+Engine::S_Delay_Entity Engine::GenerateEntity(Engine::EntityManager* entman, std::string Tag)
 {
-    srand(seed / 2);
-    int Amount_Planet = rand() % 40 + 15;
-    srand(seed / 5);
-    int Amount_Asteroid = rand() % 200 + 100;
 
+    S_Delay_Entity entite;
+    entite.E_ID = entman->RequestEntity();
+    entite.E_Tag = Tag;
 
-    for (size_t i = 0; i < Amount_Planet; i++)
-    {
-       Entity* newplanet = entman->RequestEntity();
-       newplanet->E_CanBeUsed = false;
-       newplanet->E_Tag = "Planet";
-       newplanet->E_IsAnimated = true;
-       entman->EntityChangeMap(newplanet, "Empty", "Planet");
-
-    }
-
-    for (size_t i = 0; i < Amount_Asteroid; i++)
-    {
-        Entity* newasteroid = entman->RequestEntity();
-        newasteroid->E_CanBeUsed = false;
-        newasteroid->E_Tag = "Asteroid";
-        entman->EntityChangeMap(newasteroid, "Empty", "Asteroid");
-    }
-
-
-
-}
-
-Engine::Entity* Engine::GenerateEntity(Engine::EntityManager* entman, std::string Tag)
-{
-    Entity* newentity = entman->RequestEntity();
-    newentity->E_CanBeUsed = false;
-    newentity->E_Tag = Tag;
-    newentity->E_IsAnimated = false;
-
-    entman->EntityChangeMap(newentity, "Empty", Tag);
-    return newentity;
+    return entite;
 }
 
 

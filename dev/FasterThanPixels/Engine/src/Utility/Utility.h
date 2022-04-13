@@ -11,6 +11,8 @@
 
 namespace Engine {
 	class Entity;
+	struct S_Delay_Entity;
+	class EntityManager;
 	/*!
 	*  \brief LoadAssetFromFile
 	*
@@ -69,9 +71,8 @@ namespace Engine {
 	* \return liste d'entite
 	*/
 
-	void InitEnvironnement(int seed, Engine::EntityManager* entman);
 
-	Engine::Entity* GenerateEntity(Engine::EntityManager* entman, std::string Tag);
+	S_Delay_Entity GenerateEntity(Engine::EntityManager* entman, std::string Tag);
 
 
 
