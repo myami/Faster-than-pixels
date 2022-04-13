@@ -80,9 +80,9 @@ void Game::S_Render()
 	_SceneManager->_GameManager->Windows->draw(BottomBackground);
 	_SceneManager->_GameManager->Windows->draw(LeftBackground);
 
-	_SceneManager->_GameManager->Windows->draw(RepairIcon);
-	_SceneManager->_GameManager->Windows->draw(CurrentRepair);
-	_SceneManager->_GameManager->Windows->draw(MaximumRepair);
+	_SceneManager->_GameManager->Windows->draw(Repair.Icon);
+	_SceneManager->_GameManager->Windows->draw(Repair.CurrentValue);
+	_SceneManager->_GameManager->Windows->draw(Repair.MaxValue);
 
 	_SceneManager->_GameManager->Windows->draw(MineIcon);
 	_SceneManager->_GameManager->Windows->draw(CurrentMine);
@@ -383,21 +383,23 @@ void Game::GenerateUI()
 	LeftBackground.setOrigin(LeftBackground.getGlobalBounds().width / 2.f, LeftBackground.getGlobalBounds().height / 2.f);
 	LeftBackground.setPosition(450, _SceneManager->_GameManager->View.getCenter().y + 450);
 
-	RepairIcon.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("RepairIcon"));
-	RepairIcon.setOrigin(RepairIcon.getGlobalBounds().width / 2.f, RepairIcon.getGlobalBounds().height / 2.f);
-	RepairIcon.setPosition(100, _SceneManager->_GameManager->View.getCenter().y +440);
+	Repair.InitHudBonus(_SceneManager->_GameManager->G_AssetManager->GetTexture("RepairIcon"), "3", "0", _SceneManager->_GameManager->G_AssetManager->GetFont("FontText"), 20, sf::Vector2f(100, _SceneManager->_GameManager->View.getCenter().y + 440));
 
-	CurrentRepair.setFont(_SceneManager->_GameManager->G_AssetManager->GetFont("FontText"));
-	CurrentRepair.setCharacterSize(20);
-	CurrentRepair.setOrigin(CurrentRepair.getGlobalBounds().width / 2.f, CurrentRepair.getGlobalBounds().height / 2.f);
-	CurrentRepair.setPosition(130, _SceneManager->_GameManager->View.getCenter().y + 430);
-	CurrentRepair.setString("0");
+	//RepairIcon.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("RepairIcon"));
+	//RepairIcon.setOrigin(RepairIcon.getGlobalBounds().width / 2.f, RepairIcon.getGlobalBounds().height / 2.f);
+	//RepairIcon.setPosition(100, _SceneManager->_GameManager->View.getCenter().y +440);
 
-	MaximumRepair.setFont(_SceneManager->_GameManager->G_AssetManager->GetFont("FontText"));
-	MaximumRepair.setCharacterSize(20);
-	MaximumRepair.setOrigin(MaximumRepair.getGlobalBounds().width / 2.f, MaximumRepair.getGlobalBounds().height / 2.f);
-	MaximumRepair.setPosition(150, _SceneManager->_GameManager->View.getCenter().y + 430);
-	MaximumRepair.setString("/ 3");
+	//CurrentRepair.setFont(_SceneManager->_GameManager->G_AssetManager->GetFont("FontText"));
+	//CurrentRepair.setCharacterSize(20);
+	//CurrentRepair.setOrigin(CurrentRepair.getGlobalBounds().width / 2.f, CurrentRepair.getGlobalBounds().height / 2.f);
+	//CurrentRepair.setPosition(130, _SceneManager->_GameManager->View.getCenter().y + 430);
+	//CurrentRepair.setString("0");
+
+	//MaximumRepair.setFont(_SceneManager->_GameManager->G_AssetManager->GetFont("FontText"));
+	//MaximumRepair.setCharacterSize(20);
+	//MaximumRepair.setOrigin(MaximumRepair.getGlobalBounds().width / 2.f, MaximumRepair.getGlobalBounds().height / 2.f);
+	//MaximumRepair.setPosition(150, _SceneManager->_GameManager->View.getCenter().y + 430);
+	//MaximumRepair.setString("/ 3");
 
 	MineIcon.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("MineIcon"));
 	MineIcon.setOrigin(MineIcon.getGlobalBounds().width / 2.f, MineIcon.getGlobalBounds().height / 2.f);

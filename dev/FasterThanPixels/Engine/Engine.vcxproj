@@ -184,6 +184,7 @@
     <ClInclude Include="src\Utility\GameStats.h" />
     <ClInclude Include="src\Utility\Graph.h" />
     <ClInclude Include="src\Utility\GUI\Button.h" />
+    <ClInclude Include="src\Utility\GUI\Hud_Bonus.h" />
     <ClInclude Include="src\Utility\GUI\Input.h" />
     <ClInclude Include="src\Utility\GUI\Slider.h" />
     <ClInclude Include="src\Utility\InputAction.h" />
@@ -204,6 +205,7 @@
     <ClCompile Include="src\Utility\Animation.cpp" />
     <ClCompile Include="src\Utility\BlankScene.cpp" />
     <ClCompile Include="src\Utility\GUI\Button.cpp" />
+    <ClCompile Include="src\Utility\GUI\Hud_Bonus.cpp" />
     <ClCompile Include="src\Utility\GUI\Input.cpp" />
     <ClCompile Include="src\Utility\GUI\Slider.cpp" />
     <ClCompile Include="src\Utility\InputAction.cpp" />

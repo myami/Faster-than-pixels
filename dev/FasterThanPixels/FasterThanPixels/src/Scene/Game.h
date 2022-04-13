@@ -67,9 +67,11 @@ public:
 	sf::Sprite BottomBackground;
 	sf::Sprite LeftBackground;
 
-	sf::Sprite RepairIcon;
-	sf::Text MaximumRepair;
-	sf::Text CurrentRepair;
+	Engine::Hud_Bonus Repair;
+
+	//sf::Sprite RepairIcon;
+	//sf::Text MaximumRepair;
+	//sf::Text CurrentRepair;
 
 	sf::Sprite MineIcon;
 	sf::Text MaximumMine;
