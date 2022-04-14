@@ -1,0 +1,15 @@
+{
+  "name": "ButtonInter",
+  "url": "/img/Compendium/Intercepteur.png",
+  "type": "Texture",
+  "collider": [
+    {
+      "x": 0,
+      "y": 0
+    },
+    {
+      "x": 0,
+      "y": 0
+    }
+  ]
+}

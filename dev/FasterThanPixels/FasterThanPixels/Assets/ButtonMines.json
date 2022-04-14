@@ -1,0 +1,15 @@
+{
+  "name": "ButtonMines",
+  "url": "/img/Compendium/Mines.png",
+  "type": "Texture",
+  "collider": [
+    {
+      "x": 0,
+      "y": 0
+    },
+    {
+      "x": 0,
+      "y": 0
+    }
+  ]
+}

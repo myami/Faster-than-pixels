@@ -1,0 +1,15 @@
+{
+  "name": "ButtonDernierSurvivant",
+  "url": "/img/Compendium/Dernier-Survivant.png",
+  "type": "Texture",
+  "collider": [
+    {
+      "x": 0,
+      "y": 0
+    },
+    {
+      "x": 0,
+      "y": 0
+    }
+  ]
+}
