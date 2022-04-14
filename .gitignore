@@ -39,3 +39,7 @@ ipch/
 *.cachefile
 *.VC.db
 *.VC.VC.opendb
+dev/FasterThanPixels/x64/Debug/FasterThanPixels.exe
+dev/FasterThanPixels/x64/Debug/Engine.lib
+dev/FasterThanPixels/x64/Debug/Engine.idb
+dev/FasterThanPixels/FasterThanPixels/x64/Debug/vc143.idb
