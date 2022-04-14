@@ -68,35 +68,12 @@ public:
 	sf::Sprite LeftBackground;
 
 	Engine::Hud_Bonus Repair;
-
-	//sf::Sprite RepairIcon;
-	//sf::Text MaximumRepair;
-	//sf::Text CurrentRepair;
-
 	Engine::Hud_Bonus Mine;
-
-	/*sf::Sprite MineIcon;
-	sf::Text MaximumMine;
-	sf::Text CurrentMine;*/
-
-	
 	Engine::Hud_Bonus Missile; 
-	
-	//sf::Sprite MissileIcon; // todo remplacer par une classe qui contient ces 3 element
-	//sf::Text MaximumMissile;
-	//sf::Text CurrentMissile;
-
 	Engine::Hud_Bonus Perforation;
-	
-	/*sf::Sprite PerforationIcon;
-	sf::Text MaximumPerforation;
-	sf::Text CurrentPerforation;*/
-
 	Engine::Hud_Bonus Cadence;
 
-	//sf::Sprite CadenceIcon;
-	//sf::Text MaximumCadence;
-	//sf::Text CurrentCadence;
+
 
 	sf::Sprite BoostIcon;
 
