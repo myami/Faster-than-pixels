@@ -2,11 +2,12 @@
 
 Engine::Hud_Bonus::Hud_Bonus()
 {
+
 }
 
-void Engine::Hud_Bonus::InitHudBonus(sf::Texture IconTexture, std::string BonusMaxValue, std::string BonusCurrentValue, sf::Font FontAddress, int CharacterSize, sf::Vector2f PositionOrigin)
+void Engine::Hud_Bonus::InitHudBonus(sf::Texture& IconTexture, std::string BonusMaxValue, std::string BonusCurrentValue, sf::Font& FontAddress, int CharacterSize, sf::Vector2f PosOrigin)
 {
-	this->PositionOrigin = PositionOrigin;
+	PositionOrigin = PosOrigin;
 	Icon.setTexture(IconTexture);
 	Icon.setOrigin(Icon.getGlobalBounds().width / 2.f, Icon.getGlobalBounds().height / 2.f);
 	Icon.setPosition(PositionOrigin.x, PositionOrigin.y);

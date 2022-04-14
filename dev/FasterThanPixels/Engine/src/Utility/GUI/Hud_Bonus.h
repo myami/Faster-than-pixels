@@ -12,9 +12,10 @@ namespace Engine {
 		sf::Text MaxValue;
 	public:
 
+
 		Hud_Bonus();
 
-		void InitHudBonus(sf::Texture IconTexture, std::string BonusMaxValue, std::string BonusCurrentValue, sf::Font FontAddress, int CharacterSize, sf::Vector2f PositionOrigin);
+		void InitHudBonus(sf::Texture& IconTexture, std::string BonusMaxValue, std::string BonusCurrentValue, sf::Font& FontAddress, int CharacterSize, sf::Vector2f PositionOrigin);
 
 		sf::Sprite GetIcon();
 
