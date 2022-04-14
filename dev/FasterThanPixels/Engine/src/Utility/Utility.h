@@ -7,7 +7,7 @@
 #include "../Factory/EntityManager.h"
 #include "box2d/box2d.h"
 #include "json.hpp"
-#include "mysql/jdbc.h"
+
 
 namespace Engine {
 	class Entity;

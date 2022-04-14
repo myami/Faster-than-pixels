@@ -49,5 +49,7 @@ public:
 	*/
 	bool IsInputClicked(sf::RenderWindow* render);
 
+	void SetPosition(std::string text, sf::Vector2f pos);
+
 
 };

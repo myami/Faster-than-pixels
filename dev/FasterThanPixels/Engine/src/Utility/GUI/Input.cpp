@@ -123,6 +123,14 @@ bool Input::IsInputClicked(sf::RenderWindow* render)
 	}
 }
 
+void Input::SetPosition(std::string text, sf::Vector2f pos)
+{
+	textbox.setPosition(pos.x, pos.y);
+	textbox.move(sf::Vector2(- textbox.getGlobalBounds().width / 2.f, - textbox.getGlobalBounds().height / 2.f));
+	BackgroundTexture.setPosition(pos.x, pos.y);
+	textbox.setString(text);
+}
+
 void Input::DeleteLastChar()
 {
 	std::string t = text.str();
