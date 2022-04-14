@@ -1,5 +1,6 @@
 #include "Authentification.h"
 #include "../Factory/FTP_SceneManager.h"
+#include "SFML/Graphics.hpp"
 
 
 Authentification::Authentification(std::string name, FTP_SceneManager* refs) : Engine::BlankScene(name)
@@ -180,6 +181,7 @@ void Authentification::S_Input_Mouse(sf::Event event)
 #pragma endregion
 
 #pragma region Champs
+
 		if (UserName.IsInputClicked(_SceneManager->_GameManager->Windows)) {
 			UserName.SetSelected(true);
 		}

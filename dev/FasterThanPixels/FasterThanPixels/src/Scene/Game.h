@@ -73,21 +73,30 @@ public:
 	//sf::Text MaximumRepair;
 	//sf::Text CurrentRepair;
 
-	sf::Sprite MineIcon;
+	Engine::Hud_Bonus Mine;
+
+	/*sf::Sprite MineIcon;
 	sf::Text MaximumMine;
-	sf::Text CurrentMine;
+	sf::Text CurrentMine;*/
 
-	sf::Sprite MissileIcon; // todo remplacer par une classe qui contient ces 3 element
-	sf::Text MaximumMissile;
-	sf::Text CurrentMissile;
+	
+	Engine::Hud_Bonus Missile; 
+	
+	//sf::Sprite MissileIcon; // todo remplacer par une classe qui contient ces 3 element
+	//sf::Text MaximumMissile;
+	//sf::Text CurrentMissile;
 
-	sf::Sprite PerforationIcon;
+	Engine::Hud_Bonus Perforation;
+	
+	/*sf::Sprite PerforationIcon;
 	sf::Text MaximumPerforation;
-	sf::Text CurrentPerforation;
+	sf::Text CurrentPerforation;*/
 
-	sf::Sprite CadenceIcon;
-	sf::Text MaximumCadence;
-	sf::Text CurrentCadence;
+	Engine::Hud_Bonus Cadence;
+
+	//sf::Sprite CadenceIcon;
+	//sf::Text MaximumCadence;
+	//sf::Text CurrentCadence;
 
 	sf::Sprite BoostIcon;
 

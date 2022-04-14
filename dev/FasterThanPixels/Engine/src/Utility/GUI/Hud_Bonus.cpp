@@ -15,13 +15,13 @@ void Engine::Hud_Bonus::InitHudBonus(sf::Texture& IconTexture, std::string Bonus
 	MaxValue.setFont(FontAddress);
 	MaxValue.setCharacterSize(CharacterSize);
 	MaxValue.setOrigin(MaxValue.getGlobalBounds().width / 2.f, MaxValue.getGlobalBounds().height / 2.f);
-	MaxValue.setPosition(PositionOrigin.x + 20, PositionOrigin.y - 10);
+	MaxValue.setPosition(PositionOrigin.x + 40, PositionOrigin.y - 10);
 	MaxValue.setString("/" + BonusMaxValue);
 
 	CurrentValue.setFont(FontAddress);
 	CurrentValue.setCharacterSize(CharacterSize);
 	CurrentValue.setOrigin(CurrentValue.getGlobalBounds().width / 2.f, CurrentValue.getGlobalBounds().height / 2.f);
-	CurrentValue.setPosition(PositionOrigin.x + 40, PositionOrigin.y - 10);
+	CurrentValue.setPosition(PositionOrigin.x + 20, PositionOrigin.y - 10);
 	CurrentValue.setString(BonusCurrentValue);
 }
 
