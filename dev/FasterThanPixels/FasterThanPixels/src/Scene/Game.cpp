@@ -180,7 +180,7 @@ void Game::S_ActionTrigger(std::string ActionName)
 	if (ActionName == "TurboRelease") {
 	}
 	if (ActionName == "Shoot") {
-		//SpawnLaser(S_EntityManager->M_EntityMap["Player"][0]);
+		SpawnLaser(S_EntityManager->GetPlayer());
 	}
 	if (ActionName == "ShootRelease") {
 	}
@@ -512,24 +512,28 @@ void Game::DamagePlayer(int amount)
 
 void Game::SpawnLaser(Engine::Entity* Shooter)
 {
+
+	Engine::S_Delay_Entity Laser;
+	Laser.E_State = Engine::EntityState::Add;
+	Laser.E_ID = S_EntityManager->RequestEntity();
+	Laser.E_Tag = "Laser";
+	Laser.IsAnimated = false;
 	C_Static_Render* ShooterRender = dynamic_cast<C_Static_Render*>(Shooter->GetComponent("Render"));
 
 
-	auto laser = Engine::GenerateEntity(S_EntityManager, "Laser");
 	std::map < std::string, Engine::Component*> ComponentLaser;
 	ComponentLaser.insert(std::pair<std::string, Engine::Component*>("Render", new C_Static_Render()));
 	ComponentLaser.insert(std::pair<std::string, Engine::Component*>("Transform", new C_Transform()));
 	ComponentLaser.insert(std::pair<std::string, Engine::Component*>("Collider", new C_Static_Collider_Sphere()));
-	laser.E_Component = ComponentLaser;
+	Laser.E_Component = ComponentLaser;
 
-	 C_Static_Render* LaserRender = dynamic_cast<C_Static_Render*>(ComponentLaser["Render"]);
-	if(LaserRender)
-		LaserRender->Sprite.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("WeaponLaser"));
-		LaserRender->Sprite.setOrigin(LaserRender->Sprite.getGlobalBounds().width / 2.f, LaserRender->Sprite.getGlobalBounds().height / 2.f);
-		LaserRender->Sprite.setPosition(ShooterRender->Sprite.getOrigin().x + 5.f, ShooterRender->Sprite.getOrigin().y);
-		LaserRender->Sprite.setRotation(ShooterRender->Sprite.getRotation());
+	C_Static_Render* LaserRender = dynamic_cast<C_Static_Render*>(ComponentLaser["Render"]);
+	LaserRender->Sprite.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("WeaponLaser"));
+	LaserRender->Sprite.setOrigin(LaserRender->Sprite.getGlobalBounds().width / 2.f, LaserRender->Sprite.getGlobalBounds().height / 2.f);
+	LaserRender->Sprite.setPosition(ShooterRender->Sprite.getOrigin().x + 5.f, ShooterRender->Sprite.getOrigin().y);
+	LaserRender->Sprite.setRotation(ShooterRender->Sprite.getRotation());
 	
-
+	S_EntityManager->AddToWaiting(Laser);
 }
 
 
