@@ -2,12 +2,12 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include "json.hpp"
 #include "../Sqlite/include/sqlite/sqlite3.h" // Fix temporaire
 #include "SFML/Graphics.hpp"
 #include "../Factory/EntityManager.h"
 #include "box2d/box2d.h"
-
+#include "json.hpp"
+#include "mysql/jdbc.h"
 
 namespace Engine {
 	class Entity;
@@ -73,7 +73,6 @@ namespace Engine {
 
 
 	S_Delay_Entity GenerateEntity(Engine::EntityManager* entman, std::string Tag);
-
 
 
 }
