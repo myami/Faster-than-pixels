@@ -102,7 +102,7 @@ void Authentification::S_Begin_Play()
 	UserName.textbox.setString("Username");
 	//UserName.BackgroundTexture.move(sf::Vector2(-400.f, 200.f));
 	//UserName.textbox.move(sf::Vector2(-400.f, 200.f));
-	UserName.SetPosition(UserName.GetText(), sf::Vector2f(_SceneManager->_GameManager->View.getCenter().x - 400.f, _SceneManager->_GameManager->View.getCenter().y + 200.f));
+	UserName.SetPosition("Username", sf::Vector2f(_SceneManager->_GameManager->View.getCenter().x - 400.f, _SceneManager->_GameManager->View.getCenter().y + 200.f));
 
 	Mail.hasLimit = false;
 	Mail.isCrypted = false;
@@ -116,7 +116,7 @@ void Authentification::S_Begin_Play()
 	Mail.BackgroundTexture.setOrigin(Mail.BackgroundTexture.getGlobalBounds().width / 2.f, Mail.BackgroundTexture.getGlobalBounds().height / 2.f);
 	//Mail.BackgroundTexture.setPosition(_SceneManager->_GameManager->View.getCenter());
 	Mail.textbox.setString("Adresse Mail");
-	Mail.SetPosition(Mail.GetText(), sf::Vector2f(_SceneManager->_GameManager->View.getCenter().x, _SceneManager->_GameManager->View.getCenter().y + -200.f));
+	Mail.SetPosition("Adresse Mail", sf::Vector2f(_SceneManager->_GameManager->View.getCenter().x, _SceneManager->_GameManager->View.getCenter().y + -200.f));
 
 	PassWord.hasLimit = true;
 	PassWord.limit = 10;
@@ -133,7 +133,7 @@ void Authentification::S_Begin_Play()
 	PassWord.textbox.setString("Password");
 	//PassWord.BackgroundTexture.move(sf::Vector2(400.f, 200.f));
 	//PassWord.textbox.move(sf::Vector2(400.f, 200.f));
-	PassWord.SetPosition(PassWord.GetText(), sf::Vector2f(_SceneManager->_GameManager->View.getCenter().x + 400.f, _SceneManager->_GameManager->View.getCenter().y + 200.f));
+	PassWord.SetPosition("Password", sf::Vector2f(_SceneManager->_GameManager->View.getCenter().x + 400.f, _SceneManager->_GameManager->View.getCenter().y + 200.f));
 
 	VerifPassWord.hasLimit = true;
 	VerifPassWord.limit = 10;
@@ -145,7 +145,7 @@ void Authentification::S_Begin_Play()
 	VerifPassWord.textbox.setOrigin(VerifPassWord.textbox.getGlobalBounds().width / 2.f, VerifPassWord.textbox.getGlobalBounds().height / 2.f);
 	VerifPassWord.BackgroundTexture.setOrigin(VerifPassWord.BackgroundTexture.getGlobalBounds().width / 2.f, VerifPassWord.BackgroundTexture.getGlobalBounds().height / 2.f);
 	VerifPassWord.textbox.setString("Password Verification");
-	VerifPassWord.SetPosition(VerifPassWord.GetText(), sf::Vector2f(_SceneManager->_GameManager->View.getCenter().x, _SceneManager->_GameManager->View.getCenter().y + 100.f));
+	VerifPassWord.SetPosition("Password Verification", sf::Vector2f(_SceneManager->_GameManager->View.getCenter().x, _SceneManager->_GameManager->View.getCenter().y + 100.f));
 
 
 }
