@@ -230,9 +230,6 @@
     <ClInclude Include="src\ECS\Components\C_Turret.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="src\ECS\Components\C_Render.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
     <ClInclude Include="src\GameMode\FTP_GameStats.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>

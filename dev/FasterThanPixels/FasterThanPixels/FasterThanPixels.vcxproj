@@ -192,7 +192,6 @@
     <ClInclude Include="src\ECS\Components\C_Mouvement_Passif.h" />
     <ClInclude Include="src\ECS\Components\C_Pickup.h" />
     <ClInclude Include="src\ECS\Components\C_Punching.h" />
-    <ClInclude Include="src\ECS\Components\C_Render.h" />
     <ClInclude Include="src\ECS\Components\C_Shield.h" />
     <ClInclude Include="src\ECS\Components\C_Shoot.h" />
     <ClInclude Include="src\ECS\Components\C_Static_Collider_Sphere.h" />

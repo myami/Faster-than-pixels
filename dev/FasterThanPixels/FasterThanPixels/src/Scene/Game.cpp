@@ -61,6 +61,7 @@ void Game::S_Render()
 		for (auto Entity : EntityToDraw)
 		{
 			if (Entity->E_IsAnimated) {
+
 				C_Animated_Render* CheckAnimatation = dynamic_cast<C_Animated_Render*>(Entity->GetComponent("Render"));
 				_SceneManager->_GameManager->Windows->draw(CheckAnimatation->AnimatedSprite.FrameToDraw());
 			}
@@ -113,14 +114,7 @@ void Game::S_Render()
 
 
 
-
-
-
 	// center UI on player
-
-
-
-
 
 }
 
@@ -331,7 +325,8 @@ void Game::CreateAsteroidPhysic( std::vector<Engine::Entity*> Asteroids)
 		srand(seed / 4 + entity->E_Id);
 		float randomx = rand() % (int)-15 + 15;
 		float randomy = rand() % (int)-15 + 15;
-		
+		randomx = 0;
+		randomy = 0;
 		BodyDef.position = b2Vec2(Static->Sprite.getPosition().x / SCALE, Static->Sprite.getPosition().y / SCALE);
 		BodyDef.type = b2_dynamicBody;
 		BodyDef.linearVelocity = b2Vec2(randomx, randomy);
@@ -652,6 +647,7 @@ void Game::InitPlanet()
 		Planet.E_State = Engine::EntityState::Add;
 		Planet.E_ID = S_EntityManager->RequestEntity();
 		Planet.E_Tag = "Planet";
+		Planet.IsAnimated = true;
 
 
 		std::map < std::string, Engine::Component*> ComponentPlanet;
@@ -662,11 +658,13 @@ void Game::InitPlanet()
 		C_Animated_Render* PlanetRender = dynamic_cast<C_Animated_Render*>(ComponentPlanet["Render"]);
 		srand(seed  + i );
 		int randomplanet = rand() % AvailablePlanet.size() + 0;
-		std::cout << randomplanet;
 		PlanetRender->AnimatedSprite.SetupAnimation(_SceneManager->_GameManager->G_AssetManager->GetTexture(AvailablePlanet[randomplanet]), 15 / 60.f, {10,1}, sf::Vector2f(0.f, 0.f));
 		float randomx = rand() % (int)MapSize.x + -MapSize.x;
 		float randomy = rand() % (int)MapSize.y + -MapSize.y;
+
 		PlanetRender->AnimatedSprite.MoveSprite(sf::Vector2f(randomx, randomy));
+
+
 		S_EntityManager->AddToWaiting(Planet);
 
 
@@ -705,6 +703,7 @@ void Game::InitAsteroid()
 
 		Asteroid.E_ID = S_EntityManager->RequestEntity();
 		Asteroid.E_Tag = "Asteroid";
+		Asteroid.IsAnimated = false;
 
 
 		std::map < std::string, Engine::Component*> ComponentAsteroid;
@@ -740,6 +739,7 @@ void Game::InitPlayer()
 	Engine::S_Delay_Entity Player;
 	Player.E_ID = S_EntityManager->RequestEntity();
 	Player.E_State = Engine::EntityState::Add;
+	Player.IsAnimated = false;
 
 	Player.E_Tag = "Player";
 

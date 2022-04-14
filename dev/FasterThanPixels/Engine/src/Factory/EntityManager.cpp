@@ -123,6 +123,8 @@ void Engine::EntityManager::AddEntity(S_Delay_Entity entite)
 			entity->E_CanBeUsed = false;
 			entity->E_Tag = entite.E_Tag;
 			//EntityChangeMap(entity, entity->E_Tag, entite.E_Tag);
+			entity->DeleteComponent("Render");
+			entity->E_IsAnimated = entite.IsAnimated;
 			for (auto const& x : entite.E_Component)
 			{
 				entity->AddComponent(x.first, x.second);
@@ -140,6 +142,7 @@ void Engine::EntityManager::AddComponent(S_Delay_Entity entite) // a ajouter che
 		{
 			for (auto const& x : entite.E_Component)
 			{
+				
 				entity->AddComponent(x.first, x.second);
 			}
 

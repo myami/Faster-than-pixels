@@ -21,6 +21,7 @@ namespace Engine {
 		EntityState E_State;
 		std::map < std::string, Engine::Component*> E_Component; /*!< Liste des components de l'entite . si deletecomponent on check juste les strings et pas le contenu. */
 		std::string E_Tag;
+		bool IsAnimated;
 	};
 
 	class EntityManager {
