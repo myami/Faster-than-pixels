@@ -1,0 +1,15 @@
+{
+  "name": "Tour25",
+  "url": "/img/Gameplay/Ennemies/Tour25.png",
+  "type": "Texture",
+  "collider": [
+    {
+      "x": 0,
+      "y": 0
+    },
+    {
+      "x": 0,
+      "y": 0
+    }
+  ]
+}

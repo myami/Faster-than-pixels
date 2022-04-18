@@ -1,0 +1,15 @@
+{
+  "name": "Carrier50",
+  "url": "/img/Gameplay/Ennemies/Carrier50.png",
+  "type": "Texture",
+  "collider": [
+    {
+      "x": 0,
+      "y": 0
+    },
+    {
+      "x": 0,
+      "y": 0
+    }
+  ]
+}

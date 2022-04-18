@@ -172,6 +172,7 @@
     <ClCompile Include="src\Scene\MainMenu.cpp" />
     <ClCompile Include="src\Scene\Settings.cpp" />
     <ClCompile Include="src\Scene\Starting.cpp" />
+    <ClCompile Include="src\Utility\GUI\CompendiumInfo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Engine\Engine.vcxproj">
@@ -248,6 +249,7 @@
     <ClInclude Include="src\Scene\Pause.h" />
     <ClInclude Include="src\Scene\PlayerProfile.h" />
     <ClInclude Include="src\Scene\Starting.h" />
+    <ClInclude Include="src\Utility\GUI\CompendiumInfo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

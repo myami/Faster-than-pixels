@@ -1,0 +1,15 @@
+{
+  "name": "Chasseur100",
+  "url": "/img/Gameplay/Ennemies/Chasseur100.png",
+  "type": "Texture",
+  "collider": [
+    {
+      "x": 0,
+      "y": 0
+    },
+    {
+      "x": 0,
+      "y": 0
+    }
+  ]
+}

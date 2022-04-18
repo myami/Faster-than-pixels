@@ -32,7 +32,7 @@ void FTP_SceneManager::Init(std::string FirstScene)
 	AddScene(profile);
 
 
-	CurrentScene = "Cinematique";
+	CurrentScene = "Compendium";
 
 	GetCurrentScene()->S_Begin_Play();
 
