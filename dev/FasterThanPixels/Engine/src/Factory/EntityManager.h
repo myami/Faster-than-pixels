@@ -24,7 +24,7 @@ namespace Engine {
 		bool IsAnimated;
 	};
 
-	class EntityManager {
+class EntityManager {
 	public:
 		std::vector<Engine::Entity*> M_EntityVector; /*!< Liste des Entite */
 		//std::map<std::string, std::vector<Engine::Entity*>> M_EntityMap; /*!< Liste des Entite par tag */
@@ -32,6 +32,7 @@ namespace Engine {
 		int M_TotalEntity; /*!< Le nombre total d'entite disponible dans le pool */
 		std::map<b2Body*, Engine::Entity*> M_PhysicMap;  /*!< Liste des body de la simulation relie a leur entite */
 		EntityManager();
+
 		/*!
 	   *  \brief GenerateEntity
 	   *

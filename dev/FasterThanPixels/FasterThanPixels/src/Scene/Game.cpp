@@ -457,7 +457,7 @@ void Game::SpawnLaser(Engine::Entity* Shooter)
 	C_Static_Render* LaserRender = dynamic_cast<C_Static_Render*>(ComponentLaser["Render"]);
 	LaserRender->Sprite.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("WeaponLaser"));
 	LaserRender->Sprite.setOrigin(LaserRender->Sprite.getGlobalBounds().width / 2.f, LaserRender->Sprite.getGlobalBounds().height / 2.f);
-	LaserRender->Sprite.setPosition(ShooterRender->Sprite.getOrigin().x + 5.f, ShooterRender->Sprite.getOrigin().y);
+	LaserRender->Sprite.setPosition(ShooterRender->Sprite.getPosition().x , ShooterRender->Sprite.getPosition().y - 60.f);
 	LaserRender->Sprite.setRotation(ShooterRender->Sprite.getRotation());
 	
 	S_EntityManager->AddToWaiting(Laser);
