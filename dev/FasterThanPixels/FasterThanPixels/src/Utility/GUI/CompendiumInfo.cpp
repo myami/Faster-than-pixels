@@ -3,7 +3,7 @@
 
 CompendiumInfo::CompendiumInfo() {};
 
-void CompendiumInfo::InitCompendiumInfo(bool isEnnemy, sf::Font& Font, int size, std::string Titre, sf::Texture& Image, std::string DamageValue, std::string ShieldValue, std::string LifeValue, std::string Description, sf::Vector2f pos)
+void CompendiumInfo::InitCompendiumInfo(bool isEnnemy, sf::Font& Font, int size, std::string Titre, sf::Texture& Image, std::string DamageValue, std::string ShieldValue, std::string LifeValue, std::string Description, sf::Vector2f pos,double scale)
 {
 	m_Titre.setFont(Font);
 	m_Titre.setString(Titre);
@@ -17,7 +17,7 @@ void CompendiumInfo::InitCompendiumInfo(bool isEnnemy, sf::Font& Font, int size,
 	m_Image.setPosition(pos);
 	m_Image.setOrigin(m_Image.getGlobalBounds().width / 2.f, m_Image.getGlobalBounds().height / 2.f);
 	m_Image.move(50.f, -50.f);
-	m_Image.scale(0.25, 0.25);
+	m_Image.scale(scale, scale);
 
 
 	if (isEnnemy) {
