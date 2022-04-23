@@ -21,6 +21,7 @@
 #include "ECS/BlankComponent.h"
 #include "Utility/InputAction.h"
 #include "Utility/GUI/Hud_Bonus.h"
+#include "Utility/GUI/CheckBox.h"
 
 
 

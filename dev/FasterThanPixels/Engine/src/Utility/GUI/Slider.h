@@ -8,7 +8,7 @@ public:
 	sf::Sprite Background;
 	sf::Sprite SliderBar;
 	Slider();
-	bool orientation; // true == horizontal, false = vertical
+	bool orientation; // false == horizontal, true = vertical
 		/**
 	 * @def SetSlider
 	 * @brief transforme la valeur en une valeur entre 0 et 1. on prend en entree une valeur entre 0 et 100 et on la divise pour etre entre 0 et 1
@@ -27,6 +27,6 @@ public:
 */
 	float GetSliderPosition();
 
-
+	bool IsSpriteClicked(sf::RenderWindow* render);
 };
 }

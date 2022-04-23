@@ -28,5 +28,11 @@ float Engine::Slider::GetSliderPosition()
 	return CurrentPosition * 100;
 }
 
-
+bool  Engine::Slider::IsSpriteClicked(sf::RenderWindow* render)
+{
+	if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+	{
+			return Background.getGlobalBounds().contains(render->mapPixelToCoords(sf::Mouse::getPosition()));
+	}
+}
 
