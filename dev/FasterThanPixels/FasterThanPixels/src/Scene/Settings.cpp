@@ -238,9 +238,9 @@ void Settings::S_Input_Mouse(sf::Event event)
 		else
 			FullScreenBox.State = true;
 	}
-	if (SliderSound.SlideBar.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {}
-	if (SliderMusic.SliderBar.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {}
-	if (SliderMain.SliderBar.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {}
+	if (SliderSound.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {}
+	if (SliderMusic.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {}
+	if (SliderMain.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {}
 	if (Back.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {}
 	if (Apply.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {
 		//Creation / Modification du fichier Setting
