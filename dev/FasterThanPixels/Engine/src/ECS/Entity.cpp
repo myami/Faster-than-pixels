@@ -7,7 +7,6 @@ Engine::Entity::Entity(int id)
 
 Engine::Component* Engine::Entity::GetComponent(std::string name)
 {
-
 	return 	E_Component[name];
 }
 

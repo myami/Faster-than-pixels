@@ -2,13 +2,10 @@
 
 Engine::EntityManager::EntityManager()
 {
-
 }
 
 void Engine::EntityManager::GenerateEntity()
 {
-
-
 	for (size_t i = 0; i < M_TotalEntity; i++)
 	{
 		Entity* en = new Entity(i);
@@ -23,9 +20,7 @@ void Engine::EntityManager::Update()
 		EntityWaitingListDispatch();
 	}
 	M_EntityToChange.clear();
-
 }
-
 
 int Engine::EntityManager::RequestEntity()
 {
@@ -38,14 +33,13 @@ int Engine::EntityManager::RequestEntity()
 
 	std::cout << "Aucune entite est libre d'utilisation" << std::endl;
 	return 0; // si il y en a aucune de dispo
-	
 }
 
 std::vector<Engine::Entity*> Engine::EntityManager::EntityToDraw()
 {
 	std::vector<Engine::Entity*> todraw;
 
-	for (auto entity : M_EntityVector) 
+	for (auto entity : M_EntityVector)
 	{
 		if (entity->GetComponent("Render") != nullptr)
 		{
@@ -68,13 +62,24 @@ std::vector<Engine::Entity*> Engine::EntityManager::GetAllEntityWithComponent(st
 	return Entity;
 }
 
+Engine::Entity* Engine::EntityManager::GetEntityWithId(int id)
+{
+	for (auto entity : M_EntityVector)
+	{
+		if (entity->E_Id == id)
+		{
+			return entity;
+		}
+	}
+	return nullptr;
+}
+
 bool Engine::EntityManager::AsEntityWaiting()
 {
 	if (M_EntityToChange.size() != 0)
 		return true;
 	else {
 		return false;
-
 	}
 }
 
@@ -82,20 +87,19 @@ void Engine::EntityManager::EntityWaitingListDispatch()
 {
 	for (S_Delay_Entity delayentity : M_EntityToChange)
 	{
-		
 		switch (delayentity.E_State)
 		{
 		case Engine::EntityState::Add:
-			AddEntity(delayentity);
+			EntityEndWaiting(AddEntity(delayentity), Engine::EntityState::Add);
 			break;
 		case Engine::EntityState::Delete:
-			RemoveEntity(delayentity);
+			EntityEndWaiting(RemoveEntity(delayentity), Engine::EntityState::Delete);
 			break;
 		case Engine::EntityState::AddComponent:
-			AddComponent(delayentity);
+			EntityEndWaiting(AddComponent(delayentity), Engine::EntityState::AddComponent);
 			break;
 		case Engine::EntityState::DeleteComponent:
-			DeleteComponent(delayentity);
+			EntityEndWaiting(DeleteComponent(delayentity), Engine::EntityState::DeleteComponent);
 			break;
 		default:
 			break;
@@ -103,18 +107,20 @@ void Engine::EntityManager::EntityWaitingListDispatch()
 	}
 }
 
-void Engine::EntityManager::RemoveEntity(S_Delay_Entity entite)
+Engine::Entity* Engine::EntityManager::RemoveEntity(S_Delay_Entity entite)
 {
 	for (auto entity : M_EntityVector)
 	{
-		if (entity->E_Id == entite.E_ID) 
+		if (entity->E_Id == entite.E_ID)
 		{
 			entity->Reset();
+			return entity;
 		}
 	}
+	return nullptr;
 }
 
-void Engine::EntityManager::AddEntity(S_Delay_Entity entite)
+Engine::Entity* Engine::EntityManager::AddEntity(S_Delay_Entity entite)
 {
 	for (auto entity : M_EntityVector)
 	{
@@ -128,13 +134,14 @@ void Engine::EntityManager::AddEntity(S_Delay_Entity entite)
 			for (auto const& x : entite.E_Component)
 			{
 				entity->AddComponent(x.first, x.second);
+				return entity;
 			}
-
 		}
 	}
+	return nullptr;
 }
 
-void Engine::EntityManager::AddComponent(S_Delay_Entity entite) // a ajouter checker si le component existe deja ou pas
+Engine::Entity* Engine::EntityManager::AddComponent(S_Delay_Entity entite) // a ajouter checker si le component existe deja ou pas
 {
 	for (auto entity : M_EntityVector)
 	{
@@ -142,15 +149,15 @@ void Engine::EntityManager::AddComponent(S_Delay_Entity entite) // a ajouter che
 		{
 			for (auto const& x : entite.E_Component)
 			{
-				
 				entity->AddComponent(x.first, x.second);
+				return entity;
 			}
-
 		}
 	}
+	return nullptr;
 }
 
-void Engine::EntityManager::DeleteComponent(S_Delay_Entity entite)
+Engine::Entity* Engine::EntityManager::DeleteComponent(S_Delay_Entity entite)
 {
 	for (auto entity : M_EntityVector)
 	{
@@ -159,10 +166,11 @@ void Engine::EntityManager::DeleteComponent(S_Delay_Entity entite)
 			for (auto const& x : entite.E_Component)
 			{
 				//DeleteComponent(x.first.c_str());
+				return entity;
 			}
-
 		}
 	}
+	return nullptr;
 }
 
 void Engine::EntityManager::AddToWaiting(S_Delay_Entity entite)
@@ -177,22 +185,18 @@ std::vector<Engine::Entity*> Engine::EntityManager::GetAllEntityWithTag(std::str
 		if (entity->E_Tag == Tag) {
 			tmp.push_back(entity);
 		}
-
 	}
 	return tmp;
 }
 
 Engine::Entity* Engine::EntityManager::GetPlayer()
 {
-	for (auto entity : M_EntityVector) 
+	for (auto entity : M_EntityVector)
 	{
-		if (entity->E_Tag == "Player") 
+		if (entity->E_Tag == "Player")
 		{
 			return entity;
 		}
 	}
 	return nullptr;
 }
-
-
-

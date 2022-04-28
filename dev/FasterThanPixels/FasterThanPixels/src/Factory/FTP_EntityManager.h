@@ -5,5 +5,5 @@
 *
 */
 class FTP_EntityManager : public Engine::EntityManager {
-
+	void EntityEndWaiting(Engine::Entity* entity, Engine::EntityState entitystate) override;
 };

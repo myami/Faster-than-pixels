@@ -4,7 +4,7 @@
 #include "InputAction.h"
 #include "box2d/box2d.h"
 
-	class SceneManager;
+class SceneManager;
 namespace Engine {
 	/*! \class Path
 	* \brief classe qui gere les chemins pour une IA par exemple
@@ -18,8 +18,7 @@ namespace Engine {
 		std::vector<Engine::InputAction> ActionScene;  /*!< Chaque input disponible dans la scene */
 		SceneManager* _SceneManager;
 		b2World* World;
-
-
+		const int SCALE = 30;
 
 		bool S_Paused; /*!< Si la scene est en pause */
 		bool S_End; /*!< Si la scene est fini d'etre utiliser */
@@ -28,19 +27,19 @@ namespace Engine {
 			*
 			*  Appeler au debut de la gameloop, Cette function call dans l'entityManager pour mettre a jour sont contenu
 			*/
-		virtual void S_Update() = 0; 
+		virtual void S_Update() = 0;
 		/*!
 		*  \brief S_Action
 		*
 		*  Appeler dans la gameloop pour ajouter les inputs recus par les events de sfml(mouvement, tir ,....)
 		*/
-		void S_Action(sf::Event event); 
+		void S_Action(sf::Event event);
 		/*!
 		*  \brief S_Simulation
 		*
 		*  Appeler dans la gameloop , Appelle la librairie Box2D et sont monde pour savoir ou deplacer les elements lie qui bouge avec la physique
 		*/
-		void S_Simulation(); 
+		void S_Simulation();
 		/*!
 		*  \brief S_Syteme
 		*
@@ -52,22 +51,22 @@ namespace Engine {
 		*
 		*  Appeler a la fin de la gameloop, permait d'afficher les elements dans la scene a la fin de la gameloop
 		*/
-		virtual void S_Render() = 0; 
+		virtual void S_Render() = 0;
 		/*!
 		*  \brief RegisterAction
 		*
 		*  Enregistre dans la scene les inputs disponible
-		* \param key : represente la touche a appuyer 
+		* \param key : represente la touche a appuyer
 		* \param ActionName : Nom de l'action lie a la touches
 		*/
-		void RegisterAction(Engine::InputAction Action); 
+		void RegisterAction(Engine::InputAction Action);
 		/*!
 		*  \brief S_ActionTrigger
 		*
-		*  Verifie que l'input que le joueur appuye existe 
+		*  Verifie que l'input que le joueur appuye existe
 		* \param ActionName : Nom de l'action lie a la touches
 		*/
-		virtual void S_ActionTrigger(std::string ActionName) = 0; 
+		virtual void S_ActionTrigger(std::string ActionName) = 0;
 		/*!
 		*  \brief S_Begin_Play
 		*
@@ -79,7 +78,7 @@ namespace Engine {
 		*
 		*  Appeler a la fin de la scene juste avant un changement de scene
 		*/
-		virtual void S_End_Scene() = 0; 
+		virtual void S_End_Scene() = 0;
 		/*!
 		*  \brief S_Input_Mouse
 		*
@@ -92,14 +91,11 @@ namespace Engine {
 		*  Appeler quand le joueur ecrit du texte dans le jeu
 		*/
 		virtual void S_Input_Text(sf::Event event) = 0;
-		
-		std::vector<Engine::InputAction> GetKeyInput(Engine::Trigger inputype);
 
+		std::vector<Engine::InputAction> GetKeyInput(Engine::Trigger inputype);
 
 		virtual void S_Static_Physic(b2Body* body) = 0;
 		virtual void S_Dynamic_Physic(b2Body* body) = 0;
 		virtual void S_Kynematic_Physic(b2Body* body) = 0;
-
-		
 	};
 }

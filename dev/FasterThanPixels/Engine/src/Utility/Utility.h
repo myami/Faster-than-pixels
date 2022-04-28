@@ -8,7 +8,6 @@
 #include "box2d/box2d.h"
 #include "json.hpp"
 
-
 namespace Engine {
 	class Entity;
 	struct S_Delay_Entity;
@@ -20,8 +19,6 @@ namespace Engine {
 	* \return liste de tout les JSON dispo dans le dossier Assets
 	*/
 	std::vector<nlohmann::json> LoadAssetFromFile(std::string Path);
-
-
 
 	/*!
 	*  \brief GetPlayerInfoFromDB
@@ -59,7 +56,7 @@ namespace Engine {
 	*  \brief ObjectCollide
 	*
 	*  Return une liste d'entite qui sont rentrer en collision dans box2d
-	* \return liste d'entite 
+	* \return liste d'entite
 	*/
 
 	std::vector<Entity> ObjectCollide();
@@ -71,8 +68,7 @@ namespace Engine {
 	* \return liste d'entite
 	*/
 
-
 	S_Delay_Entity GenerateEntity(Engine::EntityManager* entman, std::string Tag);
 
-
+	void GeneratePhysicBody(Engine::EntityManager* entman, int identity, sf::Vector2f position, sf::Vector2f direction, sf::Vector2f bound, b2BodyType type, int scale, b2World* World);
 }

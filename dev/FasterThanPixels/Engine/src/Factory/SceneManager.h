@@ -3,7 +3,7 @@
 #include <vector>
 
 namespace Engine {
-class GameManager;
+	class GameManager;
 	/*! \class SceneManager
 	* \brief classe representant les scenes dans le jeu
 	*
@@ -54,9 +54,9 @@ class GameManager;
 		*  \brief Init
 		*
 		*  Initialise le scene_manager, il charge toutes les scenes disponibles dans la listes
-		* 
+		*
 		*/
-		virtual void Init(std::string FirstScene) =0;
+		virtual void Init(std::string FirstScene) = 0;
 		/*!
 		*  \brief ChangeScene
 		*
@@ -66,6 +66,5 @@ class GameManager;
 		void ChangeScene(std::string newscene);
 
 		~SceneManager();
-
 	};
 }

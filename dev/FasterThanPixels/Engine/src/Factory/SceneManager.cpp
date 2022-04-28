@@ -9,7 +9,6 @@ Engine::SceneManager::SceneManager()
 Engine::SceneManager::SceneManager(Engine::GameManager* gm)
 {
 	this->_GameManager = gm;
-
 }
 
 Engine::Scene& Engine::SceneManager::GetScene(std::string sc)
@@ -27,7 +26,6 @@ Engine::Scene* Engine::SceneManager::GetCurrentScene()
 	for (auto scene : M_Scene)
 	{
 		if (scene->S_Name == CurrentScene) {
-			
 			return scene;
 		}
 	}
@@ -36,7 +34,6 @@ Engine::Scene* Engine::SceneManager::GetCurrentScene()
 void Engine::SceneManager::AddScene(Engine::Scene* scene)
 {
 	M_Scene.push_back(scene);
-
 }
 
 void Engine::SceneManager::ChangeScene(std::string newscene)

@@ -49,7 +49,7 @@ namespace Engine {
 		*  return une texture par rapport a sont nom
 		*
 		*  \param name : Nom de la texture
-		* 
+		*
 		* \return la texture selectionner
 		*/
 		sf::Texture& GetTexture(std::string name);
@@ -76,9 +76,8 @@ namespace Engine {
 		/*!
 		*  \brief InitAsset
 		*
-		*  Charge les assets dans les listes 
+		*  Charge les assets dans les listes
 		*/
 		virtual void InitAsset() = 0;
-
 	};
 }

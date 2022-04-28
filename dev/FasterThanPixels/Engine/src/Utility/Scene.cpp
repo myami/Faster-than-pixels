@@ -2,14 +2,13 @@
 
 void Engine::Scene::RegisterAction(Engine::InputAction Action)
 {
-
 	ActionScene.push_back(Action);
 }
 
 std::vector<Engine::InputAction> Engine::Scene::GetKeyInput(Engine::Trigger inputype)
 {
 	std::vector<Engine::InputAction> key;
-	for (const auto & action : ActionScene)
+	for (const auto& action : ActionScene)
 	{
 		if (action.TriggerEvent == inputype) {
 			key.push_back(action);
@@ -20,19 +19,16 @@ std::vector<Engine::InputAction> Engine::Scene::GetKeyInput(Engine::Trigger inpu
 
 Engine::Scene::Scene()
 {
-
 }
 
 Engine::Scene::Scene(std::string name)
 {
 	this->S_Name = name;
-	S_EntityManager = new EntityManager();
-
 }
 
 void Engine::Scene::S_Action(sf::Event event)
 {
-	if ( event.type == event.KeyPressed)
+	if (event.type == event.KeyPressed)
 	{
 		auto keydown = GetKeyInput(Engine::Trigger::KeyDown);
 		for (const auto& action : keydown)
@@ -43,13 +39,11 @@ void Engine::Scene::S_Action(sf::Event event)
 
 			if (event.key.code == val) {
 				S_ActionTrigger(action.Name);
-
-			} 
+			}
 		}
 	}
 
 	if (event.type == event.KeyReleased) {
-
 		auto keydown = GetKeyInput(Engine::Trigger::KeyUp);
 		for (const auto& action : keydown)
 		{
@@ -59,7 +53,6 @@ void Engine::Scene::S_Action(sf::Event event)
 
 			if (event.key.code == val) {
 				S_ActionTrigger(action.Name);
-
 			}
 		}
 	}
@@ -84,19 +77,24 @@ void Engine::Scene::S_Simulation()
 		{
 			if (BodyIterator->GetType() == b2_dynamicBody)
 			{
-				if (S_EntityManager->M_PhysicMap[BodyIterator] != nullptr)
+				if (S_EntityManager->GetEntityWithId(S_EntityManager->M_PhysicMap[BodyIterator]) != nullptr)
 				{
 					S_Dynamic_Physic(BodyIterator);
 				}
-
 			}
 			else if (BodyIterator->GetType() == b2_staticBody)
 			{
-				S_Static_Physic(BodyIterator);
+				if (S_EntityManager->GetEntityWithId(S_EntityManager->M_PhysicMap[BodyIterator]) != nullptr)
+				{
+					S_Static_Physic(BodyIterator);
+				}
 			}
-			else if (BodyIterator->GetType() == b2_kinematicBody) 
+			else if (BodyIterator->GetType() == b2_kinematicBody)
 			{
-				S_Kynematic_Physic(BodyIterator);
+				if (S_EntityManager->GetEntityWithId(S_EntityManager->M_PhysicMap[BodyIterator]) != nullptr)
+				{
+					S_Kynematic_Physic(BodyIterator);
+				}
 			}
 		}
 	}

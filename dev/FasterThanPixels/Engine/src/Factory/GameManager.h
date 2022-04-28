@@ -2,8 +2,8 @@
 
 #include "SFML/Graphics.hpp"
 namespace Engine {
-class AssetManager;
-class SceneManager;
+	class AssetManager;
+	class SceneManager;
 	/**
 	 * @def View_Height
 	 * @brief Hauteur par default de la fenetre
@@ -27,12 +27,12 @@ class SceneManager;
 		sf::View View; /*!< La vue dans la fenetre(camera ) */
 		bool Running; /*!< Si le programme tourne */
 		float DeltaTime = 0.f;
-		 /*!
-		 *  \brief Quit
-		 *
-		 *  Quitte le jeu
-		 */
-		 void Quit();
+		/*!
+		*  \brief Quit
+		*
+		*  Quitte le jeu
+		*/
+		void Quit();
 		/*!
 		*  \brief Game_Init
 		*
@@ -40,7 +40,7 @@ class SceneManager;
 		* \param NameOfTheGame : Nom du jeu
 		* \param FirstScene : Nom de la premiere scene a lancer
 		*/
-		virtual void Game_Init(std::string NameOfTheGame,std::string FirstScene) = 0; // initialiser toutes les donnes du jeu
+		virtual void Game_Init(std::string NameOfTheGame, std::string FirstScene) = 0; // initialiser toutes les donnes du jeu
 		/*!
 		*  \brief GameLoop
 		*
@@ -52,7 +52,7 @@ class SceneManager;
 		*
 		*  Gere les events de SFML pour recevoir les inputs, cette function se trouve dans la gameloop
 		*/
-		void S_Input(); 
+		void S_Input();
 		/*!
 		*  \brief ResizeView
 		*
@@ -60,8 +60,5 @@ class SceneManager;
 		* \param event : event de sfml
 		*/
 		void ResizeView(sf::Event event);
-
-
-
 	};
 }

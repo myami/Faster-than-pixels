@@ -23,12 +23,8 @@
 #include "Utility/GUI/Hud_Bonus.h"
 #include "Utility/GUI/CheckBox.h"
 
-
-
 /*! \namespace Engine
  *
  * espace de nommage regroupant les classes du moteur de jeu
- * 
+ *
  */
-
-
