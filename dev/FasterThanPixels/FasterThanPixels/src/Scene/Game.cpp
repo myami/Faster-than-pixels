@@ -419,16 +419,18 @@ void Game::S_Static_Physic(b2Body* body)
 	C_Static_Render* Static = (C_Static_Render*)entity->GetComponent("Render");
 	if (Static)
 		Static->Sprite.setPosition(SCALE * body->GetPosition().x, SCALE * body->GetPosition().y);
-	Static->Sprite.setRotation(body->GetAngle() * 180 / b2_pi);
+		Static->Sprite.setRotation(body->GetAngle() * 180 / b2_pi);
 }
 
 void Game::S_Dynamic_Physic(b2Body* body)
 {
 	Engine::Entity* entity = S_EntityManager->GetEntityWithId(S_EntityManager->M_PhysicMap[body]);
 	C_Static_Render* Static = (C_Static_Render*)entity->GetComponent("Render");
-	if (Static)
+	/*if (Static)
 		Static->Sprite.setPosition(SCALE * body->GetPosition().x, SCALE * body->GetPosition().y);
-	Static->Sprite.setRotation(body->GetAngle() * 180 / b2_pi);
+		Static->Sprite.setRotation(body->GetAngle() * 180 / b2_pi);
+
+		*/
 }
 
 void Game::S_Kynematic_Physic(b2Body* body)

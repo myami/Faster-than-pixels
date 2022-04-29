@@ -24,10 +24,24 @@ void Engine::EntityManager::Update()
 
 int Engine::EntityManager::RequestEntity()
 {
+	std::vector<int> used_id;
+	for (S_Delay_Entity delayentity : M_EntityToChange) 
+	{
+		used_id.push_back(delayentity.E_ID);
+		
+	}
 	for (auto entity : M_EntityVector) {
 		if (entity->E_CanBeUsed) {
-			entity->E_CanBeUsed = false;
-			return entity->E_Id;
+			bool notused = false;
+			for (int id : used_id) 
+			{
+				if (entity->E_Id == id)
+					notused = true;
+			}
+			if (!notused)
+				return entity->E_Id;
+			// si le id est pas dans la waiting list
+			
 		}
 	}
 
@@ -131,11 +145,11 @@ Engine::Entity* Engine::EntityManager::AddEntity(S_Delay_Entity entite)
 			//EntityChangeMap(entity, entity->E_Tag, entite.E_Tag);
 			entity->DeleteComponent("Render");
 			entity->E_IsAnimated = entite.IsAnimated;
-			for (auto const& x : entite.E_Component)
+			for (auto x : entite.E_Component)
 			{
 				entity->AddComponent(x.first, x.second);
-				return entity;
 			}
+			return entity;
 		}
 	}
 	return nullptr;
