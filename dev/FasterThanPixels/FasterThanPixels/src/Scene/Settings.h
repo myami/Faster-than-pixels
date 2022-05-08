@@ -12,7 +12,32 @@ public:
 	void S_ActionTrigger(std::string ActionName) override;
 	void S_Begin_Play() override;
 	void S_Input_Mouse(sf::Event event) override;
+	void S_Update() override;
 
+	const std::vector<sf::VideoMode> ScreenSizes = sf::VideoMode::getFullscreenModes();
+	sf::VideoMode ScreenSize;
+
+	int MainVolumeParam;
+	int MusicVolumeParam;
+	int SoundVolumeParam;
+	int ResolutionIndex;
+	int FullScreenParam;
+	int tmpMainVolumeParam;
+	int tmpMusicVolumeParam;
+	int tmpSoundVolumeParam;
+	int tmpResolutionIndex;
+	int tmpFullScreenParam;
+
+ 
+
+	std::map<std::string, int> SettingsParam =
+	{
+		{"Resolution", ResolutionIndex},
+		{"FullScreen", FullScreenParam},
+		{"MainVolume", MainVolumeParam},
+		{"MusicVolume", MusicVolumeParam},
+		{"SoundVolume", SoundVolumeParam},
+	};
 
 	sf::Sprite Background;  /*!< Sprite du background */
 	sf::Sprite Title; /*!< Sprite du titre du jeu */
@@ -27,17 +52,23 @@ public:
 	sf::Text MainVolume;
 	Engine::Slider SliderMain;
 	sf::Text MainVolumeValue;
+	Button NextMainVolButton;
+	Button PrevMainVolButton;
 
 	sf::Text MusicVolume;
 	Engine::Slider SliderMusic;
 	sf::Text MusicVolumeValue;
+	Button NextMusicVolButton;
+	Button PrevMusicVolButton;
 
 	sf::Text SoundVolume;
 	Engine::Slider SliderSound;
 	sf::Text SoundVolumeValue;
+	Button NextSoundVolButton;
+	Button PrevSoundVolButton;
 
-	Button NextButton;
-	Button PrevButton;
+	Button NextResButton;
+	Button PrevResButton;
 	Button Back;
 	Button Apply;
 

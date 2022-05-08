@@ -32,6 +32,22 @@ std::vector<nlohmann::json> Engine::LoadAssetFromFile(std::string path)
 	return assets;
 }
 
+void Engine::SerializeData(std::map<std::string, int>& params) {
+
+	nlohmann::json settings(params);
+	std::string filename = "./settings.json";
+	std::ofstream file(filename);
+	file << settings;
+
+}
+
+bool Engine::FileExists(std::string path)
+{
+	return std::filesystem::exists(path);
+}
+
+
+
 Engine::S_Delay_Entity Engine::GenerateEntity(Engine::EntityManager* entman, std::string Tag)
 {
 	S_Delay_Entity entite;

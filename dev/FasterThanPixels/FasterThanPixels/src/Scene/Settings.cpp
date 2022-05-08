@@ -1,5 +1,7 @@
 #include "Settings.h"
 #include "../Factory/FTP_SceneManager.h"
+#include <iostream>
+
 
 Settings::Settings(std::string name, FTP_SceneManager* refs) : Engine::BlankScene(name)
 {
@@ -14,9 +16,9 @@ void Settings::S_Render()
 	_SceneManager->_GameManager->Windows->draw(MenuTitle);
 
 	_SceneManager->_GameManager->Windows->draw(Resolution);
-	_SceneManager->_GameManager->Windows->draw(PrevButton.ButtonSprite);
+	_SceneManager->_GameManager->Windows->draw(PrevResButton.ButtonSprite);
 	_SceneManager->_GameManager->Windows->draw(ResolutionValue);
-	_SceneManager->_GameManager->Windows->draw(NextButton.ButtonSprite);
+	_SceneManager->_GameManager->Windows->draw(NextResButton.ButtonSprite);
 
 	_SceneManager->_GameManager->Windows->draw(FullScreen);
 	_SceneManager->_GameManager->Windows->draw(FullScreenBox.CheckBoxSprite);
@@ -26,19 +28,19 @@ void Settings::S_Render()
 	}
 
 	_SceneManager->_GameManager->Windows->draw(MainVolume);
-	_SceneManager->_GameManager->Windows->draw(SliderMain.Background);
-	_SceneManager->_GameManager->Windows->draw(SliderMain.SliderBar);
+	_SceneManager->_GameManager->Windows->draw(PrevMainVolButton.ButtonSprite);
 	_SceneManager->_GameManager->Windows->draw(MainVolumeValue);	
+	_SceneManager->_GameManager->Windows->draw(NextMainVolButton.ButtonSprite);
 
 	_SceneManager->_GameManager->Windows->draw(MusicVolume);
-	_SceneManager->_GameManager->Windows->draw(SliderMusic.Background);
-	_SceneManager->_GameManager->Windows->draw(SliderMusic.SliderBar);
+	_SceneManager->_GameManager->Windows->draw(PrevMusicVolButton.ButtonSprite);
 	_SceneManager->_GameManager->Windows->draw(MusicVolumeValue);
+	_SceneManager->_GameManager->Windows->draw(NextMusicVolButton.ButtonSprite);
 
 	_SceneManager->_GameManager->Windows->draw(SoundVolume);
-	_SceneManager->_GameManager->Windows->draw(SliderSound.Background);
-	_SceneManager->_GameManager->Windows->draw(SliderSound.SliderBar);
+	_SceneManager->_GameManager->Windows->draw(PrevSoundVolButton.ButtonSprite);
 	_SceneManager->_GameManager->Windows->draw(SoundVolumeValue);
+	_SceneManager->_GameManager->Windows->draw(NextSoundVolButton.ButtonSprite);
 
 
 	_SceneManager->_GameManager->Windows->draw(Apply.ButtonSprite);
@@ -59,6 +61,39 @@ void Settings::S_ActionTrigger(std::string ActionName)
 
 void Settings::S_Begin_Play()
 {
+#pragma region Initialisation_Params
+	ScreenSize = sf::VideoMode::getDesktopMode();
+	for (size_t i = 0; i < ScreenSizes.size(); i++)
+	{
+		if (ScreenSizes[i] == ScreenSize)
+			ResolutionIndex = i;
+	}
+
+	if (Engine::FileExists("settings.json")) 
+	{
+
+	}
+	else 
+	{
+		FullScreenParam = 1;
+		MainVolumeParam = 100;
+		MusicVolumeParam = 100;
+		SoundVolumeParam = 100;
+
+		SettingsParam["Resolution"] = ResolutionIndex;
+		SettingsParam["FullScreen"] = FullScreenParam;
+		SettingsParam["MainVolume"] = MainVolumeParam;
+		SettingsParam["SoundVolume"] = SoundVolumeParam;
+		SettingsParam["MusicVolume"] = MusicVolumeParam;
+
+		tmpMainVolumeParam = MainVolumeParam;
+		tmpMusicVolumeParam = MusicVolumeParam;
+		tmpSoundVolumeParam = SoundVolumeParam;
+		tmpResolutionIndex = ResolutionIndex;
+		tmpFullScreenParam = FullScreenParam;
+	}
+
+#pragma endregion
 
 #pragma region Background
 	Background.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("MenuBackground"));
@@ -92,20 +127,20 @@ void Settings::S_Begin_Play()
 	Resolution.setPosition(_SceneManager->_GameManager->View.getCenter());
 	Resolution.move(sf::Vector2(-300.f, -175.f));
 
-	PrevButton.InitButton(_SceneManager->_GameManager->G_AssetManager->GetTexture("Arrow"), _SceneManager->_GameManager->View.getCenter());
-	PrevButton.ButtonSprite.setScale(-1, 1);
-	PrevButton.ButtonSprite.move(175.f, -170.f);
+	PrevResButton.InitButton(_SceneManager->_GameManager->G_AssetManager->GetTexture("Arrow"), _SceneManager->_GameManager->View.getCenter());
+	PrevResButton.ButtonSprite.setScale(-1, 1);
+	PrevResButton.ButtonSprite.move(175.f, -170.f);
 
 	ResolutionValue.setFont(_SceneManager->_GameManager->G_AssetManager->GetFont("FontText"));
-	ResolutionValue.setString("PlaceHolder");
+	ResolutionValue.setString(std::to_string(ScreenSize.width) + "x" + std::to_string(ScreenSize.height));
 	ResolutionValue.setCharacterSize(20);
 	ResolutionValue.setFillColor(sf::Color::White);
 	ResolutionValue.setOrigin(ResolutionValue.getGlobalBounds().width / 2.f, ResolutionValue.getGlobalBounds().height / 2.f);
 	ResolutionValue.setPosition(_SceneManager->_GameManager->View.getCenter());
 	ResolutionValue.move(sf::Vector2(300.f, -175.f));
 
-	NextButton.InitButton(_SceneManager->_GameManager->G_AssetManager->GetTexture("Arrow"), _SceneManager->_GameManager->View.getCenter());
-	NextButton.ButtonSprite.move(425.f, -170.f);
+	NextResButton.InitButton(_SceneManager->_GameManager->G_AssetManager->GetTexture("Arrow"), _SceneManager->_GameManager->View.getCenter());
+	NextResButton.ButtonSprite.move(425.f, -170.f);
 
 	FullScreen.setFont(_SceneManager->_GameManager->G_AssetManager->GetFont("FontText"));
 	FullScreen.setString("FULLSCREEN");
@@ -130,29 +165,21 @@ void Settings::S_Begin_Play()
 	MainVolume.setOrigin(MainVolume.getGlobalBounds().width / 2.f, MainVolume.getGlobalBounds().height / 2.f);
 	MainVolume.setPosition(_SceneManager->_GameManager->View.getCenter());
 	MainVolume.move(sf::Vector2(-300.f, -50.f));
-
-	SliderMain.Background.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("BackgroundShield"));
-	SliderMain.Background.rotate(90.f);
-	SliderMain.Background.setOrigin(SliderMain.Background.getGlobalBounds().width / 2.f, SliderMain.Background.getGlobalBounds().height / 2.f);
-	SliderMain.Background.setPosition(_SceneManager->_GameManager->View.getCenter());
-	SliderMain.Background.move(sf::Vector2(420.f, 70.f));
-	SliderMain.Background.scale(0.5, 0.5);
-
-	SliderMain.SliderBar.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("SliderShield"));
-	SliderMain.SliderBar.rotate(90.f);
-	SliderMain.SliderBar.setOrigin(SliderMain.SliderBar.getGlobalBounds().height / 2.f, SliderMain.SliderBar.getGlobalBounds().width / 2.f);
-	SliderMain.SliderBar.setPosition(_SceneManager->_GameManager->View.getCenter());
-	SliderMain.SliderBar.move(sf::Vector2(420.f, -45.f));
-	SliderMain.SliderBar.scale(0.1, 0.05);
-	SliderMain.InitSlider(0, 100, 10, false, 100);
+	
+	PrevMainVolButton.InitButton(_SceneManager->_GameManager->G_AssetManager->GetTexture("Arrow"), _SceneManager->_GameManager->View.getCenter());
+	PrevMainVolButton.ButtonSprite.setScale(-1, 1);
+	PrevMainVolButton.ButtonSprite.move(175.f, -50.f);
 
 	MainVolumeValue.setFont(_SceneManager->_GameManager->G_AssetManager->GetFont("FontText"));
-	MainVolumeValue.setString(std::to_string(trunc(SliderMain.GetSliderPosition())));
+	MainVolumeValue.setString(std::to_string(tmpMainVolumeParam));
 	MainVolumeValue.setCharacterSize(20);
 	MainVolumeValue.setFillColor(sf::Color::White);
 	MainVolumeValue.setOrigin(MainVolumeValue.getGlobalBounds().width / 2.f, MainVolumeValue.getGlobalBounds().height / 2.f);
 	MainVolumeValue.setPosition(_SceneManager->_GameManager->View.getCenter());
-	MainVolumeValue.move(sf::Vector2(550.f, -50.f));
+	MainVolumeValue.move(sf::Vector2(300.f, -50.f));
+
+	NextMainVolButton.InitButton(_SceneManager->_GameManager->G_AssetManager->GetTexture("Arrow"), _SceneManager->_GameManager->View.getCenter());
+	NextMainVolButton.ButtonSprite.move(425.f, -50.f);
 
 	MusicVolume.setFont(_SceneManager->_GameManager->G_AssetManager->GetFont("FontText"));
 	MusicVolume.setString("Music Volume");
@@ -162,28 +189,20 @@ void Settings::S_Begin_Play()
 	MusicVolume.setPosition(_SceneManager->_GameManager->View.getCenter());
 	MusicVolume.move(sf::Vector2(-300.f, 0.f));
 
-	SliderMusic.Background.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("BackgroundShield"));
-	SliderMusic.Background.rotate(90.f);
-	SliderMusic.Background.setOrigin(SliderMusic.Background.getGlobalBounds().width / 2.f, SliderMusic.Background.getGlobalBounds().height / 2.f);
-	SliderMusic.Background.setPosition(_SceneManager->_GameManager->View.getCenter());
-	SliderMusic.Background.move(sf::Vector2(420.f, 120.f));
-	SliderMusic.Background.scale(0.5, 0.5);
+	PrevMusicVolButton.InitButton(_SceneManager->_GameManager->G_AssetManager->GetTexture("Arrow"), _SceneManager->_GameManager->View.getCenter());
+	PrevMusicVolButton.ButtonSprite.setScale(-1, 1);
+	PrevMusicVolButton.ButtonSprite.move(175.f, 0.f);
 
-	SliderMusic.SliderBar.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("SliderShield"));
-	SliderMusic.SliderBar.rotate(90.f);
-	SliderMusic.SliderBar.setOrigin(SliderMusic.SliderBar.getGlobalBounds().height / 2.f, SliderMusic.SliderBar.getGlobalBounds().width / 2.f);
-	SliderMusic.SliderBar.setPosition(_SceneManager->_GameManager->View.getCenter());
-	SliderMusic.SliderBar.move(sf::Vector2(420.f, 5.f));
-	SliderMusic.SliderBar.scale(0.1, 0.05);
-	SliderMusic.InitSlider(0, 100, 10, false, 100);
-	
 	MusicVolumeValue.setFont(_SceneManager->_GameManager->G_AssetManager->GetFont("FontText"));
-	MusicVolumeValue.setString(std::to_string(trunc(SliderMain.GetSliderPosition())));
+	MusicVolumeValue.setString(std::to_string(tmpMusicVolumeParam));
 	MusicVolumeValue.setCharacterSize(20);
 	MusicVolumeValue.setFillColor(sf::Color::White);
 	MusicVolumeValue.setOrigin(MusicVolumeValue.getGlobalBounds().width / 2.f, MusicVolumeValue.getGlobalBounds().height / 2.f);
 	MusicVolumeValue.setPosition(_SceneManager->_GameManager->View.getCenter());
-	MusicVolumeValue.move(sf::Vector2(550.f, 0.f));
+	MusicVolumeValue.move(sf::Vector2(300.f, 0.f));
+
+	NextMusicVolButton.InitButton(_SceneManager->_GameManager->G_AssetManager->GetTexture("Arrow"), _SceneManager->_GameManager->View.getCenter());
+	NextMusicVolButton.ButtonSprite.move(425.f, 0.f);
 
 	SoundVolume.setFont(_SceneManager->_GameManager->G_AssetManager->GetFont("FontText"));
 	SoundVolume.setString("Sound Volume");
@@ -193,28 +212,21 @@ void Settings::S_Begin_Play()
 	SoundVolume.setPosition(_SceneManager->_GameManager->View.getCenter());
 	SoundVolume.move(sf::Vector2(-300.f, 50.f));
 
-	SliderSound.Background.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("BackgroundShield"));
-	SliderSound.Background.rotate(90.f);
-	SliderSound.Background.setOrigin(SliderSound.Background.getGlobalBounds().width / 2.f, SliderSound.Background.getGlobalBounds().height / 2.f);
-	SliderSound.Background.setPosition(_SceneManager->_GameManager->View.getCenter());
-	SliderSound.Background.move(sf::Vector2(420.f, 170.f));
-	SliderSound.Background.scale(0.5, 0.5);
-
-	SliderSound.SliderBar.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("SliderShield"));
-	SliderSound.SliderBar.rotate(90.f);
-	SliderSound.SliderBar.setOrigin(SliderSound.SliderBar.getGlobalBounds().height / 2.f, SliderSound.SliderBar.getGlobalBounds().width / 2.f);
-	SliderSound.SliderBar.setPosition(_SceneManager->_GameManager->View.getCenter());
-	SliderSound.SliderBar.move(sf::Vector2(420.f, 55.f));
-	SliderSound.SliderBar.scale(0.1, 0.05);
-	SliderSound.InitSlider(0, 100, 10, false, 100);
+	PrevSoundVolButton.InitButton(_SceneManager->_GameManager->G_AssetManager->GetTexture("Arrow"), _SceneManager->_GameManager->View.getCenter());
+	PrevSoundVolButton.ButtonSprite.setScale(-1, 1);
+	PrevSoundVolButton.ButtonSprite.move(175.f, 50.f);
 
 	SoundVolumeValue.setFont(_SceneManager->_GameManager->G_AssetManager->GetFont("FontText"));
-	SoundVolumeValue.setString(std::to_string(trunc(SliderMain.GetSliderPosition())));
+	SoundVolumeValue.setString(std::to_string(tmpSoundVolumeParam));
 	SoundVolumeValue.setCharacterSize(20);
 	SoundVolumeValue.setFillColor(sf::Color::White);
 	SoundVolumeValue.setOrigin(SoundVolumeValue.getGlobalBounds().width / 2.f, SoundVolumeValue.getGlobalBounds().height / 2.f);
 	SoundVolumeValue.setPosition(_SceneManager->_GameManager->View.getCenter());
-	SoundVolumeValue.move(sf::Vector2(550.f, 50.f));
+	SoundVolumeValue.move(sf::Vector2(300.f, 50.f));
+
+	NextSoundVolButton.InitButton(_SceneManager->_GameManager->G_AssetManager->GetTexture("Arrow"), _SceneManager->_GameManager->View.getCenter());
+	NextSoundVolButton.ButtonSprite.move(425.f, 50.f);
+
 #pragma endregion
 
 	Apply.ButtonSprite.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("ApplyButton"));
@@ -228,22 +240,42 @@ void Settings::S_Begin_Play()
 	Back.ButtonSprite.move(sf::Vector2(200.f, 400.f));
 }
 
-
+void Settings::S_Update()
+{
+	ResolutionValue.setString(std::to_string(ScreenSize.width) + "x" + std::to_string(ScreenSize.height));
+	MainVolumeValue.setString(std::to_string(tmpMainVolumeParam));
+	MusicVolumeValue.setString(std::to_string(tmpMusicVolumeParam));
+	SoundVolumeValue.setString(std::to_string(tmpSoundVolumeParam));
+}
 
 void Settings::S_Input_Mouse(sf::Event event)
 {
 	if (FullScreenBox.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {
-		if(FullScreenBox.State == true)
+		if (FullScreenBox.State == true) 
+		{
 			FullScreenBox.State = false;
-		else
+			tmpFullScreenParam = 0;
+		}
+		else 
+		{
 			FullScreenBox.State = true;
+			tmpFullScreenParam = 1;
+		}
+			
 	}
-	if (SliderSound.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {}
-	if (SliderMusic.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {}
-	if (SliderMain.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {}
-	if (Back.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {}
+	if (Back.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {
+		std::cout << "Changes Canceled";
+		_SceneManager->ChangeScene("MainMenu");
+	}
 	if (Apply.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {
-		//Creation / Modification du fichier Setting
+
+		SettingsParam["Resolution"] = tmpResolutionIndex;
+		SettingsParam["FullScreen"] = tmpFullScreenParam;
+		SettingsParam["MainVolume"] = tmpMainVolumeParam;
+		SettingsParam["SoundVolume"] = tmpSoundVolumeParam;
+		SettingsParam["MusicVolume"] = tmpMusicVolumeParam;
+
+		Engine::SerializeData(SettingsParam);
 		std::cout << "Applied Changes";
 		_SceneManager->ChangeScene("MainMenu");
 	}
@@ -252,7 +284,61 @@ void Settings::S_Input_Mouse(sf::Event event)
 		std::cout << "Back";
 		_SceneManager->ChangeScene("MainMenu");
 	}
+	if (PrevResButton.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {
+		if (tmpResolutionIndex <= 0)
+			tmpResolutionIndex = 0;
+		else
+			tmpResolutionIndex--;
+		ScreenSize = ScreenSizes[tmpResolutionIndex];
+	}	
+	if (NextResButton.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {
+		if (tmpResolutionIndex >= ScreenSizes.size()-1)
+			tmpResolutionIndex = ScreenSizes.size();
+		else
+			tmpResolutionIndex++;
+		ScreenSize = ScreenSizes[tmpResolutionIndex];
+	}
+
+	if (PrevSoundVolButton.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {
+		if (tmpSoundVolumeParam <= 0)
+			tmpSoundVolumeParam = 0;
+		else
+			tmpSoundVolumeParam -= 10;
+	}
+	if (NextSoundVolButton.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {
+		if (tmpSoundVolumeParam >= 100)
+			tmpSoundVolumeParam = 100;
+		else
+			tmpSoundVolumeParam += 10;
+	}
+	if (PrevMusicVolButton.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {
+		if (tmpMusicVolumeParam <= 0)
+			tmpMusicVolumeParam = 0;
+		else
+			tmpMusicVolumeParam -= 10;
+	}
+	if (NextMusicVolButton.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {
+		if (tmpMusicVolumeParam >= 100)
+			tmpMusicVolumeParam = 100;
+		else
+			tmpMusicVolumeParam += 10;
+	}
+	if (PrevMainVolButton.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {
+		if (tmpMainVolumeParam <= 0)
+			tmpMainVolumeParam = 0;
+		else
+			tmpMainVolumeParam -= 10;
+	}
+	if (NextMainVolButton.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {
+		if (tmpMainVolumeParam >= 100)
+			tmpMainVolumeParam = 100;
+		else
+			tmpMainVolumeParam += 10;
+	}
+
 
 }
+
+
 
 

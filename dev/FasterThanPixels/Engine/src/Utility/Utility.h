@@ -20,6 +20,9 @@ namespace Engine {
 	*/
 	std::vector<nlohmann::json> LoadAssetFromFile(std::string Path);
 
+	void SerializeData(std::map<std::string,int>& map);
+
+	bool FileExists(std::string path);
 	/*!
 	*  \brief GetPlayerInfoFromDB
 	*
@@ -27,6 +30,7 @@ namespace Engine {
 	* \param Name : Nom du joueur
 	* \return json du joueur de la bdd
 	*/
+
 	nlohmann::json GetPlayerInfoFromDB(std::string Name);
 	/*!
 	*  \brief LoginUser
