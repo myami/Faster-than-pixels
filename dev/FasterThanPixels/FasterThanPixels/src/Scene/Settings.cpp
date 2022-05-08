@@ -62,19 +62,30 @@ void Settings::S_ActionTrigger(std::string ActionName)
 void Settings::S_Begin_Play()
 {
 #pragma region Initialisation_Params
-	ScreenSize = sf::VideoMode::getDesktopMode();
-	for (size_t i = 0; i < ScreenSizes.size(); i++)
-	{
-		if (ScreenSizes[i] == ScreenSize)
-			ResolutionIndex = i;
-	}
 
-	if (Engine::FileExists("settings.json")) 
+	if (Engine::FileExists("./settings.json")) 
 	{
+		std::ifstream settings_file("settings.json");
+		settings_file >> j;
+		SettingsParam = j;
 
+
+		tmpMainVolumeParam = SettingsParam["MainVolume"];
+		tmpMusicVolumeParam = SettingsParam["MusicVolume"];
+		tmpSoundVolumeParam = SettingsParam["SoundVolume"];
+		tmpResolutionIndex = SettingsParam["Resolution"];
+		tmpFullScreenParam = SettingsParam["FullScreen"];
+		ScreenSize = ScreenSizes[SettingsParam["Resolution"]];
 	}
 	else 
 	{
+		ScreenSize = sf::VideoMode::getDesktopMode();
+		for (size_t i = 0; i < ScreenSizes.size(); i++)
+		{
+			if (ScreenSizes[i] == ScreenSize)
+				ResolutionIndex = i;
+		}
+
 		FullScreenParam = 1;
 		MainVolumeParam = 100;
 		MusicVolumeParam = 100;
@@ -293,7 +304,7 @@ void Settings::S_Input_Mouse(sf::Event event)
 	}	
 	if (NextResButton.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {
 		if (tmpResolutionIndex >= ScreenSizes.size()-1)
-			tmpResolutionIndex = ScreenSizes.size();
+			tmpResolutionIndex = ScreenSizes.size()-1;
 		else
 			tmpResolutionIndex++;
 		ScreenSize = ScreenSizes[tmpResolutionIndex];
