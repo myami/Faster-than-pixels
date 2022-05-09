@@ -28,7 +28,7 @@ void FTP_SceneManager::Init(std::string FirstScene)
 	AddScene(compendium);
 	AddScene(profile);
 
-	CurrentScene = "Settings";
+	CurrentScene = "PlayerProfile";
 
 	GetCurrentScene()->S_Begin_Play();
 }

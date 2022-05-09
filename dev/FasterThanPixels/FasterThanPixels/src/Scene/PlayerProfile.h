@@ -11,8 +11,16 @@ public:
 	PlayerProfile(std::string name, FTP_SceneManager* refs);
 	void S_Render() override; // fin de frame affiche le resultat de la simulation 4/4
 	void S_Begin_Play() override;
+	void S_Update() override;
 	void S_Input_Mouse(sf::Event event) override;
 
 
+	sf::Sprite Background;  /*!< Sprite du background */
+	sf::Sprite Title; /*!< Sprite du titre du jeu */
 
+	bool DisplayStats;
+	sf::Text MenuTitle;
+	sf::Text Name, Level, Interceptor, Bomber, Fighter, Carrier, Turret, Asteroid, Castaway, Missions;
+
+	Button Back,SwaptoStats, SwaptoAchievements;
 };
