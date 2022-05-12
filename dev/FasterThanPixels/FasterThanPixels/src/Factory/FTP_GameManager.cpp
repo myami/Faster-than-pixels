@@ -6,8 +6,14 @@
 
 void FTP_GameManager::Game_Init(std::string NameOfTheGame, std::string FirstScene)
 {
-    sf::VideoMode desktop = sf::VideoMode::getDesktopMode();
-	Windows = new sf::RenderWindow (sf::VideoMode(desktop.width, desktop.height), NameOfTheGame, sf::Style::Fullscreen);
+    if (Engine::FileExists("./settings.json"))
+        Settings = Engine::GetInfoFromJSON("./settings.json");
+
+    sf::VideoMode desktop = sf::VideoMode::getFullscreenModes()[Settings["Resolution"]];
+    if(Settings["FullScreen"])
+	    Windows = new sf::RenderWindow (sf::VideoMode(desktop.width, desktop.height), NameOfTheGame, sf::Style::Fullscreen);
+    else
+        Windows = new sf::RenderWindow(sf::VideoMode(desktop.width, desktop.height), NameOfTheGame, sf::Style::Default);
     Windows->setFramerateLimit(30);
 
     View.setSize(desktop.width, desktop.height);

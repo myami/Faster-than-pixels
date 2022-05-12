@@ -45,6 +45,8 @@ void Settings::S_Render()
 
 	_SceneManager->_GameManager->Windows->draw(Apply.ButtonSprite);
 	_SceneManager->_GameManager->Windows->draw(Back.ButtonSprite);
+	_SceneManager->_GameManager->Windows->draw(Info);
+
 
 
 
@@ -65,10 +67,7 @@ void Settings::S_Begin_Play()
 
 	if (Engine::FileExists("./settings.json")) 
 	{
-		std::ifstream settings_file("settings.json");
-		settings_file >> j;
-		SettingsParam = j;
-
+		SettingsParam = Engine::GetInfoFromJSON("./settings.json");
 
 		tmpMainVolumeParam = SettingsParam["MainVolume"];
 		tmpMusicVolumeParam = SettingsParam["MusicVolume"];
@@ -239,6 +238,14 @@ void Settings::S_Begin_Play()
 	NextSoundVolButton.ButtonSprite.move(425.f, 50.f);
 
 #pragma endregion
+
+	Info.setFont(_SceneManager->_GameManager->G_AssetManager->GetFont("FontText"));
+	Info.setString("Les changements seront effectifs au prochain démarrage du jeu.");
+	Info.setCharacterSize(20);
+	Info.setFillColor(sf::Color::White);
+	Info.setOrigin(Info.getGlobalBounds().width / 2.f, Info.getGlobalBounds().height / 2.f);
+	Info.setPosition(_SceneManager->_GameManager->View.getCenter());
+	Info.move(sf::Vector2(0.f, 450.f));
 
 	Apply.ButtonSprite.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("ApplyButton"));
 	Apply.ButtonSprite.setOrigin(Apply.ButtonSprite.getGlobalBounds().width / 2.f, Apply.ButtonSprite.getGlobalBounds().height / 2.f);

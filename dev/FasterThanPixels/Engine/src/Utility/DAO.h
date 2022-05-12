@@ -1,5 +1,5 @@
 #pragma once
-#include "jdbc/mysql_connection.h"
+//#include "jdbc/mysql_connection.h"
 namespace Engine {
 	struct DBConnectionInfo {
 		std::string IpAdress;
@@ -13,7 +13,7 @@ namespace Engine {
 		DBConnectionInfo DB_Info;
 	public:
 		DAO(DBConnectionInfo dbinfo);
-		bool Connection();
+		void Connection();
 		void Disconnect();
 		bool IsConnected();
 

@@ -22,6 +22,8 @@ namespace Engine {
 
 	void SerializeData(std::map<std::string,int>& map);
 
+	std::map<std::string, int> GetInfoFromJSON(std::string path);
+
 	bool FileExists(std::string path);
 	/*!
 	*  \brief GetPlayerInfoFromDB

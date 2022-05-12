@@ -1,4 +1,4 @@
-#include "StateMachine.h"
+/*#include "StateMachine.h"
 
 void Engine::StateMachine_Master::SetState(StateMachine_State* NextState)
 {
@@ -15,4 +15,4 @@ Engine::StateMachine_State* Engine::StateMachine_Master::GetCurrentState()
 void Engine::StateMachine_Master::OnTick()
 {
 	CurrentState->On_Tick();
-}
+}*/

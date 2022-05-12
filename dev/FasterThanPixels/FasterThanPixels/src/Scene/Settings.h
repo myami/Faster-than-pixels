@@ -16,7 +16,6 @@ public:
 
 	const std::vector<sf::VideoMode> ScreenSizes = sf::VideoMode::getFullscreenModes();
 	sf::VideoMode ScreenSize;
-	nlohmann::json j;
 
 	int MainVolumeParam;
 	int MusicVolumeParam;
@@ -67,6 +66,8 @@ public:
 	sf::Text SoundVolumeValue;
 	Button NextSoundVolButton;
 	Button PrevSoundVolButton;
+
+	sf::Text Info;
 
 	Button NextResButton;
 	Button PrevResButton;

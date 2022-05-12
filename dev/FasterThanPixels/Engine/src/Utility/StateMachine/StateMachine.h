@@ -1,4 +1,4 @@
-#pragma once
+/*#pragma once
 namespace Engine {
 	class StateMachine_Master 
 	{
@@ -20,4 +20,4 @@ namespace Engine {
 	};
 
 
-}
+}*/
