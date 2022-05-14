@@ -1,5 +1,6 @@
 #pragma once
 //#include "jdbc/mysql_connection.h"
+#include "sqlite/sqlite3.h"
 namespace Engine {
 	struct DBConnectionInfo {
 		std::string IpAdress;

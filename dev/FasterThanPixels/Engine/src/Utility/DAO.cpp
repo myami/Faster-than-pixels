@@ -7,6 +7,7 @@ Engine::DAO::DAO(DBConnectionInfo dbinfo)
 
 bool Engine::DAO::Connection()
 {
+	
 	return false;
 }
 
