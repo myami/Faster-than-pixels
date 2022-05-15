@@ -2,7 +2,7 @@
 
 Scene::Scene(std::string name):FSM_State()
 {
-	SceneName = name;
+	param.StateName = name;
 }
 
 void Scene::Begin_Play()

@@ -3,9 +3,6 @@
 #include "sqlite/sqlite3.h"
 namespace Engine {
 	struct DBConnectionInfo {
-		std::string IpAdress;
-		std::string UserName;
-		std::string Password;
 		std::string DbName;
 
 	};
