@@ -23,7 +23,7 @@ Engine::Scene::Scene()
 
 Engine::Scene::Scene(std::string name)
 {
-	this->S_Name = name;
+	param.StateName = name;
 }
 
 void Engine::Scene::S_Action(sf::Event event)

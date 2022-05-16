@@ -1,6 +1,7 @@
 #pragma once
 #include "../Utility/Scene.h"
 #include <vector>
+#include "../Engine.h"
 
 namespace Engine {
 	class GameManager;
@@ -8,11 +9,10 @@ namespace Engine {
 	* \brief classe representant les scenes dans le jeu
 	*
 	*/
-	class SceneManager {
-		std::vector <Scene*> M_Scene; /*!< Liste de toutes les scenes disponible */
+	class SceneManager : public Engine::FiniteStateMachine{
 	public:
-		std::string CurrentScene; /*!< La scene actuelle */
-
+		void Reset_FSM();
+		bool Run_FSM();
 		/*!
 		*  \brief SceneManager
 		*
@@ -35,7 +35,7 @@ namespace Engine {
 		* \param name : Nom de la scene
 		* \return la scene selectionner
 		*/
-		Scene& GetScene(std::string name);
+		Scene* GetScene(std::string name);
 		/*!
 		*  \brief GetCurrentScene
 		*

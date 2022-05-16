@@ -1,8 +1,34 @@
 #include "SceneManager.h"
 #include "GameManager.h"
 #include "../Utility/Scene.h"
+#include "../Utility/StateMachine/FiniteStateMachine.h"
 
-Engine::SceneManager::SceneManager()
+void Engine::SceneManager::Reset_FSM()
+{
+	Current_States = Initial_States;
+	Current_States->Begin_Play();
+}
+
+bool Engine::SceneManager::Run_FSM()
+{
+	if (Current_States->param.StopState) {
+		if (!Current_States->param.isterminal) {
+			ChangeScene(Current_States->param.NextScene);
+		}
+		else {
+			Stop_FSM();
+			return true;
+		}
+	}
+	else {
+		Current_States->Tick();
+	}
+	return false;
+}
+
+
+
+Engine::SceneManager::SceneManager():Engine::FiniteStateMachine()
 {
 }
 
@@ -11,41 +37,27 @@ Engine::SceneManager::SceneManager(Engine::GameManager* gm)
 	this->_GameManager = gm;
 }
 
-Engine::Scene& Engine::SceneManager::GetScene(std::string sc)
+Engine::Scene* Engine::SceneManager::GetScene(std::string sc)
 {
-	for (auto scene : M_Scene)
-	{
-		if (scene->S_Name == sc) {
-			return *scene;
-		}
-	}
+	return dynamic_cast<Scene*>(FindByName(sc));
 }
 
 Engine::Scene* Engine::SceneManager::GetCurrentScene()
 {
-	for (auto scene : M_Scene)
-	{
-		if (scene->S_Name == CurrentScene) {
-			return scene;
-		}
-	}
+	return dynamic_cast<Scene*>(Current_States);
 }
 
 void Engine::SceneManager::AddScene(Engine::Scene* scene)
 {
-	M_Scene.push_back(scene);
+	Add_States(scene);
 }
 
 void Engine::SceneManager::ChangeScene(std::string newscene)
 {
-	GetCurrentScene()->S_End_Scene();
-	CurrentScene = newscene;
-	GetCurrentScene()->S_Begin_Play();
+	Transit_To(FindByName(newscene));
 }
 
 Engine::SceneManager::~SceneManager()
 {
-	for (auto s : M_Scene) {
-		delete s;
-	}
+	
 }

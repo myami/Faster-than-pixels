@@ -13,11 +13,11 @@ void Engine::GameManager::GameLoop()
 	while (Windows->isOpen())
 	{
 		DeltaTime = ClockDeltaTime.restart().asSeconds();
-
-		G_SceneManager->GetCurrentScene()->S_Update();
 		S_Input();
-		G_SceneManager->GetCurrentScene()->S_Simulation();
-		G_SceneManager->GetCurrentScene()->S_Syteme();
+		if (G_SceneManager->Run_FSM()) 
+		{
+			Quit();
+		}
 		Windows->clear();
 		G_SceneManager->GetCurrentScene()->S_Render();
 		Windows->display();
