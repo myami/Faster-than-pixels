@@ -4,16 +4,21 @@
 namespace Engine {
 	struct DBConnectionInfo {
 		std::string DbName;
-
 	};
 	class DAO {
 	private:
 		DBConnectionInfo DB_Info;
 	public:
 		DAO(DBConnectionInfo dbinfo);
-		void Connection();
+		void Connection(std::string DBname);
 		void Disconnect();
-		bool IsConnected();
+		void InsertData(std::string DBName, std::string Query);
+		sqlite3* db;
 
+		std::string createUserTable;
+		std::string createAchievementTable;
+		std::string createUserAchievementTable;
+
+		std::string 
 	};
 }
