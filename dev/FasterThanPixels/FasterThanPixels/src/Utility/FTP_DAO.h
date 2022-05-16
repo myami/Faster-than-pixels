@@ -9,4 +9,9 @@ public:
 	// STATS
 	// ACHIEVEMENTS
 	std::vector<int> GetPlayerBestScore(std::string PlayerName);
+	std::string createUserTable;
+	std::string createAchievementTable;
+	std::string createUserAchievementTable;
+
+	std::string
 };
