@@ -22,7 +22,7 @@ namespace Engine {
 
 		bool S_Paused; /*!< Si la scene est en pause */
 		bool S_End; /*!< Si la scene est fini d'etre utiliser */
-
+		void S_Simulation();
 		/*!
 		*  \brief S_Action
 		*

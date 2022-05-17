@@ -15,7 +15,7 @@ Starting::Starting(std::string name, FTP_SceneManager* refs):Engine::BlankScene(
 
 
 
-void Starting::S_Update()
+void Starting::Tick()
 {
 	if (S_End) {
 		_SceneManager->ChangeScene("Authentification");
@@ -51,7 +51,7 @@ void Starting::S_ActionTrigger(std::string ActionName)
 	}
 }
 
-void Starting::S_Begin_Play()
+void Starting::Begin_Play()
 {
 	text.setFont(_SceneManager->_GameManager->G_AssetManager->GetFont("FontText"));
 	text.setString("FASTER THAN PIXEL");

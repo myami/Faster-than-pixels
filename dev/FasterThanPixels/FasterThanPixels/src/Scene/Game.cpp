@@ -27,11 +27,8 @@ Game::Game(std::string name, FTP_SceneManager* refs) : Engine::BlankScene(name)
 	S_EntityManager->GameManager = _SceneManager->_GameManager;
 }
 
-void Game::S_Syteme()
-{
-}
 
-void Game::S_Update()
+void Game::Tick()
 {
 	S_EntityManager->Update(); // mais a jour la waiting list
 	MousePosScreen = sf::Mouse::getPosition();
@@ -189,7 +186,7 @@ void Game::S_ActionTrigger(std::string ActionName)
 	}
 }
 
-void Game::S_Begin_Play()
+void Game::Begin_Play()
 {
 	text.setFont(_SceneManager->_GameManager->G_AssetManager->GetFont("FontText"));
 	text.setCharacterSize(30);

@@ -23,7 +23,7 @@ void MainMenu::S_Render()
 }
 
 
-void MainMenu::S_Begin_Play()
+void MainMenu::Begin_Play()
 {
 
 #pragma region Background
@@ -104,5 +104,9 @@ void MainMenu::S_Input_Mouse(sf::Event event)
 
 	}
 
+}
+
+void MainMenu::Tick()
+{
 }
 

@@ -13,12 +13,6 @@ namespace Engine {
 		void Connection(std::string DBname);
 		void Disconnect();
 		void InsertData(std::string DBName, std::string Query);
-		sqlite3* db;
-
-		std::string createUserTable;
-		std::string createAchievementTable;
-		std::string createUserAchievementTable;
-
-		std::string 
+		sqlite3* db;	
 	};
 }

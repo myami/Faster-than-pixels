@@ -1,36 +1,39 @@
 #include "SceneManager.h"
 #include "GameManager.h"
+#include "../Utility/StateMachine/State.h"
 #include "../Utility/Scene.h"
-#include "../Utility/StateMachine/FiniteStateMachine.h"
+
+Engine::SceneManager::SceneManager():FiniteStateMachine()
+{
+}
+
 
 void Engine::SceneManager::Reset_FSM()
 {
-	Current_States = Initial_States;
-	Current_States->Begin_Play();
+	this->Current_States = this->Initial_States;
+	GetCurrentScene()->Begin_Play();
 }
 
 bool Engine::SceneManager::Run_FSM()
 {
-	if (Current_States->param.StopState) {
-		if (!Current_States->param.isterminal) {
-			ChangeScene(Current_States->param.NextScene);
+	if (GetCurrentScene()->param.StopState) {
+		if (!GetCurrentScene()->param.isterminal) {
+			ChangeScene(GetCurrentScene()->param.NextScene);
 		}
 		else {
-			Stop_FSM();
+			this->Stop_FSM();
 			return true;
 		}
 	}
 	else {
-		Current_States->Tick();
+		GetCurrentScene()->Tick();
 	}
 	return false;
 }
 
 
 
-Engine::SceneManager::SceneManager():Engine::FiniteStateMachine()
-{
-}
+
 
 Engine::SceneManager::SceneManager(Engine::GameManager* gm)
 {
@@ -39,17 +42,17 @@ Engine::SceneManager::SceneManager(Engine::GameManager* gm)
 
 Engine::Scene* Engine::SceneManager::GetScene(std::string sc)
 {
-	return dynamic_cast<Scene*>(FindByName(sc));
+	return dynamic_cast<Scene*>(this->FindByName(sc));
 }
 
 Engine::Scene* Engine::SceneManager::GetCurrentScene()
 {
-	return dynamic_cast<Scene*>(Current_States);
+	return dynamic_cast<Scene*>(this->Current_States);
 }
 
 void Engine::SceneManager::AddScene(Engine::Scene* scene)
 {
-	Add_States(scene);
+	this->Add_States(scene);
 }
 
 void Engine::SceneManager::ChangeScene(std::string newscene)
@@ -60,4 +63,9 @@ void Engine::SceneManager::ChangeScene(std::string newscene)
 Engine::SceneManager::~SceneManager()
 {
 	
+}
+
+Engine::FSM_State* Engine::SceneManager::GetStatesFromScene(Engine::Scene* sc)
+{
+	return dynamic_cast<FSM_State*>(sc);
 }

@@ -1,4 +1,5 @@
 #include "Scene.h"
+#include "StateMachine/State.h"
 
 void Engine::Scene::RegisterAction(Engine::InputAction Action)
 {
@@ -21,7 +22,7 @@ Engine::Scene::Scene()
 {
 }
 
-Engine::Scene::Scene(std::string name)
+Engine::Scene::Scene(std::string name):Engine::FSM_State()
 {
 	param.StateName = name;
 }

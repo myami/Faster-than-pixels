@@ -33,7 +33,7 @@ void GameModeSelection::S_Render()
 }
 
 
-void GameModeSelection::S_Begin_Play()
+void GameModeSelection::Begin_Play()
 {
 #pragma region Background
 	Background.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("MenuBackground"));
@@ -229,4 +229,8 @@ void GameModeSelection::S_Input_Mouse(sf::Event event)
 void GameModeSelection::S_Input_Text(sf::Event event)
 {
 	Seed.TypedOn(event);
+}
+
+void GameModeSelection::Tick()
+{
 }

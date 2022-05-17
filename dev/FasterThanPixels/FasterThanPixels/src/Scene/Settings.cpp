@@ -61,7 +61,7 @@ void Settings::S_ActionTrigger(std::string ActionName)
 }
 
 
-void Settings::S_Begin_Play()
+void Settings::Begin_Play()
 {
 #pragma region Initialisation_Params
 
@@ -258,7 +258,7 @@ void Settings::S_Begin_Play()
 	Back.ButtonSprite.move(sf::Vector2(200.f, 400.f));
 }
 
-void Settings::S_Update()
+void Settings::Tick()
 {
 	ResolutionValue.setString(std::to_string(ScreenSize.width) + "x" + std::to_string(ScreenSize.height));
 	MainVolumeValue.setString(std::to_string(tmpMainVolumeParam));

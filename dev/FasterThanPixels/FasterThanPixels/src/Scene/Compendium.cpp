@@ -163,7 +163,7 @@ void Compendium::S_ActionTrigger(std::string ActionName)
 {
 }
 
-void Compendium::S_Begin_Play()
+void Compendium::Begin_Play()
 {
 
 	FS = FirstState::Empty;
@@ -335,5 +335,9 @@ void Compendium::S_Input_Mouse(sf::Event event)
 }
 
 void Compendium::S_Input_Text(sf::Event event)
+{
+}
+
+void Compendium::Tick()
 {
 }

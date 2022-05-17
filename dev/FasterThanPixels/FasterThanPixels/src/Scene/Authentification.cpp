@@ -11,10 +11,7 @@ Authentification::Authentification(std::string name, FTP_SceneManager* refs) : E
 
 
 
-void Authentification::S_Update()
-{
-	// sql
-}
+
 
 void Authentification::S_Render()
 {
@@ -49,7 +46,7 @@ void Authentification::S_Render()
 }
 
 
-void Authentification::S_Begin_Play()
+void Authentification::Begin_Play()
 {
 	inscription = false;
 	Background.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("MenuBackground"));
@@ -228,4 +225,8 @@ void Authentification::ShowRegister()
 	PassWord.SetPosition("Password", sf::Vector2f(_SceneManager->_GameManager->View.getCenter().x , _SceneManager->_GameManager->View.getCenter().y));
 
 	
+}
+
+void Authentification::Tick()
+{
 }

@@ -1,6 +1,7 @@
 #include "GameManager.h"
 #include "AssetManager.h"
 #include "SceneManager.h"
+#include "../Utility/Scene.h"
 
 void Engine::GameManager::Quit()
 {
@@ -14,6 +15,7 @@ void Engine::GameManager::GameLoop()
 	{
 		DeltaTime = ClockDeltaTime.restart().asSeconds();
 		S_Input();
+		G_SceneManager->GetCurrentScene()->S_Simulation();
 		if (G_SceneManager->Run_FSM()) 
 		{
 			Quit();

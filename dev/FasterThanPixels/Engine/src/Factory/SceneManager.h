@@ -1,15 +1,17 @@
 #pragma once
-#include "../Utility/Scene.h"
 #include <vector>
-#include "../Engine.h"
+#include <string>
+#include "../Utility/StateMachine/FiniteStateMachine.h"
 
 namespace Engine {
 	class GameManager;
+	class FSM_State;
+	class Scene;
 	/*! \class SceneManager
 	* \brief classe representant les scenes dans le jeu
 	*
 	*/
-	class SceneManager : public Engine::FiniteStateMachine{
+	class SceneManager : public FiniteStateMachine{
 	public:
 		void Reset_FSM();
 		bool Run_FSM();
@@ -66,5 +68,8 @@ namespace Engine {
 		void ChangeScene(std::string newscene);
 
 		~SceneManager();
+
+		FSM_State* GetStatesFromScene(Scene* sc);
+
 	};
 }

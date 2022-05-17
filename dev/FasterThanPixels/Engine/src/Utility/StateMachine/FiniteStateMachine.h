@@ -1,10 +1,11 @@
-
+#pragma once
 #include <vector>
-#include "State.h"
+#include <string>
 namespace Engine {
-	class FiniteStateMachine
-	{
+	class FSM_State;
+	class FiniteStateMachine{
 	public:
+		FiniteStateMachine();
 		FSM_State* Initial_States;
 		FSM_State* Current_States;
 		std::vector<FSM_State*> StatesList;

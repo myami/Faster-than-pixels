@@ -36,7 +36,7 @@ void PlayerProfile::S_Render()
 
 }
 
-void PlayerProfile::S_Begin_Play()
+void PlayerProfile::Begin_Play()
 {
 	DisplayStats = true;
 
@@ -158,7 +158,7 @@ void PlayerProfile::S_Begin_Play()
 
 }
 
-void PlayerProfile::S_Update() 
+void PlayerProfile::Tick() 
 {
 
 }

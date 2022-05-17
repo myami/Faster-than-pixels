@@ -10,8 +10,8 @@ class PlayerProfile : public Engine::BlankScene {
 public:
 	PlayerProfile(std::string name, FTP_SceneManager* refs);
 	void S_Render() override; // fin de frame affiche le resultat de la simulation 4/4
-	void S_Begin_Play() override;
-	void S_Update() override;
+	void Begin_Play() override;
+	void Tick() override;
 	void S_Input_Mouse(sf::Event event) override;
 
 

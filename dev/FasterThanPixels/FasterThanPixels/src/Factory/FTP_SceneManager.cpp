@@ -28,9 +28,9 @@ void FTP_SceneManager::Init(std::string FirstScene)
 	AddScene(compendium);
 	AddScene(profile);
 
-	CurrentScene = "PlayerProfile";
+	Initial_States = GetStatesFromScene(profile);
 
-	GetCurrentScene()->S_Begin_Play();
+	Reset_FSM();
 }
 
 FTP_SceneManager::FTP_SceneManager(Engine::GameManager* gm)
