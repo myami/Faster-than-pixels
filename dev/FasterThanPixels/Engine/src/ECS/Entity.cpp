@@ -5,6 +5,18 @@ Engine::Entity::Entity(int id)
 	E_Id = id;
 }
 
+void Engine::Entity::Begin_Play()
+{
+}
+
+void Engine::Entity::Tick()
+{
+}
+
+void Engine::Entity::End_Play()
+{
+}
+
 Engine::Component* Engine::Entity::GetComponent(std::string name)
 {
 	return 	E_Component[name];

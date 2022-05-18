@@ -3,7 +3,7 @@
 #include <vector>
 #include <map>
 #include "Component.h"
-#include "../Factory/EntityManager.h"
+#include "../Utility/StateMachine/StateParent.h"
 /*!
  * \file Entity.h
  * \brief Entite qui apparait dans le jeu, il contient les composants
@@ -13,7 +13,8 @@ namespace Engine {
 	* \brief classe representant chaque Entite qui est dans le EntityManager
 	*
 	*/
-	class Entity {
+	class StateParent;
+	class Entity : public StateParent{
 		std::map < std::string, Engine::Component*> E_Component; /*!< Liste des components de l'entite */
 	public:
 		Entity(int id);
@@ -23,6 +24,12 @@ namespace Engine {
 		bool E_IsAnimated = false;
 
 		std::map<std::string, std::any> ValueToChange;/*!< Valeur a changer sur les variables entity au update de la gameloop(Tag ou CanBeUsed) */
+
+		void Begin_Play() override;
+
+		void Tick() override;
+
+		void End_Play() override;
 
 		/*!
 		 *  \brief Return un component

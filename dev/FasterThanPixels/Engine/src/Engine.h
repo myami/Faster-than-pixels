@@ -24,7 +24,9 @@
 #include "Utility/GUI/CheckBox.h"
 #include "Utility/DAO.h"
 #include "Utility/StateMachine/FiniteStateMachine.h"
+#include "Utility/StateMachine/StateMachine.h"
 #include "Utility/StateMachine/State.h"
+#include "Utility/StateMachine/StateParent.h"
 
 /*! \namespace Engine
  *

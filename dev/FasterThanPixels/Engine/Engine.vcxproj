@@ -193,8 +193,10 @@
     <ClInclude Include="src\Utility\Path.h" />
     <ClInclude Include="src\Utility\Random.h" />
     <ClInclude Include="src\Utility\Scene.h" />
-    <ClInclude Include="src\Utility\StateMachine\State.h" />
     <ClInclude Include="src\Utility\StateMachine\FiniteStateMachine.h" />
+    <ClInclude Include="src\Utility\StateMachine\State.h" />
+    <ClInclude Include="src\Utility\StateMachine\StateMachine.h" />
+    <ClInclude Include="src\Utility\StateMachine\StateParent.h" />
     <ClInclude Include="src\Utility\Utility.h" />
   </ItemGroup>
   <ItemGroup>
@@ -217,6 +219,8 @@
     <ClCompile Include="src\Utility\Random.cpp" />
     <ClCompile Include="src\Utility\Scene.cpp" />
     <ClCompile Include="src\Utility\StateMachine\FiniteStateMachine.cpp" />
+    <ClCompile Include="src\Utility\StateMachine\StateMachine.cpp" />
+    <ClCompile Include="src\Utility\StateMachine\StateParent.cpp" />
     <ClCompile Include="src\Utility\Utility.cpp" />
   </ItemGroup>
   <ItemGroup>

@@ -3,6 +3,7 @@
 #include <map>
 #include <string>
 #include "box2d/box2d.h"
+#include "../Utility/StateMachine/StateMachine.h"
 
 namespace Engine {
 	/*! \class EntityManager
@@ -25,7 +26,8 @@ namespace Engine {
 		bool IsAnimated;
 	};
 	class GameManager;
-	class EntityManager {
+	class StateMachine;
+	class EntityManager : public StateMachine {
 	public:
 		std::vector<Engine::Entity*> M_EntityVector; /*!< Liste des Entite */
 		//std::map<std::string, std::vector<Engine::Entity*>> M_EntityMap; /*!< Liste des Entite par tag */
