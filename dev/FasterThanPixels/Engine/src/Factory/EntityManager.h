@@ -13,15 +13,12 @@ namespace Engine {
 	enum class EntityState {
 		None,
 		Add,
-		Delete,
-		AddComponent,
-		DeleteComponent
+		Delete
 	};
 
 	struct S_Delay_Entity {
 		int E_ID;
 		EntityState E_State;
-		std::map < std::string, Engine::Component*> E_Component; /*!< Liste des components de l'entite . si deletecomponent on check juste les strings et pas le contenu. */
 		std::string E_Tag;
 		bool IsAnimated;
 	};
@@ -30,9 +27,8 @@ namespace Engine {
 	class EntityManager : public StateMachine {
 	public:
 		std::vector<Engine::Entity*> M_EntityVector; /*!< Liste des Entite */
-		//std::map<std::string, std::vector<Engine::Entity*>> M_EntityMap; /*!< Liste des Entite par tag */
+		std::map<std::string, std::vector<Engine::Entity*>> M_EntityMap; /*!< Liste des Entite par tag */
 		std::vector<S_Delay_Entity> M_EntityToChange; /*!< Liste des entites qui doivent etre changer au debut de la prochaine frame */
-		int M_TotalEntity; /*!< Le nombre total d'entite disponible dans le pool */
 		std::map<b2Body*, int> M_PhysicMap;  /*!< Liste des body de la simulation relie a leur entite */
 		Engine::GameManager* GameManager;
 
@@ -41,9 +37,9 @@ namespace Engine {
 		/*!
 	   *  \brief GenerateEntity
 	   *
-	   *  Au debut de la scene, genere toutes els entite disponibles
+	   *  Au debut de la scene, genere toutes les entite disponibles
 	   */
-		void GenerateEntity();
+		virtual void GenerateEntity(Scene* sc) = 0; 
 		/*!
 		*  \brief Update
 		*
@@ -56,7 +52,7 @@ namespace Engine {
 		*  Demande une entite libre
 		* \return une entite libre d utilisatation
 		*/
-		int RequestEntity();
+		int RequestEntity(std::string tag);
 
 		std::vector<Engine::Entity*> EntityToDraw();
 
@@ -67,8 +63,6 @@ namespace Engine {
 
 		void AddToWaiting(S_Delay_Entity entite);
 		std::vector<Engine::Entity*> GetAllEntityWithTag(std::string Tag);
-
-		Engine::Entity* GetPlayer();
 
 		virtual void EntityEndWaiting(Engine::Entity* entity, EntityState entitystate) = 0;
 
@@ -89,7 +83,5 @@ namespace Engine {
 		* \brief AddEntity Ajoute une entite a partir de la struct
 		*/
 		Engine::Entity* AddEntity(S_Delay_Entity entite);
-		Engine::Entity* AddComponent(S_Delay_Entity entite);
-		Engine::Entity* DeleteComponent(S_Delay_Entity entite);
 	};
 }

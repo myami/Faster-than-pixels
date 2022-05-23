@@ -61,9 +61,7 @@ bool Engine::FileExists(std::string path)
 Engine::S_Delay_Entity Engine::GenerateEntity(Engine::EntityManager* entman, std::string Tag)
 {
 	S_Delay_Entity entite;
-	entite.E_ID = entman->RequestEntity();
-	entite.E_Tag = Tag;
-
+	entite.E_ID = entman->RequestEntity(Tag);
 	return entite;
 }
 

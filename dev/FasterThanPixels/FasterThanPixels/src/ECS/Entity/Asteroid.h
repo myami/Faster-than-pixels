@@ -5,5 +5,11 @@
 *
 */
 class Asteroid : public Engine::Entity {
+public:
+	Asteroid();
+	Asteroid(Engine::Scene* sc);
+	void Begin_Play() override;
+	void Tick() override;
+	void End_Play() override;
 
 };

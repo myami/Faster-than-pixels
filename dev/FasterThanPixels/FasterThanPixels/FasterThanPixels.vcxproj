@@ -155,6 +155,10 @@
   <ItemGroup>
     <ClCompile Include="src\ECS\Components\C_Mouvement_Actif.cpp" />
     <ClCompile Include="src\ECS\Components\C_Shield.cpp" />
+    <ClCompile Include="src\ECS\Entity\Asteroid.cpp" />
+    <ClCompile Include="src\ECS\Entity\Planet.cpp" />
+    <ClCompile Include="src\ECS\Entity\Player.cpp" />
+    <ClCompile Include="src\ECS\Entity\Weapon\Laser.cpp" />
     <ClCompile Include="src\ECS\System\S_Health.cpp" />
     <ClCompile Include="src\ECS\System\S_MouvementActif.cpp" />
     <ClCompile Include="src\ECS\System\S_MouvementPassif.cpp" />
@@ -210,6 +214,7 @@
     <ClInclude Include="src\ECS\Entity\Enemie\Intercepteur.h" />
     <ClInclude Include="src\ECS\Entity\GameMode\ProtectTheArea\Building_P.h" />
     <ClInclude Include="src\ECS\Entity\GameMode\Race\Checkpoint.h" />
+    <ClInclude Include="src\ECS\Entity\Planet.h" />
     <ClInclude Include="src\ECS\Entity\Player.h" />
     <ClInclude Include="src\ECS\Entity\Enemie\PortesVaisseau.h" />
     <ClInclude Include="src\ECS\Entity\Bonus\Punching.h" />

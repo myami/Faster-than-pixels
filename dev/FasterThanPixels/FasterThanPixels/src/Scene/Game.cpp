@@ -2,21 +2,13 @@
 #include "../Factory/FTP_SceneManager.h"
 #include "../Factory/FTP_GameManager.h"
 #include "../Factory/FTP_EntityManager.h"
-
 #include <sstream>
 #include "../ECS/Components/C_Animated_Render.h"
-#include "../ECS/Components/C_Static_Collider_Sphere.h"
-#include "../ECS/Components/C_Transform.h"
 #include "../ECS/Components/C_Static_Render.h"
-#include "../ECS/Components/C_Kynematic_Collider_Sphere.h"
-#include "../ECS/Components/C_Transform.h"
-#include "../ECS/Components/C_Mouvement_Actif.h"
-#include "../ECS/Components/C_Health.h"
-#include "../ECS/Components/C_Shield.h"
-
 #include "../ECS/System/S_MouvementActif.h"
 #include "../ECS/System/S_Health.h"
 #include "../ECS/System/S_Shield.h"
+#include "../ECS/Entity/Player.h"
 
 #include <map>
 
@@ -110,80 +102,10 @@ void Game::S_Render()
 
 void Game::S_ActionTrigger(std::string ActionName)
 {
-	C_Transform* PlayerTransform = dynamic_cast<C_Transform*>(S_EntityManager->GetPlayer()->GetComponent("Transform"));
-	if (PlayerTransform)
-	{
-		if (ActionName == "Forward") {
-			_SceneManager->_GameManager->View.move(0.f, -viewspeed * _SceneManager->_GameManager->DeltaTime);
-			PlayerTransform->Direction = sf::Vector2f(0, -viewspeed);
-		}
-		if (ActionName == "ForwardRelease") {
-			PlayerTransform->Direction = sf::Vector2f(0, 0);
-		}
-		if (ActionName == "Backward") {
-			_SceneManager->_GameManager->View.move(0.f, viewspeed * _SceneManager->_GameManager->DeltaTime);
-			PlayerTransform->Direction = sf::Vector2f(0, viewspeed);
-		}
-		if (ActionName == "BackwardRelease") {
-			PlayerTransform->Direction = sf::Vector2f(0, 0);
-		}
-		if (ActionName == "Left") {
-			_SceneManager->_GameManager->View.move(-viewspeed * _SceneManager->_GameManager->DeltaTime, 0.f);
-			PlayerTransform->Direction = sf::Vector2f(-viewspeed, 0);
-		}
-		if (ActionName == "LeftRelease") {
-			PlayerTransform->Direction = sf::Vector2f(0, 0);
-		}
-		if (ActionName == "Right") {
-			_SceneManager->_GameManager->View.move(viewspeed * _SceneManager->_GameManager->DeltaTime, 0.f);
-			PlayerTransform->Direction = sf::Vector2f(viewspeed, 0);
-		}
-		if (ActionName == "RightRelease") {
-			PlayerTransform->Direction = sf::Vector2f(0, 0);
-		}
-
-		if (ActionName == "RotLeft") {
-			PlayerTransform->RotationDirection = -rotationspeed;
-		}
-		if (ActionName == "RotLeftRelease") {
-			PlayerTransform->RotationDirection = 0;
-		}
-		if (ActionName == "RotRight") {
-			PlayerTransform->RotationDirection = rotationspeed;
-		}
-		if (ActionName == "RotRightRelease") {
-			PlayerTransform->RotationDirection = 0;
-		}
-		if (ActionName == "Turbo") {
-		}
-		if (ActionName == "TurboRelease") {
-		}
-		if (ActionName == "Shoot") {
-			SpawnLaser(S_EntityManager->GetPlayer());
-		}
-		if (ActionName == "ShootRelease") {
-		}
-		if (ActionName == "Mines") {
-		}
-		if (ActionName == "MinesRelease") {
-		}
-		if (ActionName == "Missiles") {
-		}
-		if (ActionName == "MissilesRelease") {
-		}
-		if (ActionName == "Reparation") {
-		}
-		if (ActionName == "ReparationRelease") {
-		}
-		if (ActionName == "Perforation") {
-		}
-		if (ActionName == "PerforationRelease") {
-		}
-		if (ActionName == "Surfrequencage") {
-		}
-		if (ActionName == "SurfrequencageRelease") {
-		}
-	}
+	FTP_EntityManager* etm = dynamic_cast<FTP_EntityManager*>(S_EntityManager);
+	Player* p = dynamic_cast<Player*>(etm->GetPlayer());
+	if (etm && p)
+		p->Input(ActionName);
 }
 
 void Game::Begin_Play()
@@ -196,67 +118,12 @@ void Game::Begin_Play()
 	Gravity = b2Vec2(0, 0);
 	World = new b2World(Gravity);
 
-	S_EntityManager->M_TotalEntity = 500; // on veux 500 entite dans le jeu
-	S_EntityManager->GenerateEntity();
+	S_EntityManager->GenerateEntity(this);
 
 	InitPlanet();
 	InitAsteroid();
 
-	Engine::InputAction Forward(Engine::Trigger::KeyDown, "Forward", sf::Keyboard::W);
-	Engine::InputAction Backward(Engine::Trigger::KeyDown, "Backward", sf::Keyboard::S);
-	Engine::InputAction Left(Engine::Trigger::KeyDown, "Left", sf::Keyboard::Q);
-	Engine::InputAction Right(Engine::Trigger::KeyDown, "Right", sf::Keyboard::E);
-	Engine::InputAction RotLeft(Engine::Trigger::KeyDown, "RotLeft", sf::Keyboard::A);
-	Engine::InputAction RotRight(Engine::Trigger::KeyDown, "RotRight", sf::Keyboard::D);
-	Engine::InputAction Turbo(Engine::Trigger::KeyDown, "Turbo", sf::Keyboard::LShift);
-	Engine::InputAction Shoot(Engine::Trigger::KeyDown, "Shoot", sf::Keyboard::Space);
-	Engine::InputAction Mines(Engine::Trigger::KeyDown, "Mines", sf::Keyboard::LControl);
-	Engine::InputAction Missiles(Engine::Trigger::KeyDown, "Missiles", sf::Keyboard::F);
-	Engine::InputAction Reparation(Engine::Trigger::KeyDown, "Reparation", sf::Keyboard::Num1);
-	Engine::InputAction Perforation(Engine::Trigger::KeyDown, "Perforation", sf::Keyboard::Num2);
-	Engine::InputAction Surfrequencage(Engine::Trigger::KeyDown, "Surfrequencage", sf::Keyboard::Num3);
 
-	Engine::InputAction ForwardRelease(Engine::Trigger::KeyUp, "ForwardRelease", sf::Keyboard::W);
-	Engine::InputAction BackwardRelease(Engine::Trigger::KeyUp, "BackwardRelease", sf::Keyboard::S);
-	Engine::InputAction LeftRelease(Engine::Trigger::KeyUp, "LeftRelease", sf::Keyboard::Q);
-	Engine::InputAction RightRelease(Engine::Trigger::KeyUp, "RightRelease", sf::Keyboard::E);
-	Engine::InputAction RotLeftRelease(Engine::Trigger::KeyUp, "RotLeftRelease", sf::Keyboard::A);
-	Engine::InputAction RotRightRelease(Engine::Trigger::KeyUp, "RotRightRelease", sf::Keyboard::D);
-	Engine::InputAction TurboRelease(Engine::Trigger::KeyUp, "TurboRelease", sf::Keyboard::LShift);
-	Engine::InputAction ShootRelease(Engine::Trigger::KeyUp, "ShootRelease", sf::Keyboard::Space);
-	Engine::InputAction MinesRelease(Engine::Trigger::KeyUp, "MinesRelease", sf::Keyboard::LControl);
-	Engine::InputAction MissilesRelease(Engine::Trigger::KeyUp, "MissilesRelease", sf::Keyboard::F);
-	Engine::InputAction ReparationRelease(Engine::Trigger::KeyUp, "ReparationRelease", sf::Keyboard::Num1);
-	Engine::InputAction PerforationRelease(Engine::Trigger::KeyUp, "PerforationRelease", sf::Keyboard::Num2);
-	Engine::InputAction SurfrequencageRelease(Engine::Trigger::KeyUp, "SurfrequencageRelease", sf::Keyboard::Num3);
-
-	RegisterAction(Forward);
-	RegisterAction(Backward);
-	RegisterAction(Left);
-	RegisterAction(Right);
-	RegisterAction(RotLeft);
-	RegisterAction(RotRight);
-	RegisterAction(ForwardRelease);
-	RegisterAction(BackwardRelease);
-	RegisterAction(LeftRelease);
-	RegisterAction(RightRelease);
-	RegisterAction(RotLeftRelease);
-	RegisterAction(RotRightRelease);
-
-	RegisterAction(Turbo);
-	RegisterAction(Shoot);
-	RegisterAction(Mines);
-	RegisterAction(Missiles);
-	RegisterAction(Reparation);
-	RegisterAction(Perforation);
-	RegisterAction(Surfrequencage);
-	RegisterAction(TurboRelease);
-	RegisterAction(ShootRelease);
-	RegisterAction(MinesRelease);
-	RegisterAction(MissilesRelease);
-	RegisterAction(ReparationRelease);
-	RegisterAction(PerforationRelease);
-	RegisterAction(SurfrequencageRelease);
 
 	System_Mouvement_Actif = new S_Mouvement_Actif();
 	InitPlayer();
@@ -336,23 +203,8 @@ void Game::SpawnLaser(Engine::Entity* Shooter)
 {
 	Engine::S_Delay_Entity Laser;
 	Laser.E_State = Engine::EntityState::Add;
-	Laser.E_ID = S_EntityManager->RequestEntity();
-	Laser.E_Tag = "Laser";
+	Laser.E_ID = S_EntityManager->RequestEntity("Laser");
 	Laser.IsAnimated = false;
-	C_Static_Render* ShooterRender = dynamic_cast<C_Static_Render*>(Shooter->GetComponent("Render"));
-
-	std::map < std::string, Engine::Component*> ComponentLaser;
-	ComponentLaser.insert(std::pair<std::string, Engine::Component*>("Render", new C_Static_Render()));
-	ComponentLaser.insert(std::pair<std::string, Engine::Component*>("Transform", new C_Transform()));
-	ComponentLaser.insert(std::pair<std::string, Engine::Component*>("Collider", new C_Static_Collider_Sphere()));
-	Laser.E_Component = ComponentLaser;
-
-	C_Static_Render* LaserRender = dynamic_cast<C_Static_Render*>(ComponentLaser["Render"]);
-	LaserRender->Sprite.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("WeaponLaser"));
-	LaserRender->Sprite.setOrigin(LaserRender->Sprite.getGlobalBounds().width / 2.f, LaserRender->Sprite.getGlobalBounds().height / 2.f);
-	LaserRender->Sprite.setPosition(ShooterRender->Sprite.getPosition().x, ShooterRender->Sprite.getPosition().y - 60.f);
-	LaserRender->Sprite.setRotation(ShooterRender->Sprite.getRotation());
-
 	S_EntityManager->AddToWaiting(Laser);
 }
 
@@ -454,23 +306,8 @@ void Game::InitPlanet()
 	{
 		Engine::S_Delay_Entity Planet;
 		Planet.E_State = Engine::EntityState::Add;
-		Planet.E_ID = S_EntityManager->RequestEntity();
-		Planet.E_Tag = "Planet";
+		Planet.E_ID = S_EntityManager->RequestEntity("Planet");
 		Planet.IsAnimated = true;
-
-		std::map < std::string, Engine::Component*> ComponentPlanet;
-		ComponentPlanet.insert(std::pair<std::string, Engine::Component*>("Render", new C_Animated_Render()));
-		ComponentPlanet.insert(std::pair<std::string, Engine::Component*>("Collider", new C_Static_Collider_Sphere()));
-		Planet.E_Component = ComponentPlanet;
-
-		C_Animated_Render* PlanetRender = dynamic_cast<C_Animated_Render*>(ComponentPlanet["Render"]);
-		srand(seed + i);
-		int randomplanet = rand() % AvailablePlanet.size() + 0;
-		PlanetRender->AnimatedSprite.SetupAnimation(_SceneManager->_GameManager->G_AssetManager->GetTexture(AvailablePlanet[randomplanet]), 15 / 60.f, { 10,1 }, sf::Vector2f(0.f, 0.f));
-		float randomx = rand() % (int)MapSize.x + -MapSize.x;
-		float randomy = rand() % (int)MapSize.y + -MapSize.y;
-
-		PlanetRender->AnimatedSprite.MoveSprite(sf::Vector2f(randomx, randomy));
 
 		S_EntityManager->AddToWaiting(Planet);
 	}
@@ -500,26 +337,9 @@ void Game::InitAsteroid()
 		Engine::S_Delay_Entity Asteroid;
 		Asteroid.E_State = Engine::EntityState::Add;
 
-		Asteroid.E_ID = S_EntityManager->RequestEntity();
-		Asteroid.E_Tag = "Asteroid";
+		Asteroid.E_ID = S_EntityManager->RequestEntity("Asteroid");
 		Asteroid.IsAnimated = false;
 
-		std::map < std::string, Engine::Component*> ComponentAsteroid;
-		ComponentAsteroid.insert(std::pair<std::string, Engine::Component*>("Render", new C_Static_Render()));
-		ComponentAsteroid.insert(std::pair<std::string, Engine::Component*>("Collider", new C_Static_Collider_Sphere()));
-		Asteroid.E_Component = ComponentAsteroid;
-
-		C_Static_Render* AsteroidRender = dynamic_cast<C_Static_Render*>(ComponentAsteroid["Render"]);
-		srand(seed / 2 + i);
-		int randomasteroid = rand() % AvailableAsteroid.size() + 0; // selection texture
-		float randomx = rand() % (int)MapSize.x + -MapSize.x;
-		float randomy = rand() % (int)MapSize.y + -MapSize.y;
-		float randomscale = rand() % 1 + 0.3;
-		AsteroidRender->Sprite.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture(AvailableAsteroid[randomasteroid]));
-		AsteroidRender->Sprite.setOrigin(AsteroidRender->Sprite.getGlobalBounds().width / 2.f, AsteroidRender->Sprite.getGlobalBounds().height / 2.f);
-		AsteroidRender->Sprite.setScale(sf::Vector2f(randomscale, randomscale));
-		AsteroidRender->Sprite.setPosition(_SceneManager->_GameManager->View.getCenter());
-		AsteroidRender->Sprite.move(sf::Vector2f(randomx, randomy));
 
 		S_EntityManager->AddToWaiting(Asteroid);
 	}
@@ -528,61 +348,9 @@ void Game::InitAsteroid()
 void Game::InitPlayer()
 {
 	Engine::S_Delay_Entity Player;
-	Player.E_ID = S_EntityManager->RequestEntity();
+	Player.E_ID = S_EntityManager->RequestEntity("Player");
 	Player.E_State = Engine::EntityState::Add;
 	Player.IsAnimated = false;
-
-	Player.E_Tag = "Player";
-
-	std::map < std::string, Engine::Component*> ComponentPlayer;
-	ComponentPlayer.insert(std::pair<std::string, Engine::Component*>("Render", new C_Static_Render()));
-	ComponentPlayer.insert(std::pair<std::string, Engine::Component*>("Collider", new C_Kynematic_Collider_Sphere()));
-	ComponentPlayer.insert(std::pair<std::string, Engine::Component*>("Transform", new C_Transform()));
-	ComponentPlayer.insert(std::pair<std::string, Engine::Component*>("Mouvement", new C_MouvementActif()));
-	ComponentPlayer.insert(std::pair<std::string, Engine::Component*>("Health", new C_Health()));
-	ComponentPlayer.insert(std::pair<std::string, Engine::Component*>("Shield", new C_Shield()));
-
-	Player.E_Component = ComponentPlayer;
-
-	dynamic_cast<C_Health*>(ComponentPlayer["Health"])->Health = 100;
-	dynamic_cast<C_Shield*>(ComponentPlayer["Shield"])->HealthShield = 100;
-	dynamic_cast<C_Shield*>(ComponentPlayer["Shield"])->RegenerationAmountPerTick = 10;
-	dynamic_cast<C_Shield*>(ComponentPlayer["Shield"])->RegenerationSpeed = 3000;
-
-	C_Static_Render* Render = dynamic_cast<C_Static_Render*>(ComponentPlayer["Render"]);
-
-	Render->Sprite.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("Player100"));
-	Render->Sprite.setScale(sf::Vector2f(.2f, .2f));
-	Render->Sprite.setOrigin(Render->Sprite.getLocalBounds().width / 2.f, Render->Sprite.getLocalBounds().height / 2.f);
-	Render->Sprite.setPosition(_SceneManager->_GameManager->View.getCenter());
-	std::cout << "Default X : " << _SceneManager->_GameManager->View.getCenter().x << " Y : " << _SceneManager->_GameManager->View.getCenter().y << std::endl;
-
 	S_EntityManager->AddToWaiting(Player);
 }
 
-void Game::CheckPlayerLimit(Engine::Entity* entity)
-{
-	C_Static_Render* Render = dynamic_cast<C_Static_Render*>(entity->GetComponent("Render"));
-
-	if (Render->Sprite.getPosition().x > MapSize.x - 5)
-	{
-		Render->Sprite.setPosition(sf::Vector2f(-MapSize.x + 5, Render->Sprite.getPosition().y));
-		return;
-	}
-	if (Render->Sprite.getPosition().x < -MapSize.x + 5)
-	{
-		Render->Sprite.setPosition(sf::Vector2f(MapSize.x - 5, Render->Sprite.getPosition().y));
-		return;
-	}
-
-	if (Render->Sprite.getPosition().y < -MapSize.y + 5)
-	{
-		Render->Sprite.setPosition(sf::Vector2f(Render->Sprite.getPosition().x, MapSize.y - 5));
-		return;
-	}
-	if (Render->Sprite.getPosition().y > MapSize.y - 5)
-	{
-		Render->Sprite.setPosition(sf::Vector2f(Render->Sprite.getPosition().x, -MapSize.y + 5));
-		return;
-	}
-}

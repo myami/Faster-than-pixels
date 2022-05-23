@@ -14,14 +14,18 @@ namespace Engine {
 	*
 	*/
 	class StateParent;
+	class Scene;
 	class Entity : public StateParent{
 		std::map < std::string, Engine::Component*> E_Component; /*!< Liste des components de l'entite */
 	public:
 		Entity(int id);
+		Entity();
+		Entity(Scene* sc);
 		int E_Id = 0; /*!< ID de l'entite */
 		std::string E_Tag = "Default"; /*!< Tag de l'entite */
 		bool E_CanBeUsed = true; /*!< Si on peux utiliser cette entite ou si elle est utiliser actuellement */
 		bool E_IsAnimated = false;
+		Scene* CurrentScene;
 
 		std::map<std::string, std::any> ValueToChange;/*!< Valeur a changer sur les variables entity au update de la gameloop(Tag ou CanBeUsed) */
 

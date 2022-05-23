@@ -5,5 +5,11 @@
 *
 */
 class Laser : public Engine::Entity {
+public:
+	Laser();
+	Laser(Engine::Scene* sc);
+	void Begin_Play() override;
+	void Tick() override;
+	void End_Play() override;
 
 };

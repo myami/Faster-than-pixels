@@ -1,6 +1,12 @@
 #include "FTP_EntityManager.h"
 #include "../ECS/Components/C_Static_Render.h"
 #include "../ECS/Components/C_Animated_Render.h"
+#include "../ECS/Entity/Player.h"
+#include "../ECS/Entity/Asteroid.h"
+#include "../ECS/Entity/Planet.h"
+#include "../ECS/Entity/Weapon/Laser.h"
+
+
 
 void FTP_EntityManager::EntityEndWaiting(Engine::Entity* entity, Engine::EntityState entitystate)
 {
@@ -30,11 +36,39 @@ void FTP_EntityManager::EntityEndWaiting(Engine::Entity* entity, Engine::EntityS
 		break;
 	case Engine::EntityState::Delete:
 		break;
-	case Engine::EntityState::AddComponent:
-		break;
-	case Engine::EntityState::DeleteComponent:
-		break;
+
 	default:
 		break;
 	}
+}
+
+void FTP_EntityManager::GenerateEntity(Engine::Scene* sc)
+{ // Memory pool de se que on va avoir besoin et risque d avoir besoin
+	Player* p = new Player(sc);
+	M_EntityVector.push_back(p);
+
+	for (size_t i = 0; i < 300; i++)
+	{
+		Asteroid* ast = new Asteroid(sc);
+		M_EntityVector.push_back(ast);
+	}
+	for (size_t i = 0; i < 50; i++)
+	{
+		Planet* ast = new Planet(sc);
+		M_EntityVector.push_back(ast);
+	}
+	for (size_t i = 0; i < 50; i++)
+	{
+		Laser* ast = new Laser(sc);
+		M_EntityVector.push_back(ast);
+	}
+}
+
+FTP_EntityManager::FTP_EntityManager()
+{
+}
+
+Player* FTP_EntityManager::GetPlayer()
+{
+	return 	dynamic_cast<Player*>(GetAllEntityWithTag("Player")[0]);
 }

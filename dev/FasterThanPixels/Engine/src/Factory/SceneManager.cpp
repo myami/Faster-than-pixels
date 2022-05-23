@@ -31,10 +31,6 @@ bool Engine::SceneManager::Run_FSM()
 	return false;
 }
 
-
-
-
-
 Engine::SceneManager::SceneManager(Engine::GameManager* gm)
 {
 	this->_GameManager = gm;

@@ -5,6 +5,15 @@ Engine::Entity::Entity(int id)
 	E_Id = id;
 }
 
+Engine::Entity::Entity()
+{
+}
+
+Engine::Entity::Entity(Scene* sc)
+{
+	CurrentScene = sc;
+}
+
 void Engine::Entity::Begin_Play()
 {
 }

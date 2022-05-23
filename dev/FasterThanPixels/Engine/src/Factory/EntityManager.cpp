@@ -4,15 +4,7 @@ Engine::EntityManager::EntityManager()
 {
 }
 
-void Engine::EntityManager::GenerateEntity()
-{
-	for (size_t i = 0; i < M_TotalEntity; i++)
-	{
-		Entity* en = new Entity(i);
-		en->E_CanBeUsed = true;
-		M_EntityVector.push_back(en);
-	}
-}
+
 
 void Engine::EntityManager::Update()
 {
@@ -22,7 +14,7 @@ void Engine::EntityManager::Update()
 	M_EntityToChange.clear();
 }
 
-int Engine::EntityManager::RequestEntity()
+int Engine::EntityManager::RequestEntity(std::string tag)
 {
 	std::vector<int> used_id;
 	for (S_Delay_Entity delayentity : M_EntityToChange) 
@@ -39,8 +31,9 @@ int Engine::EntityManager::RequestEntity()
 					notused = true;
 			}
 			if (!notused)
-				return entity->E_Id;
-			// si le id est pas dans la waiting list
+				if (entity->E_Tag.compare(tag))
+					return entity->E_Id;
+			// si le id est pas dans la waiting list et il a le tag 
 			
 		}
 	}
@@ -109,12 +102,7 @@ void Engine::EntityManager::EntityWaitingListDispatch()
 		case Engine::EntityState::Delete:
 			EntityEndWaiting(RemoveEntity(delayentity), Engine::EntityState::Delete);
 			break;
-		case Engine::EntityState::AddComponent:
-			EntityEndWaiting(AddComponent(delayentity), Engine::EntityState::AddComponent);
-			break;
-		case Engine::EntityState::DeleteComponent:
-			EntityEndWaiting(DeleteComponent(delayentity), Engine::EntityState::DeleteComponent);
-			break;
+
 		default:
 			break;
 		}
@@ -127,6 +115,7 @@ Engine::Entity* Engine::EntityManager::RemoveEntity(S_Delay_Entity entite)
 	{
 		if (entity->E_Id == entite.E_ID)
 		{
+			entity->End_Play();
 			entity->Reset();
 			return entity;
 		}
@@ -142,50 +131,15 @@ Engine::Entity* Engine::EntityManager::AddEntity(S_Delay_Entity entite)
 		{
 			entity->E_CanBeUsed = false;
 			entity->E_Tag = entite.E_Tag;
-			//EntityChangeMap(entity, entity->E_Tag, entite.E_Tag);
-			entity->DeleteComponent("Render");
 			entity->E_IsAnimated = entite.IsAnimated;
-			for (auto x : entite.E_Component)
-			{
-				entity->AddComponent(x.first, x.second);
-			}
+			entity->Begin_Play();
+			Add_States(dynamic_cast<StateParent*>(entity));
 			return entity;
 		}
 	}
 	return nullptr;
 }
 
-Engine::Entity* Engine::EntityManager::AddComponent(S_Delay_Entity entite) // a ajouter checker si le component existe deja ou pas
-{
-	for (auto entity : M_EntityVector)
-	{
-		if (entity->E_Id == entite.E_ID)
-		{
-			for (auto const& x : entite.E_Component)
-			{
-				entity->AddComponent(x.first, x.second);
-				return entity;
-			}
-		}
-	}
-	return nullptr;
-}
-
-Engine::Entity* Engine::EntityManager::DeleteComponent(S_Delay_Entity entite)
-{
-	for (auto entity : M_EntityVector)
-	{
-		if (entity->E_Id == entite.E_ID)
-		{
-			for (auto const& x : entite.E_Component)
-			{
-				//DeleteComponent(x.first.c_str());
-				return entity;
-			}
-		}
-	}
-	return nullptr;
-}
 
 void Engine::EntityManager::AddToWaiting(S_Delay_Entity entite)
 {
@@ -201,16 +155,4 @@ std::vector<Engine::Entity*> Engine::EntityManager::GetAllEntityWithTag(std::str
 		}
 	}
 	return tmp;
-}
-
-Engine::Entity* Engine::EntityManager::GetPlayer()
-{
-	for (auto entity : M_EntityVector)
-	{
-		if (entity->E_Tag == "Player")
-		{
-			return entity;
-		}
-	}
-	return nullptr;
 }
