@@ -15,5 +15,8 @@ public:
 
 	void Input(std::string ActioName);
 	void CheckLimit();
+	void GetDamage(int amount);
+	float viewspeed = 200.f;
+	float rotationspeed = 2.f;
 
 };

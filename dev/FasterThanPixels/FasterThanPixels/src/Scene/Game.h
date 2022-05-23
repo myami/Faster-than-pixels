@@ -31,8 +31,7 @@ public:
 
 	sf::RectangleShape shape;
 
-	float viewspeed = 200.f;
-	float rotationspeed = 2.f;
+
 	int seed = 524524;
 
 	sf::Vector2f MapSize = { 3000.f,3000.f };
@@ -49,12 +48,9 @@ public:
 	void InitAsteroid();
 	void InitPlayer();
 
-	void CheckPlayerLimit(Engine::Entity* entity);
 	std::vector<std::string> AvailablePlanet;
 	std::vector<std::string> AvailableAsteroid;
 
-	void CreateAsteroidPhysic(std::vector<Engine::Entity*> Asteroids); //https://veendeta.wordpress.com/2012/02/16/tutorial-getting-started-with-box2d/
-	void CreatePlanetPhysic(std::vector<Engine::Entity*> Planets);
 
 	void GenerateUI();
 	//UI
@@ -78,6 +74,5 @@ public:
 	S_Health* Health_Manager;
 	S_Shield* Shield_Manager;
 
-	void DamagePlayer(int amount);
 	void SpawnLaser(Engine::Entity* Shooter);
 };

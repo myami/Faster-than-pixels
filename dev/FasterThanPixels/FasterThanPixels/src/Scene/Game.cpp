@@ -186,18 +186,6 @@ void Game::GenerateUI()
 	Boost.InitSlider(0, 100, 1, false, 100);
 }
 
-void Game::DamagePlayer(int amount)
-{
-	if (!Shield_Manager->AsShield(S_EntityManager->GetPlayer()))
-	{
-		Health_Manager->DoDamage(amount, S_EntityManager->GetPlayer());
-		Health.SetSlider(Health_Manager->GetHealth(S_EntityManager->GetPlayer()));
-	}
-	else {
-		Shield_Manager->DamageShield(amount, S_EntityManager->GetPlayer());
-		Shield.SetSlider(Shield_Manager->GetShield(S_EntityManager->GetPlayer()));
-	}
-}
 
 void Game::SpawnLaser(Engine::Entity* Shooter)
 {
@@ -218,7 +206,7 @@ void Game::S_Input_Text(sf::Event event)
 
 void Game::UpdateEntity()
 {
-	auto EntitiesRender = S_EntityManager->GetAllEntityWithComponent("Render");
+	/*auto EntitiesRender = S_EntityManager->GetAllEntityWithComponent("Render");
 	for (auto Entity : EntitiesRender)
 	{
 		C_Animated_Render* CheckAnimatation = dynamic_cast<C_Animated_Render*>(Entity->GetComponent("Render"));
@@ -260,6 +248,7 @@ void Game::UpdateEntity()
 		if (CheckHealth)
 			Health_Manager->RunSystem(Entity, _SceneManager->_GameManager->DeltaTime);
 	}
+	*/
 }
 
 void Game::S_Static_Physic(b2Body* body)
@@ -308,7 +297,6 @@ void Game::InitPlanet()
 		Planet.E_State = Engine::EntityState::Add;
 		Planet.E_ID = S_EntityManager->RequestEntity("Planet");
 		Planet.IsAnimated = true;
-
 		S_EntityManager->AddToWaiting(Planet);
 	}
 }

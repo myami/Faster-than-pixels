@@ -5,8 +5,7 @@
 #include "../Components/C_Shield.h"
 #include "../Components/C_Transform.h"
 #include "../Components/C_Mouvement_Actif.h"
-
-
+#include "../../Scene/Game.h"
 
 
 
@@ -108,34 +107,34 @@ void Player::End_Play()
 {
 }
 
-void Player::Input(std::string ActioName)
+void Player::Input(std::string ActionName)
 {
 	C_Transform* PlayerTransform = dynamic_cast<C_Transform*>(GetComponent("Transform"));
 	if (PlayerTransform)
 	{
 		if (ActionName == "Forward") {
-			_SceneManager->_GameManager->View.move(0.f, -viewspeed * _SceneManager->_GameManager->DeltaTime);
+			CurrentScene->_SceneManager->_GameManager->View.move(0.f, -viewspeed * CurrentScene->_SceneManager->_GameManager->DeltaTime);
 			PlayerTransform->Direction = sf::Vector2f(0, -viewspeed);
 		}
 		if (ActionName == "ForwardRelease") {
 			PlayerTransform->Direction = sf::Vector2f(0, 0);
 		}
 		if (ActionName == "Backward") {
-			_SceneManager->_GameManager->View.move(0.f, viewspeed * _SceneManager->_GameManager->DeltaTime);
+			CurrentScene->_SceneManager->_GameManager->View.move(0.f, viewspeed * CurrentScene->_SceneManager->_GameManager->DeltaTime);
 			PlayerTransform->Direction = sf::Vector2f(0, viewspeed);
 		}
 		if (ActionName == "BackwardRelease") {
 			PlayerTransform->Direction = sf::Vector2f(0, 0);
 		}
 		if (ActionName == "Left") {
-			_SceneManager->_GameManager->View.move(-viewspeed * _SceneManager->_GameManager->DeltaTime, 0.f);
+			CurrentScene->_SceneManager->_GameManager->View.move(-viewspeed * CurrentScene->_SceneManager->_GameManager->DeltaTime, 0.f);
 			PlayerTransform->Direction = sf::Vector2f(-viewspeed, 0);
 		}
 		if (ActionName == "LeftRelease") {
 			PlayerTransform->Direction = sf::Vector2f(0, 0);
 		}
 		if (ActionName == "Right") {
-			_SceneManager->_GameManager->View.move(viewspeed * _SceneManager->_GameManager->DeltaTime, 0.f);
+			CurrentScene->_SceneManager->_GameManager->View.move(viewspeed * CurrentScene->_SceneManager->_GameManager->DeltaTime, 0.f);
 			PlayerTransform->Direction = sf::Vector2f(viewspeed, 0);
 		}
 		if (ActionName == "RightRelease") {
@@ -159,7 +158,7 @@ void Player::Input(std::string ActioName)
 		if (ActionName == "TurboRelease") {
 		}
 		if (ActionName == "Shoot") {
-			SpawnLaser(S_EntityManager->GetPlayer());
+			//CurrentScene->SpawnLaser(S_EntityManager->GetPlayer());
 		}
 		if (ActionName == "ShootRelease") {
 		}
@@ -188,29 +187,45 @@ void Player::Input(std::string ActioName)
 
 void Player::CheckLimit()
 {
-	C_Static_Render* Render = dynamic_cast<C_Static_Render*>(entity->GetComponent("Render"));
+	C_Static_Render* Render = dynamic_cast<C_Static_Render*>(GetComponent("Render"));
+	Game* Scene = dynamic_cast<Game*>(CurrentScene);
 
-	if (Render->Sprite.getPosition().x > MapSize.x - 5)
+	if (Render->Sprite.getPosition().x > Scene->MapSize.x - 5)
 	{
-		Render->Sprite.setPosition(sf::Vector2f(-MapSize.x + 5, Render->Sprite.getPosition().y));
+		Render->Sprite.setPosition(sf::Vector2f(-Scene->MapSize.x + 5, Render->Sprite.getPosition().y));
 		return;
 	}
-	if (Render->Sprite.getPosition().x < -MapSize.x + 5)
+	if (Render->Sprite.getPosition().x < -Scene->MapSize.x + 5)
 	{
-		Render->Sprite.setPosition(sf::Vector2f(MapSize.x - 5, Render->Sprite.getPosition().y));
+		Render->Sprite.setPosition(sf::Vector2f(Scene->MapSize.x - 5, Render->Sprite.getPosition().y));
 		return;
 	}
 
-	if (Render->Sprite.getPosition().y < -MapSize.y + 5)
+	if (Render->Sprite.getPosition().y < -Scene->MapSize.y + 5)
 	{
-		Render->Sprite.setPosition(sf::Vector2f(Render->Sprite.getPosition().x, MapSize.y - 5));
+		Render->Sprite.setPosition(sf::Vector2f(Render->Sprite.getPosition().x, Scene->MapSize.y - 5));
 		return;
 	}
-	if (Render->Sprite.getPosition().y > MapSize.y - 5)
+	if (Render->Sprite.getPosition().y > Scene->MapSize.y - 5)
 	{
-		Render->Sprite.setPosition(sf::Vector2f(Render->Sprite.getPosition().x, -MapSize.y + 5));
+		Render->Sprite.setPosition(sf::Vector2f(Render->Sprite.getPosition().x, -Scene->MapSize.y + 5));
 		return;
 	}
+}
+
+void Player::GetDamage(int amount)
+{
+	/*
+	if (!Shield_Manager->AsShield(S_EntityManager->GetPlayer()))
+	{
+		Health_Manager->DoDamage(amount, S_EntityManager->GetPlayer());
+		Health.SetSlider(Health_Manager->GetHealth(S_EntityManager->GetPlayer()));
+	}
+	else {
+		Shield_Manager->DamageShield(amount, S_EntityManager->GetPlayer());
+		Shield.SetSlider(Shield_Manager->GetShield(S_EntityManager->GetPlayer()));
+	}
+	*/
 }
 
 
