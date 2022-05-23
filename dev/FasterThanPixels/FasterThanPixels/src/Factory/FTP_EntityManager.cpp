@@ -44,22 +44,22 @@ void FTP_EntityManager::EntityEndWaiting(Engine::Entity* entity, Engine::EntityS
 
 void FTP_EntityManager::GenerateEntity(Engine::Scene* sc)
 { // Memory pool de se que on va avoir besoin et risque d avoir besoin
-	Player* p = new Player(sc);
+	Player* p = new Player(sc, M_EntityVector.size());
 	M_EntityVector.push_back(p);
 
 	for (size_t i = 0; i < 300; i++)
 	{
-		Asteroid* ast = new Asteroid(sc);
+		Asteroid* ast = new Asteroid(sc, M_EntityVector.size());
 		M_EntityVector.push_back(ast);
 	}
 	for (size_t i = 0; i < 50; i++)
 	{
-		Planet* ast = new Planet(sc);
+		Planet* ast = new Planet(sc, M_EntityVector.size());
 		M_EntityVector.push_back(ast);
 	}
 	for (size_t i = 0; i < 50; i++)
 	{
-		Laser* ast = new Laser(sc);
+		Laser* ast = new Laser(sc, M_EntityVector.size());
 		M_EntityVector.push_back(ast);
 	}
 }

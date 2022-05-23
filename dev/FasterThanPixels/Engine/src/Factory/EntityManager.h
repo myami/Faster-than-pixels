@@ -27,7 +27,6 @@ namespace Engine {
 	class EntityManager : public StateMachine {
 	public:
 		std::vector<Engine::Entity*> M_EntityVector; /*!< Liste des Entite */
-		std::map<std::string, std::vector<Engine::Entity*>> M_EntityMap; /*!< Liste des Entite par tag */
 		std::vector<S_Delay_Entity> M_EntityToChange; /*!< Liste des entites qui doivent etre changer au debut de la prochaine frame */
 		std::map<b2Body*, int> M_PhysicMap;  /*!< Liste des body de la simulation relie a leur entite */
 		Engine::GameManager* GameManager;

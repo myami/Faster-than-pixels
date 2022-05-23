@@ -8,6 +8,8 @@ class Asteroid : public Engine::Entity {
 public:
 	Asteroid();
 	Asteroid(Engine::Scene* sc);
+	Asteroid(Engine::Scene* sc,int id);
+
 	void Begin_Play() override;
 	void Tick() override;
 	void End_Play() override;

@@ -14,6 +14,24 @@ Engine::Entity::Entity(Scene* sc)
 	CurrentScene = sc;
 }
 
+Engine::Entity::Entity(Scene* sc, std::string tag)
+{
+	CurrentScene = sc;
+	E_Tag = tag;
+}
+
+Engine::Entity::Entity(std::string tag)
+{
+	E_Tag = tag;
+}
+
+Engine::Entity::Entity(Scene* sc, std::string tag, int id)
+{
+	CurrentScene = sc;
+	E_Tag = tag;
+	E_Id = id;
+}
+
 void Engine::Entity::Begin_Play()
 {
 }

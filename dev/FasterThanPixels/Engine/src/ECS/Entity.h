@@ -21,6 +21,10 @@ namespace Engine {
 		Entity(int id);
 		Entity();
 		Entity(Scene* sc);
+		Entity(Scene* sc,std::string tag);
+		Entity(std::string tag);
+		Entity(Scene* sc, std::string tag, int id);
+
 		int E_Id = 0; /*!< ID de l'entite */
 		std::string E_Tag = "Default"; /*!< Tag de l'entite */
 		bool E_CanBeUsed = true; /*!< Si on peux utiliser cette entite ou si elle est utiliser actuellement */

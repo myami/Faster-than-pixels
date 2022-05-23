@@ -11,6 +11,11 @@ Laser::Laser(Engine::Scene* sc): Engine::Entity(sc)
 {
 }
 
+Laser::Laser(Engine::Scene* sc, int id) : Engine::Entity(sc,"Laser",id)
+{
+
+}
+
 void Laser::Begin_Play()
 {
 

@@ -9,6 +9,7 @@ class Player : public Engine::Entity {
 public:
 	Player();
 	Player(Engine::Scene* sc);
+	Player(Engine::Scene* sc, int id);
 	void Begin_Play() override;
 	void Tick() override;
 	void End_Play() override;

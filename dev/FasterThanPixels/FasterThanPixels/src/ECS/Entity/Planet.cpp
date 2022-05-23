@@ -3,13 +3,13 @@
 #include "../Components/C_Animated_Render.h"
 #include "../Components/C_Static_Collider_Sphere.h"
 
-Planet::Planet(): Engine::Entity()
-{
-	this->E_Tag = "Planet";
 
+
+Planet::Planet(Engine::Scene* sc):Engine::Entity(sc, "Planet")
+{
 }
 
-Planet::Planet(Engine::Scene* sc):Engine::Entity(sc)
+Planet::Planet(Engine::Scene* sc, int id) : Engine::Entity(sc, "Planet",id)
 {
 }
 

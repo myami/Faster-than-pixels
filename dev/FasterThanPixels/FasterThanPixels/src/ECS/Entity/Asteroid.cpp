@@ -4,13 +4,12 @@
 #include "Engine.h"
 #include "../../Scene/Game.h"
 
-Asteroid::Asteroid(): Engine::Entity()
-{
-	this->E_Tag = "Asteroid";
 
+Asteroid::Asteroid(Engine::Scene* sc) : Engine::Entity(sc, "Asteroid")
+{
 }
 
-Asteroid::Asteroid(Engine::Scene* sc) : Engine::Entity(sc)
+Asteroid::Asteroid(Engine::Scene* sc, int id) : Engine::Entity(sc, "Asteroid",id)
 {
 }
 

@@ -9,12 +9,13 @@
 
 
 
-Player::Player(): Engine::Entity()
+
+
+Player::Player(Engine::Scene* sc) : Engine::Entity(sc, "Player")
 {
-	this->E_Tag = "Player";
 }
 
-Player::Player(Engine::Scene* sc) : Engine::Entity(sc)
+Player::Player(Engine::Scene* sc, int id) : Engine::Entity(sc, "Player",id)
 {
 }
 
