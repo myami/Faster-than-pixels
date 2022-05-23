@@ -12,6 +12,7 @@ void Engine::EntityManager::Update()
 		EntityWaitingListDispatch();
 	}
 	M_EntityToChange.clear();
+	Run_FSM(false);
 }
 
 int Engine::EntityManager::RequestEntity(std::string tag)
@@ -154,7 +155,7 @@ Engine::Entity* Engine::EntityManager::AddEntity(S_Delay_Entity entite)
 			entity->E_Tag = entite.E_Tag;
 			entity->E_IsAnimated = entite.IsAnimated;
 			entity->Begin_Play();
-			Add_States(dynamic_cast<StateParent*>(entity));
+			Add_States(entity);
 			return entity;
 		}
 	}

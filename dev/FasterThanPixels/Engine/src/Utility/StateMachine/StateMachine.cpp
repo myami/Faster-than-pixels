@@ -5,7 +5,7 @@ Engine::StateMachine::StateMachine()
 {
 }
 
-void Engine::StateMachine::Add_States(StateParent* newstate) // TODO: A CALL DANS LE WAITING LIST ?
+void Engine::StateMachine::Add_States(StateParent* newstate) 
 {
 
 	StatesList.push_back(newstate);
@@ -23,7 +23,7 @@ void Engine::StateMachine::Run_FSM(bool reset)
 {
 	if (reset)
 		Reset_FSM();
-	while (Continued)
+	if (Continued)
 	{
 		for (StateParent* state : StatesList) {
 			state->Tick();

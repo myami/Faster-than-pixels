@@ -27,12 +27,16 @@ void Planet::Begin_Play()
 	float randomx = rand() % (int)Scene->MapSize.x + -Scene->MapSize.x;
 	float randomy = rand() % (int)Scene->MapSize.y + -Scene->MapSize.y;
 
-	PlanetRender->AnimatedSprite.MoveSprite(sf::Vector2f(randomx, randomy));
+	PlanetRender->AnimatedSprite.MoveSprite(sf::Vector2f(0, 0));
 
 }
 
 void Planet::Tick()
 {
+	std::cout << "TickPlanet";
+	C_Animated_Render* PlanetRender = dynamic_cast<C_Animated_Render*>(GetComponent("Render"));
+
+	PlanetRender->AnimatedSprite.updateSprites(CurrentScene->_SceneManager->_GameManager->DeltaTime);
 }
 
 void Planet::End_Play()

@@ -33,9 +33,9 @@ void Game::Tick()
 	ss << " Coord \n X : " << MousePosView.x << "\n Y : " << MousePosView.y << "\n";
 
 	text.setString(ss.str());
-
-	UpdateEntity();
-	// debut de frame mais a jour tout se qu il doit mettre a jour 1 /4
+	//S_EntityManager->Run_FSM(false);
+	//UpdateEntity();
+	
 }
 
 void Game::S_Render()
@@ -132,6 +132,8 @@ void Game::Begin_Play()
 
 	Health_Manager = new S_Health();
 	Shield_Manager = new S_Shield();
+	S_EntityManager->Run_FSM(true);
+
 }
 
 void Game::GenerateUI()
