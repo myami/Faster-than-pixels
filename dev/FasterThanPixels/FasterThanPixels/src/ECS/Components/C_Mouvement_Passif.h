@@ -8,9 +8,10 @@
 */
 class C_MouvementPassif : public Engine::BlankComponent {
 public:
-	b2BodyDef def;  /*!< Box2D TODO */
-	b2Body body; /*!< Box2D TODO */
-	b2Fixture fixture; /*!< Box2D TODO */
-	b2PolygonShape collider; /*!< Box2D TODO */
+	C_MouvementPassif();
+	/*b2BodyDef def;  /*!< Box2D TODO */
+	/*b2Body body; /*!< Box2D TODO */
+	/*b2Fixture fixture; /*!< Box2D TODO */
+	/*b2PolygonShape collider; /*!< Box2D TODO */
 	
 };

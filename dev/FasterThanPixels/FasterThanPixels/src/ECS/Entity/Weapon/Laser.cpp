@@ -19,9 +19,9 @@ Laser::Laser(Engine::Scene* sc, int id) : Engine::Entity(sc,"Laser",id)
 void Laser::Begin_Play()
 {
 
-	AddComponent("Render", new C_Static_Render());
-	AddComponent("Transform", new C_Transform());
-	AddComponent("Collider", new C_Static_Collider_Sphere());
+	AddComponent(new C_Static_Render());
+	AddComponent(new C_Transform());
+	AddComponent(new C_Static_Collider_Sphere());
 
 	C_Static_Render* LaserRender = dynamic_cast<C_Static_Render*>(GetComponent("Render"));
 	LaserRender->Sprite.setTexture(CurrentScene->_SceneManager->_GameManager->G_AssetManager->GetTexture("WeaponLaser"));

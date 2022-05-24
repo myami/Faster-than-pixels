@@ -16,9 +16,8 @@ Planet::Planet(Engine::Scene* sc, int id) : Engine::Entity(sc, "Planet",id)
 void Planet::Begin_Play()
 {
 
-
-	AddComponent("Render", new C_Animated_Render());
-	AddComponent("Collider", new C_Static_Collider_Sphere());
+	AddComponent(new C_Animated_Render());
+	AddComponent(new C_Static_Collider_Sphere());
 	C_Animated_Render* PlanetRender = dynamic_cast<C_Animated_Render*>(GetComponent("Render"));
 	Game* Scene = dynamic_cast<Game*>(CurrentScene);
 	srand(E_Id);
@@ -33,9 +32,7 @@ void Planet::Begin_Play()
 
 void Planet::Tick()
 {
-	std::cout << "TickPlanet";
 	C_Animated_Render* PlanetRender = dynamic_cast<C_Animated_Render*>(GetComponent("Render"));
-
 	PlanetRender->AnimatedSprite.updateSprites(CurrentScene->_SceneManager->_GameManager->DeltaTime);
 }
 

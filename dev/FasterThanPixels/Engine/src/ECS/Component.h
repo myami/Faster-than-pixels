@@ -19,15 +19,9 @@ namespace Engine {
 	 public:
 		 std::vector<std::string> RequireComponent; /*!< Liste des composant requis si il a des dependances*/
 		 std::map<std::string, std::any> ValueToChange; /*!< Valeur a changer sur les variables du component au prochain update du gameloop */
-	/*!
-	 *  \brief A les composants requis
-	 *
-	 *  Check si l'entite a tout les composants requis
-	 *
-	 *  \param entite : sont parent l'entite
-	 * \return true si l'entite a bien tout les composants requis pour que ce component marche
-	 */
-		 bool AsRequireComponent(Entity entite);
+		 std::string C_Name;
+		 Component();
+		 Component(std::string name);
 		 virtual void PrintName() = 0;
 	};
 }

@@ -7,6 +7,7 @@
 */
 class C_Health : public Engine::BlankComponent {
 public:
+	C_Health();
 	int Health;  /*!< Vie de l'entite */
 };
 

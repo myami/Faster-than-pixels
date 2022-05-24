@@ -7,6 +7,7 @@
 */
 class C_Transform : public Engine::BlankComponent {
 public:
+	C_Transform();
 	sf::Vector2f Direction;  /*!< Direction de l'entite */
 	float RotationDirection;
 

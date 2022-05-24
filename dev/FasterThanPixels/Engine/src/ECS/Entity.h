@@ -16,7 +16,7 @@ namespace Engine {
 	class StateParent;
 	class Scene;
 	class Entity : public StateParent{
-		std::map < std::string, Engine::Component*> E_Component; /*!< Liste des components de l'entite */
+		std::vector<Component*> E_Component; /*!< Liste des components de l'entite */
 	public:
 		Entity(int id);
 		Entity();
@@ -56,7 +56,7 @@ namespace Engine {
 		 *  \param name : Le nom du component
 		 *  \param Component : Le component
 		 */
-		void AddComponent(std::string name, Engine::Component* Component);
+		void AddComponent(Engine::Component* Component);
 
 		void Reset();
 

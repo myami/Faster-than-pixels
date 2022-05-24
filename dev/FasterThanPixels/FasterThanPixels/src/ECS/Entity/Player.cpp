@@ -76,12 +76,13 @@ void Player::Begin_Play()
 	CurrentScene->RegisterAction(ReparationRelease);
 	CurrentScene->RegisterAction(PerforationRelease);
 	CurrentScene->RegisterAction(SurfrequencageRelease);
-	AddComponent("Render", new C_Static_Render());
-	AddComponent("Collider", new C_Kynematic_Collider_Sphere());
-	AddComponent("Transform", new C_Transform());
-	AddComponent("Mouvement", new C_MouvementActif());
-	AddComponent("Health", new C_Health());
-	AddComponent("Shield", new C_Shield());
+
+	AddComponent(new C_Static_Render());
+	AddComponent(new C_Kynematic_Collider_Sphere());
+	AddComponent(new C_Transform());
+	AddComponent(new C_MouvementActif());
+	AddComponent(new C_Health());
+	AddComponent(new C_Shield());
 
 
 	
@@ -97,7 +98,7 @@ void Player::Begin_Play()
 	Render->Sprite.setOrigin(Render->Sprite.getLocalBounds().width / 2.f, Render->Sprite.getLocalBounds().height / 2.f);
 	Render->Sprite.setPosition(CurrentScene->_SceneManager->_GameManager->View.getCenter());
 
-
+	
 }
 
 void Player::Tick()
@@ -110,7 +111,8 @@ void Player::End_Play()
 
 void Player::Input(std::string ActionName)
 {
-	C_Transform* PlayerTransform = dynamic_cast<C_Transform*>(GetComponent("Transform"));
+	Engine::Component* Transform = GetComponent("Transform");
+	C_Transform* PlayerTransform = dynamic_cast<C_Transform*>(Transform);
 	if (PlayerTransform)
 	{
 		if (ActionName == "Forward") {
@@ -183,6 +185,9 @@ void Player::Input(std::string ActionName)
 		}
 		if (ActionName == "SurfrequencageRelease") {
 		}
+	}
+	else {
+		std::cout << "PATATE" << std::endl;
 	}
 }
 

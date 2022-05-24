@@ -46,12 +46,24 @@ void Engine::Entity::End_Play()
 
 Engine::Component* Engine::Entity::GetComponent(std::string name)
 {
-	return 	E_Component[name];
+	for (auto compo : E_Component) {
+		if (compo->C_Name == name) {
+			return compo;
+		}
+	}
+	return nullptr;
 }
 
-void Engine::Entity::AddComponent(std::string name, Engine::Component* Component)
+void Engine::Entity::AddComponent(Engine::Component* cp)
 {
-	E_Component.insert({ name, Component });
+	bool notalreadyin = false;
+	for (auto compo : E_Component) {
+		if (compo->C_Name == cp->C_Name) {
+			notalreadyin = true;
+		}
+	}
+	if (!notalreadyin)
+		E_Component.push_back(cp);
 }
 
 void Engine::Entity::Reset()
@@ -59,15 +71,15 @@ void Engine::Entity::Reset()
 	E_CanBeUsed = true;
 	for (auto const& x : E_Component)
 	{
-		delete x.second; // je sais pas si le erase le fait
-		E_Component.erase(x.first);
-		E_Tag = "Default";
-		E_IsAnimated = false;
+		delete x;
 	}
 }
 
 void Engine::Entity::DeleteComponent(const std::string name)
 {
-	delete E_Component[name]; // pas sur de devoir le faire avec le erase
-	E_Component.erase(name);
+	for (auto compo : E_Component) {
+		if (compo->C_Name == name) {
+			delete compo;
+		}
+	}
 }

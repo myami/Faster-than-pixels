@@ -62,6 +62,8 @@ void FTP_EntityManager::GenerateEntity(Engine::Scene* sc)
 		Laser* ast = new Laser(sc, M_EntityVector.size());
 		M_EntityVector.push_back(ast);
 	}
+	std::cout << GetAllEntityWithTag("Player").size() << std::endl;
+
 }
 
 FTP_EntityManager::FTP_EntityManager()
@@ -70,5 +72,12 @@ FTP_EntityManager::FTP_EntityManager()
 
 Player* FTP_EntityManager::GetPlayer()
 {
-	return 	dynamic_cast<Player*>(GetAllEntityWithTag("Player")[0]);
+	for (auto ent : M_EntityVector) {
+		if (ent->E_Tag.compare("Player")) {
+			return 	dynamic_cast<Player*>(ent);
+		}
+	}
+	return nullptr;
+
+
 }

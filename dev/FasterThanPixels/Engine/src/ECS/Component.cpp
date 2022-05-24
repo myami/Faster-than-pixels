@@ -1,7 +1,12 @@
 #include "Component.h"
 #include "Entity.h"
 
-bool Engine::Component::AsRequireComponent(Entity entity)
+
+Engine::Component::Component()
 {
-	return false;
+}
+
+Engine::Component::Component(std::string name)
+{
+	C_Name = name;
 }

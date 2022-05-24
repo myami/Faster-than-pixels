@@ -16,8 +16,8 @@ Asteroid::Asteroid(Engine::Scene* sc, int id) : Engine::Entity(sc, "Asteroid",id
 void Asteroid::Begin_Play()
 {
 
-	AddComponent("Render", new C_Static_Render());
-	AddComponent("Collider", new C_Static_Collider_Sphere());
+	AddComponent(new C_Static_Render());
+	AddComponent(new C_Static_Collider_Sphere());
 
 	C_Static_Render* AsteroidRender = dynamic_cast<C_Static_Render*>(GetComponent("Render"));
 	Game* Scene = dynamic_cast<Game*>(CurrentScene);

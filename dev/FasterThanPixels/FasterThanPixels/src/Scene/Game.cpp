@@ -53,7 +53,8 @@ void Game::S_Render()
 				_SceneManager->_GameManager->Windows->draw(CheckAnimatation->AnimatedSprite.FrameToDraw());
 			}
 			else {
-				C_Static_Render* Static = dynamic_cast<C_Static_Render*>(Entity->GetComponent("Render"));
+				Engine::Component* render = Entity->GetComponent("Render");
+				C_Static_Render* Static = dynamic_cast<C_Static_Render*>(render);
 				_SceneManager->_GameManager->Windows->draw(Static->Sprite);
 			}
 		}
@@ -103,9 +104,11 @@ void Game::S_Render()
 void Game::S_ActionTrigger(std::string ActionName)
 {
 	FTP_EntityManager* etm = dynamic_cast<FTP_EntityManager*>(S_EntityManager);
-	Player* p = dynamic_cast<Player*>(etm->GetPlayer());
-	if (etm && p)
-		p->Input(ActionName);
+	if (etm) {
+		Player* pl = etm->GetPlayer();
+		pl->Input(ActionName);
+	}
+
 }
 
 void Game::Begin_Play()

@@ -4,6 +4,7 @@ namespace Engine {
 
 class BlankComponent : public Engine::Component {
 public :
+	BlankComponent(std::string na);
 	void PrintName() override;
 };
 }
