@@ -26,7 +26,7 @@ void Planet::Begin_Play()
 	float randomx = rand() % (int)Scene->MapSize.x + -Scene->MapSize.x;
 	float randomy = rand() % (int)Scene->MapSize.y + -Scene->MapSize.y;
 
-	PlanetRender->AnimatedSprite.MoveSprite(sf::Vector2f(0, 0));
+	PlanetRender->AnimatedSprite.MoveSprite(sf::Vector2f(randomx, randomy));
 
 }
 

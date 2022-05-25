@@ -23,6 +23,7 @@ Game::Game(std::string name, FTP_SceneManager* refs) : Engine::BlankScene(name)
 void Game::Tick()
 {
 	S_EntityManager->Update(); // mais a jour la waiting list
+	S_EntityManager->Run_FSM(false); // Appelle le tick de toutes les entite
 	MousePosScreen = sf::Mouse::getPosition();
 	MousePosWindow = sf::Mouse::getPosition(*_SceneManager->_GameManager->Windows);
 	_SceneManager->_GameManager->Windows->setView(_SceneManager->_GameManager->View);
@@ -31,10 +32,9 @@ void Game::Tick()
 
 	std::stringstream ss;
 	ss << " Coord \n X : " << MousePosView.x << "\n Y : " << MousePosView.y << "\n";
-
 	text.setString(ss.str());
-	//S_EntityManager->Run_FSM(false);
-	//UpdateEntity();
+	System_Mouvement_Actif->RunSystem(_SceneManager->_GameManager->DeltaTime);
+
 	
 }
 
@@ -46,7 +46,7 @@ void Game::S_Render()
 
 	auto EntityToDraw = S_EntityManager->EntityToDraw();
 	if (EntityToDraw.size() != 0) {
-		for (auto Entity : EntityToDraw)
+		for (auto const& Entity : EntityToDraw)
 		{
 			if (Entity->E_IsAnimated) {
 				C_Animated_Render* CheckAnimatation = dynamic_cast<C_Animated_Render*>(Entity->GetComponent("Render"));
@@ -55,7 +55,8 @@ void Game::S_Render()
 			else {
 				Engine::Component* render = Entity->GetComponent("Render");
 				C_Static_Render* Static = dynamic_cast<C_Static_Render*>(render);
-				_SceneManager->_GameManager->Windows->draw(Static->Sprite);
+				if (Static)
+					_SceneManager->_GameManager->Windows->draw(Static->Sprite);
 			}
 		}
 	}
@@ -136,6 +137,7 @@ void Game::Begin_Play()
 	Health_Manager = new S_Health();
 	Shield_Manager = new S_Shield();
 	S_EntityManager->Run_FSM(true);
+
 
 }
 
@@ -269,11 +271,11 @@ void Game::S_Dynamic_Physic(b2Body* body)
 {
 	Engine::Entity* entity = S_EntityManager->GetEntityWithId(S_EntityManager->M_PhysicMap[body]);
 	C_Static_Render* Static = (C_Static_Render*)entity->GetComponent("Render");
-	/*if (Static)
+	if (Static)
 		Static->Sprite.setPosition(SCALE * body->GetPosition().x, SCALE * body->GetPosition().y);
 		Static->Sprite.setRotation(body->GetAngle() * 180 / b2_pi);
 
-		*/
+	
 }
 
 void Game::S_Kynematic_Physic(b2Body* body)

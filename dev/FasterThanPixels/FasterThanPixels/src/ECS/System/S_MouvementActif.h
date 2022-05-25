@@ -8,6 +8,6 @@
 class S_Mouvement_Actif : public Engine::System {
 public:
 	S_Mouvement_Actif();
-	void RunSystem(Engine::Entity* Entity, float dt) override;
-
+	void RunSystem(float dt) override;
+	int increment = 0;
 };

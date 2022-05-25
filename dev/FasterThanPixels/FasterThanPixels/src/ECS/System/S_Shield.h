@@ -8,7 +8,7 @@ class S_Shield : public Engine::System {
 public:
 	S_Shield();
 	bool AsShield(Engine::Entity* target);
-	void RunSystem(Engine::Entity* Entity, float dt) override;
+	void RunSystem(float dt) override;
 	void DamageShield(int amount, Engine::Entity* target);
 	int GetShield(Engine::Entity* target);
 

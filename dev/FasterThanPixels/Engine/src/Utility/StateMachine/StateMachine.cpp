@@ -25,14 +25,14 @@ void Engine::StateMachine::Run_FSM(bool reset)
 		Reset_FSM();
 	if (Continued)
 	{
-		for (StateParent* state : StatesList) {
+		for (StateParent* const& state : StatesList) {
 			state->Tick();
 		}
 		
 	}
 
 	if (!Continued) {
-		for (StateParent* state : StatesList) {
+		for (StateParent* const& state : StatesList) {
 			state->End_Play();
 		}
 	}

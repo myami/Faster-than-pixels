@@ -10,7 +10,7 @@ public:
 	int GetHealth(Engine::Entity* target);
 	void Repair(int amout,Engine::Entity* target);
 	bool IsAlive(Engine::Entity* target);
-	void RunSystem(Engine::Entity* Entity, float dt) override;
+	void RunSystem(float dt) override;
 	S_Health();
 
 };

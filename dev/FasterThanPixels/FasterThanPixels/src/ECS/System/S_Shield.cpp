@@ -3,45 +3,60 @@
 
 void S_Shield::RegenerateShield(Engine::Entity* target)
 {
-	C_Shield* Component = (C_Shield*)target->GetComponent("Shield");
-	Component->HealthShield += Component->RegenerationAmountPerTick;
+	if (IsEntityInSystem(target)) {
 
+		C_Shield* Component = (C_Shield*)target->GetComponent("Shield");
+		Component->HealthShield += Component->RegenerationAmountPerTick;
+	}
 }
 
 bool S_Shield::AsShield(Engine::Entity* target)
 {
-	C_Shield* Component = (C_Shield*)target->GetComponent("Shield");
-	if (Component->HealthShield > 0) {
-		return true;
+	if (IsEntityInSystem(target)) {
+
+		C_Shield* Component = (C_Shield*)target->GetComponent("Shield");
+		if (Component->HealthShield > 0) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
-	else {
-		return false;
-	}
+	return false;
 }
 
-void S_Shield::RunSystem(Engine::Entity* Entity, float dt)
+void S_Shield::RunSystem(float dt)
 {
-	C_Shield* Component = (C_Shield*)Entity->GetComponent("Shield");
-	if (Component->ShieldClock.getElapsedTime().asMilliseconds() >= Component->RegenerationSpeed) 
-	{
-		RegenerateShield(Entity);
-		Component->ShieldClock.restart();
+	for (auto const& Entity : EntityLoop) {
+		C_Shield* Component = (C_Shield*)Entity->GetComponent("Shield");
+		if (Component->ShieldClock.getElapsedTime().asMilliseconds() >= Component->RegenerationSpeed)
+		{
+			RegenerateShield(Entity);
+			Component->ShieldClock.restart();
+		}
 	}
+
 
 }
 
 void S_Shield::DamageShield(int amount, Engine::Entity* target)
 {
-	C_Shield* Component = (C_Shield*)target->GetComponent("Shield");
-	Component->HealthShield -= amount;
+	if (IsEntityInSystem(target)) {
+
+		C_Shield* Component = (C_Shield*)target->GetComponent("Shield");
+		Component->HealthShield -= amount;
+	}
 
 }
 
 int S_Shield::GetShield(Engine::Entity* target)
 {
-	C_Shield* Component = (C_Shield*)target->GetComponent("Shield");
+	if (IsEntityInSystem(target)) {
 
-	return Component->HealthShield;
+		C_Shield* Component = (C_Shield*)target->GetComponent("Shield");
+		return Component->HealthShield;
+	}
+	return 0;
 }
 
 S_Shield::S_Shield()

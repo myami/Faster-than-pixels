@@ -9,10 +9,12 @@ Engine::EntityManager::EntityManager()
 void Engine::EntityManager::Update()
 {
 	if (AsEntityWaiting()) {
+		
 		EntityWaitingListDispatch();
 	}
 	M_EntityToChange.clear();
-	Run_FSM(false);
+	
+
 }
 
 int Engine::EntityManager::RequestEntity(std::string tag)
@@ -24,7 +26,7 @@ int Engine::EntityManager::RequestEntity(std::string tag)
 		used_id.push_back(delayentity.E_ID);
 		
 	}
-	for (auto entity : GetAllEntityWithTag(tag)) {
+	for (auto const& entity : GetAllEntityWithTag(tag)) {
 		bool notused = false;
 		if (entity->E_CanBeUsed) {
 			for (int id : used_id)
@@ -68,7 +70,7 @@ std::vector<Engine::Entity*> Engine::EntityManager::EntityToDraw()
 {
 	std::vector<Engine::Entity*> todraw;
 
-	for (auto entity : M_EntityVector)
+	for (auto const& entity : M_EntityVector)
 	{
 		if (entity->GetComponent("Render") != nullptr)
 		{
@@ -81,7 +83,7 @@ std::vector<Engine::Entity*> Engine::EntityManager::EntityToDraw()
 std::vector<Engine::Entity*> Engine::EntityManager::GetAllEntityWithComponent(std::string Component)
 {
 	std::vector<Engine::Entity*> Entity;
-	for (auto entity : M_EntityVector)
+	for (auto const& entity : M_EntityVector)
 	{
 		if (entity->GetComponent(Component) != nullptr) {
 			Entity.push_back(entity);
@@ -93,7 +95,7 @@ std::vector<Engine::Entity*> Engine::EntityManager::GetAllEntityWithComponent(st
 
 Engine::Entity* Engine::EntityManager::GetEntityWithId(int id)
 {
-	for (auto entity : M_EntityVector)
+	for (auto const& entity : M_EntityVector)
 	{
 		if (entity->E_Id == id)
 		{
@@ -114,7 +116,7 @@ bool Engine::EntityManager::AsEntityWaiting()
 
 void Engine::EntityManager::EntityWaitingListDispatch()
 {
-	for (S_Delay_Entity delayentity : M_EntityToChange)
+	for (S_Delay_Entity const& delayentity : M_EntityToChange)
 	{
 		switch (delayentity.E_State)
 		{
@@ -133,7 +135,7 @@ void Engine::EntityManager::EntityWaitingListDispatch()
 
 Engine::Entity* Engine::EntityManager::RemoveEntity(S_Delay_Entity entite)
 {
-	for (auto entity : M_EntityVector)
+	for (auto const& entity : M_EntityVector)
 	{
 		if (entity->E_Id == entite.E_ID)
 		{
@@ -147,7 +149,7 @@ Engine::Entity* Engine::EntityManager::RemoveEntity(S_Delay_Entity entite)
 
 Engine::Entity* Engine::EntityManager::AddEntity(S_Delay_Entity entite)
 {
-	for (auto entity : M_EntityVector)
+	for (auto const& entity : M_EntityVector)
 	{
 		if (entity->E_Id == entite.E_ID)
 		{
@@ -170,7 +172,7 @@ void Engine::EntityManager::AddToWaiting(S_Delay_Entity entite)
 std::vector<Engine::Entity*> Engine::EntityManager::GetAllEntityWithTag(std::string Tag)
 {
 	std::vector<Engine::Entity*> tmp;
-	for (auto entity : M_EntityVector) {
+	for (auto const& entity : M_EntityVector) {
 		if (entity->E_Tag == Tag) {
 			tmp.push_back(entity);
 		}

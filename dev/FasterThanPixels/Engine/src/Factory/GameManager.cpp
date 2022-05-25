@@ -13,7 +13,8 @@ void Engine::GameManager::GameLoop()
 {
 	while (Windows->isOpen())
 	{
-		DeltaTime = ClockDeltaTime.restart().asSeconds();
+		DeltaTime = ClockDeltaTime.getElapsedTime().asSeconds();
+		ClockDeltaTime.restart();
 		S_Input();
 		G_SceneManager->GetCurrentScene()->S_Simulation();
 		if (G_SceneManager->Run_FSM()) 

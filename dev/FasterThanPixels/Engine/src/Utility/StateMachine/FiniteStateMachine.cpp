@@ -54,7 +54,7 @@ void Engine::FiniteStateMachine::Stop_FSM()
 
 Engine::FSM_State* Engine::FiniteStateMachine::FindByName(std::string name)
 {
-	for (FSM_State* state : StatesList)
+	for (FSM_State* const& state : StatesList)
 	{
 		if (state->param.StateName == name) {
 			return state;

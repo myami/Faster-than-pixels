@@ -46,7 +46,7 @@ void Engine::Entity::End_Play()
 
 Engine::Component* Engine::Entity::GetComponent(std::string name)
 {
-	for (auto compo : E_Component) {
+	for (auto const& compo : E_Component) {
 		if (compo->C_Name == name) {
 			return compo;
 		}
@@ -57,7 +57,7 @@ Engine::Component* Engine::Entity::GetComponent(std::string name)
 void Engine::Entity::AddComponent(Engine::Component* cp)
 {
 	bool notalreadyin = false;
-	for (auto compo : E_Component) {
+	for (auto const& compo : E_Component) {
 		if (compo->C_Name == cp->C_Name) {
 			notalreadyin = true;
 		}
@@ -77,7 +77,7 @@ void Engine::Entity::Reset()
 
 void Engine::Entity::DeleteComponent(const std::string name)
 {
-	for (auto compo : E_Component) {
+	for (auto const& compo : E_Component) {
 		if (compo->C_Name == name) {
 			delete compo;
 		}
