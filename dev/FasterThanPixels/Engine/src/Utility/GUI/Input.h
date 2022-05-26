@@ -48,7 +48,12 @@ public:
 	 * 	\param render : fenetre
 	*/
 	bool IsInputClicked(sf::RenderWindow* render);
-
+	/**
+	 * @def SetPosition
+	 * @brief Set la position et le texte
+	 * 	\param string : text
+	 * \param sf::Vector2f : pos
+	*/
 	void SetPosition(std::string text, sf::Vector2f pos);
 
 

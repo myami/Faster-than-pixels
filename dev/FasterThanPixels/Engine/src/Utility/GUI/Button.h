@@ -3,7 +3,7 @@
 class Button {
 public:
 	sf::Sprite ButtonSprite; /*!< Sprite du bouton */
-	sf::Text ButtonText;
+	sf::Text ButtonText;/*!< Texte du bouton */
 	/**
 	 * @def IsSpriteClicked
 	 * @brief Si la souris a cliquer sur le sprite

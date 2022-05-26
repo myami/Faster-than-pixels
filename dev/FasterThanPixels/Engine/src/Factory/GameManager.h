@@ -26,7 +26,7 @@ namespace Engine {
 		sf::RenderWindow* Windows; /*!< La fenetre */
 		sf::View View; /*!< La vue dans la fenetre(camera ) */
 		bool Running; /*!< Si le programme tourne */
-		float DeltaTime = 0.f;
+		float DeltaTime = 0.f; /*!< deltatime */
 		/*!
 		*  \brief Quit
 		*

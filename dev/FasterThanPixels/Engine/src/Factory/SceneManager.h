@@ -13,7 +13,17 @@ namespace Engine {
 	*/
 	class SceneManager : public FiniteStateMachine{
 	public:
+		/*!
+		*  \brief Reset_FSM
+		*
+		*  Reset la statemachine
+		*/
 		void Reset_FSM();
+		/*!
+		*  \brief Run_FSM
+		*
+		*  fait marcher la statemachine
+		*/
 		bool Run_FSM();
 		/*!
 		*  \brief SceneManager
@@ -68,7 +78,12 @@ namespace Engine {
 		void ChangeScene(std::string newscene);
 
 		~SceneManager();
-
+		/*!
+		*  \brief GetStatesFromScene
+		*
+		*  return le FSM_State de la scene
+		* \param Scene sc : le niveaux
+		*/
 		FSM_State* GetStatesFromScene(Scene* sc);
 
 	};

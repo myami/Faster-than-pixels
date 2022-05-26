@@ -6,8 +6,8 @@
 #include "../Utility/StateMachine/StateMachine.h"
 
 namespace Engine {
-	/*! \class EntityManager
-	* \brief classe representant tout les entite de la scene
+	/*! \enum EntityState
+	* \brief enum representant les etats possibles pour les entite en files d'attente
 	*
 	*/
 	enum class EntityState {
@@ -15,6 +15,10 @@ namespace Engine {
 		Add,
 		Delete
 	};
+	/*! \struct S_Delay_Entity
+	* \brief struct representant les entites en file d'attente 
+	*
+	*/
 
 	struct S_Delay_Entity {
 		int E_ID;
@@ -24,12 +28,16 @@ namespace Engine {
 	};
 	class GameManager;
 	class StateMachine;
+	/*! \class EntityManager
+	* \brief classe representant tout les entite de la scene
+	*
+	*/
 	class EntityManager : public StateMachine {
 	public:
 		std::vector<Engine::Entity*> M_EntityVector; /*!< Liste des Entite */
 		std::vector<S_Delay_Entity> M_EntityToChange; /*!< Liste des entites qui doivent etre changer au debut de la prochaine frame */
 		std::map<b2Body*, int> M_PhysicMap;  /*!< Liste des body de la simulation relie a leur entite */
-		Engine::GameManager* GameManager;
+		Engine::GameManager* GameManager; /*!< Game Manager*/
 
 		EntityManager();
 
@@ -52,16 +60,55 @@ namespace Engine {
 		* \return une entite libre d utilisatation
 		*/
 		int RequestEntity(std::string tag);
-
+		/*!
+		*  \brief EntityToDraw
+		*
+		*  return les entites qui peuvent etre dessiner a l'ecran
+		* \return un vector d'entite
+		*/
 		std::vector<Engine::Entity*> EntityToDraw();
-
+		/*!
+		*  \brief GetAllEntityWithComponent
+		*  \param name : Nom du components
+		*  return les entites qui ont tous un meme components
+		* \return un vector d'entite
+		*/
 		std::vector<Engine::Entity*> GetAllEntityWithComponent(std::string Component);
+		/*!
+		*  \brief GetEntityWithId
+		*  \param int id : id du components
+		*  return un entite qui a l'id du param
+		* \return une entite
+		*/
 		Engine::Entity* GetEntityWithId(int id);
-
+		/*!
+		*  \brief AsEntityWaiting
+		*
+		*  return true si il y a des entites dans la file d'attente
+		* \return true/false
+		*/
 		bool AsEntityWaiting();
+		/*!
+		*  \brief AsEntityWaiting
+		*
+		*  Ajoute une entite dans la liste d'attente
+		*  \param S_Delay_Entity entite : structure de l'entite
 
+		*/
 		void AddToWaiting(S_Delay_Entity entite);
+		/*!
+		*  \brief GetAllEntityWithTag
+		*  \param name : Nom du tag
+		*  return les entites qui ont tous un meme tag
+		* \return un vector d'entite
+		*/
 		std::vector<Engine::Entity*> GetAllEntityWithTag(std::string Tag);
+		/*!
+		*  \brief EntityEndWaiting
+		*  \param Entity entity : entite
+		*  \param EntityState entitystate : states
+		* Une fois l entite a fini dans la liste d'attente lui faire des actions
+		*/
 
 		virtual void EntityEndWaiting(Engine::Entity* entity, EntityState entitystate) = 0;
 

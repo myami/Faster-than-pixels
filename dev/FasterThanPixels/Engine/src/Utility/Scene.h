@@ -16,9 +16,9 @@ namespace Engine {
 		Scene(std::string name);
 		EntityManager* S_EntityManager;  /*!< Sous syteme qui gere les entite */
 		std::vector<Engine::InputAction> ActionScene;  /*!< Chaque input disponible dans la scene */
-		SceneManager* _SceneManager;
-		b2World* World;
-		const int SCALE = 30;
+		SceneManager* _SceneManager; /*!< sceneManager */
+		b2World* World; /*!< Monde box2d */
+		const int SCALE = 30; /*!< Scale de box2d */
 
 		bool S_Paused; /*!< Si la scene est en pause */
 		bool S_End; /*!< Si la scene est fini d'etre utiliser */
@@ -65,9 +65,23 @@ namespace Engine {
 		virtual void S_Input_Text(sf::Event event) = 0;
 
 		std::vector<Engine::InputAction> GetKeyInput(Engine::Trigger inputype);
-
+		/*!
+		*  \brief S_Static_Physic
+		*
+		*  Appeler pour tout les elements statics de box2d
+		*/
 		virtual void S_Static_Physic(b2Body* body) = 0;
+		/*!
+		*  \brief S_Dynamic_Physic
+		*
+		*  Appeler pour tout les elements dynamic de box2d
+		*/
 		virtual void S_Dynamic_Physic(b2Body* body) = 0;
+		/*!
+		*  \brief S_Kynematic_Physic
+		*
+		*  Appeler pour tout les elements kynematic de box2d
+		*/
 		virtual void S_Kynematic_Physic(b2Body* body) = 0;
 	};
 }

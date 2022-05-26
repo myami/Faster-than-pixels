@@ -3,10 +3,10 @@
 namespace Engine {
 
 class Slider {
-	float CurrentPosition;
+	float CurrentPosition; /*!< Position du slider */
 public:
-	sf::Sprite Background;
-	sf::Sprite SliderBar;
+	sf::Sprite Background; /*!< Sprite du background */
+	sf::Sprite SliderBar; /*!< Sprite du slider */
 	Slider();
 	bool orientation; // false == horizontal, true = vertical
 		/**

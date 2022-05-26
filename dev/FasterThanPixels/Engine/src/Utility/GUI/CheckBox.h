@@ -3,8 +3,8 @@
 
 class CheckBox {
 public:
-	sf::Sprite CheckBoxSprite; /*!<  */
-	sf::Sprite CheckSprite;
+	sf::Sprite CheckBoxSprite; /*!< Le background */
+	sf::Sprite CheckSprite;/*!< le petit V */
 	/**
 	 * @def IsSpriteClicked
 	 * @brief Si la souris a cliquer sur le sprite

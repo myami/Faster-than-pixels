@@ -76,5 +76,6 @@ namespace Engine {
 
 	S_Delay_Entity GenerateEntity(Engine::EntityManager* entman, std::string Tag);
 
+
 	void GeneratePhysicBody(Engine::EntityManager* entman, int identity, sf::Vector2f position, sf::Vector2f direction, sf::Vector2f bound, b2BodyType type, int scale, b2World* World);
 }
