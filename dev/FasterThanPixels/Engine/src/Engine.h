@@ -22,7 +22,7 @@
 #include "Utility/InputAction.h"
 #include "Utility/GUI/Hud_Bonus.h"
 #include "Utility/GUI/CheckBox.h"
-#include "Utility/DAO.h"
+#include "Utility/DAOJSON.h"
 #include "Utility/StateMachine/FiniteStateMachine.h"
 #include "Utility/StateMachine/StateMachine.h"
 #include "Utility/StateMachine/State.h"

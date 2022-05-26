@@ -111,6 +111,9 @@
     <ClCompile Include="src\ECS\Components\C_Health.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="src\Utility\FTP_DAO.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Factory\FTP_GameManager.h">
@@ -326,5 +329,11 @@
     <ClInclude Include="src\ECS\Entity\Planet.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+    <ClInclude Include="src\Utility\FTP_DAO.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="settings.json" />
   </ItemGroup>
 </Project>

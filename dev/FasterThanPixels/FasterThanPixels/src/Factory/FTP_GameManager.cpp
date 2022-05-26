@@ -25,6 +25,7 @@ void FTP_GameManager::Game_Init(std::string NameOfTheGame, std::string FirstScen
     G_AssetManager->InitAsset();
     G_SceneManager->Init(FirstScene);
 
+
     
 }
 

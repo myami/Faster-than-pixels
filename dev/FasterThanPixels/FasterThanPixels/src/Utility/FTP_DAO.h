@@ -1,16 +1,14 @@
 #pragma once
 #include "Engine.h"
 #include <vector>
-class FTP_DAO : public Engine::DAO {
+
+/*! \class FTP_DAO
+* \brief classe enfant de DAOJSON
+*
+*/
+class FTP_DAO : public Engine::DAOJSON{
 public:
-	//TODO: Init le constructeur (ne pas oublier de call le parent et passer le parametre de connection
-	//TODO: cree des function lie a FTP pour les query qui retournes les valeurs rechercher par exemples :
-	// USERNAME
-	// STATS
-	// ACHIEVEMENTS
-	std::vector<int> GetPlayerBestScore(std::string PlayerName);
-	std::string createUserTable;
-	std::string createAchievementTable;
-	std::string createUserAchievementTable;
+	std::vector<std::string> pattern{ "Username","Mail","Password","Level","Interceptor","Bomber","Fighter","Carrier","Turret","Asteroid","Castaway","Mission" };
+
 
 };

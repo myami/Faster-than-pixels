@@ -184,6 +184,7 @@
     <ClCompile Include="src\Scene\MainMenu.cpp" />
     <ClCompile Include="src\Scene\Settings.cpp" />
     <ClCompile Include="src\Scene\Starting.cpp" />
+    <ClCompile Include="src\Utility\FTP_DAO.cpp" />
     <ClCompile Include="src\Utility\GUI\CompendiumInfo.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -262,7 +263,11 @@
     <ClInclude Include="src\Scene\Pause.h" />
     <ClInclude Include="src\Scene\PlayerProfile.h" />
     <ClInclude Include="src\Scene\Starting.h" />
+    <ClInclude Include="src\Utility\FTP_DAO.h" />
     <ClInclude Include="src\Utility\GUI\CompendiumInfo.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="settings.json" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
