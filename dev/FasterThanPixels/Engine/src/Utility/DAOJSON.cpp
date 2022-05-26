@@ -10,6 +10,11 @@ Engine::DAO::DAO(DBConnectionInfo dbinfo)
 
 void Engine::DAO::CreateDB(const std::string Path, std::map<std::string, std::string>& data, std::string playerName)
 {
+	std::string filename = Path + playerName + ".json";
+	nlohmann::json userdata(data);
+	std::ofstream file(filename);
+	file << userdata;
+
 }
 
 void Engine::DAO::InsertData(const std::string Path, std::map<std::string, std::string>& data, std::string playerName) {
