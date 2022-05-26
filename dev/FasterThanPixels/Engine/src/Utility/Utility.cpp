@@ -43,12 +43,12 @@ void Engine::SerializeData(std::map<std::string, int>& params) {
 
 std::map<std::string, int> Engine::GetInfoFromJSON(std::string path) {
 	nlohmann::json j;
-	std::map < std::string, int> SettingsParam;
+	std::map < std::string, int> data;
 	std::ifstream settings_file(path);
 	settings_file >> j;
-	SettingsParam = j;
+	data = j;
 
-	return SettingsParam;
+	return data;
 }
 
 bool Engine::FileExists(std::string path)

@@ -180,6 +180,7 @@
     <ClInclude Include="src\Factory\SceneManager.h" />
     <ClInclude Include="src\Utility\Animation.h" />
     <ClInclude Include="src\Utility\BlankScene.h" />
+    <ClInclude Include="src\Utility\DAOJSON.h" />
     <ClInclude Include="src\Utility\GameMode.h" />
     <ClInclude Include="src\Utility\GameStats.h" />
     <ClInclude Include="src\Utility\Graph.h" />
@@ -210,6 +211,7 @@
     <ClCompile Include="src\Factory\SceneManager.cpp" />
     <ClCompile Include="src\Utility\Animation.cpp" />
     <ClCompile Include="src\Utility\BlankScene.cpp" />
+    <ClCompile Include="src\Utility\DAOJSON.cpp" />
     <ClCompile Include="src\Utility\GUI\Button.cpp" />
     <ClCompile Include="src\Utility\GUI\CheckBox.cpp" />
     <ClCompile Include="src\Utility\GUI\Hud_Bonus.cpp" />

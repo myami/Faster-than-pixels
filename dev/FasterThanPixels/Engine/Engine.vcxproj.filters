@@ -102,6 +102,9 @@
     <ClInclude Include="src\Utility\StateMachine\FiniteStateMachine.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+    <ClInclude Include="src\Utility\DAOJSON.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Utility\Utility.cpp">
@@ -171,6 +174,9 @@
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="src\ECS\System.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utility\DAOJSON.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>

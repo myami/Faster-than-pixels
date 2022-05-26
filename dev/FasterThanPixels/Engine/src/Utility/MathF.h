@@ -15,10 +15,11 @@ namespace Engine {
 	*
 	*  Return un angle entre deux vector
 	* \param origin : Premiere position
-	* \param destination : Seconde position
-	* \return un float qui est un angle entre 2 objet
+	* \param point1 : Seconde position
+	* \param point2 : troisième position
+	* \return un float qui est un angle entre 3 points
 	*/
-	float AngleBetweenVector(sf::Vector2f origin, sf::Vector2f destination);
+	float AngleBetweenVector(sf::Vector2f origin, sf::Vector2f point1, sf::Vector2f point2);
 	/*!
 	*  \brief NormalizeVector
 	*

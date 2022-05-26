@@ -13,5 +13,4 @@ public:
 	std::string createAchievementTable;
 	std::string createUserAchievementTable;
 
-	std::string
 };
