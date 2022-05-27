@@ -11,9 +11,9 @@
 namespace Engine {
 	class Entity;
 	/*! \class Component
-   * \brief classe representant chaque composant que l'entite va avoir
-   *
-   */
+     * \brief classe representant chaque composant que l'entite va avoir
+     *
+     */
 	class Component {
 	public:
 		std::string C_Name; /*!< Nom du component*/

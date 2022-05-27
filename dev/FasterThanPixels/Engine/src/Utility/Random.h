@@ -2,7 +2,11 @@
 #include <random>
 
 namespace Engine {
-	class Random { // https://github.com/darienmiller88/Animation-SFML
+	/*! \class Random
+	* \brief classe representant un générateur de valeur aléatoire.
+	*
+	*/
+	class Random {
 	public:
 		Random();
 		int getIntInRange(int min, int max);

@@ -16,8 +16,8 @@ public:
 	CheckBox();
 
 	/**
-	* @def IsSpriteClicked
-	* @brief Si la souris a cliquer sur le sprite
+	* @def InitCheckBox
+	* @brief Initialise la CheckBox.
 	* \param CheckBoxTexture : le sprite de la checkbox
 	* \param CheckTexture : le sprite de la coche
 	* \param pos : le vecteur de position

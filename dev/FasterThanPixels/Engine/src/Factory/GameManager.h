@@ -6,16 +6,16 @@ namespace Engine {
 	class SceneManager;
 	/**
 	 * @def View_Height
-	 * @brief Hauteur par default de la fenetre
+	 * @brief Hauteur par defaut de la fenêtre.
 	*/
 	static const float View_Height = 1080.f;
 	/**
 	 * @def View_Width
-	 * @brief Largeur par default de la fenetre
+	 * @brief Largeur par defaut de la fenêtre.
 	*/
 	static const float View_Width = 1920.f;
 	/*! \class GameManager
-	* \brief classe representant le jeu, il contient tout les sous-systeme et a la gameloop
+	* \brief Classe représentant le jeu, elle contient tout les sous-systèmes et gère la gameloop.
 	*
 	*/
 	class GameManager {
@@ -28,35 +28,35 @@ namespace Engine {
 		bool Running; /*!< Si le programme tourne */
 		float DeltaTime = 0.f; /*!< deltatime */
 		/*!
-		*  \brief Quit
+		* \brief Quit
 		*
-		*  Quitte le jeu
+		* Quitte le jeu
 		*/
 		void Quit();
 		/*!
-		*  \brief Game_Init
+		* \brief Initialisation
 		*
-		*  Initialise les sous-systemes pour avoir toutes les donneer necessaires pour que le jeu marche
+		* Initialise les sous-systemes pour avoir toutes les données nécessaires pour que le jeu fonctionne.
 		* \param NameOfTheGame : Nom du jeu
 		* \param FirstScene : Nom de la premiere scene a lancer
 		*/
-		virtual void Game_Init(std::string NameOfTheGame, std::string FirstScene) = 0; // initialiser toutes les donnes du jeu
+		virtual void Game_Init(std::string NameOfTheGame, std::string FirstScene) = 0;
 		/*!
-		*  \brief GameLoop
+		* \brief GameLoop
 		*
-		*  La loop du jeux, elle est appeler a chaque frame pour mettre a jour le contenu du jeu
+		* La loop du jeux, elle est appelée à chaque frame pour mettre à jour le contenu du jeu.
 		*/
-		void GameLoop();// loop principale du jeu
+		void GameLoop();
 		/*!
 		*  \brief S_Input
 		*
-		*  Gere les events de SFML pour recevoir les inputs, cette function se trouve dans la gameloop
+		*  Gère les events de SFML pour recevoir les inputs, cette fonction se trouve dans la gameloop.
 		*/
 		void S_Input();
 		/*!
-		*  \brief ResizeView
+		*  \brief Redimension de la vue.
 		*
-		*  Scale proprement les elements dans la fenetre de jeu quand elle change de taille
+		*  Scale proprement les éléments dans la fenetre de jeu quand elle change de taille
 		* \param event : event de sfml
 		*/
 		void ResizeView(sf::Event event);

@@ -3,13 +3,21 @@
 #include "json.hpp"
 
 namespace Engine {
+	/*! \struct DBConnectionInfo
+	* \brief struct representant les information de connections
+	*
+	*/
 	struct DBConnectionInfo {
 		std::string Path;
 		std::string Username;
 	};
+	/*! \class DAOJSON
+	* \brief classe representant un DAO utilisatn JSON 
+	*
+	*/
 	class DAOJSON {
 	public:
-		DBConnectionInfo db_info;
+		DBConnectionInfo db_info; /*!< Struct DBConnectionInfo */
 		DAOJSON(DBConnectionInfo dbinfo);
 		/*!
 		*  \brief CreateDB

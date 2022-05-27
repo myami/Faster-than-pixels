@@ -35,18 +35,18 @@ namespace Engine {
 		/*!
 		 *  \brief Constructeur avec une scene et un tag
 		 *  \param Scene* sc: Pointeur vers la scene ou l'entite est utiliesr
-		 *   \param std::string tag: Tag de l'entite
+		 *  \param std::string tag: Tag de l'entite
 		 */
 		Entity(Scene* sc, std::string tag);
 		/*!
 		 *  \brief Constructeur avec un tag
-		 *   \param std::string tag: Tag de l'entite
+		 *  \param std::string tag: Tag de l'entite
 		 */
 		Entity(std::string tag);
 		/*!
 		 *  \brief Constructeur avec une scene , un tag et un id
 		 *  \param Scene* sc: Pointeur vers la scene ou l'entite est utiliesr
-		 *   \param std::string tag: Tag de l'entite
+		 *  \param std::string tag: Tag de l'entite
 		 *  \param int id: id de l'entite
 		 */
 		Entity(Scene* sc, std::string tag, int id);

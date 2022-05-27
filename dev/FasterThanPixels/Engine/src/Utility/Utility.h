@@ -2,79 +2,61 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include "../Sqlite/include/sqlite/sqlite3.h" // Fix temporaire
 #include "SFML/Graphics.hpp"
 #include "../Factory/EntityManager.h"
 #include "box2d/box2d.h"
 #include "json.hpp"
 
 namespace Engine {
+
 	class Entity;
 	struct S_Delay_Entity;
 	class EntityManager;
 	/*!
-	*  \brief LoadAssetFromFile
+	*  @def LoadAssetFromFile
 	*
 	*  Charge tout les assets du dossier assets dans un vector de JSON
 	* \return liste de tout les JSON dispo dans le dossier Assets
 	*/
 	std::vector<nlohmann::json> LoadAssetFromFile(std::string Path);
-
+	/*!
+	* @def SerializeData
+	*
+	* Sauvegarde le dictionnaire dans un fichier JSON
+	* \param map : Dictionnaire de int.
+	*/
 	void SerializeData(std::map<std::string, int>& map);
 
+	/*!
+	* @def GetInfoFromJSON
+	*
+	* Lit un fichier JSON et en extrait un dictionnaire.
+	* \param path : le chemin d'accès du JSON
+	* \return Un dictionnaire de int.
+	*/
 	std::map<std::string, int> GetInfoFromJSON(std::string path);
 
+	/*!
+	* @def FileExists
+	*
+	* Vérifie si un fichier existe au chemin spécifié.
+	* \param path : le chemin d'accès du Fichier
+	* \return Un booléen.
+	*/
 	bool FileExists(std::string path);
-	/*!
-	*  \brief GetPlayerInfoFromDB
-	*
-	*  Retourne un JSON de la BDD avec toutes les donners actuelle du joueur
-	* \param Name : Nom du joueur
-	* \return json du joueur de la bdd
-	*/
 
-	nlohmann::json GetPlayerInfoFromDB(std::string Name);
 	/*!
-	*  \brief LoginUser
+	*  @def GeneratePhysicBody
 	*
-	*  Connecte le joueur au jeu
-	* \param name : Nom du joueur
-	* \param passwd : mot de passe du joueur
-	* \return true si le joueur existe et ces bien connecter
-	*/
-	bool LoginUser(std::string name, std::string passwd);
-	/*!
-	*  \brief CreateUser
-	*
-	*  Inscrit le joueur au jeu
-	* \param name : Nom du joueur
-	* \param passwd : mot de passe du joueur
-	*/
-	void CreateUser(std::string name, std::string passwd);
-	/*!
-	*  \brief SetPlayerInfo
-	*
-	*  Modifie les infos du joueur dans la bdd
-	* \param newinfo : JSON de la bdd du joueur avec les nouvelles infos
-	*/
-	void SetPlayerInfo(nlohmann::json newinfo);
-	/*!
-	*  \brief ObjectCollide
-	*
-	*  Return une liste d'entite qui sont rentrer en collision dans box2d
+	*  Return une liste d'entite 
+	* \param entman : pointeur l'Entity Manager
+	* \param identity : l'ID l'entity qui sera liée au body
+	* \param position : position dans le World
+	* \param bound : Bounding box de l'objet
+	* \param type : type de body Box2D
+	* \param scale : sclaire de la taille de l'entité
+	* \param World : pointeur vers le World box2D
 	* \return liste d'entite
 	*/
-
-	std::vector<Entity> ObjectCollide();
-	/*!
-	*  \brief GenerateEnvironnement
-	*
-	*  Return une liste d'entite qui sont l environnement de la map
-	* \param seed : le seed du joueur
-	* \return liste d'entite
-	*/
-
-	S_Delay_Entity GenerateEntity(Engine::EntityManager* entman, std::string Tag);
-
-	void GeneratePhysicBody(Engine::EntityManager* entman, int identity, sf::Vector2f position, sf::Vector2f direction, sf::Vector2f bound, b2BodyType type, int scale, b2World* World);
+	void GeneratePhysicBody(Engine::EntityManager* entman, int identity, sf::Vector2f position, sf::Vector2f bound, b2BodyType type, int scale, b2World* World);
 }

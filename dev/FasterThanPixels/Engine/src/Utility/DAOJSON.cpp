@@ -20,14 +20,7 @@ void Engine::DAOJSON::InsertData(std::map<std::string, std::string>& data, std::
 	nlohmann::json userdata(data);
 	std::ofstream file(filename);
 	file << userdata;
-	std::cout << "Sauvegarde réussie" << std::endl;
 
-	/*if (isFollowingPattern(data, pattern))
-	{
-	}
-	else {
-		std::cout << "Clefs de map incorrectes" << std::endl;
-	}*/
 }
 
 std::map<std::string, std::string> Engine::DAOJSON::GetData() {

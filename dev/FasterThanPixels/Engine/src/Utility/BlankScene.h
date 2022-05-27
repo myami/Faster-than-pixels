@@ -2,7 +2,7 @@
 
 #include "Scene.h"
 class SceneManager;
-/*! \class Game
+/*! \class BlankScene
 * \brief classe enfant de Scene, represente le niveau ou le joueur joue
 *
 */
@@ -10,8 +10,8 @@ namespace Engine {
 	class BlankScene : public Engine::Scene {
 	public:
 		BlankScene(std::string name);
-		void Tick() override; // debut de frame met a jour tout se qu il doit mettre a jour 1 /4
-		void S_Render() override; // fin de frame affiche le resultat de la simulation 4/4
+		void Tick() override;
+		void S_Render() override;
 		void S_ActionTrigger(std::string ActionName) override;
 		void Begin_Play() override;
 		void End_Play() override;

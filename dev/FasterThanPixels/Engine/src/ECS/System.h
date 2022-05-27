@@ -14,30 +14,29 @@ namespace Engine {
 		System();
 		std::vector <Entity*> EntityLoop;
 		/*!
-		*  \brief RunSystem
+		*  \brief Run les entites
 		*
-		*  Run pour tout les entites qui ont decider d'etre dans se system
+		*  Run pour tout les entites qui sont dotées de ce système
 		*/
-		virtual void RunSystem(float dt) = 0; // la boucle du systeme
+
+		virtual void RunSystem(float dt) = 0;
 		/*!
-		 *  \brief Ajoute une entite dans le systeme
+		 *  \brief Enregistre dans EntityLoop une entite
 		 *
-		 *	Enregistre dans EntityLoop une entite
 		 *  \param Entity* ent : l'entite
 		 */
 
 		void RegisterSystem(Entity* ent);
 		/*!
-		 *  \brief Supprime une entite du systeme
+		 *  \brief Supprime une entite du système
 		 *
-		 *	Supprime une entite du systeme
 		 *  \param Entity* ent : l'entite
 		 */
+
 		void RemoveEntity(Entity* ent);
 		/*!
 		 *  \brief Check que l'entite est dans le system
 		 *
-		 *	Check que l'entite est dans le system
 		 *  \param Entity* ent : l'entite
 		 */
 

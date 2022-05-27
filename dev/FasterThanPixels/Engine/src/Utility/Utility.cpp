@@ -54,14 +54,7 @@ bool Engine::FileExists(std::string path)
 	return std::filesystem::exists(path);
 }
 
-Engine::S_Delay_Entity Engine::GenerateEntity(Engine::EntityManager* entman, std::string Tag)
-{
-	S_Delay_Entity entite;
-	entite.E_ID = entman->RequestEntity(Tag);
-	return entite;
-}
-
-void Engine::GeneratePhysicBody(Engine::EntityManager* entman, int identity, sf::Vector2f position, sf::Vector2f direction, sf::Vector2f bound, b2BodyType type, int scale, b2World* World)
+void Engine::GeneratePhysicBody(Engine::EntityManager* entman, int identity, sf::Vector2f position, sf::Vector2f bound, b2BodyType type, int scale, b2World* World)
 {
 	b2BodyDef BodyDef = b2BodyDef();
 	BodyDef.position = b2Vec2(position.x / scale, position.y / scale);

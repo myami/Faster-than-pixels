@@ -14,74 +14,72 @@ namespace Engine {
 	class SceneManager : public FiniteStateMachine {
 	public:
 		/*!
-		*  \brief Reset_FSM
+		* \brief Reset
 		*
-		*  Reset la statemachine
+		* Reset la statemachine.
 		*/
 		void Reset_FSM();
 		/*!
-		*  \brief Run_FSM
+		* \brief Run
 		*
-		*  fait marcher la statemachine
+		* Fait marcher la statemachine;
 		*/
 		bool Run_FSM();
 		/*!
-		*  \brief SceneManager
+		* \brief Constructeur
 		*
-		*  Constructeur sans argument
+		* Constructeur sans argument.
 		*/
 		SceneManager();
 		/*!
-		*  \brief SceneManager
+		* \brief Constructeur avec arguments.
 		*
-		*  Constructeur avec argument pour passer sont parent
+		* Constructeur avec argument pour passer son parent.
 		* \param gm : parent
 		*/
 		SceneManager(Engine::GameManager* gm);
 
-		Engine::GameManager* _GameManager; /*!< Reference a sont parent le GameManager */
+		Engine::GameManager* _GameManager; /*!< Reference à son parent le GameManager */
 		/*!
-		*  \brief GetScene
+		* \brief GetScene
 		*
-		*  Return la scene selectionner
+		* Retourne la scene selectionnée.
 		* \param name : Nom de la scene
 		* \return la scene selectionner
 		*/
 		Scene* GetScene(std::string name);
 		/*!
-		*  \brief GetCurrentScene
+		* \brief GetCurrentScene
 		*
-		*  Return la scene actuellement entrain de tourner
+		* Retourne la sceèe active.
 		* \return la scene actuelle
 		*/
 		Scene* GetCurrentScene();
 		/*!
-		*  \brief AddScene
+		* \brief AddScene
 		*
-		*  Ajoute une scene dans le manager
+		* Ajoute une scène dans le manager
 		* \param scene : scene a ajouter
 		*/
 		void AddScene(Scene* scene);
 		/*!
-		*  \brief Init
+		* \brief Initialisation.
 		*
-		*  Initialise le scene_manager, il charge toutes les scenes disponibles dans la listes
-		*
+		* Initialise le scene_manager, il charge toutes les scenes disponibles dans la listes
 		*/
 		virtual void Init(std::string FirstScene) = 0;
 		/*!
-		*  \brief ChangeScene
+		*  \brief Change de niveau
 		*
-		*  Change de niveaux
-		* \param newscene : Nom niveaux a charger
+		* \param newscene : Nom du niveaux à charger
 		*/
 		void ChangeScene(std::string newscene);
 
 		~SceneManager();
 		/*!
-		*  \brief GetStatesFromScene
+		* \brief GetStatesFromScene
 		*
-		*  return le FSM_State de la scene
+		* return le FSM_State de la scene
 		* \param Scene sc : le niveaux
 		*/
 		FSM_State* GetStatesFromScene(Scene* sc);
