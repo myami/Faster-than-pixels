@@ -25,8 +25,15 @@ void FTP_GameManager::Game_Init(std::string NameOfTheGame, std::string FirstScen
     G_AssetManager->InitAsset();
     G_SceneManager->Init(FirstScene);
 
-
+    Dao->CreateDB();
     
+}
+
+FTP_GameManager::FTP_GameManager():GameManager()
+{
+    Engine::DBConnectionInfo db_info;
+    db_info.Path = "./DB/";
+    Dao = new FTP_DAO(db_info);
 }
 
 

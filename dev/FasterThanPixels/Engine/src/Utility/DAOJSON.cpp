@@ -2,41 +2,42 @@
 #include <vector>
 #include <iostream>
 #include <fstream>
+#include <filesystem>
 
 Engine::DAOJSON::DAOJSON(DBConnectionInfo dbinfo)
 {
-	DB_Info = dbinfo;
+	db_info = dbinfo;
 }
 
-void Engine::DAOJSON::CreateDB(const std::string Path, std::map<std::string, std::string>& data)
+void Engine::DAOJSON::CreateDB()
 {
-	std::string filename = Path +".json";
+	std::filesystem::create_directory(db_info.Path);
+
+}
+
+void Engine::DAOJSON::InsertData(std::map<std::string, std::string>& data, std::vector<std::string>& pattern)
+{
+	std::string filename = db_info.Path + db_info.Username + ".json";
 	nlohmann::json userdata(data);
 	std::ofstream file(filename);
 	file << userdata;
+	std::cout << "Sauvegarde réussie" << std::endl;
 
-}
-
-void Engine::DAOJSON::InsertData(const std::string Path, std::map<std::string, std::string>& data, std::vector<std::string>& pattern)
-{
-	if (isFollowingPattern(data, pattern))
+	/*if (isFollowingPattern(data, pattern))
 	{
-		std::string filename = Path + ".json";
-		nlohmann::json userdata(data);
-		std::ofstream file(filename);
-		file << userdata;
+
 	}
 	else {
 		std::cout << "Clefs de map incorrectes" << std::endl;
-	}
+	}*/
 }
 
 
-std::map<std::string, std::string> Engine::DAOJSON::GetData(std::string path) {
+std::map<std::string, std::string> Engine::DAOJSON::GetData() {
 	nlohmann::json j;
-	std::map < std::string, std::string> data;
-	std::ifstream settings_file(path);
-	settings_file >> j;
+	std::map <std::string, std::string> data;
+	std::ifstream user_file(db_info.Path+db_info.Username+".json");
+	user_file >> j;
 	data = j;
 
 	return data;

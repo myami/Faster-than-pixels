@@ -5,11 +5,11 @@
 namespace Engine {
 	struct DBConnectionInfo {
 		std::string Path;
+		std::string Username;
 	};
-	class DAOJSON {
-	private:
-		DBConnectionInfo DB_Info;
+	class DAOJSON {	
 	public:
+		DBConnectionInfo db_info;
 		DAOJSON(DBConnectionInfo dbinfo);
 		/*!
 		*  \brief CreateDB
@@ -19,7 +19,7 @@ namespace Engine {
 		* \param data : Map contenant les informations du joueur
 		*
 		*/
-		void CreateDB(const std::string Path, std::map<std::string, std::string>& data);
+		void CreateDB();
 		/*!
 		*  \brief InsertData
 		*
@@ -27,14 +27,14 @@ namespace Engine {
 		* \param path : Chemin du répertoire
 		* \param data : Map contenant les informations du joueur
 		*/
-		void InsertData(const std::string Path, std::map<std::string, std::string>& data, std::vector<std::string>& pattern);
+		void InsertData(std::map<std::string, std::string>& data, std::vector<std::string>& pattern);
 		/*!
 		*  \brief GetData
 		*
 		*  Retourne une map des informations du joueur.
 		* \param path : Chemin du répertoire
 		*/
-		std::map<std::string, std::string>GetData(std::string path);
+		std::map<std::string, std::string>GetData();
 		/*!
 		*  \brief isFollowingPattern
 		*

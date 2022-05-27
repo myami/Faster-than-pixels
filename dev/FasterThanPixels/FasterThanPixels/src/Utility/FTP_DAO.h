@@ -8,7 +8,8 @@
 */
 class FTP_DAO : public Engine::DAOJSON{
 public:
-	std::vector<std::string> pattern{ "Username","Mail","Password","Level","Interceptor","Bomber","Fighter","Carrier","Turret","Asteroid","Castaway","Mission" };
+	FTP_DAO(Engine::DBConnectionInfo db_info);
 
+	std::vector<std::string> pattern{ "Username","Mail","Password","Level","Interceptor","Bomber","Fighter","Carrier","Turret","Asteroid","Castaway","Mission" };
 
 };

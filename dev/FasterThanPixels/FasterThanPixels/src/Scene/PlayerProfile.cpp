@@ -1,4 +1,5 @@
 #include "../Factory/FTP_SceneManager.h"
+#include "../Factory/FTP_GameManager.h"
 #include "PlayerProfile.h"
 
 PlayerProfile::PlayerProfile(std::string name, FTP_SceneManager* refs) : Engine::BlankScene(name)
@@ -41,6 +42,7 @@ void PlayerProfile::Begin_Play()
 	DisplayStats = true;
 
 	//TO DO : Récupérer les infos de la DB en fonction du nom de l'utilisateur 
+	std::map<std::string, std::string>playerdata = static_cast<FTP_GameManager*>(_SceneManager->_GameManager)->Dao->GetData();
 
 #pragma region Background
 	Background.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("MenuBackground"));
@@ -66,7 +68,7 @@ void PlayerProfile::Begin_Play()
 #pragma endregion
 
 	Name.setFont(_SceneManager->_GameManager->G_AssetManager->GetFont("FontText"));
-	Name.setString("PILOT : ");
+	Name.setString("PILOT : " + playerdata["Username"]);
 	Name.setCharacterSize(20);
 	Name.setFillColor(sf::Color::White);
 	Name.setOrigin(Name.getGlobalBounds().width / 2.f, Name.getGlobalBounds().height / 2.f);
@@ -74,7 +76,7 @@ void PlayerProfile::Begin_Play()
 	Name.move(sf::Vector2(-300.f, -220.f));
 
 	Level.setFont(_SceneManager->_GameManager->G_AssetManager->GetFont("FontText"));
-	Level.setString("LEVEL : ");
+	Level.setString("LEVEL : " + playerdata["Level"]);
 	Level.setCharacterSize(20);
 	Level.setFillColor(sf::Color::White);
 	Level.setOrigin(Level.getGlobalBounds().width / 2.f, Level.getGlobalBounds().height / 2.f);
@@ -82,7 +84,7 @@ void PlayerProfile::Begin_Play()
 	Level.move(sf::Vector2(-300.f, -175.f));
 
 	Interceptor.setFont(_SceneManager->_GameManager->G_AssetManager->GetFont("FontText"));
-	Interceptor.setString("INTERCEPTOR DESTROYED : ");
+	Interceptor.setString("INTERCEPTOR DESTROYED : " + playerdata["Interceptor"]);
 	Interceptor.setCharacterSize(16);
 	Interceptor.setFillColor(sf::Color::White);
 	Interceptor.setOrigin(Interceptor.getGlobalBounds().width / 2.f, Interceptor.getGlobalBounds().height / 2.f);
@@ -90,7 +92,7 @@ void PlayerProfile::Begin_Play()
 	Interceptor.move(sf::Vector2(-300.f, 0.f));
 
 	Bomber.setFont(_SceneManager->_GameManager->G_AssetManager->GetFont("FontText"));
-	Bomber.setString("BOMBERS DESTROYED : ");
+	Bomber.setString("BOMBERS DESTROYED : " + playerdata["Bomber"]);
 	Bomber.setCharacterSize(16);
 	Bomber.setFillColor(sf::Color::White);
 	Bomber.setOrigin(Bomber.getGlobalBounds().width / 2.f, Bomber.getGlobalBounds().height / 2.f);
@@ -98,7 +100,7 @@ void PlayerProfile::Begin_Play()
 	Bomber.move(sf::Vector2(-300.f, 50.f));
 
 	Fighter.setFont(_SceneManager->_GameManager->G_AssetManager->GetFont("FontText"));
-	Fighter.setString("FIGHTER DESTROYED : ");
+	Fighter.setString("FIGHTER DESTROYED : " + playerdata["Fighter"]);
 	Fighter.setCharacterSize(16);
 	Fighter.setFillColor(sf::Color::White);
 	Fighter.setOrigin(Fighter.getGlobalBounds().width / 2.f, Fighter.getGlobalBounds().height / 2.f);
@@ -106,7 +108,7 @@ void PlayerProfile::Begin_Play()
 	Fighter.move(sf::Vector2(-300.f, 100.f));
 
 	Carrier.setFont(_SceneManager->_GameManager->G_AssetManager->GetFont("FontText"));
-	Carrier.setString("CARRIERS DESTROYED : ");
+	Carrier.setString("CARRIERS DESTROYED : " + playerdata["Carrier"]);
 	Carrier.setCharacterSize(16);
 	Carrier.setFillColor(sf::Color::White);
 	Carrier.setOrigin(Carrier.getGlobalBounds().width / 2.f, Carrier.getGlobalBounds().height / 2.f);
@@ -114,7 +116,7 @@ void PlayerProfile::Begin_Play()
 	Carrier.move(sf::Vector2(-300.f, 150.f));
 
 	Turret.setFont(_SceneManager->_GameManager->G_AssetManager->GetFont("FontText"));
-	Turret.setString("TURRETS DESTROYED : ");
+	Turret.setString("TURRETS DESTROYED : " + playerdata["Turret"]);
 	Turret.setCharacterSize(16);
 	Turret.setFillColor(sf::Color::White);
 	Turret.setOrigin(Turret.getGlobalBounds().width / 2.f, Turret.getGlobalBounds().height / 2.f);
@@ -122,7 +124,7 @@ void PlayerProfile::Begin_Play()
 	Turret.move(sf::Vector2(300.f, 0.f));
 
 	Asteroid.setFont(_SceneManager->_GameManager->G_AssetManager->GetFont("FontText"));
-	Asteroid.setString("ASTEROIDS DESTROYED : ");
+	Asteroid.setString("ASTEROIDS DESTROYED : " + playerdata["Asteroid"]);
 	Asteroid.setCharacterSize(16);
 	Asteroid.setFillColor(sf::Color::White);
 	Asteroid.setOrigin(Asteroid.getGlobalBounds().width / 2.f, Asteroid.getGlobalBounds().height / 2.f);
@@ -130,7 +132,7 @@ void PlayerProfile::Begin_Play()
 	Asteroid.move(sf::Vector2(300.f, 50.f));
 
 	Castaway.setFont(_SceneManager->_GameManager->G_AssetManager->GetFont("FontText"));
-	Castaway.setString("CASTAWAY SAVED : ");
+	Castaway.setString("CASTAWAY SAVED : " + playerdata["Castaway"]);
 	Castaway.setCharacterSize(16);
 	Castaway.setFillColor(sf::Color::White);
 	Castaway.setOrigin(Castaway.getGlobalBounds().width / 2.f, Castaway.getGlobalBounds().height / 2.f);
@@ -138,7 +140,7 @@ void PlayerProfile::Begin_Play()
 	Castaway.move(sf::Vector2(300.f, 100.f));
 
 	Missions.setFont(_SceneManager->_GameManager->G_AssetManager->GetFont("FontText"));
-	Missions.setString("MISSION COMPLETED : ");
+	Missions.setString("MISSION COMPLETED : " + playerdata["Mission"]);
 	Missions.setCharacterSize(16);
 	Missions.setFillColor(sf::Color::White);
 	Missions.setOrigin(Missions.getGlobalBounds().width / 2.f, Missions.getGlobalBounds().height / 2.f);

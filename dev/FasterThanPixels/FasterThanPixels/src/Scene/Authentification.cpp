@@ -1,6 +1,9 @@
 #include "Authentification.h"
 #include "../Factory/FTP_SceneManager.h"
+#include "../Factory/FTP_GameManager.h"
 #include "SFML/Graphics.hpp"
+#include <regex>
+#include "../Utility/FTP_DAO.h"
 
 
 Authentification::Authentification(std::string name, FTP_SceneManager* refs) : Engine::BlankScene(name)
@@ -10,12 +13,8 @@ Authentification::Authentification(std::string name, FTP_SceneManager* refs) : E
 }
 
 
-
-
-
 void Authentification::S_Render()
 {
-	
 	_SceneManager->_GameManager->Windows->draw(Background);
 	_SceneManager->_GameManager->Windows->draw(ButtonBackground);
 	_SceneManager->_GameManager->Windows->draw(Title);
@@ -25,12 +24,7 @@ void Authentification::S_Render()
 	_SceneManager->_GameManager->Windows->draw(PassWord.BackgroundTexture);
 	_SceneManager->_GameManager->Windows->draw(PassWord.textbox);
 
-	if (!inscription) 
-	{
-		_SceneManager->_GameManager->Windows->draw(Login.ButtonSprite);
-		_SceneManager->_GameManager->Windows->draw(Register.ButtonSprite);
-	}
-	else
+	if (inscription) 
 	{
 		_SceneManager->_GameManager->Windows->draw(Mail.BackgroundTexture);
 		_SceneManager->_GameManager->Windows->draw(Mail.textbox);
@@ -39,6 +33,11 @@ void Authentification::S_Render()
 
 		_SceneManager->_GameManager->Windows->draw(Apply.ButtonSprite);
 		_SceneManager->_GameManager->Windows->draw(Back.ButtonSprite);
+	}
+	else
+	{
+		_SceneManager->_GameManager->Windows->draw(Login.ButtonSprite);
+		_SceneManager->_GameManager->Windows->draw(Register.ButtonSprite);
 	}
 
 
@@ -63,17 +62,17 @@ void Authentification::Begin_Play()
 	Register.ButtonSprite.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("RegisterButton"));
 	Register.ButtonSprite.setOrigin(Register.ButtonSprite.getGlobalBounds().width / 2.f, Register.ButtonSprite.getGlobalBounds().height / 2.f);
 	Register.ButtonSprite.setPosition(_SceneManager->_GameManager->View.getCenter());
-	Register.ButtonSprite.move(sf::Vector2(-200.f, 400.f));
+	Register.ButtonSprite.move(sf::Vector2(-300.f, 400.f));
 
 	Apply.ButtonSprite.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("ApplyButton"));
 	Apply.ButtonSprite.setOrigin(Apply.ButtonSprite.getGlobalBounds().width / 2.f, Apply.ButtonSprite.getGlobalBounds().height / 2.f);
 	Apply.ButtonSprite.setPosition(_SceneManager->_GameManager->View.getCenter());
-	Apply.ButtonSprite.move(sf::Vector2(-200.f, 400.f));
+	Apply.ButtonSprite.move(sf::Vector2(-0.f, 400.f));
 
 	Back.ButtonSprite.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("BackButton"));
 	Back.ButtonSprite.setOrigin(Register.ButtonSprite.getGlobalBounds().width / 2.f, Register.ButtonSprite.getGlobalBounds().height / 2.f);
 	Back.ButtonSprite.setPosition(_SceneManager->_GameManager->View.getCenter());
-	Back.ButtonSprite.move(sf::Vector2(200.f, 400.f));
+	Back.ButtonSprite.move(sf::Vector2(300.f, 400.f));
 
 	ButtonBackground.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("BackgroundButtonIdentification"));
 	ButtonBackground.setOrigin(Register.ButtonSprite.getGlobalBounds().width / 2.f, Register.ButtonSprite.getGlobalBounds().height / 2.f);
@@ -150,20 +149,47 @@ void Authentification::S_Input_Mouse(sf::Event event)
 #pragma region Boutons
 		if (Login.IsSpriteClicked(_SceneManager->_GameManager->Windows) && !inscription) {
 			std::cout << "login";
-			_SceneManager->ChangeScene("MainMenu");
-			// SQL SELECT
+
+			static_cast<FTP_GameManager*>(_SceneManager->_GameManager)->Dao->db_info.Username = UserName.GetText();
+
+			std::map<std::string,std::string>datatemp = static_cast<FTP_GameManager*>(_SceneManager->_GameManager)->Dao->GetData();
+			if (datatemp["Username"]._Equal(UserName.GetText()) && datatemp["Password"]._Equal(PassWord.GetText()))
+			{
+				_SceneManager->ChangeScene("MainMenu");
+			}
 		}
 		if (Register.IsSpriteClicked(_SceneManager->_GameManager->Windows) && !inscription) {
 			std::cout << "register";
 			inscription = true;
 			ShowRegister();
 		}
-		if (Apply.IsSpriteClicked(_SceneManager->_GameManager->Windows) && !inscription) {
+		if (Apply.IsSpriteClicked(_SceneManager->_GameManager->Windows) && inscription) {
 			std::cout << "Registration Applied";
+			//std::regex_match(UserName.GetText(), std::regex("\w[A-z]*"))
+			//Fonctionne sur les testeurs en ligne, mais pas dans le programme
+			if (std::regex_match(Mail.GetText(), std::regex(".*[@].*[\.].*")) && PassWord.GetText()._Equal(VerifPassWord.GetText())){
+				static_cast<FTP_GameManager*>(_SceneManager->_GameManager)->Dao->db_info.Username = UserName.GetText();
+				std::map<std::string, std::string> data;
+				data["Username"] = UserName.GetText();
+				data["Mail"] = Mail.GetText();
+				data["Password"] = PassWord.GetText();
+				data["Level"] = "0";
+				data["Interceptor"] = "0";
+				data["Bomber"] = "0";
+				data["Fighter"] = "0";
+				data["Carrier"] = "0";
+				data["Turret"] = "0";
+				data["Asteroid"] = "0";
+				data["Castaway"] = "0";
+				data["Mission"] = "0";
+				static_cast<FTP_GameManager*>(_SceneManager->_GameManager)->Dao->InsertData(data, static_cast<FTP_GameManager*>(_SceneManager->_GameManager)->Dao->pattern);
+			}
+			else {
+				std::cout << "Registration Failed";
+			}
 			inscription = false;
-			//SQL INSERT
 		}
-		if (Back.IsSpriteClicked(_SceneManager->_GameManager->Windows) && !inscription) {
+		if (Back.IsSpriteClicked(_SceneManager->_GameManager->Windows) && inscription) {
 			std::cout << "Back";
 			inscription = false;
 			ShowLogin();
@@ -198,18 +224,19 @@ void Authentification::S_Input_Mouse(sf::Event event)
 		}
 		if (VerifPassWord.isSelected && !VerifPassWord.IsInputClicked(_SceneManager->_GameManager->Windows)) {
 			VerifPassWord.SetSelected(false);
-
 		}
 #pragma endregion
 	}
 
-
-	
 }
 
 void Authentification::S_Input_Text(sf::Event event)
 {
 	UserName.TypedOn(event);
+	PassWord.TypedOn(event);
+	Mail.TypedOn(event);
+	VerifPassWord.TypedOn(event);
+
 }
 
 void Authentification::ShowLogin()

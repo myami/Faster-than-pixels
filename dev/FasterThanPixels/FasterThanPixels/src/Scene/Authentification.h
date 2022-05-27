@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Engine.h"
+#include <regex>
 class FTP_SceneManager;
 /*! \class Authentification
 * \brief classe enfant de Scene, represente le niveau ou le joueur rentre ces infos pour se connecter au jeu
