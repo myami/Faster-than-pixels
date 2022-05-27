@@ -14,7 +14,6 @@ public:
 	void Tick() override;
 	void S_Input_Mouse(sf::Event event) override;
 
-
 	sf::Sprite Background;  /*!< Sprite du background */
 	sf::Sprite Title; /*!< Sprite du titre du jeu */
 
@@ -22,5 +21,5 @@ public:
 	sf::Text MenuTitle;
 	sf::Text Name, Level, Interceptor, Bomber, Fighter, Carrier, Turret, Asteroid, Castaway, Missions;
 
-	Button Back,SwaptoStats, SwaptoAchievements;
+	Button Back, SwaptoStats, SwaptoAchievements;
 };

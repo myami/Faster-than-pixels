@@ -8,15 +8,11 @@
 #include "../../Scene/Game.h"
 #include "../System/S_MouvementActif.h"
 
-
-
-
-
 Player::Player(Engine::Scene* sc) : Engine::Entity(sc, "Player")
 {
 }
 
-Player::Player(Engine::Scene* sc, int id) : Engine::Entity(sc, "Player",id)
+Player::Player(Engine::Scene* sc, int id) : Engine::Entity(sc, "Player", id)
 {
 }
 
@@ -85,8 +81,6 @@ void Player::Begin_Play()
 	AddComponent(new C_Health());
 	AddComponent(new C_Shield());
 
-
-	
 	dynamic_cast<C_Health*>(GetComponent("Health"))->Health = 100;
 	dynamic_cast<C_Shield*>(GetComponent("Shield"))->HealthShield = 100;
 	dynamic_cast<C_Shield*>(GetComponent("Shield"))->RegenerationAmountPerTick = 10;
@@ -98,24 +92,16 @@ void Player::Begin_Play()
 	Render->Sprite.setScale(sf::Vector2f(.2f, .2f));
 	Render->Sprite.setOrigin(Render->Sprite.getLocalBounds().width / 2.f, Render->Sprite.getLocalBounds().height / 2.f);
 	Render->Sprite.setPosition(CurrentScene->_SceneManager->_GameManager->View.getCenter());
-	dynamic_cast<Game*>(CurrentScene)->System_Mouvement_Actif->RegisterSystem(this);
-	//std::cout << "Fin BeginPlay Player" << std::endl;
-	
+	//dynamic_cast<Game*>(CurrentScene)->System_Mouvement_Actif->RegisterSystem(this);
 }
 
 void Player::Tick()
 {
 	CheckLimit();
-	C_Static_Render* Render = dynamic_cast<C_Static_Render*>(GetComponent("Render"));
-	if (Render) {
-		Engine::Component* Transform = GetComponent("Transform");
-		C_Transform* PlayerTransform = dynamic_cast<C_Transform*>(Transform);
-		//Render->Sprite.move(PlayerTransform->Direction * CurrentScene->_SceneManager->_GameManager->DeltaTime);
-		//Render->Sprite.setPosition(Render->Sprite.getPosition() + sf::Vector2f(test,0));
-		//CurrentScene->_SceneManager->_GameManager->View.setCenter(Render->Sprite.getPosition());
-	}
+	C_Static_Render* Render = static_cast<C_Static_Render*>(GetComponent("Render"));
 
-	
+	Render->Sprite.setPosition(CurrentScene->_SceneManager->_GameManager->View.getCenter());
+
 }
 
 void Player::End_Play()
@@ -131,7 +117,6 @@ void Player::Input(std::string ActionName)
 		if (ActionName == "Forward") {
 			CurrentScene->_SceneManager->_GameManager->View.move(0.f, -viewspeed * CurrentScene->_SceneManager->_GameManager->DeltaTime);
 			PlayerTransform->Direction = sf::Vector2f(0, -viewspeed);
-
 		}
 		if (ActionName == "ForwardRelease") {
 			PlayerTransform->Direction = sf::Vector2f(0, 0);
@@ -160,7 +145,6 @@ void Player::Input(std::string ActionName)
 
 		if (ActionName == "RotLeft") {
 			PlayerTransform->RotationDirection = -rotationspeed;
-
 		}
 		if (ActionName == "RotLeftRelease") {
 			PlayerTransform->RotationDirection = 0;
@@ -232,7 +216,6 @@ void Player::CheckLimit()
 		Render->Sprite.setPosition(sf::Vector2f(Render->Sprite.getPosition().x, -Scene->MapSize.y + 5));
 		return;
 	}
-	
 }
 
 void Player::GetDamage(int amount)
@@ -249,6 +232,3 @@ void Player::GetDamage(int amount)
 	}
 	*/
 }
-
-
-

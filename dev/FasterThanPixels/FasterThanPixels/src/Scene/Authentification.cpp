@@ -5,13 +5,10 @@
 #include <regex>
 #include "../Utility/FTP_DAO.h"
 
-
 Authentification::Authentification(std::string name, FTP_SceneManager* refs) : Engine::BlankScene(name)
 {
 	_SceneManager = refs;
-
 }
-
 
 void Authentification::S_Render()
 {
@@ -24,7 +21,7 @@ void Authentification::S_Render()
 	_SceneManager->_GameManager->Windows->draw(PassWord.BackgroundTexture);
 	_SceneManager->_GameManager->Windows->draw(PassWord.textbox);
 
-	if (inscription) 
+	if (inscription)
 	{
 		_SceneManager->_GameManager->Windows->draw(Mail.BackgroundTexture);
 		_SceneManager->_GameManager->Windows->draw(Mail.textbox);
@@ -39,11 +36,7 @@ void Authentification::S_Render()
 		_SceneManager->_GameManager->Windows->draw(Login.ButtonSprite);
 		_SceneManager->_GameManager->Windows->draw(Register.ButtonSprite);
 	}
-
-
-
 }
-
 
 void Authentification::Begin_Play()
 {
@@ -90,7 +83,7 @@ void Authentification::Begin_Play()
 #pragma region Input
 	UserName.hasLimit = true;
 	UserName.limit = 16;
-	UserName.isCrypted = false; 
+	UserName.isCrypted = false;
 	UserName.SetSelected(false);
 	UserName.BackgroundTexture.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("InputBackground"));
 	UserName.textbox.setFont(_SceneManager->_GameManager->G_AssetManager->GetFont("FontText"));
@@ -136,38 +129,27 @@ void Authentification::Begin_Play()
 	VerifPassWord.textbox.setString("Password Verification");
 	VerifPassWord.SetPosition("Password Verification", sf::Vector2f(_SceneManager->_GameManager->View.getCenter().x, _SceneManager->_GameManager->View.getCenter().y + 100.f));
 #pragma endregion
-
 }
-
-
-
 
 void Authentification::S_Input_Mouse(sf::Event event)
 {
 	if (event.type == sf::Event::MouseButtonPressed) {
-
 #pragma region Boutons
 		if (Login.IsSpriteClicked(_SceneManager->_GameManager->Windows) && !inscription) {
-			std::cout << "login";
-
 			static_cast<FTP_GameManager*>(_SceneManager->_GameManager)->Dao->db_info.Username = UserName.GetText();
 
-			std::map<std::string,std::string>datatemp = static_cast<FTP_GameManager*>(_SceneManager->_GameManager)->Dao->GetData();
+			std::map<std::string, std::string>datatemp = static_cast<FTP_GameManager*>(_SceneManager->_GameManager)->Dao->GetData();
 			if (datatemp["Username"]._Equal(UserName.GetText()) && datatemp["Password"]._Equal(PassWord.GetText()))
 			{
 				_SceneManager->ChangeScene("MainMenu");
 			}
 		}
 		if (Register.IsSpriteClicked(_SceneManager->_GameManager->Windows) && !inscription) {
-			std::cout << "register";
 			inscription = true;
 			ShowRegister();
 		}
 		if (Apply.IsSpriteClicked(_SceneManager->_GameManager->Windows) && inscription) {
-			std::cout << "Registration Applied";
-			//std::regex_match(UserName.GetText(), std::regex("\w[A-z]*"))
-			//Fonctionne sur les testeurs en ligne, mais pas dans le programme
-			if (std::regex_match(Mail.GetText(), std::regex(".*[@].*[\.].*")) && PassWord.GetText()._Equal(VerifPassWord.GetText())){
+			if (std::regex_match(Mail.GetText(), std::regex(".*[@].*[\.].*")) && PassWord.GetText()._Equal(VerifPassWord.GetText())) {
 				static_cast<FTP_GameManager*>(_SceneManager->_GameManager)->Dao->db_info.Username = UserName.GetText();
 				std::map<std::string, std::string> data;
 				data["Username"] = UserName.GetText();
@@ -184,13 +166,10 @@ void Authentification::S_Input_Mouse(sf::Event event)
 				data["Mission"] = "0";
 				static_cast<FTP_GameManager*>(_SceneManager->_GameManager)->Dao->InsertData(data, static_cast<FTP_GameManager*>(_SceneManager->_GameManager)->Dao->pattern);
 			}
-			else {
-				std::cout << "Registration Failed";
-			}
+
 			inscription = false;
 		}
 		if (Back.IsSpriteClicked(_SceneManager->_GameManager->Windows) && inscription) {
-			std::cout << "Back";
 			inscription = false;
 			ShowLogin();
 		}
@@ -203,21 +182,18 @@ void Authentification::S_Input_Mouse(sf::Event event)
 		}
 		if (UserName.isSelected && !UserName.IsInputClicked(_SceneManager->_GameManager->Windows)) {
 			UserName.SetSelected(false);
-
 		}
 		if (PassWord.IsInputClicked(_SceneManager->_GameManager->Windows)) {
 			PassWord.SetSelected(true);
 		}
 		if (PassWord.isSelected && !PassWord.IsInputClicked(_SceneManager->_GameManager->Windows)) {
 			PassWord.SetSelected(false);
-
 		}
 		if (Mail.IsInputClicked(_SceneManager->_GameManager->Windows)) {
 			Mail.SetSelected(true);
 		}
 		if (Mail.isSelected && !Mail.IsInputClicked(_SceneManager->_GameManager->Windows)) {
 			Mail.SetSelected(false);
-
 		}
 		if (VerifPassWord.IsInputClicked(_SceneManager->_GameManager->Windows)) {
 			VerifPassWord.SetSelected(true);
@@ -227,7 +203,6 @@ void Authentification::S_Input_Mouse(sf::Event event)
 		}
 #pragma endregion
 	}
-
 }
 
 void Authentification::S_Input_Text(sf::Event event)
@@ -236,22 +211,18 @@ void Authentification::S_Input_Text(sf::Event event)
 	PassWord.TypedOn(event);
 	Mail.TypedOn(event);
 	VerifPassWord.TypedOn(event);
-
 }
 
 void Authentification::ShowLogin()
 {
 	UserName.SetPosition("Username", sf::Vector2f(_SceneManager->_GameManager->View.getCenter().x - 400.f, _SceneManager->_GameManager->View.getCenter().y + 200.f));
 	PassWord.SetPosition("Password", sf::Vector2f(_SceneManager->_GameManager->View.getCenter().x + 400.f, _SceneManager->_GameManager->View.getCenter().y + 200.f));
- 
 }
 
 void Authentification::ShowRegister()
 {
-	UserName.SetPosition("Username", sf::Vector2f(_SceneManager->_GameManager->View.getCenter().x , _SceneManager->_GameManager->View.getCenter().y - 100.f));
-	PassWord.SetPosition("Password", sf::Vector2f(_SceneManager->_GameManager->View.getCenter().x , _SceneManager->_GameManager->View.getCenter().y));
-
-	
+	UserName.SetPosition("Username", sf::Vector2f(_SceneManager->_GameManager->View.getCenter().x, _SceneManager->_GameManager->View.getCenter().y - 100.f));
+	PassWord.SetPosition("Password", sf::Vector2f(_SceneManager->_GameManager->View.getCenter().x, _SceneManager->_GameManager->View.getCenter().y));
 }
 
 void Authentification::Tick()

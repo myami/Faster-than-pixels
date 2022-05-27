@@ -22,7 +22,7 @@ Engine::Scene::Scene()
 {
 }
 
-Engine::Scene::Scene(std::string name):Engine::FSM_State()
+Engine::Scene::Scene(std::string name) :Engine::FSM_State()
 {
 	param.StateName = name;
 }
@@ -74,7 +74,7 @@ void Engine::Scene::S_Simulation()
 {
 	if (World != nullptr) {
 		World->Step(1 / 60.f, 8, 3);
-		for (b2Body*  BodyIterator = World->GetBodyList(); BodyIterator != 0; BodyIterator = BodyIterator->GetNext())
+		for (b2Body* BodyIterator = World->GetBodyList(); BodyIterator != 0; BodyIterator = BodyIterator->GetNext())
 		{
 			if (BodyIterator->GetType() == b2_dynamicBody)
 			{

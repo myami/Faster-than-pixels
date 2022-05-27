@@ -3,10 +3,9 @@
 #include "../Utility/StateMachine/State.h"
 #include "../Utility/Scene.h"
 
-Engine::SceneManager::SceneManager():FiniteStateMachine()
+Engine::SceneManager::SceneManager() :FiniteStateMachine()
 {
 }
-
 
 void Engine::SceneManager::Reset_FSM()
 {
@@ -58,7 +57,6 @@ void Engine::SceneManager::ChangeScene(std::string newscene)
 
 Engine::SceneManager::~SceneManager()
 {
-	
 }
 
 Engine::FSM_State* Engine::SceneManager::GetStatesFromScene(Engine::Scene* sc)

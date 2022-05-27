@@ -11,7 +11,6 @@ Input::Input(int size, bool sel)
 	else {
 		textbox.setString("");
 	}
-
 }
 
 void Input::InputLogic(int chartyped)
@@ -29,8 +28,7 @@ void Input::InputLogic(int chartyped)
 		SetSelected(false);
 	}
 	if (!isCrypted) {
-	textbox.setString(text.str() + "_");
-
+		textbox.setString(text.str() + "_");
 	}
 	else {
 		std::string star;
@@ -39,7 +37,6 @@ void Input::InputLogic(int chartyped)
 			star += "*";
 		}
 		textbox.setString(star + "_");
-
 	}
 }
 
@@ -48,9 +45,8 @@ void Input::SetSelected(bool sel)
 	isSelected = sel;
 	if (!sel) {
 		if (!isCrypted) {
-		textbox.setString("");
-		textbox.setString(text.str());
-
+			textbox.setString("");
+			textbox.setString(text.str());
 		}
 		else {
 			std::string star;
@@ -61,13 +57,11 @@ void Input::SetSelected(bool sel)
 			textbox.setString("");
 			textbox.setString(star);
 		}
-
 	}
 	else {
 		if (!isCrypted) {
 			textbox.setString("");
 			textbox.setString(text.str());
-
 		}
 		else {
 			std::string star;
@@ -78,7 +72,6 @@ void Input::SetSelected(bool sel)
 			textbox.setString("");
 			textbox.setString(star + "_");
 		}
-
 	}
 }
 
@@ -89,25 +82,25 @@ std::string Input::GetText()
 
 void Input::TypedOn(sf::Event event)
 {
-	if (isSelected) 
+	if (isSelected)
 	{
 		int charTypes = event.text.unicode;
-		if (charTypes < 128) 
+		if (charTypes < 128)
 		{
-			if (hasLimit) 
+			if (hasLimit)
 			{
-				if (text.str().length() <= limit) 
+				if (text.str().length() <= limit)
 				{
 					InputLogic(charTypes);
 				}
-				else if (text.str().length() > limit && charTypes == DELETE_KEY) 
+				else if (text.str().length() > limit && charTypes == DELETE_KEY)
 				{
 					{
 						DeleteLastChar();
 					}
 				}
 			}
-			else 
+			else
 			{
 				InputLogic(charTypes);
 			}
@@ -126,7 +119,7 @@ bool Input::IsInputClicked(sf::RenderWindow* render)
 void Input::SetPosition(std::string text, sf::Vector2f pos)
 {
 	textbox.setPosition(pos.x, pos.y);
-	textbox.move(sf::Vector2(- textbox.getGlobalBounds().width / 2.f, - textbox.getGlobalBounds().height / 2.f));
+	textbox.move(sf::Vector2(-textbox.getGlobalBounds().width / 2.f, -textbox.getGlobalBounds().height / 2.f));
 	BackgroundTexture.setPosition(pos.x, pos.y);
 	textbox.setString(text);
 }

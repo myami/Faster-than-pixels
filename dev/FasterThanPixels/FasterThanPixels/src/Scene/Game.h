@@ -23,18 +23,15 @@ public:
 	void Begin_Play() override;
 	void S_Input_Mouse(sf::Event event) override;
 	void S_Input_Text(sf::Event event) override;
-
-	void UpdateEntity();
 	void S_Static_Physic(b2Body* body) override;
 	void S_Dynamic_Physic(b2Body* body) override;
 	void S_Kynematic_Physic(b2Body* body) override;
 
 	sf::RectangleShape shape;
 
-
 	int seed = 524524;
 
-	sf::Vector2f MapSize = { 3000.f,3000.f };
+	sf::Vector2f MapSize = { 8000.f,8000.f };
 
 	/** Box2d */
 	b2Vec2 Gravity;
@@ -50,7 +47,6 @@ public:
 
 	std::vector<std::string> AvailablePlanet;
 	std::vector<std::string> AvailableAsteroid;
-
 
 	void GenerateUI();
 	//UI

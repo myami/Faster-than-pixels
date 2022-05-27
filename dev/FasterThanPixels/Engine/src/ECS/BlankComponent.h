@@ -7,9 +7,9 @@ namespace Engine {
 	 * \version 0.1
 	 */
 
-class BlankComponent : public Engine::Component {
-public :
-	BlankComponent(std::string na);
-	void PrintName() override;
-};
+	class BlankComponent : public Engine::Component {
+	public:
+		BlankComponent(std::string na);
+		void PrintName() override;
+	};
 }

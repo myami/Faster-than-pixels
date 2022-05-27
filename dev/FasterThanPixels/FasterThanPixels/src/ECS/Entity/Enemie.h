@@ -6,5 +6,4 @@
 */
 class Enemie : public Engine::Entity {
 public:
-
 };

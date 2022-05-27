@@ -7,7 +7,7 @@ namespace Engine {
 	*
 	*/
 	class Entity;
-	class System 
+	class System
 	{
 		// entite pour laquelle on run le system
 	public:
@@ -42,7 +42,5 @@ namespace Engine {
 		 */
 
 		bool IsEntityInSystem(Entity* ent);
-	
-
 	};
 }

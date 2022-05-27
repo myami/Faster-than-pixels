@@ -2,16 +2,13 @@
 #include"SFML/Graphics.hpp"
 
 namespace Engine {
-
 	class Hud_Bonus {
-	
 		sf::Font Font;
 		sf::Vector2f PositionOrigin;
 		sf::Sprite Icon;
 		sf::Text CurrentValue;
 		sf::Text MaxValue;
 	public:
-
 
 		Hud_Bonus();
 

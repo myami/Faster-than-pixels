@@ -9,4 +9,3 @@ class FTP_AttackTheArea : public Engine::GameMode {
 	void OnGameModeUpdate();
 	void OnGameModeEnd();
 };
-

@@ -11,7 +11,7 @@ namespace Engine {
 	* \brief classe representant les scenes dans le jeu
 	*
 	*/
-	class SceneManager : public FiniteStateMachine{
+	class SceneManager : public FiniteStateMachine {
 	public:
 		/*!
 		*  \brief Reset_FSM
@@ -85,6 +85,5 @@ namespace Engine {
 		* \param Scene sc : le niveaux
 		*/
 		FSM_State* GetStatesFromScene(Scene* sc);
-
 	};
 }

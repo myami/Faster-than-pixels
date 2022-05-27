@@ -9,4 +9,3 @@ class FTP_LastSurvivor : public Engine::GameMode {
 	void OnGameModeUpdate();
 	void OnGameModeEnd();
 };
-

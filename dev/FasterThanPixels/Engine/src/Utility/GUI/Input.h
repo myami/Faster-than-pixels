@@ -11,7 +11,7 @@ class Input {
 	void DeleteLastChar();
 public:
 	Input();
-	Input(int size,bool sel);
+	Input(int size, bool sel);
 	sf::Text textbox; /*!< Zone de texte sfml qui apparait */
 	std::ostringstream text; /*!< Texte brut */
 	sf::Sprite BackgroundTexture; /*!< Sprite en arriere de l input */
@@ -55,6 +55,4 @@ public:
 	 * \param sf::Vector2f : pos
 	*/
 	void SetPosition(std::string text, sf::Vector2f pos);
-
-
 };

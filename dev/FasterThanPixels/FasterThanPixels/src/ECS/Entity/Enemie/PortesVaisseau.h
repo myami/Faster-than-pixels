@@ -6,5 +6,4 @@
 *
 */
 class PortesVaiseau : public Enemie {
-
 };

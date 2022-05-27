@@ -2,9 +2,6 @@
 #include "Engine.h"
 #include <json.hpp>
 
-
-
-
 void FTP_AssetManager::InitAsset()
 {
 	std::vector<nlohmann::json> tmpassetfile = Engine::LoadAssetFromFile("./Assets");

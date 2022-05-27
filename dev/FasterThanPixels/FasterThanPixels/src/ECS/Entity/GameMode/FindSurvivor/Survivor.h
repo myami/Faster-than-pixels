@@ -5,5 +5,4 @@
 *
 */
 class Survivor : public Engine::Entity {
-
 };

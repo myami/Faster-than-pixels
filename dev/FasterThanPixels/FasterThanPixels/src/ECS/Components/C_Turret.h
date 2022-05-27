@@ -13,5 +13,4 @@ public:
 	float TurretShootingSpeed;  /*!< Cadence de tir des tourelles */
 	float TurretTimeToRotate;  /*!< Duree pour la tourelle de tourner */
 	void RotateTurret(int TurrentIndex, Engine::Entity Target);
-
 };

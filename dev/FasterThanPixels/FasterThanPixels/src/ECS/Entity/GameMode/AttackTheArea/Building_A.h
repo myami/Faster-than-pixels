@@ -5,5 +5,4 @@
 *
 */
 class Building_A : public Engine::Entity {
-
 };

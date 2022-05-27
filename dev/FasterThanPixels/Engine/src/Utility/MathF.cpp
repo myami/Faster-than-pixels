@@ -2,8 +2,8 @@
 
 float Engine::DistanceBetweenVector(sf::Vector2f origin, sf::Vector2f destination)
 {
-		return sqrt(pow(destination.x - origin.x, 2) +
-			pow(destination.y - origin.y, 2));
+	return sqrt(pow(destination.x - origin.x, 2) +
+		pow(destination.y - origin.y, 2));
 }
 
 float Engine::AngleBetweenVector(sf::Vector2f origin, sf::Vector2f point1, sf::Vector2f point2)

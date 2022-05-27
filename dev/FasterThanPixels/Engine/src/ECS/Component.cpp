@@ -1,7 +1,6 @@
 #include "Component.h"
 #include "Entity.h"
 
-
 Engine::Component::Component()
 {
 }

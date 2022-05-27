@@ -25,5 +25,4 @@ public:
 	* \param isActive : détermine l'état de la checkbox
 	*/
 	void InitCheckBox(sf::Texture& CheckBoxTexture, sf::Texture& CheckTexture, sf::Vector2f pos, double scale, bool isActive);
-
 };

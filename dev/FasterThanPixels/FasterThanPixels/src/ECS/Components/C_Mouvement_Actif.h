@@ -7,5 +7,4 @@
 class C_MouvementActif : public Engine::BlankComponent {
 public:
 	C_MouvementActif();
-
 };

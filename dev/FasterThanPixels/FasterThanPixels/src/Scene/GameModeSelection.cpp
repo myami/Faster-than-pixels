@@ -6,8 +6,6 @@ GameModeSelection::GameModeSelection(std::string name, FTP_SceneManager* refs) :
 	_SceneManager = refs;
 }
 
-
-
 void GameModeSelection::S_Render()
 {
 	_SceneManager->_GameManager->Windows->draw(Background);
@@ -27,11 +25,7 @@ void GameModeSelection::S_Render()
 	_SceneManager->_GameManager->Windows->draw(MenuTitle);
 	_SceneManager->_GameManager->Windows->draw(Borders);
 	_SceneManager->_GameManager->Windows->draw(DifficultySelection);
-
-
-
 }
-
 
 void GameModeSelection::Begin_Play()
 {
@@ -114,21 +108,12 @@ void GameModeSelection::Begin_Play()
 	Seed.textbox.setCharacterSize(20);
 	Seed.textbox.setOrigin(Seed.textbox.getGlobalBounds().width / 2.f, Seed.textbox.getGlobalBounds().height / 2.f);
 	Seed.textbox.setPosition(_SceneManager->_GameManager->View.getCenter());
-	Seed.textbox.move(sf::Vector2(-50.f, -8.f)); // bonne position relatif 
+	Seed.textbox.move(sf::Vector2(-50.f, -8.f)); // bonne position relatif
 	Seed.BackgroundTexture.setOrigin(Seed.BackgroundTexture.getGlobalBounds().width / 2.f, Seed.BackgroundTexture.getGlobalBounds().height / 2.f);
 	Seed.BackgroundTexture.setPosition(_SceneManager->_GameManager->View.getCenter());
 	Seed.textbox.setString("Entrez la seed ici");
 	Seed.BackgroundTexture.move(sf::Vector2(0.f, -150.f));
-	Seed.textbox.move(sf::Vector2(0.f - Seed.textbox.getGlobalBounds().width/3.f, -150.f));
-
-
-	//Borders.setOrigin(Seed.textbox.getGlobalBounds().width / 2.f, Seed.textbox.getGlobalBounds().height / 2.f);
-	//Borders.setPosition(_SceneManager->_GameManager->View.getCenter());
-	//Borders.setSize(sf::Vector2f(Seed.textbox.getGlobalBounds().width,Seed.textbox.getGlobalBounds().height));
-	//Borders.setFillColor(sf::Color::Magenta);
-	//Borders.move(sf::Vector2(0.f - Seed.textbox.getGlobalBounds().width / 2.f, -150.f));
-
-
+	Seed.textbox.move(sf::Vector2(0.f - Seed.textbox.getGlobalBounds().width / 3.f, -150.f));
 
 #pragma endregion
 
@@ -143,17 +128,15 @@ void GameModeSelection::Begin_Play()
 	MenuTitle.move(sf::Vector2(0.f, -325.f));
 #pragma endregion
 
-
 #pragma region DifficultySelection
 
 	DifficultySelection.setSize(sf::Vector2f(150, 5));
-	DifficultySelection.setFillColor(sf::Color(52,106,232));
+	DifficultySelection.setFillColor(sf::Color(52, 106, 232));
 	DifficultySelection.setOrigin(DifficultySelection.getGlobalBounds().width / 2.f, DifficultySelection.getGlobalBounds().height / 2.f);
 	DifficultySelection.setPosition(_SceneManager->_GameManager->View.getCenter());
 	DifficultySelection.move(sf::Vector2(-225.f, -215.f));
 
 #pragma endregion
-
 
 #pragma region ModesSelection
 	ModesSelection.setSize(sf::Vector2f(250, 500));
@@ -165,53 +148,40 @@ void GameModeSelection::Begin_Play()
 	ModesSelection.setFillColor(sf::Color::Transparent);
 
 #pragma endregion
-
 }
-
-
 
 void GameModeSelection::S_Input_Mouse(sf::Event event)
 {
 	if (event.type == sf::Event::MouseButtonPressed) {
-
 		if (Easy.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {
-			std::cout << "Easy";
 			DifficultySelection.setPosition(_SceneManager->_GameManager->View.getCenter());
 			DifficultySelection.move(sf::Vector2(-225.f, -215.f));
 			CurrentDifficulty = 0;
-
 		}
 		if (Medium.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {
-			std::cout << "Medium";
 			DifficultySelection.setPosition(_SceneManager->_GameManager->View.getCenter());
 			CurrentDifficulty = 1;
 			DifficultySelection.move(sf::Vector2(0.f, -215.f));
-
 		}
 		if (Hard.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {
-			std::cout << "Hard";
 			CurrentDifficulty = 2;
 			DifficultySelection.setPosition(_SceneManager->_GameManager->View.getCenter());
 			DifficultySelection.move(sf::Vector2(225.f, -215.f));
 		}
 		if (Back.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {
-			std::cout << "Back";
 			_SceneManager->ChangeScene("MainMenu");
 		}
 		if (Training.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {
-			std::cout << "Training";
 			ModesSelection.setPosition(_SceneManager->_GameManager->View.getCenter());
 			ModesSelection.move(sf::Vector2(-265.f, 160.f));
 			CurrentModes = 0;
 		}
 		if (FastAction.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {
-			std::cout << "FastAction";
 			CurrentModes = 1;
 			ModesSelection.setPosition(_SceneManager->_GameManager->View.getCenter());
 			ModesSelection.move(sf::Vector2(10.f, 160.f));
 		}
 		if (StartGame.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {
-			std::cout << "Start";
 			_SceneManager->ChangeScene("Game");
 		}
 
@@ -220,9 +190,7 @@ void GameModeSelection::S_Input_Mouse(sf::Event event)
 		}
 		if (Seed.isSelected && !Seed.IsInputClicked(_SceneManager->_GameManager->Windows)) {
 			Seed.SetSelected(false);
-
 		}
-
 	}
 }
 

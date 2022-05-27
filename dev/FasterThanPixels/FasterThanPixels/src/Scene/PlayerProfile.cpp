@@ -9,7 +9,6 @@ PlayerProfile::PlayerProfile(std::string name, FTP_SceneManager* refs) : Engine:
 
 void PlayerProfile::S_Render()
 {
-
 	_SceneManager->_GameManager->Windows->draw(Background);
 	_SceneManager->_GameManager->Windows->draw(Title);
 	_SceneManager->_GameManager->Windows->draw(MenuTitle);
@@ -19,7 +18,6 @@ void PlayerProfile::S_Render()
 	_SceneManager->_GameManager->Windows->draw(SwaptoStats.ButtonText);
 	_SceneManager->_GameManager->Windows->draw(SwaptoAchievements.ButtonText);
 	_SceneManager->_GameManager->Windows->draw(Back.ButtonSprite);
-
 
 	if (DisplayStats)
 	{
@@ -31,17 +29,14 @@ void PlayerProfile::S_Render()
 		_SceneManager->_GameManager->Windows->draw(Asteroid);
 		_SceneManager->_GameManager->Windows->draw(Castaway);
 		_SceneManager->_GameManager->Windows->draw(Missions);
-
 	}
-
-
 }
 
 void PlayerProfile::Begin_Play()
 {
 	DisplayStats = true;
 
-	//TO DO : Récupérer les infos de la DB en fonction du nom de l'utilisateur 
+	//TO DO : Récupérer les infos de la DB en fonction du nom de l'utilisateur
 	std::map<std::string, std::string>playerdata = static_cast<FTP_GameManager*>(_SceneManager->_GameManager)->Dao->GetData();
 
 #pragma region Background
@@ -157,12 +152,10 @@ void PlayerProfile::Begin_Play()
 	SwaptoAchievements.ButtonText.setFillColor(sf::Color::White);
 
 	Back.InitButton(_SceneManager->_GameManager->G_AssetManager->GetTexture("BackButton"), sf::Vector2f(_SceneManager->_GameManager->View.getCenter().x, _SceneManager->_GameManager->View.getCenter().y + 400.f));
-
 }
 
-void PlayerProfile::Tick() 
+void PlayerProfile::Tick()
 {
-
 }
 
 void PlayerProfile::S_Input_Mouse(sf::Event event)
@@ -184,8 +177,6 @@ void PlayerProfile::S_Input_Mouse(sf::Event event)
 		}
 	}
 	if (Back.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {
-		std::cout << "Back";
 		_SceneManager->ChangeScene("MainMenu");
 	}
-
 }

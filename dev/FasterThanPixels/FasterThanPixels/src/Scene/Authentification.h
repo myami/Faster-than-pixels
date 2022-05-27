@@ -30,5 +30,4 @@ public:
 	Input PassWord;  /*!< input du mot de passe */
 	Input Mail;
 	Input VerifPassWord;
-
 };

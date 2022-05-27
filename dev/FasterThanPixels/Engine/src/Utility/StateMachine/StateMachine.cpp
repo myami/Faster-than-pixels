@@ -5,12 +5,10 @@ Engine::StateMachine::StateMachine()
 {
 }
 
-void Engine::StateMachine::Add_States(StateParent* newstate) 
+void Engine::StateMachine::Add_States(StateParent* newstate)
 {
-
 	StatesList.push_back(newstate);
 	newstate->Begin_Play();
-
 }
 
 void Engine::StateMachine::Reset_FSM()
@@ -28,7 +26,6 @@ void Engine::StateMachine::Run_FSM(bool reset)
 		for (StateParent* const& state : StatesList) {
 			state->Tick();
 		}
-		
 	}
 
 	if (!Continued) {
@@ -36,7 +33,4 @@ void Engine::StateMachine::Run_FSM(bool reset)
 			state->End_Play();
 		}
 	}
-
 }
-
-

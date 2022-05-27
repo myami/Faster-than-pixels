@@ -6,5 +6,4 @@
 *
 */
 class Bombardier : public Enemie {
-
 };

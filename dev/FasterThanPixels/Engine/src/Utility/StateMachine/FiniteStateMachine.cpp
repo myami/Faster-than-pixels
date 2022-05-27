@@ -8,7 +8,6 @@ Engine::FiniteStateMachine::FiniteStateMachine()
 void Engine::FiniteStateMachine::Add_States(FSM_State* newstate)
 {
 	StatesList.push_back(newstate);
-
 }
 
 void Engine::FiniteStateMachine::Reset_FSM()

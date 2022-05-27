@@ -4,18 +4,16 @@
 #include "Engine.h"
 #include "../../Scene/Game.h"
 
-
 Asteroid::Asteroid(Engine::Scene* sc) : Engine::Entity(sc, "Asteroid")
 {
 }
 
-Asteroid::Asteroid(Engine::Scene* sc, int id) : Engine::Entity(sc, "Asteroid",id)
+Asteroid::Asteroid(Engine::Scene* sc, int id) : Engine::Entity(sc, "Asteroid", id)
 {
 }
 
 void Asteroid::Begin_Play()
 {
-
 	AddComponent(new C_Static_Render());
 	AddComponent(new C_Static_Collider_Sphere());
 

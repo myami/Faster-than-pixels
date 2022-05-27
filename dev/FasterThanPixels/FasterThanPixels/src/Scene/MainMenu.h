@@ -14,7 +14,7 @@ public:
 	void Begin_Play() override;
 	void S_Input_Mouse(sf::Event event) override;
 	void Tick()override;
-		
+
 	sf::Sprite Background;  /*!< Sprite du background */
 	sf::Sprite Title; /*!< Sprite du titre du jeu */
 	Button Play;  /*!< bouton Play, envoie vers la scene Starting */

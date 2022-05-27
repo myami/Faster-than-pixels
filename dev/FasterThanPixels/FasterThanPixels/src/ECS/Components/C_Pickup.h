@@ -6,5 +6,4 @@
 *
 */
 class C_Pickup : public Engine::BlankComponent {
-	
 };

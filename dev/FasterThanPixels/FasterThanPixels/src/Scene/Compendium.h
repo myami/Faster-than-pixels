@@ -5,20 +5,19 @@ class FTP_SceneManager;
 /*! \class Option
 * \brief classe enfant de Scene, represente le menu d option du jeu
 *
-*/	
+*/
 enum class FirstState { Empty = 0, Ennemis = 1, Bonus = 2, Objectifs = 3 };/*!< Permet d'identifier l'arborescence sélectionnée */
 enum class SecondState { Empty = 0, First = 1, Second = 2, Third = 3, Fourth = 4, Fifth = 5 };
 
 class Compendium : public Engine::BlankScene {
 public:
 	Compendium(std::string name, FTP_SceneManager* refs);
-	void S_Render() override; 
+	void S_Render() override;
 	void S_ActionTrigger(std::string ActionName) override;
 	void Begin_Play() override;
 	void S_Input_Mouse(sf::Event event) override;
 	void S_Input_Text(sf::Event event) override;
 	void Tick() override;
-
 
 	FirstState FS;
 	SecondState SS;
@@ -41,7 +40,7 @@ public:
 	CompendiumInfo ci_Carrier;
 	Button Tour;
 	CompendiumInfo ci_Tour;
-	
+
 	Button Bonus;
 	Button Mines;
 	CompendiumInfo ci_Mines;
@@ -67,5 +66,4 @@ public:
 	CompendiumInfo ci_Sauvetage;
 
 	Button Back;
-
 };

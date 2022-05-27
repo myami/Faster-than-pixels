@@ -4,34 +4,27 @@ Engine::EntityManager::EntityManager()
 {
 }
 
-
-
 void Engine::EntityManager::Update()
 {
 	if (AsEntityWaiting()) {
-		
 		EntityWaitingListDispatch();
 	}
 	M_EntityToChange.clear();
-	
-
 }
 
 int Engine::EntityManager::RequestEntity(std::string tag)
 {
 	std::vector<int> used_id;
-	// S'assure que les entites dans la file d'attente ne peuvent pas etre pris
-	for (S_Delay_Entity delayentity : M_EntityToChange) 
+	for (S_Delay_Entity delayentity : M_EntityToChange)
 	{
 		used_id.push_back(delayentity.E_ID);
-		
 	}
 	for (auto const& entity : GetAllEntityWithTag(tag)) {
 		bool notused = false;
 		if (entity->E_CanBeUsed) {
 			for (int id : used_id)
 			{
-				// Elle est dans la liste 
+				// Elle est dans la liste
 				if (entity->E_Id == id)
 					notused = true;
 			}
@@ -40,28 +33,6 @@ int Engine::EntityManager::RequestEntity(std::string tag)
 			}
 		}
 	}
-	/*
-	// boucle dans toutes les entite
-	for (auto entity : M_EntityVector) {
-		// Si une entite peux etre utiliser
-		if (entity->E_CanBeUsed) {
-			bool notused = false;
-			// check si elle est dans les elements de la file d'attente
-			for (int id : used_id) 
-			{
-				// Elle est dans la liste 
-				if (entity->E_Id == id)
-					notused = true;
-			}
-			// si elle est pas dans la liste
-			if (!notused)
-				if (entity->E_Tag.compare(tag))
-					return entity->E_Id;
-			// si le id est pas dans la waiting list et il a le tag 
-			
-		}
-	}
-	*/
 	std::cout << "Aucune entite est libre d'utilisation pour le tag : " << tag << std::endl;
 	return 0; // si il y en a aucune de dispo
 }
@@ -162,7 +133,6 @@ Engine::Entity* Engine::EntityManager::AddEntity(S_Delay_Entity entite)
 	}
 	return nullptr;
 }
-
 
 void Engine::EntityManager::AddToWaiting(S_Delay_Entity entite)
 {

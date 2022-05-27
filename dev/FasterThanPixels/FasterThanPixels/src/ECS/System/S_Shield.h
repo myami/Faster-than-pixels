@@ -11,5 +11,4 @@ public:
 	void RunSystem(float dt) override;
 	void DamageShield(int amount, Engine::Entity* target);
 	int GetShield(Engine::Entity* target);
-
 };

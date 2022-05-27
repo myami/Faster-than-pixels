@@ -13,5 +13,4 @@ public:
 	/*b2Body body; /*!< Box2D TODO */
 	/*b2Fixture fixture; /*!< Box2D TODO */
 	/*b2PolygonShape collider; /*!< Box2D TODO */
-	
 };

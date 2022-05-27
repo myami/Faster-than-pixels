@@ -5,5 +5,4 @@
 *
 */
 class ThunderBolt : public Engine::Entity {
-
 };

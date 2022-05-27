@@ -17,7 +17,7 @@ void Engine::GameManager::GameLoop()
 		ClockDeltaTime.restart();
 		S_Input();
 		G_SceneManager->GetCurrentScene()->S_Simulation();
-		if (G_SceneManager->Run_FSM()) 
+		if (G_SceneManager->Run_FSM())
 		{
 			Quit();
 		}

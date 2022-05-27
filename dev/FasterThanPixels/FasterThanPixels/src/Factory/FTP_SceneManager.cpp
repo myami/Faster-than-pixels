@@ -28,7 +28,7 @@ void FTP_SceneManager::Init(std::string FirstScene)
 	AddScene(compendium);
 	AddScene(profile);
 
-	Initial_States = GetStatesFromScene(authentification);
+	Initial_States = GetStatesFromScene(GetScene(FirstScene));
 
 	Reset_FSM();
 }

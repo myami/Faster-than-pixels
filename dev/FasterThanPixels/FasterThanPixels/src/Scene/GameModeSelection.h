@@ -24,7 +24,6 @@ public:
 	sf::RectangleShape DifficultySelection; /*!< ligne rouge sous la difficulte selectionner */
 	sf::RectangleShape ModesSelection; /*!< Contour autour du gamemodes */
 
-
 	sf::Text MenuTitle;
 	Button Easy;  /*!< bouton Play, modifie la difficulte pour facile */
 	Button Medium;  /*!< bouton Compendium, modifie la difficulte pour moyen */
@@ -35,9 +34,6 @@ public:
 	Button StartGame;  /*!< bouton PLAY, envoie vers la scene Game */
 	Button Back;/*!< bouton register, appelle la fonction Quit() */
 
-
 	sf::Sprite ButtonBackground;  /*!< Sprite du background des boutons */
 	Input Seed;  /*!< input de la seed pour la generation de la carte, valeur random si vide*/
-
 };
-

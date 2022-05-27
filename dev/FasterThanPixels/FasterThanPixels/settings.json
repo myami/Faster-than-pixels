@@ -1,1 +1,7 @@
-{"FullScreen":1,"MainVolume":40,"MusicVolume":30,"Resolution":0,"SoundVolume":20}
+{
+  "FullScreen": 1,
+  "MainVolume": 40,
+  "MusicVolume": 30,
+  "Resolution": 0,
+  "SoundVolume": 20
+}

@@ -15,7 +15,7 @@ namespace Engine {
 	*/
 	class StateParent;
 	class Scene;
-	class Entity : public StateParent{
+	class Entity : public StateParent {
 		std::vector<Component*> E_Component; /*!< Liste des components de l'entite */
 	public:
 		/*!
@@ -37,7 +37,7 @@ namespace Engine {
 		 *  \param Scene* sc: Pointeur vers la scene ou l'entite est utiliesr
 		 *   \param std::string tag: Tag de l'entite
 		 */
-		Entity(Scene* sc,std::string tag);
+		Entity(Scene* sc, std::string tag);
 		/*!
 		 *  \brief Constructeur avec un tag
 		 *   \param std::string tag: Tag de l'entite

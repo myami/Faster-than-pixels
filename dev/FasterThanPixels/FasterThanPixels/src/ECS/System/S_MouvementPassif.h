@@ -5,6 +5,4 @@
 *
 */
 class S_MouvementPassif : public Engine::System {
-
-
 };

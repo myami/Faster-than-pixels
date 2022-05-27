@@ -22,7 +22,5 @@ namespace Engine {
 		*  Function appeler a la fin du mode de jeux. Generalement pour lancer un autre gamemode ou la fin de partie et sauvegarder les stats du joueur pendant se gamemode
 		*/
 		virtual void OnGameModeEnd() = 0;
-
 	};
-	
 }

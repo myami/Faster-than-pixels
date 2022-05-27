@@ -7,7 +7,7 @@ namespace Engine {
 		std::string Path;
 		std::string Username;
 	};
-	class DAOJSON {	
+	class DAOJSON {
 	public:
 		DBConnectionInfo db_info;
 		DAOJSON(DBConnectionInfo dbinfo);

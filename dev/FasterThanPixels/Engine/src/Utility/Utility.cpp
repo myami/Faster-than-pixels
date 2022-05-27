@@ -17,7 +17,7 @@ std::vector<nlohmann::json> Engine::LoadAssetFromFile(std::string path)
 	for (const auto& file : std::filesystem::directory_iterator(path)) { // prend tout les chemins de fichier json dans un vector
 		if (!file.is_directory()) {
 			fileasset.push_back(file.path());
-			std::cout << " Json for asset available :" << file.path() << std::endl;
+			std::cout << "Json for asset available : " << file.path() << std::endl;
 		}
 	}
 	for (size_t i = 0; i < fileasset.size(); i++) // lie les fichier json et enregistre leur contenu dans la memoire
@@ -33,12 +33,10 @@ std::vector<nlohmann::json> Engine::LoadAssetFromFile(std::string path)
 }
 
 void Engine::SerializeData(std::map<std::string, int>& params) {
-
 	nlohmann::json settings(params);
 	std::string filename = "./settings.json";
 	std::ofstream file(filename);
 	file << settings;
-
 }
 
 std::map<std::string, int> Engine::GetInfoFromJSON(std::string path) {
@@ -55,8 +53,6 @@ bool Engine::FileExists(std::string path)
 {
 	return std::filesystem::exists(path);
 }
-
-
 
 Engine::S_Delay_Entity Engine::GenerateEntity(Engine::EntityManager* entman, std::string Tag)
 {

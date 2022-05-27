@@ -5,7 +5,7 @@
 *
 */
 class FTP_Race : public Engine::GameMode {
-	 void OnGameModeStart();
-	 void OnGameModeUpdate();
-	 void OnGameModeEnd();
+	void OnGameModeStart();
+	void OnGameModeUpdate();
+	void OnGameModeEnd();
 };

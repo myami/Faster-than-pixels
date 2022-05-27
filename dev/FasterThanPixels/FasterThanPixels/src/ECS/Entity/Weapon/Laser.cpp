@@ -7,18 +7,16 @@ Laser::Laser()
 {
 }
 
-Laser::Laser(Engine::Scene* sc): Engine::Entity(sc)
+Laser::Laser(Engine::Scene* sc) : Engine::Entity(sc)
 {
 }
 
-Laser::Laser(Engine::Scene* sc, int id) : Engine::Entity(sc,"Laser",id)
+Laser::Laser(Engine::Scene* sc, int id) : Engine::Entity(sc, "Laser", id)
 {
-
 }
 
 void Laser::Begin_Play()
 {
-
 	AddComponent(new C_Static_Render());
 	AddComponent(new C_Transform());
 	AddComponent(new C_Static_Collider_Sphere());

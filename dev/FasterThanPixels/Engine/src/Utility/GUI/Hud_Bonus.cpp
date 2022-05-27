@@ -2,7 +2,6 @@
 
 Engine::Hud_Bonus::Hud_Bonus()
 {
-
 }
 
 void Engine::Hud_Bonus::InitHudBonus(sf::Texture& IconTexture, std::string BonusMaxValue, std::string BonusCurrentValue, sf::Font& FontAddress, int CharacterSize, sf::Vector2f PosOrigin)
@@ -25,7 +24,6 @@ void Engine::Hud_Bonus::InitHudBonus(sf::Texture& IconTexture, std::string Bonus
 	CurrentValue.setString(BonusCurrentValue);
 }
 
-
 sf::Sprite Engine::Hud_Bonus::GetIcon()
 {
 	return Icon;
@@ -45,5 +43,3 @@ void Engine::Hud_Bonus::SetCurrentValue(std::string CurrentValue)
 {
 	this->CurrentValue.setString(CurrentValue);
 }
-
-

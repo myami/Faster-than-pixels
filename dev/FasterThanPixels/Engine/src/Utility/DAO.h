@@ -17,6 +17,6 @@
 //		int CreateTable(const char* Path,std::string query);
 //		int InsertData(const char*, std::string Query);
 //		static int callback(void *Notused, int argc, char **argv, char **azColname);
-//		sqlite3* db;	
+//		sqlite3* db;
 //	};
 //}

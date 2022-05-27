@@ -5,5 +5,4 @@
 *
 */
 class Checkpoint : public Engine::Entity {
-
 };

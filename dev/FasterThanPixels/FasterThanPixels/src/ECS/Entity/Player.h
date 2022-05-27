@@ -19,5 +19,4 @@ public:
 	void GetDamage(int amount);
 	float viewspeed = 200.f;
 	float rotationspeed = 2.f;
-
 };

@@ -20,8 +20,5 @@ namespace Engine {
 		void S_Static_Physic(b2Body* body) override;
 		void S_Dynamic_Physic(b2Body* body) override;
 		void S_Kynematic_Physic(b2Body* body) override;
-
-
-
 	};
 }

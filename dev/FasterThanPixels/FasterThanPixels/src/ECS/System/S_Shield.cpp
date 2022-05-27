@@ -4,7 +4,6 @@
 void S_Shield::RegenerateShield(Engine::Entity* target)
 {
 	if (IsEntityInSystem(target)) {
-
 		C_Shield* Component = (C_Shield*)target->GetComponent("Shield");
 		Component->HealthShield += Component->RegenerationAmountPerTick;
 	}
@@ -13,7 +12,6 @@ void S_Shield::RegenerateShield(Engine::Entity* target)
 bool S_Shield::AsShield(Engine::Entity* target)
 {
 	if (IsEntityInSystem(target)) {
-
 		C_Shield* Component = (C_Shield*)target->GetComponent("Shield");
 		if (Component->HealthShield > 0) {
 			return true;
@@ -35,24 +33,19 @@ void S_Shield::RunSystem(float dt)
 			Component->ShieldClock.restart();
 		}
 	}
-
-
 }
 
 void S_Shield::DamageShield(int amount, Engine::Entity* target)
 {
 	if (IsEntityInSystem(target)) {
-
 		C_Shield* Component = (C_Shield*)target->GetComponent("Shield");
 		Component->HealthShield -= amount;
 	}
-
 }
 
 int S_Shield::GetShield(Engine::Entity* target)
 {
 	if (IsEntityInSystem(target)) {
-
 		C_Shield* Component = (C_Shield*)target->GetComponent("Shield");
 		return Component->HealthShield;
 	}

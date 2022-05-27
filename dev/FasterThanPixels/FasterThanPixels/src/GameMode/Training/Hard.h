@@ -9,4 +9,3 @@ class FTP_Training_Hard : public Engine::GameMode {
 	void OnGameModeUpdate();
 	void OnGameModeEnd();
 };
-

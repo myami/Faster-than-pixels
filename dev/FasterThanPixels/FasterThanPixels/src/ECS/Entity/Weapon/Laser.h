@@ -8,10 +8,9 @@ class Laser : public Engine::Entity {
 public:
 	Laser();
 	Laser(Engine::Scene* sc);
-	Laser(Engine::Scene* sc,int id);
+	Laser(Engine::Scene* sc, int id);
 
 	void Begin_Play() override;
 	void Tick() override;
 	void End_Play() override;
-
 };

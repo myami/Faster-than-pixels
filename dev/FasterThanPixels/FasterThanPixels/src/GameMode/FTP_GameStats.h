@@ -3,7 +3,7 @@
 #include <string>
 
 /**
-* Une structure qui represente les infos d une partie 
+* Une structure qui represente les infos d une partie
  */
 
 struct FTP_Game_Info {
@@ -22,13 +22,12 @@ struct FTP_Game_Info {
 	float AverageSpeed; /*!< Course : Somme de la distance entre les points de passage divise par le temps en secondes */
 	float RemainingHealth;  /*!< Vie restante de la structure a defendre */
 	std::vector<std::string> GamemodesJouer; /*!< Listes de mode jouer */
-
 };
 /*! \class FTP_GameStats
 * \brief classe enfant de GameStats
 *
 */
 class FTP_GameStats : public Engine::GameStats {
-public :
+public:
 	FTP_Game_Info InfoGame;
 };

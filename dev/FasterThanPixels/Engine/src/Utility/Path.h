@@ -9,15 +9,15 @@ namespace Engine {
 	public:
 		std::vector<sf::Vector2f> nodes;  /*!< Listes de position */
 		/*!
-	    *  \brief AddNodes
-	    *  Ajoutes une nodes dans la listes 
-	    *\param newpos : nouvelles position a ajouter dans le chemins
-	    */
+		*  \brief AddNodes
+		*  Ajoutes une nodes dans la listes
+		*\param newpos : nouvelles position a ajouter dans le chemins
+		*/
 		void AddNodes(sf::Vector2f newpos);
 		/*!
 		*  \brief Getnodes
 		*
-		*  Return toutes les positions dans une listes 
+		*  Return toutes les positions dans une listes
 		* \return liste de position
 		*/
 		std::vector<sf::Vector2f> Getnodes();

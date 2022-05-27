@@ -19,7 +19,6 @@ Game::Game(std::string name, FTP_SceneManager* refs) : Engine::BlankScene(name)
 	S_EntityManager->GameManager = _SceneManager->_GameManager;
 }
 
-
 void Game::Tick()
 {
 	S_EntityManager->Update(); // mais a jour la waiting list
@@ -34,8 +33,6 @@ void Game::Tick()
 	ss << " Coord \n X : " << MousePosView.x << "\n Y : " << MousePosView.y << "\n";
 	text.setString(ss.str());
 	System_Mouvement_Actif->RunSystem(_SceneManager->_GameManager->DeltaTime);
-
-	
 }
 
 void Game::S_Render()
@@ -109,7 +106,6 @@ void Game::S_ActionTrigger(std::string ActionName)
 		Player* pl = etm->GetPlayer();
 		pl->Input(ActionName);
 	}
-
 }
 
 void Game::Begin_Play()
@@ -127,8 +123,6 @@ void Game::Begin_Play()
 	InitPlanet();
 	InitAsteroid();
 
-
-
 	System_Mouvement_Actif = new S_Mouvement_Actif();
 	InitPlayer();
 
@@ -137,8 +131,6 @@ void Game::Begin_Play()
 	Health_Manager = new S_Health();
 	Shield_Manager = new S_Shield();
 	S_EntityManager->Run_FSM(true);
-
-
 }
 
 void Game::GenerateUI()
@@ -193,7 +185,6 @@ void Game::GenerateUI()
 	Boost.InitSlider(0, 100, 1, false, 100);
 }
 
-
 void Game::SpawnLaser(Engine::Entity* Shooter)
 {
 	Engine::S_Delay_Entity Laser;
@@ -211,60 +202,13 @@ void Game::S_Input_Text(sf::Event event)
 {
 }
 
-void Game::UpdateEntity()
-{
-	/*auto EntitiesRender = S_EntityManager->GetAllEntityWithComponent("Render");
-	for (auto Entity : EntitiesRender)
-	{
-		C_Animated_Render* CheckAnimatation = dynamic_cast<C_Animated_Render*>(Entity->GetComponent("Render"));
-		if (CheckAnimatation) {
-			CheckAnimatation->AnimatedSprite.updateSprites(_SceneManager->_GameManager->DeltaTime); // mais a jour le sprite des animations
-		}
-	}
-
-	auto Entities = S_EntityManager->GetAllEntityWithComponent("Mouvement");
-	for (auto Entity : Entities)
-	{
-		C_MouvementActif* CheckMovement = dynamic_cast<C_MouvementActif*>(Entity->GetComponent("Mouvement"));
-		if (CheckMovement) {
-			C_Static_Render* Static = dynamic_cast<C_Static_Render*>(Entity->GetComponent("Render"));
-			C_Transform* PlayerTransform = dynamic_cast<C_Transform*>(Entity->GetComponent("Transform"));
-			System_Mouvement_Actif->RunSystem(Entity, _SceneManager->_GameManager->DeltaTime);
-		}
-	}
-	//CheckPlayerLimit(S_EntityManager->GetPlayer());
-
-	C_Static_Render* Static = dynamic_cast<C_Static_Render*>(S_EntityManager->GetPlayer()->GetComponent("Render"));
-	if (Static) {
-		_SceneManager->_GameManager->View.setCenter(Static->Sprite.getPosition());
-	}
-
-	auto EntitieShield = S_EntityManager->GetAllEntityWithComponent("Shield");
-	for (auto Entity : EntitieShield)
-	{
-		C_Shield* CheckShield = dynamic_cast<C_Shield*>(Entity->GetComponent("Shield"));
-		if (CheckShield)
-			Shield_Manager->RunSystem(Entity, _SceneManager->_GameManager->DeltaTime);
-		Shield.SetSlider(Shield_Manager->GetShield(S_EntityManager->GetPlayer()));
-	}
-
-	auto EntitieHealth = S_EntityManager->GetAllEntityWithComponent("Health");
-	for (auto Entity : EntitieHealth)
-	{
-		C_Health* CheckHealth = dynamic_cast<C_Health*>(Entity->GetComponent("Health"));
-		if (CheckHealth)
-			Health_Manager->RunSystem(Entity, _SceneManager->_GameManager->DeltaTime);
-	}
-	*/
-}
-
 void Game::S_Static_Physic(b2Body* body)
 {
 	Engine::Entity* entity = S_EntityManager->GetEntityWithId(S_EntityManager->M_PhysicMap[body]);
 	C_Static_Render* Static = (C_Static_Render*)entity->GetComponent("Render");
 	if (Static)
 		Static->Sprite.setPosition(SCALE * body->GetPosition().x, SCALE * body->GetPosition().y);
-		Static->Sprite.setRotation(body->GetAngle() * 180 / b2_pi);
+	Static->Sprite.setRotation(body->GetAngle() * 180 / b2_pi);
 }
 
 void Game::S_Dynamic_Physic(b2Body* body)
@@ -273,9 +217,7 @@ void Game::S_Dynamic_Physic(b2Body* body)
 	C_Static_Render* Static = (C_Static_Render*)entity->GetComponent("Render");
 	if (Static)
 		Static->Sprite.setPosition(SCALE * body->GetPosition().x, SCALE * body->GetPosition().y);
-		Static->Sprite.setRotation(body->GetAngle() * 180 / b2_pi);
-
-	
+	Static->Sprite.setRotation(body->GetAngle() * 180 / b2_pi);
 }
 
 void Game::S_Kynematic_Physic(b2Body* body)
@@ -331,11 +273,8 @@ void Game::InitAsteroid()
 	{
 		Engine::S_Delay_Entity Asteroid;
 		Asteroid.E_State = Engine::EntityState::Add;
-
 		Asteroid.E_ID = S_EntityManager->RequestEntity("Asteroid");
 		Asteroid.IsAnimated = false;
-
-
 		S_EntityManager->AddToWaiting(Asteroid);
 	}
 }
@@ -348,4 +287,3 @@ void Game::InitPlayer()
 	Player.IsAnimated = false;
 	S_EntityManager->AddToWaiting(Player);
 }
-

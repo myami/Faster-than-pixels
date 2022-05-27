@@ -5,5 +5,4 @@
 *
 */
 class Mine : public Engine::Entity {
-
 };

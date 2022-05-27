@@ -17,10 +17,8 @@ void Engine::Slider::SetSlider(int position)
 		SliderBar.setScale(sf::Vector2f(SliderBar.getScale().x, this->CurrentPosition));
 	}
 	else {
-		SliderBar.setScale(sf::Vector2f(this->CurrentPosition,SliderBar.getScale().y));
-
+		SliderBar.setScale(sf::Vector2f(this->CurrentPosition, SliderBar.getScale().y));
 	}
-
 }
 
 float Engine::Slider::GetSliderPosition()
@@ -32,7 +30,6 @@ bool  Engine::Slider::IsSpriteClicked(sf::RenderWindow* render)
 {
 	if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 	{
-			return Background.getGlobalBounds().contains(render->mapPixelToCoords(sf::Mouse::getPosition()));
+		return Background.getGlobalBounds().contains(render->mapPixelToCoords(sf::Mouse::getPosition()));
 	}
 }
-

@@ -12,7 +12,7 @@ void Engine::AssetManager::AddTexture(std::string name, std::string path)
 		std::cout << "Error when loadind url of the texture : " << name << std::endl;
 	}
 	else {
-		std::cout << "Texture : " << name << "as been loaded as a texture" << texture.getSize().x << texture.getSize().y << std::endl;
+		std::cout << "Texture : " << name << "as been loaded as a texture : x :  " << texture.getSize().x << " y : " << texture.getSize().y << std::endl;
 		M_Textures.insert({ name,texture });
 	}
 }

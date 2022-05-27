@@ -11,5 +11,4 @@ public:
 	float RegenerationAmountPerTick; /*!< Regeneration par tick */
 	sf::Clock ShieldClock;/*!< Timer du shield lie a l entite */
 	C_Shield();
-
 };

@@ -3,5 +3,4 @@
 
 int main() {
 	Engine::PrintMessage();
-
 }

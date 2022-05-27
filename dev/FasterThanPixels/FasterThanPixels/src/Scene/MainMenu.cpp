@@ -1,12 +1,10 @@
 #include "MainMenu.h"
 #include "../Factory/FTP_SceneManager.h"
 
-MainMenu::MainMenu(std::string name, FTP_SceneManager* refs): Engine::BlankScene(name)
+MainMenu::MainMenu(std::string name, FTP_SceneManager* refs) : Engine::BlankScene(name)
 {
 	_SceneManager = refs;
 }
-
-
 
 void MainMenu::S_Render()
 {
@@ -17,15 +15,10 @@ void MainMenu::S_Render()
 	_SceneManager->_GameManager->Windows->draw(Profile.ButtonSprite);
 	_SceneManager->_GameManager->Windows->draw(Settings.ButtonSprite);
 	_SceneManager->_GameManager->Windows->draw(Exit.ButtonSprite);
-
-
-
 }
-
 
 void MainMenu::Begin_Play()
 {
-
 #pragma region Background
 	Background.setTexture(_SceneManager->_GameManager->G_AssetManager->GetTexture("MenuBackground"));
 	Background.setOrigin(Background.getGlobalBounds().width / 2.f, Background.getGlobalBounds().height / 2.f);
@@ -75,38 +68,27 @@ void MainMenu::Begin_Play()
 #pragma endregion
 }
 
-
-
 void MainMenu::S_Input_Mouse(sf::Event event)
 {
 	if (event.type == sf::Event::MouseButtonPressed) {
-
 		if (Play.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {
-			std::cout << "GMS";
 			_SceneManager->ChangeScene("GameModeSelection");
 		}
 		if (Compendium.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {
-			std::cout << "Compendium";
 			_SceneManager->ChangeScene("Compendium");
 		}
 		if (Profile.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {
-			std::cout << "Profile";
 			_SceneManager->ChangeScene("PlayerProfile");
 		}
 		if (Settings.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {
-			std::cout << "Settings";
 			_SceneManager->ChangeScene("Settings");
 		}
 		if (Exit.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {
-			std::cout << "Byebye";
 			_SceneManager->_GameManager->Quit();
 		}
-
 	}
-
 }
 
 void MainMenu::Tick()
 {
 }
-

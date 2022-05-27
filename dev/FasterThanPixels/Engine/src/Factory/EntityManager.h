@@ -16,7 +16,7 @@ namespace Engine {
 		Delete
 	};
 	/*! \struct S_Delay_Entity
-	* \brief struct representant les entites en file d'attente 
+	* \brief struct representant les entites en file d'attente
 	*
 	*/
 
@@ -46,7 +46,7 @@ namespace Engine {
 	   *
 	   *  Au debut de la scene, genere toutes les entite disponibles
 	   */
-		virtual void GenerateEntity(Scene* sc) = 0; 
+		virtual void GenerateEntity(Scene* sc) = 0;
 		/*!
 		*  \brief Update
 		*

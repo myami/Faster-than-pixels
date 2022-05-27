@@ -23,5 +23,3 @@ namespace Engine {
 		FSM_Param param; /*!< Parametre du state */
 	};
 }
-
-

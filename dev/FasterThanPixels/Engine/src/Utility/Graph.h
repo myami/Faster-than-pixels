@@ -22,9 +22,6 @@ namespace Engine {
 		*  Ajoute un gamemode disponible apres se noeud
 		* \param othergm : Autre gamemode qui peux etre enchainer apres celui-ci
 		*/
-		void AddGameMode(Graph_Gamemodes* othergm); 
-
+		void AddGameMode(Graph_Gamemodes* othergm);
 	};
-
-
 }

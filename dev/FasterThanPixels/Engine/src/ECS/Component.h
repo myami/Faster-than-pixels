@@ -14,23 +14,23 @@ namespace Engine {
    * \brief classe representant chaque composant que l'entite va avoir
    *
    */
-	 class Component  {
-	 public:
-		 std::vector<std::string> RequireComponent; /*!< Liste des composant requis si il a des dependances*/
-		 std::map<std::string, std::any> ValueToChange; /*!< Valeur a changer sur les variables du component au prochain update du gameloop */
-		 std::string C_Name; /*!< Nom du component*/
+	class Component {
+	public:
+		std::vector<std::string> RequireComponent; /*!< Liste des composant requis si il a des dependances*/
+		std::map<std::string, std::any> ValueToChange; /*!< Valeur a changer sur les variables du component au prochain update du gameloop */
+		std::string C_Name; /*!< Nom du component*/
+	   /*!
+		*  \brief Constructeur vide de Component
+		*/
+		Component();
 		/*!
-		 *  \brief Constructeur vide de Component
+		 *  \brief Constructeur avec le nom du Component;
+		 *  \param name : Le nom du component
 		 */
-		 Component();
-		 /*!
-		  *  \brief Constructeur avec le nom du Component;
-		  *  \param name : Le nom du component
-		  */
-		 Component(std::string name);
-		 /*!
-		  *  \brief Affiche le nom du component
-		  */
-		 virtual void PrintName() = 0;
+		Component(std::string name);
+		/*!
+		 *  \brief Affiche le nom du component
+		 */
+		virtual void PrintName() = 0;
 	};
 }

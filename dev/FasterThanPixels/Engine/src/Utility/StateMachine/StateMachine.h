@@ -7,7 +7,7 @@ namespace Engine {
 	* \brief classe de statemachine
 	*
 	*/
-	class StateMachine{
+	class StateMachine {
 	public:
 		StateMachine();
 		std::vector<StateParent*> StatesList; /*!< Vector d'etat */
@@ -15,8 +15,5 @@ namespace Engine {
 		void Add_States(StateParent* newstate);
 		void Reset_FSM();
 		void Run_FSM(bool reset);
-
 	};
 }
-
-

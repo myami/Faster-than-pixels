@@ -2,12 +2,10 @@
 #include "../Factory/FTP_SceneManager.h"
 #include <iostream>
 
-
 Settings::Settings(std::string name, FTP_SceneManager* refs) : Engine::BlankScene(name)
 {
 	_SceneManager = refs;
 }
-
 
 void Settings::S_Render()
 {
@@ -22,14 +20,14 @@ void Settings::S_Render()
 
 	_SceneManager->_GameManager->Windows->draw(FullScreen);
 	_SceneManager->_GameManager->Windows->draw(FullScreenBox.CheckBoxSprite);
-	if (FullScreenBox.State==true)
+	if (FullScreenBox.State == true)
 	{
 		_SceneManager->_GameManager->Windows->draw(FullScreenBox.CheckSprite);
 	}
 
 	_SceneManager->_GameManager->Windows->draw(MainVolume);
 	_SceneManager->_GameManager->Windows->draw(PrevMainVolButton.ButtonSprite);
-	_SceneManager->_GameManager->Windows->draw(MainVolumeValue);	
+	_SceneManager->_GameManager->Windows->draw(MainVolumeValue);
 	_SceneManager->_GameManager->Windows->draw(NextMainVolButton.ButtonSprite);
 
 	_SceneManager->_GameManager->Windows->draw(MusicVolume);
@@ -42,30 +40,20 @@ void Settings::S_Render()
 	_SceneManager->_GameManager->Windows->draw(SoundVolumeValue);
 	_SceneManager->_GameManager->Windows->draw(NextSoundVolButton.ButtonSprite);
 
-
 	_SceneManager->_GameManager->Windows->draw(Apply.ButtonSprite);
 	_SceneManager->_GameManager->Windows->draw(Back.ButtonSprite);
 	_SceneManager->_GameManager->Windows->draw(Info);
-
-
-
-
-
-
-
-
 }
 
 void Settings::S_ActionTrigger(std::string ActionName)
 {
 }
 
-
 void Settings::Begin_Play()
 {
 #pragma region Initialisation_Params
 
-	if (Engine::FileExists("./settings.json")) 
+	if (Engine::FileExists("./settings.json"))
 	{
 		SettingsParam = Engine::GetInfoFromJSON("./settings.json");
 
@@ -76,7 +64,7 @@ void Settings::Begin_Play()
 		tmpFullScreenParam = SettingsParam["FullScreen"];
 		ScreenSize = ScreenSizes[SettingsParam["Resolution"]];
 	}
-	else 
+	else
 	{
 		ScreenSize = sf::VideoMode::getDesktopMode();
 		for (size_t i = 0; i < ScreenSizes.size(); i++)
@@ -164,7 +152,6 @@ void Settings::Begin_Play()
 	FullScreenBox.CheckBoxSprite.move(sf::Vector2(300.f, -120.f));
 	FullScreenBox.CheckSprite.move(sf::Vector2(300.f, -120.f));
 
-
 #pragma endregion
 
 #pragma region Audio
@@ -175,7 +162,7 @@ void Settings::Begin_Play()
 	MainVolume.setOrigin(MainVolume.getGlobalBounds().width / 2.f, MainVolume.getGlobalBounds().height / 2.f);
 	MainVolume.setPosition(_SceneManager->_GameManager->View.getCenter());
 	MainVolume.move(sf::Vector2(-300.f, -50.f));
-	
+
 	PrevMainVolButton.InitButton(_SceneManager->_GameManager->G_AssetManager->GetTexture("Arrow"), _SceneManager->_GameManager->View.getCenter());
 	PrevMainVolButton.ButtonSprite.setScale(-1, 1);
 	PrevMainVolButton.ButtonSprite.move(175.f, -50.f);
@@ -269,24 +256,21 @@ void Settings::Tick()
 void Settings::S_Input_Mouse(sf::Event event)
 {
 	if (FullScreenBox.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {
-		if (FullScreenBox.State == true) 
+		if (FullScreenBox.State == true)
 		{
 			FullScreenBox.State = false;
 			tmpFullScreenParam = 0;
 		}
-		else 
+		else
 		{
 			FullScreenBox.State = true;
 			tmpFullScreenParam = 1;
 		}
-			
 	}
 	if (Back.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {
-		std::cout << "Changes Canceled";
 		_SceneManager->ChangeScene("MainMenu");
 	}
 	if (Apply.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {
-
 		SettingsParam["Resolution"] = tmpResolutionIndex;
 		SettingsParam["FullScreen"] = tmpFullScreenParam;
 		SettingsParam["MainVolume"] = tmpMainVolumeParam;
@@ -294,12 +278,10 @@ void Settings::S_Input_Mouse(sf::Event event)
 		SettingsParam["MusicVolume"] = tmpMusicVolumeParam;
 
 		Engine::SerializeData(SettingsParam);
-		std::cout << "Applied Changes";
 		_SceneManager->ChangeScene("MainMenu");
 	}
-	
+
 	if (Back.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {
-		std::cout << "Back";
 		_SceneManager->ChangeScene("MainMenu");
 	}
 	if (PrevResButton.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {
@@ -308,10 +290,10 @@ void Settings::S_Input_Mouse(sf::Event event)
 		else
 			tmpResolutionIndex--;
 		ScreenSize = ScreenSizes[tmpResolutionIndex];
-	}	
+	}
 	if (NextResButton.IsSpriteClicked(_SceneManager->_GameManager->Windows)) {
-		if (tmpResolutionIndex >= ScreenSizes.size()-1)
-			tmpResolutionIndex = ScreenSizes.size()-1;
+		if (tmpResolutionIndex >= ScreenSizes.size() - 1)
+			tmpResolutionIndex = ScreenSizes.size() - 1;
 		else
 			tmpResolutionIndex++;
 		ScreenSize = ScreenSizes[tmpResolutionIndex];
@@ -353,10 +335,4 @@ void Settings::S_Input_Mouse(sf::Event event)
 		else
 			tmpMainVolumeParam += 10;
 	}
-
-
 }
-
-
-
-

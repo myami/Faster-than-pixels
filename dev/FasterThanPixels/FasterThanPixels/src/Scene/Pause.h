@@ -14,6 +14,4 @@ public:
 	void S_ActionTrigger(std::string ActionName) override;
 	void Begin_Play() override;
 	void S_Input_Mouse(sf::Event event) override;
-
-
 };

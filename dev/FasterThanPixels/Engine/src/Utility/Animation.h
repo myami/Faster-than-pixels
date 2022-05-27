@@ -1,36 +1,33 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 namespace Engine {
+	class Animation { // https://github.com/darienmiller88/Animation-SFML
+	public:
 
+		/**
+		*@param textureFileName: The file name for the spritesheet
+		*@param spriteTimeLength: Time in seconds a singe sprite will stay on the screen.
+		*@param numSprites: vector detailing how many sprites are on the spritesheet horizontally (x), and vertically (y).
+		*/
+		Animation();
+		void updateSprites(float deltaTime);
 
-class Animation { // https://github.com/darienmiller88/Animation-SFML
-public:
+		sf::Sprite FrameToDraw();
 
-	/**
-	*@param textureFileName: The file name for the spritesheet
-	*@param spriteTimeLength: Time in seconds a singe sprite will stay on the screen.
-	*@param numSprites: vector detailing how many sprites are on the spritesheet horizontally (x), and vertically (y).
-	*/
-	Animation();
-	void updateSprites(float deltaTime);
+		void scaleSpriteSheet(const sf::Vector2u& numSprites);
 
-	sf::Sprite FrameToDraw();
+		//sf::Texture spriteTexture;
+		std::vector<sf::Sprite> spritesToAnimate;
+		int currentFrame;
+		float currentTime;
+		sf::Clock clock;
 
-	void scaleSpriteSheet(const sf::Vector2u& numSprites);
+		//Time in seconds a singe sprite will stay on the screen.
+		float SPRITE_LENGTH_TIME;
 
-	//sf::Texture spriteTexture;
-	std::vector<sf::Sprite> spritesToAnimate;
-	int currentFrame;
-	float currentTime;
-	sf::Clock clock;
+		void SetupAnimation(sf::Texture& textures, float DureeAnimation, const sf::Vector2u& numSprites, sf::Vector2f InitialPosition);
+		void MoveSprite(const sf::Vector2f& direction);
 
-	//Time in seconds a singe sprite will stay on the screen.
-	float SPRITE_LENGTH_TIME;
-
-	void SetupAnimation(sf::Texture& textures, float DureeAnimation,const sf::Vector2u& numSprites,sf::Vector2f InitialPosition);
-	void MoveSprite(const sf::Vector2f& direction);
-
-	void ScaleAnimation(float sc);
-};
-
+		void ScaleAnimation(float sc);
+	};
 }

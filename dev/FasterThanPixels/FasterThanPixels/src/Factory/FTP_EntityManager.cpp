@@ -6,8 +6,6 @@
 #include "../ECS/Entity/Planet.h"
 #include "../ECS/Entity/Weapon/Laser.h"
 
-
-
 void FTP_EntityManager::EntityEndWaiting(Engine::Entity* entity, Engine::EntityState entitystate)
 {
 	switch (entitystate)
@@ -63,7 +61,6 @@ void FTP_EntityManager::GenerateEntity(Engine::Scene* sc)
 		M_EntityVector.push_back(ast);
 	}
 	std::cout << GetAllEntityWithTag("Player").size() << std::endl;
-
 }
 
 FTP_EntityManager::FTP_EntityManager()
@@ -78,6 +75,4 @@ Player* FTP_EntityManager::GetPlayer()
 		}
 	}
 	return nullptr;
-
-
 }

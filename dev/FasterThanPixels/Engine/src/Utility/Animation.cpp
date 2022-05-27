@@ -1,10 +1,10 @@
 #include "Animation.h"
 #include <iostream>
 #include "Random.h"
+// inspirer de https://github.com/darienmiller88/Animation-SFML
 
-Engine::Animation::Animation() 
+Engine::Animation::Animation()
 {
-
 }
 
 void Engine::Animation::updateSprites(float deltaTime) {
@@ -17,7 +17,6 @@ void Engine::Animation::updateSprites(float deltaTime) {
 			currentFrame = 0;
 	}
 
-	
 	//spritesToAnimate[currentFrame].move(direction);
 }
 
@@ -28,7 +27,6 @@ sf::Sprite Engine::Animation::FrameToDraw()
 
 void Engine::Animation::scaleSpriteSheet(const sf::Vector2u& numSprites) {
 	if (spritesToAnimate[currentFrame].getTexture()->getSize().x % numSprites.x != 0 or spritesToAnimate[currentFrame].getTexture()->getSize().y % numSprites.y != 0) {
-
 		//If the width and height of the sprite sheet aren't perfectly disivible the number of sprites, cast the result
 		//to an int, and multiply the result by the number of sprites. This will give us the exact window width and
 		//height needed to resize the spritesheet to allow it to be divisible by the number of sprites.
@@ -37,14 +35,11 @@ void Engine::Animation::scaleSpriteSheet(const sf::Vector2u& numSprites) {
 
 		float xScale = newSpriteSheetWidth / spritesToAnimate[currentFrame].getTexture()->getSize().x;
 		float yScale = newSpriteSheetHeight / spritesToAnimate[currentFrame].getTexture()->getSize().y;
-
 	}
-
 }
 
-void Engine::Animation::SetupAnimation(sf::Texture& textures, float DureeAnimation, const sf::Vector2u& numSprites,  sf::Vector2f InitialPosition)
+void Engine::Animation::SetupAnimation(sf::Texture& textures, float DureeAnimation, const sf::Vector2u& numSprites, sf::Vector2f InitialPosition)
 {
-
 	//spriteTexture = textures;
 	SPRITE_LENGTH_TIME = DureeAnimation;
 	currentTime = 0.f;
@@ -58,12 +53,9 @@ void Engine::Animation::SetupAnimation(sf::Texture& textures, float DureeAnimati
 	spriteSize.x = textures.getSize().x / numSprites.x;
 	spriteSize.y = textures.getSize().y / numSprites.y;
 
-	Random rand;
-	float xPos = rand.getFloatInRange(0, 500);
-	float yPos = rand.getFloatInRange(0, 500);
+
 	for (int y = 0; y < numSprites.y; y++) {
 		for (int x = 0; x < numSprites.x; x++) {
-
 			//Using the sprite sheet, we will slice a rectangle into each of the sprites, and push it into the vector
 			//of sprites, going row by row, left to right.
 			spritesToAnimate.push_back(sf::Sprite(textures, sf::IntRect(spriteSize.x * x,
@@ -83,5 +75,4 @@ void Engine::Animation::ScaleAnimation(float sc)
 {
 	for (auto& sprite : spritesToAnimate)
 		sprite.setScale({ sc,sc });
-
 }

@@ -5,5 +5,4 @@ namespace Engine {
 	*/
 	class GameStats { // TODO : maybe la mettre en singleton que une seul sois dans chaque partie
 	};
-
 }

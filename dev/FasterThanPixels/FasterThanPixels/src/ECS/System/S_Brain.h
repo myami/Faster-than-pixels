@@ -5,6 +5,4 @@
 *
 */
 class S_Brain : public Engine::System {
-	
-
 };

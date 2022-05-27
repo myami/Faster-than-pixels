@@ -5,5 +5,4 @@
 *
 */
 class Missile : public Engine::Entity {
-
 };

@@ -9,4 +9,3 @@ class FTP_FindSurvivor : public Engine::GameMode {
 	void OnGameModeUpdate();
 	void OnGameModeEnd();
 };
-

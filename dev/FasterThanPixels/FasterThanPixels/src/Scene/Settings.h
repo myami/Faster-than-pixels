@@ -28,8 +28,6 @@ public:
 	int tmpResolutionIndex;
 	int tmpFullScreenParam;
 
- 
-
 	std::map<std::string, int> SettingsParam =
 	{
 		{"Resolution", ResolutionIndex},
@@ -73,7 +71,4 @@ public:
 	Button PrevResButton;
 	Button Back;
 	Button Apply;
-
-	
-
 };

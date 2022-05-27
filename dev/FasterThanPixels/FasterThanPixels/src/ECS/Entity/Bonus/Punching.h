@@ -5,6 +5,4 @@
 *
 */
 class Punching : public Engine::Entity {
-
-
 };
