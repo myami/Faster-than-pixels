@@ -1,0 +1,15 @@
+{
+  "name": "MineIcon",
+  "url": "/img/Gameplay/FixUI/Mine.png",
+  "type": "Texture",
+  "collider": [
+    {
+      "x": 0,
+      "y": 0
+    },
+    {
+      "x": 0,
+      "y": 0
+    }
+  ]
+}

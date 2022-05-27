@@ -1,0 +1,15 @@
+{
+  "name": "CompendiumDescriptionBackground",
+  "url": "/img/Compendium/DescriptionBackground.png",
+  "type": "Texture",
+  "collider": [
+    {
+      "x": 0,
+      "y": 0
+    },
+    {
+      "x": 0,
+      "y": 0
+    }
+  ]
+}
