@@ -16,8 +16,6 @@ namespace Engine {
    */
 	class Component {
 	public:
-		std::vector<std::string> RequireComponent; /*!< Liste des composant requis si il a des dependances*/
-		std::map<std::string, std::any> ValueToChange; /*!< Valeur a changer sur les variables du component au prochain update du gameloop */
 		std::string C_Name; /*!< Nom du component*/
 	   /*!
 		*  \brief Constructeur vide de Component
