@@ -1,0 +1,10 @@
+<map id="Engine::SceneManager" name="Engine::SceneManager">
+<area shape="rect" id="node1" title="classe representant les scenes dans le jeu" alt="" coords="232,275,389,301"/>
+<area shape="rect" id="node7" href="$d3/d48/class_engine_1_1_game_manager.html" title="Classe représentant le jeu, elle contient tout les sous&#45;systèmes et gère la gameloop." alt="" coords="141,364,296,391"/>
+<area shape="rect" id="node2" href="$d4/d73/class_engine_1_1_finite_state_machine.html" title=" " alt="" coords="219,199,402,225"/>
+<area shape="rect" id="node3" href="$da/d20/class_engine_1_1_state_machine.html" title="classe de statemachine" alt="" coords="214,95,365,121"/>
+<area shape="rect" id="node4" href="$d4/d52/class_engine_1_1_f_s_m___state.html" title="classe enfant de StateParent pour les scenes" alt="" coords="389,95,525,121"/>
+<area shape="rect" id="node5" href="$d0/d31/class_engine_1_1_state_parent.html" title=" " alt="" coords="305,5,444,32"/>
+<area shape="rect" id="node6" href="$d6/d9a/struct_engine_1_1_f_s_m___param.html" title="struct qui reprensente les parametres de l&#39;etat" alt="" coords="469,5,611,32"/>
+<area shape="rect" id="node8" href="$de/daf/class_engine_1_1_asset_manager.html" title="classe representant tout les assets disponible dans le jeux" alt="" coords="5,275,160,301"/>
+</map>

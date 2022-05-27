@@ -1,0 +1,5 @@
+<map id="Mine" name="Mine">
+<area shape="rect" id="node1" title="classe representant une entite de Mine, quand le joueur la pose dans l&#39;espace , celle&#45;ci apparait en ..." alt="" coords="49,155,100,181"/>
+<area shape="rect" id="node2" href="$d5/d5a/class_engine_1_1_entity.html" title=" " alt="" coords="23,80,127,107"/>
+<area shape="rect" id="node3" href="$d0/d31/class_engine_1_1_state_parent.html" title=" " alt="" coords="5,5,144,32"/>
+</map>

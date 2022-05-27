@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Faster than pixel:  Fichier source de Engine/src/Utility/StateMachine/FiniteStateMachine.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Faster than pixel
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search",'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_0b6ee6e7e9547e675db4add2e5de97da.html">Engine</a></li><li class="navelem"><a class="el" href="../../dir_b6dc9fbf5fd229481ae647194eb362ed.html">src</a></li><li class="navelem"><a class="el" href="../../dir_b83b933dc7ac7ffa8d1621e16ca685eb.html">Utility</a></li><li class="navelem"><a class="el" href="../../dir_53f5c585001d3e4dc8cdb0af12c8a615.html">StateMachine</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">FiniteStateMachine.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../dd/df1/_finite_state_machine_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="../../df/dcf/_state_machine_8h.html">StateMachine.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d1/db6/namespace_engine.html">Engine</a> {</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    <span class="keyword">class </span>FSM_State;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="keyword">class </span>StateMachine;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="../../d4/d73/class_engine_1_1_finite_state_machine.html">    8</a></span>    <span class="keyword">class </span><a class="code hl_class" href="../../d4/d73/class_engine_1_1_finite_state_machine.html">FiniteStateMachine</a> : <span class="keyword">public</span> <a class="code hl_class" href="../../da/d20/class_engine_1_1_state_machine.html">StateMachine</a> {</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <a class="code hl_function" href="../../d4/d73/class_engine_1_1_finite_state_machine.html#a6516fe895a0134e6be7c80f0aed9ec75">FiniteStateMachine</a>();</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="../../d4/d73/class_engine_1_1_finite_state_machine.html#ae5244fc70e71041fcb775ac1e5792236">   17</a></span>        <a class="code hl_class" href="../../d4/d52/class_engine_1_1_f_s_m___state.html">FSM_State</a>* <a class="code hl_variable" href="../../d4/d73/class_engine_1_1_finite_state_machine.html#ae5244fc70e71041fcb775ac1e5792236">Initial_States</a>; </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="../../d4/d73/class_engine_1_1_finite_state_machine.html#afa48ea2c8e510639b5dd5858a82cd289">   18</a></span>        <a class="code hl_class" href="../../d4/d52/class_engine_1_1_f_s_m___state.html">FSM_State</a>* <a class="code hl_variable" href="../../d4/d73/class_engine_1_1_finite_state_machine.html#afa48ea2c8e510639b5dd5858a82cd289">Current_States</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="../../d4/d73/class_engine_1_1_finite_state_machine.html#aa44af9da3c61339ba1b20a62a2b01a4c">   19</a></span>        std::vector&lt;FSM_State*&gt; <a class="code hl_variable" href="../../d4/d73/class_engine_1_1_finite_state_machine.html#aa44af9da3c61339ba1b20a62a2b01a4c">StatesList</a>; </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="../../d4/d73/class_engine_1_1_finite_state_machine.html#aa7da38f4fb073122a6c4f43cbb3e43c0">   20</a></span>        <span class="keywordtype">bool</span> <a class="code hl_variable" href="../../d4/d73/class_engine_1_1_finite_state_machine.html#aa7da38f4fb073122a6c4f43cbb3e43c0">Continued</a>; </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="../../d4/d73/class_engine_1_1_finite_state_machine.html#a1fd943c7c3a328cc5fa1e9b18532e25a">Add_States</a>(<a class="code hl_class" href="../../d4/d52/class_engine_1_1_f_s_m___state.html">FSM_State</a>* newstate);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="../../d4/d73/class_engine_1_1_finite_state_machine.html#a1855a0ef694ea954ee4c10827f39e8bb">Reset_FSM</a>();</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="../../d4/d73/class_engine_1_1_finite_state_machine.html#a7200274cb3c8700250812108b493493b">Transit_To</a>(<a class="code hl_class" href="../../d4/d52/class_engine_1_1_f_s_m___state.html">FSM_State</a>* nextstate);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="../../d4/d73/class_engine_1_1_finite_state_machine.html#a8d2e13ee5c5a6ad488ab5703bed526e8">Run_FSM</a>(<span class="keywordtype">bool</span> reset);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="../../d4/d73/class_engine_1_1_finite_state_machine.html#a896da5ef7d6dbffad777b9a4883ca6cb">Stop_FSM</a>();</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <a class="code hl_class" href="../../d4/d52/class_engine_1_1_f_s_m___state.html">FSM_State</a>* <a class="code hl_function" href="../../d4/d73/class_engine_1_1_finite_state_machine.html#a0b0bc8903fc5377ac623284cf69f21e1">FindByName</a>(std::string name);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    };</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>}</div>
+<div class="ttc" id="a_state_machine_8h_html"><div class="ttname"><a href="../../df/dcf/_state_machine_8h.html">StateMachine.h</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_f_s_m___state_html"><div class="ttname"><a href="../../d4/d52/class_engine_1_1_f_s_m___state.html">Engine::FSM_State</a></div><div class="ttdoc">classe enfant de StateParent pour les scenes</div><div class="ttdef"><b>Definition:</b> <a href="../../da/dea/_state_8h_source.html#l00020">State.h:21</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_finite_state_machine_html"><div class="ttname"><a href="../../d4/d73/class_engine_1_1_finite_state_machine.html">Engine::FiniteStateMachine</a></div><div class="ttdef"><b>Definition:</b> <a href="../../dd/df1/_finite_state_machine_8h_source.html#l00008">FiniteStateMachine.h:8</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_finite_state_machine_html_a0b0bc8903fc5377ac623284cf69f21e1"><div class="ttname"><a href="../../d4/d73/class_engine_1_1_finite_state_machine.html#a0b0bc8903fc5377ac623284cf69f21e1">Engine::FiniteStateMachine::FindByName</a></div><div class="ttdeci">FSM_State * FindByName(std::string name)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d07/_finite_state_machine_8cpp_source.html#l00054">FiniteStateMachine.cpp:54</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_finite_state_machine_html_a1855a0ef694ea954ee4c10827f39e8bb"><div class="ttname"><a href="../../d4/d73/class_engine_1_1_finite_state_machine.html#a1855a0ef694ea954ee4c10827f39e8bb">Engine::FiniteStateMachine::Reset_FSM</a></div><div class="ttdeci">void Reset_FSM()</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d07/_finite_state_machine_8cpp_source.html#l00013">FiniteStateMachine.cpp:13</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_finite_state_machine_html_a1fd943c7c3a328cc5fa1e9b18532e25a"><div class="ttname"><a href="../../d4/d73/class_engine_1_1_finite_state_machine.html#a1fd943c7c3a328cc5fa1e9b18532e25a">Engine::FiniteStateMachine::Add_States</a></div><div class="ttdeci">void Add_States(FSM_State *newstate)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d07/_finite_state_machine_8cpp_source.html#l00008">FiniteStateMachine.cpp:8</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_finite_state_machine_html_a6516fe895a0134e6be7c80f0aed9ec75"><div class="ttname"><a href="../../d4/d73/class_engine_1_1_finite_state_machine.html#a6516fe895a0134e6be7c80f0aed9ec75">Engine::FiniteStateMachine::FiniteStateMachine</a></div><div class="ttdeci">FiniteStateMachine()</div><div class="ttdoc">constructeur</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d07/_finite_state_machine_8cpp_source.html#l00004">FiniteStateMachine.cpp:4</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_finite_state_machine_html_a7200274cb3c8700250812108b493493b"><div class="ttname"><a href="../../d4/d73/class_engine_1_1_finite_state_machine.html#a7200274cb3c8700250812108b493493b">Engine::FiniteStateMachine::Transit_To</a></div><div class="ttdeci">void Transit_To(FSM_State *nextstate)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d07/_finite_state_machine_8cpp_source.html#l00021">FiniteStateMachine.cpp:21</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_finite_state_machine_html_a896da5ef7d6dbffad777b9a4883ca6cb"><div class="ttname"><a href="../../d4/d73/class_engine_1_1_finite_state_machine.html#a896da5ef7d6dbffad777b9a4883ca6cb">Engine::FiniteStateMachine::Stop_FSM</a></div><div class="ttdeci">void Stop_FSM()</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d07/_finite_state_machine_8cpp_source.html#l00049">FiniteStateMachine.cpp:49</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_finite_state_machine_html_a8d2e13ee5c5a6ad488ab5703bed526e8"><div class="ttname"><a href="../../d4/d73/class_engine_1_1_finite_state_machine.html#a8d2e13ee5c5a6ad488ab5703bed526e8">Engine::FiniteStateMachine::Run_FSM</a></div><div class="ttdeci">void Run_FSM(bool reset)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d07/_finite_state_machine_8cpp_source.html#l00028">FiniteStateMachine.cpp:28</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_finite_state_machine_html_aa44af9da3c61339ba1b20a62a2b01a4c"><div class="ttname"><a href="../../d4/d73/class_engine_1_1_finite_state_machine.html#aa44af9da3c61339ba1b20a62a2b01a4c">Engine::FiniteStateMachine::StatesList</a></div><div class="ttdeci">std::vector&lt; FSM_State * &gt; StatesList</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/df1/_finite_state_machine_8h_source.html#l00019">FiniteStateMachine.h:19</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_finite_state_machine_html_aa7da38f4fb073122a6c4f43cbb3e43c0"><div class="ttname"><a href="../../d4/d73/class_engine_1_1_finite_state_machine.html#aa7da38f4fb073122a6c4f43cbb3e43c0">Engine::FiniteStateMachine::Continued</a></div><div class="ttdeci">bool Continued</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/df1/_finite_state_machine_8h_source.html#l00020">FiniteStateMachine.h:20</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_finite_state_machine_html_ae5244fc70e71041fcb775ac1e5792236"><div class="ttname"><a href="../../d4/d73/class_engine_1_1_finite_state_machine.html#ae5244fc70e71041fcb775ac1e5792236">Engine::FiniteStateMachine::Initial_States</a></div><div class="ttdeci">FSM_State * Initial_States</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/df1/_finite_state_machine_8h_source.html#l00017">FiniteStateMachine.h:17</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_finite_state_machine_html_afa48ea2c8e510639b5dd5858a82cd289"><div class="ttname"><a href="../../d4/d73/class_engine_1_1_finite_state_machine.html#afa48ea2c8e510639b5dd5858a82cd289">Engine::FiniteStateMachine::Current_States</a></div><div class="ttdeci">FSM_State * Current_States</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/df1/_finite_state_machine_8h_source.html#l00018">FiniteStateMachine.h:18</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_state_machine_html"><div class="ttname"><a href="../../da/d20/class_engine_1_1_state_machine.html">Engine::StateMachine</a></div><div class="ttdoc">classe de statemachine</div><div class="ttdef"><b>Definition:</b> <a href="../../df/dcf/_state_machine_8h_source.html#l00010">StateMachine.h:10</a></div></div>
+<div class="ttc" id="anamespace_engine_html"><div class="ttname"><a href="../../d1/db6/namespace_engine.html">Engine</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d6/dca/_blank_component_8h_source.html#l00003">BlankComponent.h:3</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

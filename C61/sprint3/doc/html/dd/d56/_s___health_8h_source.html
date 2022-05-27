@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Faster than pixel:  Fichier source de FasterThanPixels/src/ECS/System/S_Health.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Faster than pixel
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search",'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_02c03db38a580fded92fda78cff56987.html">FasterThanPixels</a></li><li class="navelem"><a class="el" href="../../dir_6a8e090ea90646710d8a5b1ef0bd2e56.html">src</a></li><li class="navelem"><a class="el" href="../../dir_12248881cfc1cf333d47714dbabf3275.html">ECS</a></li><li class="navelem"><a class="el" href="../../dir_338013b8a04221cc6c6d22dabfa9606e.html">System</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">S_Health.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../dd/d56/_s___health_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="../../de/dcf/_engine_8h.html">Engine.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="../../dd/db7/class_s___health.html">    7</a></span><span class="keyword">class </span><a class="code hl_class" href="../../dd/db7/class_s___health.html">S_Health</a> : <span class="keyword">public</span> <a class="code hl_class" href="../../d5/de9/class_engine_1_1_system.html">Engine::System</a> {</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../dd/db7/class_s___health.html#ab19deda5a5724c7dcb0f95f225103b7d">DoDamage</a>(<span class="keywordtype">int</span> amount, <a class="code hl_class" href="../../d5/d5a/class_engine_1_1_entity.html">Engine::Entity</a>* target);</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="../../dd/db7/class_s___health.html#a44ece918cb41db386d5bf990bf7c43fa">GetHealth</a>(<a class="code hl_class" href="../../d5/d5a/class_engine_1_1_entity.html">Engine::Entity</a>* target);</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../dd/db7/class_s___health.html#ad5b7218ef76078e7992b197ec28437c3">Repair</a>(<span class="keywordtype">int</span> amout, <a class="code hl_class" href="../../d5/d5a/class_engine_1_1_entity.html">Engine::Entity</a>* target);</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="../../dd/db7/class_s___health.html#a70065a5b0f2bf6da53781c39bf7e6b2a">IsAlive</a>(<a class="code hl_class" href="../../d5/d5a/class_engine_1_1_entity.html">Engine::Entity</a>* target);</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../dd/db7/class_s___health.html#a200f92b6704898e142e368880f85fc1c">RunSystem</a>(<span class="keywordtype">float</span> dt) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <a class="code hl_function" href="../../dd/db7/class_s___health.html#a7c783ba4424e5d135be7cbd1d79f4d47">S_Health</a>();</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>};</div>
+<div class="ttc" id="a_engine_8h_html"><div class="ttname"><a href="../../de/dcf/_engine_8h.html">Engine.h</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_entity_html"><div class="ttname"><a href="../../d5/d5a/class_engine_1_1_entity.html">Engine::Entity</a></div><div class="ttdef"><b>Definition:</b> <a href="../../db/d3a/_entity_8h_source.html#l00018">Entity.h:18</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_system_html"><div class="ttname"><a href="../../d5/de9/class_engine_1_1_system.html">Engine::System</a></div><div class="ttdoc">classe representant chaque Systeme qui sont lie au component actif</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d78/_system_8h_source.html#l00010">System.h:11</a></div></div>
+<div class="ttc" id="aclass_s___health_html"><div class="ttname"><a href="../../dd/db7/class_s___health.html">S_Health</a></div><div class="ttdoc">classe systeme pour le component Health, il permait de changer la vie a des entite et checker si il s...</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d56/_s___health_8h_source.html#l00007">S_Health.h:7</a></div></div>
+<div class="ttc" id="aclass_s___health_html_a200f92b6704898e142e368880f85fc1c"><div class="ttname"><a href="../../dd/db7/class_s___health.html#a200f92b6704898e142e368880f85fc1c">S_Health::RunSystem</a></div><div class="ttdeci">void RunSystem(float dt) override</div><div class="ttdoc">Run les entites.</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d52/_s___health_8cpp_source.html#l00043">S_Health.cpp:43</a></div></div>
+<div class="ttc" id="aclass_s___health_html_a44ece918cb41db386d5bf990bf7c43fa"><div class="ttname"><a href="../../dd/db7/class_s___health.html#a44ece918cb41db386d5bf990bf7c43fa">S_Health::GetHealth</a></div><div class="ttdeci">int GetHealth(Engine::Entity *target)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d52/_s___health_8cpp_source.html#l00013">S_Health.cpp:13</a></div></div>
+<div class="ttc" id="aclass_s___health_html_a70065a5b0f2bf6da53781c39bf7e6b2a"><div class="ttname"><a href="../../dd/db7/class_s___health.html#a70065a5b0f2bf6da53781c39bf7e6b2a">S_Health::IsAlive</a></div><div class="ttdeci">bool IsAlive(Engine::Entity *target)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d52/_s___health_8cpp_source.html#l00031">S_Health.cpp:31</a></div></div>
+<div class="ttc" id="aclass_s___health_html_a7c783ba4424e5d135be7cbd1d79f4d47"><div class="ttname"><a href="../../dd/db7/class_s___health.html#a7c783ba4424e5d135be7cbd1d79f4d47">S_Health::S_Health</a></div><div class="ttdeci">S_Health()</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d52/_s___health_8cpp_source.html#l00055">S_Health.cpp:55</a></div></div>
+<div class="ttc" id="aclass_s___health_html_ab19deda5a5724c7dcb0f95f225103b7d"><div class="ttname"><a href="../../dd/db7/class_s___health.html#ab19deda5a5724c7dcb0f95f225103b7d">S_Health::DoDamage</a></div><div class="ttdeci">void DoDamage(int amount, Engine::Entity *target)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d52/_s___health_8cpp_source.html#l00004">S_Health.cpp:4</a></div></div>
+<div class="ttc" id="aclass_s___health_html_ad5b7218ef76078e7992b197ec28437c3"><div class="ttname"><a href="../../dd/db7/class_s___health.html#ad5b7218ef76078e7992b197ec28437c3">S_Health::Repair</a></div><div class="ttdeci">void Repair(int amout, Engine::Entity *target)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d52/_s___health_8cpp_source.html#l00023">S_Health.cpp:23</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

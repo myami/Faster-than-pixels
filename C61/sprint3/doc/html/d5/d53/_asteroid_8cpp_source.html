@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Faster than pixel:  Fichier source de FasterThanPixels/src/ECS/Entity/Asteroid.cpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Faster than pixel
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search",'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_02c03db38a580fded92fda78cff56987.html">FasterThanPixels</a></li><li class="navelem"><a class="el" href="../../dir_6a8e090ea90646710d8a5b1ef0bd2e56.html">src</a></li><li class="navelem"><a class="el" href="../../dir_12248881cfc1cf333d47714dbabf3275.html">ECS</a></li><li class="navelem"><a class="el" href="../../dir_a39d40e897838c04341540f8bb969fc4.html">Entity</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">Asteroid.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d5/d53/_asteroid_8cpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="../../d2/dcd/_asteroid_8h.html">Asteroid.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;../Components/C_Static_Render.h&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;../Components/C_Static_Collider_Sphere.h&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="../../de/dcf/_engine_8h.html">Engine.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;../../Scene/Game.h&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="../../db/dad/class_asteroid.html#a2b6f754c8b8961433bd02d24d5d450d2">    7</a></span><a class="code hl_function" href="../../db/dad/class_asteroid.html#a603c2eb87a4ed26c5b3fb06e953d611c">Asteroid::Asteroid</a>(<a class="code hl_class" href="../../d4/dd2/class_engine_1_1_scene.html">Engine::Scene</a>* sc) : <a class="code hl_namespace" href="../../d1/db6/namespace_engine.html">Engine</a>::Entity(sc, <span class="stringliteral">&quot;Asteroid&quot;</span>)</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>}</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="../../db/dad/class_asteroid.html#ad533b82b433a4b8582e03287f9b71d34">   11</a></span><a class="code hl_function" href="../../db/dad/class_asteroid.html#a603c2eb87a4ed26c5b3fb06e953d611c">Asteroid::Asteroid</a>(<a class="code hl_class" href="../../d4/dd2/class_engine_1_1_scene.html">Engine::Scene</a>* sc, <span class="keywordtype">int</span> <span class="keywordtype">id</span>) : <a class="code hl_namespace" href="../../d1/db6/namespace_engine.html">Engine</a>::Entity(sc, <span class="stringliteral">&quot;Asteroid&quot;</span>, id)</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>}</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="../../db/dad/class_asteroid.html#aaefe46d8a71e6613d371dd00b5544da6">   15</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../db/dad/class_asteroid.html#aaefe46d8a71e6613d371dd00b5544da6">Asteroid::Begin_Play</a>()</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <a class="code hl_function" href="../../d5/d5a/class_engine_1_1_entity.html#a1826c6e97168099c64dda7b780f792e5">AddComponent</a>(<span class="keyword">new</span> <a class="code hl_class" href="../../d6/d19/class_c___static___render.html">C_Static_Render</a>());</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <a class="code hl_function" href="../../d5/d5a/class_engine_1_1_entity.html#a1826c6e97168099c64dda7b780f792e5">AddComponent</a>(<span class="keyword">new</span> <a class="code hl_class" href="../../d1/d5b/class_c___static___collider___sphere.html">C_Static_Collider_Sphere</a>());</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <a class="code hl_class" href="../../d6/d19/class_c___static___render.html">C_Static_Render</a>* AsteroidRender = <span class="keyword">dynamic_cast&lt;</span><a class="code hl_class" href="../../d6/d19/class_c___static___render.html">C_Static_Render</a>*<span class="keyword">&gt;</span>(<a class="code hl_function" href="../../d5/d5a/class_engine_1_1_entity.html#a4e0d8d2e9351105ec3c2b5890d6eb8a6">GetComponent</a>(<span class="stringliteral">&quot;Render&quot;</span>));</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_class" href="../../dd/d1f/class_game.html">Game</a>* Scene = <span class="keyword">dynamic_cast&lt;</span><a class="code hl_class" href="../../dd/d1f/class_game.html">Game</a>*<span class="keyword">&gt;</span>(<a class="code hl_variable" href="../../d5/d5a/class_engine_1_1_entity.html#aed9008cc908806a0a37c6b6e0ba5bb59">CurrentScene</a>);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    srand(<a class="code hl_variable" href="../../d5/d5a/class_engine_1_1_entity.html#a26c782e8000da7a9be1bf0c65b4f580c">E_Id</a>);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordtype">int</span> randomasteroid = rand() % Scene-&gt;<a class="code hl_variable" href="../../dd/d1f/class_game.html#aeed4d2457b88d539d3024c8fc9682b15">AvailableAsteroid</a>.size() + 0; <span class="comment">// selection texture</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordtype">float</span> randomx = rand() % (int)Scene-&gt;<a class="code hl_variable" href="../../dd/d1f/class_game.html#aaf7cd2ee3cba1e735ebc6278c008419a">MapSize</a>.x + -Scene-&gt;<a class="code hl_variable" href="../../dd/d1f/class_game.html#aaf7cd2ee3cba1e735ebc6278c008419a">MapSize</a>.x;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordtype">float</span> randomy = rand() % (int)Scene-&gt;<a class="code hl_variable" href="../../dd/d1f/class_game.html#aaf7cd2ee3cba1e735ebc6278c008419a">MapSize</a>.y + -Scene-&gt;<a class="code hl_variable" href="../../dd/d1f/class_game.html#aaf7cd2ee3cba1e735ebc6278c008419a">MapSize</a>.y;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordtype">float</span> randomscale = rand() % 1 + 0.3;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    AsteroidRender-&gt;<a class="code hl_variable" href="../../d6/d19/class_c___static___render.html#ae1b201530d818221331965edff6cf2ab">Sprite</a>.setTexture(<a class="code hl_variable" href="../../d5/d5a/class_engine_1_1_entity.html#aed9008cc908806a0a37c6b6e0ba5bb59">CurrentScene</a>-&gt;<a class="code hl_variable" href="../../d4/dd2/class_engine_1_1_scene.html#aa3c2d527b6c64f070bc881e4c52e3095">_SceneManager</a>-&gt;<a class="code hl_variable" href="../../dc/d9b/class_engine_1_1_scene_manager.html#a5342ec70f5a85de4b496d2f6a6488564">_GameManager</a>-&gt;<a class="code hl_variable" href="../../d3/d48/class_engine_1_1_game_manager.html#ac189eb1374019a3ea79d2a62a6eae9a8">G_AssetManager</a>-&gt;<a class="code hl_function" href="../../de/daf/class_engine_1_1_asset_manager.html#a1535189ff9495734d8e0d7e8b43ece09">GetTexture</a>(Scene-&gt;<a class="code hl_variable" href="../../dd/d1f/class_game.html#aeed4d2457b88d539d3024c8fc9682b15">AvailableAsteroid</a>[randomasteroid]));</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    AsteroidRender-&gt;<a class="code hl_variable" href="../../d6/d19/class_c___static___render.html#ae1b201530d818221331965edff6cf2ab">Sprite</a>.setOrigin(AsteroidRender-&gt;<a class="code hl_variable" href="../../d6/d19/class_c___static___render.html#ae1b201530d818221331965edff6cf2ab">Sprite</a>.getGlobalBounds().width / 2.f, AsteroidRender-&gt;<a class="code hl_variable" href="../../d6/d19/class_c___static___render.html#ae1b201530d818221331965edff6cf2ab">Sprite</a>.getGlobalBounds().height / 2.f);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    AsteroidRender-&gt;<a class="code hl_variable" href="../../d6/d19/class_c___static___render.html#ae1b201530d818221331965edff6cf2ab">Sprite</a>.setScale(sf::Vector2f(randomscale, randomscale));</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    AsteroidRender-&gt;<a class="code hl_variable" href="../../d6/d19/class_c___static___render.html#ae1b201530d818221331965edff6cf2ab">Sprite</a>.setPosition(<a class="code hl_variable" href="../../d5/d5a/class_engine_1_1_entity.html#aed9008cc908806a0a37c6b6e0ba5bb59">CurrentScene</a>-&gt;<a class="code hl_variable" href="../../d4/dd2/class_engine_1_1_scene.html#aa3c2d527b6c64f070bc881e4c52e3095">_SceneManager</a>-&gt;<a class="code hl_variable" href="../../dc/d9b/class_engine_1_1_scene_manager.html#a5342ec70f5a85de4b496d2f6a6488564">_GameManager</a>-&gt;<a class="code hl_variable" href="../../d3/d48/class_engine_1_1_game_manager.html#af95137ac6fa9c41ca407503338431fa8">View</a>.getCenter());</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    AsteroidRender-&gt;<a class="code hl_variable" href="../../d6/d19/class_c___static___render.html#ae1b201530d818221331965edff6cf2ab">Sprite</a>.move(sf::Vector2f(randomx, randomy));</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>}</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="../../db/dad/class_asteroid.html#a9895321a9a2b004dc43c1b3c033ffbfa">   34</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../db/dad/class_asteroid.html#a9895321a9a2b004dc43c1b3c033ffbfa">Asteroid::Tick</a>()</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>{</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>}</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="../../db/dad/class_asteroid.html#a4bdc50809e1fff25bb25c20fbe0323dc">   38</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../db/dad/class_asteroid.html#a4bdc50809e1fff25bb25c20fbe0323dc">Asteroid::End_Play</a>()</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>{</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>}</div>
+<div class="ttc" id="a_asteroid_8h_html"><div class="ttname"><a href="../../d2/dcd/_asteroid_8h.html">Asteroid.h</a></div></div>
+<div class="ttc" id="a_engine_8h_html"><div class="ttname"><a href="../../de/dcf/_engine_8h.html">Engine.h</a></div></div>
+<div class="ttc" id="aclass_asteroid_html_a4bdc50809e1fff25bb25c20fbe0323dc"><div class="ttname"><a href="../../db/dad/class_asteroid.html#a4bdc50809e1fff25bb25c20fbe0323dc">Asteroid::End_Play</a></div><div class="ttdeci">void End_Play() override</div><div class="ttdoc">Appeler a la fin de sont utilisation.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d53/_asteroid_8cpp_source.html#l00038">Asteroid.cpp:38</a></div></div>
+<div class="ttc" id="aclass_asteroid_html_a603c2eb87a4ed26c5b3fb06e953d611c"><div class="ttname"><a href="../../db/dad/class_asteroid.html#a603c2eb87a4ed26c5b3fb06e953d611c">Asteroid::Asteroid</a></div><div class="ttdeci">Asteroid()</div></div>
+<div class="ttc" id="aclass_asteroid_html_a9895321a9a2b004dc43c1b3c033ffbfa"><div class="ttname"><a href="../../db/dad/class_asteroid.html#a9895321a9a2b004dc43c1b3c033ffbfa">Asteroid::Tick</a></div><div class="ttdeci">void Tick() override</div><div class="ttdoc">Appeler a chaque tick dans la gameloop.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d53/_asteroid_8cpp_source.html#l00034">Asteroid.cpp:34</a></div></div>
+<div class="ttc" id="aclass_asteroid_html_aaefe46d8a71e6613d371dd00b5544da6"><div class="ttname"><a href="../../db/dad/class_asteroid.html#aaefe46d8a71e6613d371dd00b5544da6">Asteroid::Begin_Play</a></div><div class="ttdeci">void Begin_Play() override</div><div class="ttdoc">Appeler quand l'entite commence a etre utiliser.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d53/_asteroid_8cpp_source.html#l00015">Asteroid.cpp:15</a></div></div>
+<div class="ttc" id="aclass_c___static___collider___sphere_html"><div class="ttname"><a href="../../d1/d5b/class_c___static___collider___sphere.html">C_Static_Collider_Sphere</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d16/_c___static___collider___sphere_8h_source.html#l00003">C_Static_Collider_Sphere.h:3</a></div></div>
+<div class="ttc" id="aclass_c___static___render_html"><div class="ttname"><a href="../../d6/d19/class_c___static___render.html">C_Static_Render</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d54/_c___static___render_8h_source.html#l00003">C_Static_Render.h:3</a></div></div>
+<div class="ttc" id="aclass_c___static___render_html_ae1b201530d818221331965edff6cf2ab"><div class="ttname"><a href="../../d6/d19/class_c___static___render.html#ae1b201530d818221331965edff6cf2ab">C_Static_Render::Sprite</a></div><div class="ttdeci">sf::Sprite Sprite</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d54/_c___static___render_8h_source.html#l00006">C_Static_Render.h:6</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_asset_manager_html_a1535189ff9495734d8e0d7e8b43ece09"><div class="ttname"><a href="../../de/daf/class_engine_1_1_asset_manager.html#a1535189ff9495734d8e0d7e8b43ece09">Engine::AssetManager::GetTexture</a></div><div class="ttdeci">sf::Texture &amp; GetTexture(std::string name)</div><div class="ttdoc">Returne une texture?</div><div class="ttdef"><b>Definition:</b> <a href="../../df/da4/_asset_manager_8cpp_source.html#l00038">AssetManager.cpp:38</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_entity_html_a1826c6e97168099c64dda7b780f792e5"><div class="ttname"><a href="../../d5/d5a/class_engine_1_1_entity.html#a1826c6e97168099c64dda7b780f792e5">Engine::Entity::AddComponent</a></div><div class="ttdeci">void AddComponent(Engine::Component *Component)</div><div class="ttdoc">Ajoute un component.</div><div class="ttdef"><b>Definition:</b> <a href="../../de/dfc/_entity_8cpp_source.html#l00057">Entity.cpp:57</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_entity_html_a26c782e8000da7a9be1bf0c65b4f580c"><div class="ttname"><a href="../../d5/d5a/class_engine_1_1_entity.html#a26c782e8000da7a9be1bf0c65b4f580c">Engine::Entity::E_Id</a></div><div class="ttdeci">int E_Id</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d3a/_entity_8h_source.html#l00054">Entity.h:54</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_entity_html_a4e0d8d2e9351105ec3c2b5890d6eb8a6"><div class="ttname"><a href="../../d5/d5a/class_engine_1_1_entity.html#a4e0d8d2e9351105ec3c2b5890d6eb8a6">Engine::Entity::GetComponent</a></div><div class="ttdeci">Engine::Component * GetComponent(std::string name)</div><div class="ttdoc">Return un component.</div><div class="ttdef"><b>Definition:</b> <a href="../../de/dfc/_entity_8cpp_source.html#l00047">Entity.cpp:47</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_entity_html_aed9008cc908806a0a37c6b6e0ba5bb59"><div class="ttname"><a href="../../d5/d5a/class_engine_1_1_entity.html#aed9008cc908806a0a37c6b6e0ba5bb59">Engine::Entity::CurrentScene</a></div><div class="ttdeci">Scene * CurrentScene</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d3a/_entity_8h_source.html#l00058">Entity.h:58</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_game_manager_html_ac189eb1374019a3ea79d2a62a6eae9a8"><div class="ttname"><a href="../../d3/d48/class_engine_1_1_game_manager.html#ac189eb1374019a3ea79d2a62a6eae9a8">Engine::GameManager::G_AssetManager</a></div><div class="ttdeci">AssetManager * G_AssetManager</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d96/_game_manager_8h_source.html#l00024">GameManager.h:24</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_game_manager_html_af95137ac6fa9c41ca407503338431fa8"><div class="ttname"><a href="../../d3/d48/class_engine_1_1_game_manager.html#af95137ac6fa9c41ca407503338431fa8">Engine::GameManager::View</a></div><div class="ttdeci">sf::View View</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d96/_game_manager_8h_source.html#l00027">GameManager.h:27</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_scene_html"><div class="ttname"><a href="../../d4/dd2/class_engine_1_1_scene.html">Engine::Scene</a></div><div class="ttdoc">classe qui le fonctionnement d'une sc�ne.</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d56/_scene_8h_source.html#l00013">Scene.h:13</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_scene_html_aa3c2d527b6c64f070bc881e4c52e3095"><div class="ttname"><a href="../../d4/dd2/class_engine_1_1_scene.html#aa3c2d527b6c64f070bc881e4c52e3095">Engine::Scene::_SceneManager</a></div><div class="ttdeci">SceneManager * _SceneManager</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d56/_scene_8h_source.html#l00019">Scene.h:19</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_scene_manager_html_a5342ec70f5a85de4b496d2f6a6488564"><div class="ttname"><a href="../../dc/d9b/class_engine_1_1_scene_manager.html#a5342ec70f5a85de4b496d2f6a6488564">Engine::SceneManager::_GameManager</a></div><div class="ttdeci">Engine::GameManager * _GameManager</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/da9/_scene_manager_8h_source.html#l00042">SceneManager.h:42</a></div></div>
+<div class="ttc" id="aclass_game_html"><div class="ttname"><a href="../../dd/d1f/class_game.html">Game</a></div><div class="ttdoc">classe enfant de Scene, represente le niveau ou le joueur joue</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dcd/_game_8h_source.html#l00016">Game.h:16</a></div></div>
+<div class="ttc" id="aclass_game_html_aaf7cd2ee3cba1e735ebc6278c008419a"><div class="ttname"><a href="../../dd/d1f/class_game.html#aaf7cd2ee3cba1e735ebc6278c008419a">Game::MapSize</a></div><div class="ttdeci">sf::Vector2f MapSize</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dcd/_game_8h_source.html#l00034">Game.h:34</a></div></div>
+<div class="ttc" id="aclass_game_html_aeed4d2457b88d539d3024c8fc9682b15"><div class="ttname"><a href="../../dd/d1f/class_game.html#aeed4d2457b88d539d3024c8fc9682b15">Game::AvailableAsteroid</a></div><div class="ttdeci">std::vector&lt; std::string &gt; AvailableAsteroid</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dcd/_game_8h_source.html#l00049">Game.h:49</a></div></div>
+<div class="ttc" id="anamespace_engine_html"><div class="ttname"><a href="../../d1/db6/namespace_engine.html">Engine</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d6/dca/_blank_component_8h_source.html#l00003">BlankComponent.h:3</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Faster than pixel:  Fichier source de FasterThanPixels/src/Scene/EndGame.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Faster than pixel
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search",'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_02c03db38a580fded92fda78cff56987.html">FasterThanPixels</a></li><li class="navelem"><a class="el" href="../../dir_6a8e090ea90646710d8a5b1ef0bd2e56.html">src</a></li><li class="navelem"><a class="el" href="../../dir_ffda3f02ce82275ea6c5d51703009944.html">Scene</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">EndGame.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../dc/dc7/_end_game_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="../../de/dcf/_engine_8h.html">Engine.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">class </span><a class="code hl_class" href="../../d1/d5b/class_f_t_p___scene_manager.html">FTP_SceneManager</a>;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="../../d7/d98/class_end_game.html">    9</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d7/d98/class_end_game.html">EndGame</a> : <span class="keyword">public</span> <a class="code hl_class" href="../../da/d1a/class_engine_1_1_blank_scene.html">Engine::BlankScene</a> {</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="../../d7/d98/class_end_game.html#a110f1e7b8e8bf61857bec940a947e885">   11</a></span>    <a class="code hl_function" href="../../d7/d98/class_end_game.html#a110f1e7b8e8bf61857bec940a947e885">EndGame</a>(std::string name, <a class="code hl_class" href="../../d1/d5b/class_f_t_p___scene_manager.html">FTP_SceneManager</a>* refs);</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="../../d7/d98/class_end_game.html#abd37d12997ffb4b6b345b51bf523331a">   13</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../d7/d98/class_end_game.html#abd37d12997ffb4b6b345b51bf523331a">Tick</a>() <span class="keyword">override</span>; <span class="comment">// debut de frame mais a jour tout se qu il doit mettre a jour 1 /4</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="../../d7/d98/class_end_game.html#ae6e9ec7287b66359964107fd5873f91c">   14</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../d7/d98/class_end_game.html#ae6e9ec7287b66359964107fd5873f91c">S_Render</a>() <span class="keyword">override</span>; <span class="comment">// fin de frame affiche le resultat de la simulation 4/4</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="../../d7/d98/class_end_game.html#aadd30168329dbb4c763ad3617df13a2e">   15</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../d7/d98/class_end_game.html#aadd30168329dbb4c763ad3617df13a2e">S_ActionTrigger</a>(std::string ActionName) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="../../d7/d98/class_end_game.html#a68b74f9b3badf0a744b6f6bb619082a7">   16</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../d7/d98/class_end_game.html#a68b74f9b3badf0a744b6f6bb619082a7">Begin_Play</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="../../d7/d98/class_end_game.html#a647429bf831d04028c8fbf5e497dde60">   17</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../d7/d98/class_end_game.html#a647429bf831d04028c8fbf5e497dde60">S_Input_Mouse</a>(sf::Event event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="../../d7/d98/class_end_game.html#ace38853ac4fbd66182d700e15a5f3cd0">   18</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../d7/d98/class_end_game.html#ace38853ac4fbd66182d700e15a5f3cd0">S_Input_Text</a>(sf::Event event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>};</div>
+<div class="ttc" id="a_engine_8h_html"><div class="ttname"><a href="../../de/dcf/_engine_8h.html">Engine.h</a></div></div>
+<div class="ttc" id="aclass_end_game_html"><div class="ttname"><a href="../../d7/d98/class_end_game.html">EndGame</a></div><div class="ttdoc">classe enfant de Scene, represente le niveau ou le joueur vois les infos de fin de partie</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/dc7/_end_game_8h_source.html#l00009">EndGame.h:9</a></div></div>
+<div class="ttc" id="aclass_end_game_html_a110f1e7b8e8bf61857bec940a947e885"><div class="ttname"><a href="../../d7/d98/class_end_game.html#a110f1e7b8e8bf61857bec940a947e885">EndGame::EndGame</a></div><div class="ttdeci">EndGame(std::string name, FTP_SceneManager *refs)</div></div>
+<div class="ttc" id="aclass_end_game_html_a647429bf831d04028c8fbf5e497dde60"><div class="ttname"><a href="../../d7/d98/class_end_game.html#a647429bf831d04028c8fbf5e497dde60">EndGame::S_Input_Mouse</a></div><div class="ttdeci">void S_Input_Mouse(sf::Event event) override</div></div>
+<div class="ttc" id="aclass_end_game_html_a68b74f9b3badf0a744b6f6bb619082a7"><div class="ttname"><a href="../../d7/d98/class_end_game.html#a68b74f9b3badf0a744b6f6bb619082a7">EndGame::Begin_Play</a></div><div class="ttdeci">void Begin_Play() override</div></div>
+<div class="ttc" id="aclass_end_game_html_aadd30168329dbb4c763ad3617df13a2e"><div class="ttname"><a href="../../d7/d98/class_end_game.html#aadd30168329dbb4c763ad3617df13a2e">EndGame::S_ActionTrigger</a></div><div class="ttdeci">void S_ActionTrigger(std::string ActionName) override</div></div>
+<div class="ttc" id="aclass_end_game_html_abd37d12997ffb4b6b345b51bf523331a"><div class="ttname"><a href="../../d7/d98/class_end_game.html#abd37d12997ffb4b6b345b51bf523331a">EndGame::Tick</a></div><div class="ttdeci">void Tick() override</div></div>
+<div class="ttc" id="aclass_end_game_html_ace38853ac4fbd66182d700e15a5f3cd0"><div class="ttname"><a href="../../d7/d98/class_end_game.html#ace38853ac4fbd66182d700e15a5f3cd0">EndGame::S_Input_Text</a></div><div class="ttdeci">void S_Input_Text(sf::Event event) override</div></div>
+<div class="ttc" id="aclass_end_game_html_ae6e9ec7287b66359964107fd5873f91c"><div class="ttname"><a href="../../d7/d98/class_end_game.html#ae6e9ec7287b66359964107fd5873f91c">EndGame::S_Render</a></div><div class="ttdeci">void S_Render() override</div></div>
+<div class="ttc" id="aclass_engine_1_1_blank_scene_html"><div class="ttname"><a href="../../da/d1a/class_engine_1_1_blank_scene.html">Engine::BlankScene</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d63/_blank_scene_8h_source.html#l00010">BlankScene.h:10</a></div></div>
+<div class="ttc" id="aclass_f_t_p___scene_manager_html"><div class="ttname"><a href="../../d1/d5b/class_f_t_p___scene_manager.html">FTP_SceneManager</a></div><div class="ttdoc">classe enfant de SceneManager</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/de3/_f_t_p___scene_manager_8h_source.html#l00008">FTP_SceneManager.h:8</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

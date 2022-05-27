@@ -1,0 +1,16 @@
+<map id="Authentification" name="Authentification">
+<area shape="rect" id="node1" title="classe enfant de Scene, represente le niveau ou le joueur rentre ces infos pour se connecter au jeu" alt="" coords="546,752,657,779"/>
+<area shape="rect" id="node2" href="$da/d1a/class_engine_1_1_blank_scene.html" title=" " alt="" coords="407,619,547,645"/>
+<area shape="rect" id="node3" href="$d4/dd2/class_engine_1_1_scene.html" title="classe qui le fonctionnement d&#39;une scène." alt="" coords="424,543,531,569"/>
+<area shape="rect" id="node4" href="$d4/d52/class_engine_1_1_f_s_m___state.html" title="classe enfant de StateParent pour les scenes" alt="" coords="396,95,532,121"/>
+<area shape="rect" id="node12" href="$d4/d73/class_engine_1_1_finite_state_machine.html" title=" " alt="" coords="257,199,439,225"/>
+<area shape="rect" id="node5" href="$d0/d31/class_engine_1_1_state_parent.html" title=" " alt="" coords="312,5,451,32"/>
+<area shape="rect" id="node6" href="$d6/d9a/struct_engine_1_1_f_s_m___param.html" title="struct qui reprensente les parametres de l&#39;etat" alt="" coords="475,5,618,32"/>
+<area shape="rect" id="node7" href="$d5/d19/class_engine_1_1_entity_manager.html" title="classe representant toutes les entités de la scène." alt="" coords="143,453,297,480"/>
+<area shape="rect" id="node8" href="$da/d20/class_engine_1_1_state_machine.html" title="classe de statemachine" alt="" coords="151,95,302,121"/>
+<area shape="rect" id="node9" href="$d3/d48/class_engine_1_1_game_manager.html" title="Classe représentant le jeu, elle contient tout les sous&#45;systèmes et gère la gameloop." alt="" coords="143,364,297,391"/>
+<area shape="rect" id="node11" href="$dc/d9b/class_engine_1_1_scene_manager.html" title="classe representant les scenes dans le jeu" alt="" coords="269,275,427,301"/>
+<area shape="rect" id="node10" href="$de/daf/class_engine_1_1_asset_manager.html" title="classe representant tout les assets disponible dans le jeux" alt="" coords="43,275,197,301"/>
+<area shape="rect" id="node13" href="$d4/d77/class_button.html" title=" " alt="" coords="571,619,631,645"/>
+<area shape="rect" id="node14" href="$d4/d7b/class_input.html" title=" " alt="" coords="656,619,707,645"/>
+</map>

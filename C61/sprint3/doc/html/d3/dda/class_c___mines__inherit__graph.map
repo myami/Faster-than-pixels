@@ -1,0 +1,5 @@
+<map id="C_Mines" name="C_Mines">
+<area shape="rect" id="node1" title="classe representant le component Mines, Si l&#39;entite l&#39;a cela lui permait de pouvoir poser des mines s..." alt="" coords="53,155,127,181"/>
+<area shape="rect" id="node2" href="$d6/db1/class_engine_1_1_blank_component.html" title=" " alt="" coords="5,80,175,107"/>
+<area shape="rect" id="node3" href="$d2/d27/class_engine_1_1_component.html" title="classe representant chaque composant que l&#39;entite va avoir" alt="" coords="22,5,158,32"/>
+</map>

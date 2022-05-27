@@ -1,0 +1,10 @@
+<map id="Engine/src/ECS/Entity.h" name="Engine/src/ECS/Entity.h">
+<area shape="rect" id="node1" title="Entite qui apparait dans le jeu, il contient les composants." alt="" coords="83,5,247,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,87,77,114"/>
+<area shape="rect" id="node3" title=" " alt="" coords="83,169,139,196"/>
+<area shape="rect" id="node4" title=" " alt="" coords="163,169,210,196"/>
+<area shape="rect" id="node5" href="$dc/d20/_component_8h.html" title="Composant d une entite qui sauvegarde des variables." alt="" coords="203,87,301,114"/>
+<area shape="rect" id="node8" href="$d8/d3b/_state_parent_8h.html" title=" " alt="" coords="326,80,477,121"/>
+<area shape="rect" id="node6" title=" " alt="" coords="235,169,277,196"/>
+<area shape="rect" id="node7" title=" " alt="" coords="302,169,357,196"/>
+</map>

@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Faster than pixel:  Fichier source de FasterThanPixels/src/ECS/Components/C_Brain.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Faster than pixel
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search",'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_02c03db38a580fded92fda78cff56987.html">FasterThanPixels</a></li><li class="navelem"><a class="el" href="../../dir_6a8e090ea90646710d8a5b1ef0bd2e56.html">src</a></li><li class="navelem"><a class="el" href="../../dir_12248881cfc1cf333d47714dbabf3275.html">ECS</a></li><li class="navelem"><a class="el" href="../../dir_bfcc577207e82ed7173111081b66ca91.html">Components</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">C_Brain.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d5/dac/_c___brain_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// logique de l&#39;ia</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="../../de/dcf/_engine_8h.html">Engine.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="../../da/d06/class_c___brain.html">    8</a></span><span class="keyword">class </span><a class="code hl_class" href="../../da/d06/class_c___brain.html">C_Brain</a> : <span class="keyword">public</span> <a class="code hl_class" href="../../d6/db1/class_engine_1_1_blank_component.html">Engine::BlankComponent</a> {</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="../../da/d06/class_c___brain.html#a412b2f07f9c4581f09c452ef3a95db4c">   17</a></span>    sf::Vector2f <a class="code hl_function" href="../../da/d06/class_c___brain.html#a412b2f07f9c4581f09c452ef3a95db4c">FindEntity</a>(<a class="code hl_class" href="../../d5/d5a/class_engine_1_1_entity.html">Engine::Entity</a> entite);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="../../da/d06/class_c___brain.html#abf2ccf47f9079a673692a1395513cc14">   24</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="../../da/d06/class_c___brain.html#abf2ccf47f9079a673692a1395513cc14">ObstacleOnPath</a>();</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="../../da/d06/class_c___brain.html#a6acc2caa457e759611d5f06583d41adf">   30</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../da/d06/class_c___brain.html#a6acc2caa457e759611d5f06583d41adf">FollowPath</a>();</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="../../da/d06/class_c___brain.html#afb58d68f77f7876539e80b6a18eaf82b">   37</a></span>    sf::Vector2f <a class="code hl_function" href="../../da/d06/class_c___brain.html#afb58d68f77f7876539e80b6a18eaf82b">Wander</a>();</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="../../da/d06/class_c___brain.html#adc2483936efef73f196831ce7b66a27a">   44</a></span>    sf::Vector2f <a class="code hl_function" href="../../da/d06/class_c___brain.html#adc2483936efef73f196831ce7b66a27a">Pursuit</a>();</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="../../da/d06/class_c___brain.html#acb71d7af3920d163737f6501ec833468">   51</a></span>    sf::Vector2f <a class="code hl_function" href="../../da/d06/class_c___brain.html#acb71d7af3920d163737f6501ec833468">AvoidObstacle</a>();</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="../../da/d06/class_c___brain.html#a03b4da0c8901d26bbc5177841bf910e9">   58</a></span>    <a class="code hl_class" href="../../d5/d5a/class_engine_1_1_entity.html">Engine::Entity</a> <a class="code hl_function" href="../../da/d06/class_c___brain.html#a03b4da0c8901d26bbc5177841bf910e9">FindMostThreateningObstacle</a>();</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="../../da/d06/class_c___brain.html#a53ec3213980cab74680e8d78c651b27c">   65</a></span>    <a class="code hl_class" href="../../d5/d5a/class_engine_1_1_entity.html">Engine::Entity</a> <a class="code hl_function" href="../../da/d06/class_c___brain.html#a53ec3213980cab74680e8d78c651b27c">GetNeighboorAhead</a>();</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="../../da/d06/class_c___brain.html#a47fef53169a533c302c3361d51f9fc7f">   67</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="../../da/d06/class_c___brain.html#a47fef53169a533c302c3361d51f9fc7f">CurrentNode</a>;  </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="../../da/d06/class_c___brain.html#a56140c4139af870e424f5ef1fe6ec042">   68</a></span>    <a class="code hl_class" href="../../d3/d29/class_engine_1_1_path.html">Engine::Path</a> <a class="code hl_variable" href="../../da/d06/class_c___brain.html#a56140c4139af870e424f5ef1fe6ec042">Path</a>;  </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="../../da/d06/class_c___brain.html#a501e3034aa31665a66d7924cf5ae068e">   69</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="../../da/d06/class_c___brain.html#a501e3034aa31665a66d7924cf5ae068e">FollowLeader</a>;  </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>};</div>
+<div class="ttc" id="a_engine_8h_html"><div class="ttname"><a href="../../de/dcf/_engine_8h.html">Engine.h</a></div></div>
+<div class="ttc" id="aclass_c___brain_html"><div class="ttname"><a href="../../da/d06/class_c___brain.html">C_Brain</a></div><div class="ttdoc">classe representant le component Brain, Si l'entite l'a cela lui permait de calculer son vector de di...</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/dac/_c___brain_8h_source.html#l00008">C_Brain.h:8</a></div></div>
+<div class="ttc" id="aclass_c___brain_html_a03b4da0c8901d26bbc5177841bf910e9"><div class="ttname"><a href="../../da/d06/class_c___brain.html#a03b4da0c8901d26bbc5177841bf910e9">C_Brain::FindMostThreateningObstacle</a></div><div class="ttdeci">Engine::Entity FindMostThreateningObstacle()</div><div class="ttdoc">FindMostThreateningObstacle.</div></div>
+<div class="ttc" id="aclass_c___brain_html_a412b2f07f9c4581f09c452ef3a95db4c"><div class="ttname"><a href="../../da/d06/class_c___brain.html#a412b2f07f9c4581f09c452ef3a95db4c">C_Brain::FindEntity</a></div><div class="ttdeci">sf::Vector2f FindEntity(Engine::Entity entite)</div><div class="ttdoc">FindEntity.</div></div>
+<div class="ttc" id="aclass_c___brain_html_a47fef53169a533c302c3361d51f9fc7f"><div class="ttname"><a href="../../da/d06/class_c___brain.html#a47fef53169a533c302c3361d51f9fc7f">C_Brain::CurrentNode</a></div><div class="ttdeci">int CurrentNode</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/dac/_c___brain_8h_source.html#l00067">C_Brain.h:67</a></div></div>
+<div class="ttc" id="aclass_c___brain_html_a501e3034aa31665a66d7924cf5ae068e"><div class="ttname"><a href="../../da/d06/class_c___brain.html#a501e3034aa31665a66d7924cf5ae068e">C_Brain::FollowLeader</a></div><div class="ttdeci">bool FollowLeader</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/dac/_c___brain_8h_source.html#l00069">C_Brain.h:69</a></div></div>
+<div class="ttc" id="aclass_c___brain_html_a53ec3213980cab74680e8d78c651b27c"><div class="ttname"><a href="../../da/d06/class_c___brain.html#a53ec3213980cab74680e8d78c651b27c">C_Brain::GetNeighboorAhead</a></div><div class="ttdeci">Engine::Entity GetNeighboorAhead()</div><div class="ttdoc">GetNeighboorAhead.</div></div>
+<div class="ttc" id="aclass_c___brain_html_a56140c4139af870e424f5ef1fe6ec042"><div class="ttname"><a href="../../da/d06/class_c___brain.html#a56140c4139af870e424f5ef1fe6ec042">C_Brain::Path</a></div><div class="ttdeci">Engine::Path Path</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/dac/_c___brain_8h_source.html#l00068">C_Brain.h:68</a></div></div>
+<div class="ttc" id="aclass_c___brain_html_a6acc2caa457e759611d5f06583d41adf"><div class="ttname"><a href="../../da/d06/class_c___brain.html#a6acc2caa457e759611d5f06583d41adf">C_Brain::FollowPath</a></div><div class="ttdeci">void FollowPath()</div><div class="ttdoc">FollowPath.</div></div>
+<div class="ttc" id="aclass_c___brain_html_abf2ccf47f9079a673692a1395513cc14"><div class="ttname"><a href="../../da/d06/class_c___brain.html#abf2ccf47f9079a673692a1395513cc14">C_Brain::ObstacleOnPath</a></div><div class="ttdeci">bool ObstacleOnPath()</div><div class="ttdoc">ObstacleOnPath.</div></div>
+<div class="ttc" id="aclass_c___brain_html_acb71d7af3920d163737f6501ec833468"><div class="ttname"><a href="../../da/d06/class_c___brain.html#acb71d7af3920d163737f6501ec833468">C_Brain::AvoidObstacle</a></div><div class="ttdeci">sf::Vector2f AvoidObstacle()</div><div class="ttdoc">AvoidObstacle.</div></div>
+<div class="ttc" id="aclass_c___brain_html_adc2483936efef73f196831ce7b66a27a"><div class="ttname"><a href="../../da/d06/class_c___brain.html#adc2483936efef73f196831ce7b66a27a">C_Brain::Pursuit</a></div><div class="ttdeci">sf::Vector2f Pursuit()</div><div class="ttdoc">Pursuit.</div></div>
+<div class="ttc" id="aclass_c___brain_html_afb58d68f77f7876539e80b6a18eaf82b"><div class="ttname"><a href="../../da/d06/class_c___brain.html#afb58d68f77f7876539e80b6a18eaf82b">C_Brain::Wander</a></div><div class="ttdeci">sf::Vector2f Wander()</div><div class="ttdoc">Wander.</div></div>
+<div class="ttc" id="aclass_engine_1_1_blank_component_html"><div class="ttname"><a href="../../d6/db1/class_engine_1_1_blank_component.html">Engine::BlankComponent</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d6/dca/_blank_component_8h_source.html#l00010">BlankComponent.h:10</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_entity_html"><div class="ttname"><a href="../../d5/d5a/class_engine_1_1_entity.html">Engine::Entity</a></div><div class="ttdef"><b>Definition:</b> <a href="../../db/d3a/_entity_8h_source.html#l00018">Entity.h:18</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_path_html"><div class="ttname"><a href="../../d3/d29/class_engine_1_1_path.html">Engine::Path</a></div><div class="ttdoc">classe qui gere les chemins pour une IA par exemple</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d36/_path_8h_source.html#l00008">Path.h:8</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

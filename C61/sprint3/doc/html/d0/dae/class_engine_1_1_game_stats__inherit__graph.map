@@ -1,0 +1,4 @@
+<map id="Engine::GameStats" name="Engine::GameStats">
+<area shape="rect" id="node1" title="classe qui sauvegardes les infos de la partie en cours" alt="" coords="5,5,141,32"/>
+<area shape="rect" id="node2" href="$dc/d56/class_f_t_p___game_stats.html" title="classe enfant de GameStats" alt="" coords="14,80,133,107"/>
+</map>

@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Faster than pixel:  Fichier source de Engine/src/Utility/GUI/Input.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Faster than pixel
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search",'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_0b6ee6e7e9547e675db4add2e5de97da.html">Engine</a></li><li class="navelem"><a class="el" href="../../dir_b6dc9fbf5fd229481ae647194eb362ed.html">src</a></li><li class="navelem"><a class="el" href="../../dir_b83b933dc7ac7ffa8d1621e16ca685eb.html">Utility</a></li><li class="navelem"><a class="el" href="../../dir_73a956a3e411f1394b883dc6900985e9.html">GUI</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">Input.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d2/d94/_input_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;SFML/Graphics.hpp&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;sstream&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="../../d2/d94/_input_8h.html#a5a6b2a4537cccad5a1b8568904a5ee1e">    6</a></span><span class="preprocessor">#define DELETE_KEY 8 </span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="../../d2/d94/_input_8h.html#afba17fd121bcd7abc852f1ae1f3abb58">    7</a></span><span class="preprocessor">#define ENTER_KEY 13 </span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="../../d2/d94/_input_8h.html#a4c2609b38a3373c688d3888fd50808a6">    8</a></span><span class="preprocessor">#define ESCAPE_KEY 27 </span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="../../d4/d7b/class_input.html">    9</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d4/d7b/class_input.html">Input</a> {</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordtype">void</span> DeleteLastChar();</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <a class="code hl_function" href="../../d4/d7b/class_input.html#abae3f379d3f157cf42dc857309832dba">Input</a>();</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <a class="code hl_function" href="../../d4/d7b/class_input.html#abae3f379d3f157cf42dc857309832dba">Input</a>(<span class="keywordtype">int</span> size, <span class="keywordtype">bool</span> sel);</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="../../d4/d7b/class_input.html#ac78d44fd2533947053bb2f018dca84b6">   14</a></span>    sf::Text <a class="code hl_variable" href="../../d4/d7b/class_input.html#ac78d44fd2533947053bb2f018dca84b6">textbox</a>; </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="../../d4/d7b/class_input.html#a523d4f23140dd7c7cc0772cc16d88c35">   15</a></span>    std::ostringstream <a class="code hl_variable" href="../../d4/d7b/class_input.html#a523d4f23140dd7c7cc0772cc16d88c35">text</a>; </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="../../d4/d7b/class_input.html#a1617b540b33e3a2c91edc0b8280ab893">   16</a></span>    sf::Sprite <a class="code hl_variable" href="../../d4/d7b/class_input.html#a1617b540b33e3a2c91edc0b8280ab893">BackgroundTexture</a>; </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="../../d4/d7b/class_input.html#adb69915bdf7894631085e49a2188c16d">   17</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="../../d4/d7b/class_input.html#adb69915bdf7894631085e49a2188c16d">isSelected</a> = <span class="keyword">false</span>; </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="../../d4/d7b/class_input.html#acbf6a3105201511cbb342797b9308052">   18</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="../../d4/d7b/class_input.html#acbf6a3105201511cbb342797b9308052">hasLimit</a> = <span class="keyword">false</span>; </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="../../d4/d7b/class_input.html#ac51dec5cc21df5033838e9660b99ed1f">   19</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="../../d4/d7b/class_input.html#ac51dec5cc21df5033838e9660b99ed1f">isCrypted</a> = <span class="keyword">false</span>; </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="../../d4/d7b/class_input.html#aad0a2a5d42a67246d30cfe3d6de63be5">   20</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="../../d4/d7b/class_input.html#aad0a2a5d42a67246d30cfe3d6de63be5">limit</a>; </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../d4/d7b/class_input.html#afac0fec61ae3d1580482c23edc1d99fa">InputLogic</a>(<span class="keywordtype">int</span> chartyped);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../d4/d7b/class_input.html#afde131837e006c4d0fd888aeba726117">SetSelected</a>(<span class="keywordtype">bool</span> sel);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    std::string <a class="code hl_function" href="../../d4/d7b/class_input.html#aa1665bce44e731f8a46400bc4fd8d84c">GetText</a>();</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../d4/d7b/class_input.html#a14517f1252a4ae6e405851cab30dd232">TypedOn</a>(sf::Event event);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d4/d7b/class_input.html#a6538cb00941691931bb90011840d9a43">IsInputClicked</a>(sf::RenderWindow* render);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../d4/d7b/class_input.html#a4bf2d78548cdebe7bd08069250e48e02">SetPosition</a>(std::string <a class="code hl_variable" href="../../d4/d7b/class_input.html#a523d4f23140dd7c7cc0772cc16d88c35">text</a>, sf::Vector2f pos);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>};</div>
+<div class="ttc" id="aclass_input_html"><div class="ttname"><a href="../../d4/d7b/class_input.html">Input</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d94/_input_8h_source.html#l00009">Input.h:9</a></div></div>
+<div class="ttc" id="aclass_input_html_a14517f1252a4ae6e405851cab30dd232"><div class="ttname"><a href="../../d4/d7b/class_input.html#a14517f1252a4ae6e405851cab30dd232">Input::TypedOn</a></div><div class="ttdeci">void TypedOn(sf::Event event)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d47/_input_8cpp_source.html#l00083">Input.cpp:83</a></div></div>
+<div class="ttc" id="aclass_input_html_a1617b540b33e3a2c91edc0b8280ab893"><div class="ttname"><a href="../../d4/d7b/class_input.html#a1617b540b33e3a2c91edc0b8280ab893">Input::BackgroundTexture</a></div><div class="ttdeci">sf::Sprite BackgroundTexture</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d94/_input_8h_source.html#l00016">Input.h:16</a></div></div>
+<div class="ttc" id="aclass_input_html_a4bf2d78548cdebe7bd08069250e48e02"><div class="ttname"><a href="../../d4/d7b/class_input.html#a4bf2d78548cdebe7bd08069250e48e02">Input::SetPosition</a></div><div class="ttdeci">void SetPosition(std::string text, sf::Vector2f pos)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d47/_input_8cpp_source.html#l00119">Input.cpp:119</a></div></div>
+<div class="ttc" id="aclass_input_html_a523d4f23140dd7c7cc0772cc16d88c35"><div class="ttname"><a href="../../d4/d7b/class_input.html#a523d4f23140dd7c7cc0772cc16d88c35">Input::text</a></div><div class="ttdeci">std::ostringstream text</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d94/_input_8h_source.html#l00015">Input.h:15</a></div></div>
+<div class="ttc" id="aclass_input_html_a6538cb00941691931bb90011840d9a43"><div class="ttname"><a href="../../d4/d7b/class_input.html#a6538cb00941691931bb90011840d9a43">Input::IsInputClicked</a></div><div class="ttdeci">bool IsInputClicked(sf::RenderWindow *render)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d47/_input_8cpp_source.html#l00111">Input.cpp:111</a></div></div>
+<div class="ttc" id="aclass_input_html_aa1665bce44e731f8a46400bc4fd8d84c"><div class="ttname"><a href="../../d4/d7b/class_input.html#aa1665bce44e731f8a46400bc4fd8d84c">Input::GetText</a></div><div class="ttdeci">std::string GetText()</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d47/_input_8cpp_source.html#l00078">Input.cpp:78</a></div></div>
+<div class="ttc" id="aclass_input_html_aad0a2a5d42a67246d30cfe3d6de63be5"><div class="ttname"><a href="../../d4/d7b/class_input.html#aad0a2a5d42a67246d30cfe3d6de63be5">Input::limit</a></div><div class="ttdeci">int limit</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d94/_input_8h_source.html#l00020">Input.h:20</a></div></div>
+<div class="ttc" id="aclass_input_html_abae3f379d3f157cf42dc857309832dba"><div class="ttname"><a href="../../d4/d7b/class_input.html#abae3f379d3f157cf42dc857309832dba">Input::Input</a></div><div class="ttdeci">Input()</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d47/_input_8cpp_source.html#l00002">Input.cpp:2</a></div></div>
+<div class="ttc" id="aclass_input_html_ac51dec5cc21df5033838e9660b99ed1f"><div class="ttname"><a href="../../d4/d7b/class_input.html#ac51dec5cc21df5033838e9660b99ed1f">Input::isCrypted</a></div><div class="ttdeci">bool isCrypted</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d94/_input_8h_source.html#l00019">Input.h:19</a></div></div>
+<div class="ttc" id="aclass_input_html_ac78d44fd2533947053bb2f018dca84b6"><div class="ttname"><a href="../../d4/d7b/class_input.html#ac78d44fd2533947053bb2f018dca84b6">Input::textbox</a></div><div class="ttdeci">sf::Text textbox</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d94/_input_8h_source.html#l00014">Input.h:14</a></div></div>
+<div class="ttc" id="aclass_input_html_acbf6a3105201511cbb342797b9308052"><div class="ttname"><a href="../../d4/d7b/class_input.html#acbf6a3105201511cbb342797b9308052">Input::hasLimit</a></div><div class="ttdeci">bool hasLimit</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d94/_input_8h_source.html#l00018">Input.h:18</a></div></div>
+<div class="ttc" id="aclass_input_html_adb69915bdf7894631085e49a2188c16d"><div class="ttname"><a href="../../d4/d7b/class_input.html#adb69915bdf7894631085e49a2188c16d">Input::isSelected</a></div><div class="ttdeci">bool isSelected</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d94/_input_8h_source.html#l00017">Input.h:17</a></div></div>
+<div class="ttc" id="aclass_input_html_afac0fec61ae3d1580482c23edc1d99fa"><div class="ttname"><a href="../../d4/d7b/class_input.html#afac0fec61ae3d1580482c23edc1d99fa">Input::InputLogic</a></div><div class="ttdeci">void InputLogic(int chartyped)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d47/_input_8cpp_source.html#l00016">Input.cpp:16</a></div></div>
+<div class="ttc" id="aclass_input_html_afde131837e006c4d0fd888aeba726117"><div class="ttname"><a href="../../d4/d7b/class_input.html#afde131837e006c4d0fd888aeba726117">Input::SetSelected</a></div><div class="ttdeci">void SetSelected(bool sel)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d47/_input_8cpp_source.html#l00043">Input.cpp:43</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

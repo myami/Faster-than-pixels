@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Faster than pixel:  Fichier source de FasterThanPixels/src/Factory/FTP_GameManager.cpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Faster than pixel
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search",'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_02c03db38a580fded92fda78cff56987.html">FasterThanPixels</a></li><li class="navelem"><a class="el" href="../../dir_6a8e090ea90646710d8a5b1ef0bd2e56.html">src</a></li><li class="navelem"><a class="el" href="../../dir_7e31ac1c5c9653707e20b536d5eac1b6.html">Factory</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">FTP_GameManager.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d5/df7/_f_t_p___game_manager_8cpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="../../dd/d5c/_f_t_p___game_manager_8h.html">FTP_GameManager.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;SFML/Graphics.hpp&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="../../de/dcf/_engine_8h.html">Engine.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="../../d9/de3/_f_t_p___scene_manager_8h.html">FTP_SceneManager.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="../../dd/d03/_f_t_p___asset_manager_8h.html">FTP_AssetManager.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="../../da/d86/class_f_t_p___game_manager.html#a9994df8303b91a3d8a3082b7b979d31f">    7</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../da/d86/class_f_t_p___game_manager.html#a9994df8303b91a3d8a3082b7b979d31f">FTP_GameManager::Game_Init</a>(std::string NameOfTheGame, std::string FirstScene)</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d1/db6/namespace_engine.html#ac9a4ef6f059077db152861b36ff0b7b2">Engine::FileExists</a>(<span class="stringliteral">&quot;./settings.json&quot;</span>))</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <a class="code hl_class" href="../../db/d2b/class_settings.html">Settings</a> = <a class="code hl_function" href="../../d1/db6/namespace_engine.html#a8635be5101faabab69ad4ab7889bf107">Engine::GetInfoFromJSON</a>(<span class="stringliteral">&quot;./settings.json&quot;</span>);</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    sf::VideoMode desktop = sf::VideoMode::getFullscreenModes()[<a class="code hl_class" href="../../db/d2b/class_settings.html">Settings</a>[<span class="stringliteral">&quot;Resolution&quot;</span>]];</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d2b/class_settings.html">Settings</a>[<span class="stringliteral">&quot;FullScreen&quot;</span>])</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <a class="code hl_variable" href="../../d3/d48/class_engine_1_1_game_manager.html#a8cdd4db5102dfe6bc49e05aa3daaa67f">Windows</a> = <span class="keyword">new</span> sf::RenderWindow(sf::VideoMode(desktop.width, desktop.height), NameOfTheGame, sf::Style::Fullscreen);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <a class="code hl_variable" href="../../d3/d48/class_engine_1_1_game_manager.html#a8cdd4db5102dfe6bc49e05aa3daaa67f">Windows</a> = <span class="keyword">new</span> sf::RenderWindow(sf::VideoMode(desktop.width, desktop.height), NameOfTheGame, sf::Style::Default);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <a class="code hl_variable" href="../../d3/d48/class_engine_1_1_game_manager.html#a8cdd4db5102dfe6bc49e05aa3daaa67f">Windows</a>-&gt;setFramerateLimit(30);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <a class="code hl_variable" href="../../d3/d48/class_engine_1_1_game_manager.html#af95137ac6fa9c41ca407503338431fa8">View</a>.setSize(desktop.width, desktop.height);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <a class="code hl_variable" href="../../d3/d48/class_engine_1_1_game_manager.html#af95137ac6fa9c41ca407503338431fa8">View</a>.setCenter(<a class="code hl_variable" href="../../d3/d48/class_engine_1_1_game_manager.html#a8cdd4db5102dfe6bc49e05aa3daaa67f">Windows</a>-&gt;getSize().x / 2.f, <a class="code hl_variable" href="../../d3/d48/class_engine_1_1_game_manager.html#a8cdd4db5102dfe6bc49e05aa3daaa67f">Windows</a>-&gt;getSize().y / 2.f);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_variable" href="../../d3/d48/class_engine_1_1_game_manager.html#a8cdd4db5102dfe6bc49e05aa3daaa67f">Windows</a>-&gt;setView(<a class="code hl_variable" href="../../d3/d48/class_engine_1_1_game_manager.html#af95137ac6fa9c41ca407503338431fa8">View</a>);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <a class="code hl_variable" href="../../d3/d48/class_engine_1_1_game_manager.html#a78f9e62f2001bb0d284d0ae0ee147bb1">G_SceneManager</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d1/d5b/class_f_t_p___scene_manager.html">FTP_SceneManager</a>(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <a class="code hl_variable" href="../../d3/d48/class_engine_1_1_game_manager.html#ac189eb1374019a3ea79d2a62a6eae9a8">G_AssetManager</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../da/d39/class_f_t_p___asset_manager.html">FTP_AssetManager</a>();</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <a class="code hl_variable" href="../../d3/d48/class_engine_1_1_game_manager.html#ac189eb1374019a3ea79d2a62a6eae9a8">G_AssetManager</a>-&gt;<a class="code hl_function" href="../../de/daf/class_engine_1_1_asset_manager.html#a963afd6086e3ba253229126264fc83cd">InitAsset</a>();</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <a class="code hl_variable" href="../../d3/d48/class_engine_1_1_game_manager.html#a78f9e62f2001bb0d284d0ae0ee147bb1">G_SceneManager</a>-&gt;<a class="code hl_function" href="../../dc/d9b/class_engine_1_1_scene_manager.html#ad9b2696a28fac585b86018d5c1cda23e">Init</a>(FirstScene);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <a class="code hl_variable" href="../../da/d86/class_f_t_p___game_manager.html#a996bd11dca38a5bbb86a762f7a7080d7">Dao</a>-&gt;<a class="code hl_function" href="../../d7/df8/class_engine_1_1_d_a_o_j_s_o_n.html#aa865cfdfe7aaea15b92fdfb3864d5b11">CreateDB</a>();</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>}</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="../../da/d86/class_f_t_p___game_manager.html#aa506c563f999eadaf00ad69d3bdc14d8">   31</a></span><a class="code hl_function" href="../../da/d86/class_f_t_p___game_manager.html#aa506c563f999eadaf00ad69d3bdc14d8">FTP_GameManager::FTP_GameManager</a>() :GameManager()</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>{</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <a class="code hl_struct" href="../../d3/d57/struct_engine_1_1_d_b_connection_info.html">Engine::DBConnectionInfo</a> db_info;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    db_info.<a class="code hl_variable" href="../../d3/d57/struct_engine_1_1_d_b_connection_info.html#a0faf7358253db0dfdda88d8589184dab">Path</a> = <span class="stringliteral">&quot;./DB/&quot;</span>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <a class="code hl_variable" href="../../da/d86/class_f_t_p___game_manager.html#a996bd11dca38a5bbb86a762f7a7080d7">Dao</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d1/d3d/class_f_t_p___d_a_o.html">FTP_DAO</a>(db_info);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>}</div>
+<div class="ttc" id="a_engine_8h_html"><div class="ttname"><a href="../../de/dcf/_engine_8h.html">Engine.h</a></div></div>
+<div class="ttc" id="a_f_t_p___asset_manager_8h_html"><div class="ttname"><a href="../../dd/d03/_f_t_p___asset_manager_8h.html">FTP_AssetManager.h</a></div></div>
+<div class="ttc" id="a_f_t_p___game_manager_8h_html"><div class="ttname"><a href="../../dd/d5c/_f_t_p___game_manager_8h.html">FTP_GameManager.h</a></div></div>
+<div class="ttc" id="a_f_t_p___scene_manager_8h_html"><div class="ttname"><a href="../../d9/de3/_f_t_p___scene_manager_8h.html">FTP_SceneManager.h</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_asset_manager_html_a963afd6086e3ba253229126264fc83cd"><div class="ttname"><a href="../../de/daf/class_engine_1_1_asset_manager.html#a963afd6086e3ba253229126264fc83cd">Engine::AssetManager::InitAsset</a></div><div class="ttdeci">virtual void InitAsset()=0</div><div class="ttdoc">Charge les assets dans les listes.</div></div>
+<div class="ttc" id="aclass_engine_1_1_d_a_o_j_s_o_n_html_aa865cfdfe7aaea15b92fdfb3864d5b11"><div class="ttname"><a href="../../d7/df8/class_engine_1_1_d_a_o_j_s_o_n.html#aa865cfdfe7aaea15b92fdfb3864d5b11">Engine::DAOJSON::CreateDB</a></div><div class="ttdeci">void CreateDB()</div><div class="ttdoc">CreateDB.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d39/_d_a_o_j_s_o_n_8cpp_source.html#l00012">DAOJSON.cpp:12</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_game_manager_html_a78f9e62f2001bb0d284d0ae0ee147bb1"><div class="ttname"><a href="../../d3/d48/class_engine_1_1_game_manager.html#a78f9e62f2001bb0d284d0ae0ee147bb1">Engine::GameManager::G_SceneManager</a></div><div class="ttdeci">SceneManager * G_SceneManager</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d96/_game_manager_8h_source.html#l00025">GameManager.h:25</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_game_manager_html_a8cdd4db5102dfe6bc49e05aa3daaa67f"><div class="ttname"><a href="../../d3/d48/class_engine_1_1_game_manager.html#a8cdd4db5102dfe6bc49e05aa3daaa67f">Engine::GameManager::Windows</a></div><div class="ttdeci">sf::RenderWindow * Windows</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d96/_game_manager_8h_source.html#l00026">GameManager.h:26</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_game_manager_html_ac189eb1374019a3ea79d2a62a6eae9a8"><div class="ttname"><a href="../../d3/d48/class_engine_1_1_game_manager.html#ac189eb1374019a3ea79d2a62a6eae9a8">Engine::GameManager::G_AssetManager</a></div><div class="ttdeci">AssetManager * G_AssetManager</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d96/_game_manager_8h_source.html#l00024">GameManager.h:24</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_game_manager_html_af95137ac6fa9c41ca407503338431fa8"><div class="ttname"><a href="../../d3/d48/class_engine_1_1_game_manager.html#af95137ac6fa9c41ca407503338431fa8">Engine::GameManager::View</a></div><div class="ttdeci">sf::View View</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d96/_game_manager_8h_source.html#l00027">GameManager.h:27</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_scene_manager_html_ad9b2696a28fac585b86018d5c1cda23e"><div class="ttname"><a href="../../dc/d9b/class_engine_1_1_scene_manager.html#ad9b2696a28fac585b86018d5c1cda23e">Engine::SceneManager::Init</a></div><div class="ttdeci">virtual void Init(std::string FirstScene)=0</div><div class="ttdoc">Initialisation.</div></div>
+<div class="ttc" id="aclass_f_t_p___asset_manager_html"><div class="ttname"><a href="../../da/d39/class_f_t_p___asset_manager.html">FTP_AssetManager</a></div><div class="ttdoc">classe enfant de AssetManager</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d03/_f_t_p___asset_manager_8h_source.html#l00007">FTP_AssetManager.h:7</a></div></div>
+<div class="ttc" id="aclass_f_t_p___d_a_o_html"><div class="ttname"><a href="../../d1/d3d/class_f_t_p___d_a_o.html">FTP_DAO</a></div><div class="ttdoc">classe enfant de DAOJSON</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d27/_f_t_p___d_a_o_8h_source.html#l00009">FTP_DAO.h:9</a></div></div>
+<div class="ttc" id="aclass_f_t_p___game_manager_html_a996bd11dca38a5bbb86a762f7a7080d7"><div class="ttname"><a href="../../da/d86/class_f_t_p___game_manager.html#a996bd11dca38a5bbb86a762f7a7080d7">FTP_GameManager::Dao</a></div><div class="ttdeci">FTP_DAO * Dao</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d5c/_f_t_p___game_manager_8h_source.html#l00014">FTP_GameManager.h:14</a></div></div>
+<div class="ttc" id="aclass_f_t_p___game_manager_html_a9994df8303b91a3d8a3082b7b979d31f"><div class="ttname"><a href="../../da/d86/class_f_t_p___game_manager.html#a9994df8303b91a3d8a3082b7b979d31f">FTP_GameManager::Game_Init</a></div><div class="ttdeci">void Game_Init(std::string NameOfTheGame, std::string FirstScene)</div><div class="ttdoc">Initialisation.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/df7/_f_t_p___game_manager_8cpp_source.html#l00007">FTP_GameManager.cpp:7</a></div></div>
+<div class="ttc" id="aclass_f_t_p___game_manager_html_aa506c563f999eadaf00ad69d3bdc14d8"><div class="ttname"><a href="../../da/d86/class_f_t_p___game_manager.html#aa506c563f999eadaf00ad69d3bdc14d8">FTP_GameManager::FTP_GameManager</a></div><div class="ttdeci">FTP_GameManager()</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/df7/_f_t_p___game_manager_8cpp_source.html#l00031">FTP_GameManager.cpp:31</a></div></div>
+<div class="ttc" id="aclass_f_t_p___scene_manager_html"><div class="ttname"><a href="../../d1/d5b/class_f_t_p___scene_manager.html">FTP_SceneManager</a></div><div class="ttdoc">classe enfant de SceneManager</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/de3/_f_t_p___scene_manager_8h_source.html#l00008">FTP_SceneManager.h:8</a></div></div>
+<div class="ttc" id="aclass_settings_html"><div class="ttname"><a href="../../db/d2b/class_settings.html">Settings</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d4a/_settings_8h_source.html#l00008">Settings.h:8</a></div></div>
+<div class="ttc" id="anamespace_engine_html_a8635be5101faabab69ad4ab7889bf107"><div class="ttname"><a href="../../d1/db6/namespace_engine.html#a8635be5101faabab69ad4ab7889bf107">Engine::GetInfoFromJSON</a></div><div class="ttdeci">std::map&lt; std::string, int &gt; GetInfoFromJSON(std::string path)</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d38/_utility_8cpp_source.html#l00042">Utility.cpp:42</a></div></div>
+<div class="ttc" id="anamespace_engine_html_ac9a4ef6f059077db152861b36ff0b7b2"><div class="ttname"><a href="../../d1/db6/namespace_engine.html#ac9a4ef6f059077db152861b36ff0b7b2">Engine::FileExists</a></div><div class="ttdeci">bool FileExists(std::string path)</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d38/_utility_8cpp_source.html#l00052">Utility.cpp:52</a></div></div>
+<div class="ttc" id="astruct_engine_1_1_d_b_connection_info_html"><div class="ttname"><a href="../../d3/d57/struct_engine_1_1_d_b_connection_info.html">Engine::DBConnectionInfo</a></div><div class="ttdoc">struct representant les information de connections</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d64/_d_a_o_j_s_o_n_8h_source.html#l00010">DAOJSON.h:10</a></div></div>
+<div class="ttc" id="astruct_engine_1_1_d_b_connection_info_html_a0faf7358253db0dfdda88d8589184dab"><div class="ttname"><a href="../../d3/d57/struct_engine_1_1_d_b_connection_info.html#a0faf7358253db0dfdda88d8589184dab">Engine::DBConnectionInfo::Path</a></div><div class="ttdeci">std::string Path</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d64/_d_a_o_j_s_o_n_8h_source.html#l00011">DAOJSON.h:11</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

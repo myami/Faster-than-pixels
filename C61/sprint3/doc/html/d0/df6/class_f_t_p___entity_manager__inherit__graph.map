@@ -1,0 +1,5 @@
+<map id="FTP_EntityManager" name="FTP_EntityManager">
+<area shape="rect" id="node1" title="classe enfant de EntityManager" alt="" coords="14,155,151,181"/>
+<area shape="rect" id="node2" href="$d5/d19/class_engine_1_1_entity_manager.html" title="classe representant toutes les entités de la scène." alt="" coords="5,80,160,107"/>
+<area shape="rect" id="node3" href="$da/d20/class_engine_1_1_state_machine.html" title="classe de statemachine" alt="" coords="7,5,158,32"/>
+</map>

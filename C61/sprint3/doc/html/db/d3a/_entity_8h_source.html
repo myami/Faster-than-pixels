@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Faster than pixel:  Fichier source de Engine/src/ECS/Entity.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Faster than pixel
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search",'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_0b6ee6e7e9547e675db4add2e5de97da.html">Engine</a></li><li class="navelem"><a class="el" href="../../dir_b6dc9fbf5fd229481ae647194eb362ed.html">src</a></li><li class="navelem"><a class="el" href="../../dir_5896bb42b43184d8f1c76705f8fc5fc4.html">ECS</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">Entity.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../db/d3a/_entity_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="../../dc/d20/_component_8h.html">Component.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;../Utility/StateMachine/StateParent.h&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d1/db6/namespace_engine.html">Engine</a> {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">class </span>StateParent;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">class </span>Scene;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="../../d5/d5a/class_engine_1_1_entity.html">   18</a></span>    <span class="keyword">class </span><a class="code hl_class" href="../../d5/d5a/class_engine_1_1_entity.html">Entity</a> : <span class="keyword">public</span> <a class="code hl_class" href="../../d0/d31/class_engine_1_1_state_parent.html">StateParent</a> {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        std::vector&lt;Component*&gt; E_Component; </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <a class="code hl_function" href="../../d5/d5a/class_engine_1_1_entity.html#acd682e820ae6d28f7c3d215ef48e45a6">Entity</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <a class="code hl_function" href="../../d5/d5a/class_engine_1_1_entity.html#acd682e820ae6d28f7c3d215ef48e45a6">Entity</a>();</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <a class="code hl_function" href="../../d5/d5a/class_engine_1_1_entity.html#acd682e820ae6d28f7c3d215ef48e45a6">Entity</a>(<a class="code hl_class" href="../../d4/dd2/class_engine_1_1_scene.html">Scene</a>* sc);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <a class="code hl_function" href="../../d5/d5a/class_engine_1_1_entity.html#acd682e820ae6d28f7c3d215ef48e45a6">Entity</a>(<a class="code hl_class" href="../../d4/dd2/class_engine_1_1_scene.html">Scene</a>* sc, std::string tag);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <a class="code hl_function" href="../../d5/d5a/class_engine_1_1_entity.html#acd682e820ae6d28f7c3d215ef48e45a6">Entity</a>(std::string tag);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <a class="code hl_function" href="../../d5/d5a/class_engine_1_1_entity.html#acd682e820ae6d28f7c3d215ef48e45a6">Entity</a>(<a class="code hl_class" href="../../d4/dd2/class_engine_1_1_scene.html">Scene</a>* sc, std::string tag, <span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="../../d5/d5a/class_engine_1_1_entity.html#a26c782e8000da7a9be1bf0c65b4f580c">   54</a></span>        <span class="keywordtype">int</span> <a class="code hl_variable" href="../../d5/d5a/class_engine_1_1_entity.html#a26c782e8000da7a9be1bf0c65b4f580c">E_Id</a> = 0; </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="../../d5/d5a/class_engine_1_1_entity.html#afdd5a70d94d9169e46da12978ba032c5">   55</a></span>        std::string <a class="code hl_variable" href="../../d5/d5a/class_engine_1_1_entity.html#afdd5a70d94d9169e46da12978ba032c5">E_Tag</a> = <span class="stringliteral">&quot;Default&quot;</span>; </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="../../d5/d5a/class_engine_1_1_entity.html#add4e873fdeffdde21aefab98ef17998d">   56</a></span>        <span class="keywordtype">bool</span> <a class="code hl_variable" href="../../d5/d5a/class_engine_1_1_entity.html#add4e873fdeffdde21aefab98ef17998d">E_CanBeUsed</a> = <span class="keyword">true</span>; </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="../../d5/d5a/class_engine_1_1_entity.html#a41e7dce450a8607a3f452f1a8d264d19">   57</a></span>        <span class="keywordtype">bool</span> <a class="code hl_variable" href="../../d5/d5a/class_engine_1_1_entity.html#a41e7dce450a8607a3f452f1a8d264d19">E_IsAnimated</a> = <span class="keyword">false</span>; </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="../../d5/d5a/class_engine_1_1_entity.html#aed9008cc908806a0a37c6b6e0ba5bb59">   58</a></span>        <a class="code hl_class" href="../../d4/dd2/class_engine_1_1_scene.html">Scene</a>* <a class="code hl_variable" href="../../d5/d5a/class_engine_1_1_entity.html#aed9008cc908806a0a37c6b6e0ba5bb59">CurrentScene</a>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="../../d5/d5a/class_engine_1_1_entity.html#a7ba36b9ddac16793f25753ecadfaecd0">   60</a></span>        std::map&lt;std::string, std::any&gt; <a class="code hl_variable" href="../../d5/d5a/class_engine_1_1_entity.html#a7ba36b9ddac16793f25753ecadfaecd0">ValueToChange</a>;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="../../d5/d5a/class_engine_1_1_entity.html#a2cd526dde0529e59e5dd405a3ba3d395">Begin_Play</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="../../d5/d5a/class_engine_1_1_entity.html#a7640f718d5fed1c3ddb8305e3b998b96">Tick</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="../../d5/d5a/class_engine_1_1_entity.html#af482a27ff38f1d105cd602a3267670aa">End_Play</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <a class="code hl_class" href="../../d2/d27/class_engine_1_1_component.html">Engine::Component</a>* <a class="code hl_function" href="../../d5/d5a/class_engine_1_1_entity.html#a4e0d8d2e9351105ec3c2b5890d6eb8a6">GetComponent</a>(std::string name);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="../../d5/d5a/class_engine_1_1_entity.html#a1826c6e97168099c64dda7b780f792e5">AddComponent</a>(<a class="code hl_class" href="../../d2/d27/class_engine_1_1_component.html">Engine::Component</a>* <a class="code hl_class" href="../../d2/d27/class_engine_1_1_component.html">Component</a>);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="../../d5/d5a/class_engine_1_1_entity.html#abbd9cc0765f3912542ff1e2633fe09a3">Reset</a>();</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="../../d5/d5a/class_engine_1_1_entity.html#af5047da0952f827ebfc27ac3bd11dacb">DeleteComponent</a>(<span class="keyword">const</span> std::string name);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    };</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>}</div>
+<div class="ttc" id="a_component_8h_html"><div class="ttname"><a href="../../dc/d20/_component_8h.html">Component.h</a></div><div class="ttdoc">Composant d une entite qui sauvegarde des variables.</div></div>
+<div class="ttc" id="aclass_engine_1_1_component_html"><div class="ttname"><a href="../../d2/d27/class_engine_1_1_component.html">Engine::Component</a></div><div class="ttdoc">classe representant chaque composant que l'entite va avoir</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d20/_component_8h_source.html#l00017">Component.h:17</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_entity_html"><div class="ttname"><a href="../../d5/d5a/class_engine_1_1_entity.html">Engine::Entity</a></div><div class="ttdef"><b>Definition:</b> <a href="../../db/d3a/_entity_8h_source.html#l00018">Entity.h:18</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_entity_html_a1826c6e97168099c64dda7b780f792e5"><div class="ttname"><a href="../../d5/d5a/class_engine_1_1_entity.html#a1826c6e97168099c64dda7b780f792e5">Engine::Entity::AddComponent</a></div><div class="ttdeci">void AddComponent(Engine::Component *Component)</div><div class="ttdoc">Ajoute un component.</div><div class="ttdef"><b>Definition:</b> <a href="../../de/dfc/_entity_8cpp_source.html#l00057">Entity.cpp:57</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_entity_html_a26c782e8000da7a9be1bf0c65b4f580c"><div class="ttname"><a href="../../d5/d5a/class_engine_1_1_entity.html#a26c782e8000da7a9be1bf0c65b4f580c">Engine::Entity::E_Id</a></div><div class="ttdeci">int E_Id</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d3a/_entity_8h_source.html#l00054">Entity.h:54</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_entity_html_a2cd526dde0529e59e5dd405a3ba3d395"><div class="ttname"><a href="../../d5/d5a/class_engine_1_1_entity.html#a2cd526dde0529e59e5dd405a3ba3d395">Engine::Entity::Begin_Play</a></div><div class="ttdeci">void Begin_Play() override</div><div class="ttdoc">Appeler quand l'entite commence a etre utiliser.</div><div class="ttdef"><b>Definition:</b> <a href="../../de/dfc/_entity_8cpp_source.html#l00035">Entity.cpp:35</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_entity_html_a41e7dce450a8607a3f452f1a8d264d19"><div class="ttname"><a href="../../d5/d5a/class_engine_1_1_entity.html#a41e7dce450a8607a3f452f1a8d264d19">Engine::Entity::E_IsAnimated</a></div><div class="ttdeci">bool E_IsAnimated</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d3a/_entity_8h_source.html#l00057">Entity.h:57</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_entity_html_a4e0d8d2e9351105ec3c2b5890d6eb8a6"><div class="ttname"><a href="../../d5/d5a/class_engine_1_1_entity.html#a4e0d8d2e9351105ec3c2b5890d6eb8a6">Engine::Entity::GetComponent</a></div><div class="ttdeci">Engine::Component * GetComponent(std::string name)</div><div class="ttdoc">Return un component.</div><div class="ttdef"><b>Definition:</b> <a href="../../de/dfc/_entity_8cpp_source.html#l00047">Entity.cpp:47</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_entity_html_a7640f718d5fed1c3ddb8305e3b998b96"><div class="ttname"><a href="../../d5/d5a/class_engine_1_1_entity.html#a7640f718d5fed1c3ddb8305e3b998b96">Engine::Entity::Tick</a></div><div class="ttdeci">void Tick() override</div><div class="ttdoc">Appeler a chaque tick dans la gameloop.</div><div class="ttdef"><b>Definition:</b> <a href="../../de/dfc/_entity_8cpp_source.html#l00039">Entity.cpp:39</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_entity_html_a7ba36b9ddac16793f25753ecadfaecd0"><div class="ttname"><a href="../../d5/d5a/class_engine_1_1_entity.html#a7ba36b9ddac16793f25753ecadfaecd0">Engine::Entity::ValueToChange</a></div><div class="ttdeci">std::map&lt; std::string, std::any &gt; ValueToChange</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d3a/_entity_8h_source.html#l00060">Entity.h:60</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_entity_html_abbd9cc0765f3912542ff1e2633fe09a3"><div class="ttname"><a href="../../d5/d5a/class_engine_1_1_entity.html#abbd9cc0765f3912542ff1e2633fe09a3">Engine::Entity::Reset</a></div><div class="ttdeci">void Reset()</div><div class="ttdoc">Appeler pour enlever tout les components d une entite.</div><div class="ttdef"><b>Definition:</b> <a href="../../de/dfc/_entity_8cpp_source.html#l00069">Entity.cpp:69</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_entity_html_acd682e820ae6d28f7c3d215ef48e45a6"><div class="ttname"><a href="../../d5/d5a/class_engine_1_1_entity.html#acd682e820ae6d28f7c3d215ef48e45a6">Engine::Entity::Entity</a></div><div class="ttdeci">Entity()</div><div class="ttdoc">Constructeur vide.</div><div class="ttdef"><b>Definition:</b> <a href="../../de/dfc/_entity_8cpp_source.html#l00008">Entity.cpp:8</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_entity_html_add4e873fdeffdde21aefab98ef17998d"><div class="ttname"><a href="../../d5/d5a/class_engine_1_1_entity.html#add4e873fdeffdde21aefab98ef17998d">Engine::Entity::E_CanBeUsed</a></div><div class="ttdeci">bool E_CanBeUsed</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d3a/_entity_8h_source.html#l00056">Entity.h:56</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_entity_html_aed9008cc908806a0a37c6b6e0ba5bb59"><div class="ttname"><a href="../../d5/d5a/class_engine_1_1_entity.html#aed9008cc908806a0a37c6b6e0ba5bb59">Engine::Entity::CurrentScene</a></div><div class="ttdeci">Scene * CurrentScene</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d3a/_entity_8h_source.html#l00058">Entity.h:58</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_entity_html_af482a27ff38f1d105cd602a3267670aa"><div class="ttname"><a href="../../d5/d5a/class_engine_1_1_entity.html#af482a27ff38f1d105cd602a3267670aa">Engine::Entity::End_Play</a></div><div class="ttdeci">void End_Play() override</div><div class="ttdoc">Appeler a la fin de sont utilisation.</div><div class="ttdef"><b>Definition:</b> <a href="../../de/dfc/_entity_8cpp_source.html#l00043">Entity.cpp:43</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_entity_html_af5047da0952f827ebfc27ac3bd11dacb"><div class="ttname"><a href="../../d5/d5a/class_engine_1_1_entity.html#af5047da0952f827ebfc27ac3bd11dacb">Engine::Entity::DeleteComponent</a></div><div class="ttdeci">void DeleteComponent(const std::string name)</div><div class="ttdoc">Supprime un composant.</div><div class="ttdef"><b>Definition:</b> <a href="../../de/dfc/_entity_8cpp_source.html#l00078">Entity.cpp:78</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_entity_html_afdd5a70d94d9169e46da12978ba032c5"><div class="ttname"><a href="../../d5/d5a/class_engine_1_1_entity.html#afdd5a70d94d9169e46da12978ba032c5">Engine::Entity::E_Tag</a></div><div class="ttdeci">std::string E_Tag</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d3a/_entity_8h_source.html#l00055">Entity.h:55</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_scene_html"><div class="ttname"><a href="../../d4/dd2/class_engine_1_1_scene.html">Engine::Scene</a></div><div class="ttdoc">classe qui le fonctionnement d'une sc�ne.</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d56/_scene_8h_source.html#l00013">Scene.h:13</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_state_parent_html"><div class="ttname"><a href="../../d0/d31/class_engine_1_1_state_parent.html">Engine::StateParent</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d3b/_state_parent_8h_source.html#l00003">StateParent.h:3</a></div></div>
+<div class="ttc" id="anamespace_engine_html"><div class="ttname"><a href="../../d1/db6/namespace_engine.html">Engine</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d6/dca/_blank_component_8h_source.html#l00003">BlankComponent.h:3</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Faster than pixel:  Fichier source de FasterThanPixels/src/ECS/System/S_Shield.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Faster than pixel
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search",'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_02c03db38a580fded92fda78cff56987.html">FasterThanPixels</a></li><li class="navelem"><a class="el" href="../../dir_6a8e090ea90646710d8a5b1ef0bd2e56.html">src</a></li><li class="navelem"><a class="el" href="../../dir_12248881cfc1cf333d47714dbabf3275.html">ECS</a></li><li class="navelem"><a class="el" href="../../dir_338013b8a04221cc6c6d22dabfa9606e.html">System</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">S_Shield.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d9/dff/_s___shield_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="../../de/dcf/_engine_8h.html">Engine.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="../../d1/d8d/class_s___shield.html">    6</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d1/d8d/class_s___shield.html">S_Shield</a> : <span class="keyword">public</span> <a class="code hl_class" href="../../d5/de9/class_engine_1_1_system.html">Engine::System</a> {</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="keywordtype">void</span> RegenerateShield(<a class="code hl_class" href="../../d5/d5a/class_engine_1_1_entity.html">Engine::Entity</a>* target);</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <a class="code hl_function" href="../../d1/d8d/class_s___shield.html#a5c300815cf1fa52eaf79608a2147ee37">S_Shield</a>();</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d1/d8d/class_s___shield.html#a3ad0b0bb1318f5ed6249fe88da918227">AsShield</a>(<a class="code hl_class" href="../../d5/d5a/class_engine_1_1_entity.html">Engine::Entity</a>* target);</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/d8d/class_s___shield.html#ab07477e8d45f6e7ae6482c6ba7a8962f">RunSystem</a>(<span class="keywordtype">float</span> dt) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/d8d/class_s___shield.html#a6065daf91db8c9c1c474f1ee4585a7c6">DamageShield</a>(<span class="keywordtype">int</span> amount, <a class="code hl_class" href="../../d5/d5a/class_engine_1_1_entity.html">Engine::Entity</a>* target);</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="../../d1/d8d/class_s___shield.html#a73765a1d1fefb59bf96a6cb3f4351ec6">GetShield</a>(<a class="code hl_class" href="../../d5/d5a/class_engine_1_1_entity.html">Engine::Entity</a>* target);</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>};</div>
+<div class="ttc" id="a_engine_8h_html"><div class="ttname"><a href="../../de/dcf/_engine_8h.html">Engine.h</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_entity_html"><div class="ttname"><a href="../../d5/d5a/class_engine_1_1_entity.html">Engine::Entity</a></div><div class="ttdef"><b>Definition:</b> <a href="../../db/d3a/_entity_8h_source.html#l00018">Entity.h:18</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_system_html"><div class="ttname"><a href="../../d5/de9/class_engine_1_1_system.html">Engine::System</a></div><div class="ttdoc">classe representant chaque Systeme qui sont lie au component actif</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d78/_system_8h_source.html#l00010">System.h:11</a></div></div>
+<div class="ttc" id="aclass_s___shield_html"><div class="ttname"><a href="../../d1/d8d/class_s___shield.html">S_Shield</a></div><div class="ttdoc">classe systeme pour le component Shied, il permait de gerer les shields des entites</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dff/_s___shield_8h_source.html#l00006">S_Shield.h:6</a></div></div>
+<div class="ttc" id="aclass_s___shield_html_a3ad0b0bb1318f5ed6249fe88da918227"><div class="ttname"><a href="../../d1/d8d/class_s___shield.html#a3ad0b0bb1318f5ed6249fe88da918227">S_Shield::AsShield</a></div><div class="ttdeci">bool AsShield(Engine::Entity *target)</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d85/_s___shield_8cpp_source.html#l00012">S_Shield.cpp:12</a></div></div>
+<div class="ttc" id="aclass_s___shield_html_a5c300815cf1fa52eaf79608a2147ee37"><div class="ttname"><a href="../../d1/d8d/class_s___shield.html#a5c300815cf1fa52eaf79608a2147ee37">S_Shield::S_Shield</a></div><div class="ttdeci">S_Shield()</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d85/_s___shield_8cpp_source.html#l00055">S_Shield.cpp:55</a></div></div>
+<div class="ttc" id="aclass_s___shield_html_a6065daf91db8c9c1c474f1ee4585a7c6"><div class="ttname"><a href="../../d1/d8d/class_s___shield.html#a6065daf91db8c9c1c474f1ee4585a7c6">S_Shield::DamageShield</a></div><div class="ttdeci">void DamageShield(int amount, Engine::Entity *target)</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d85/_s___shield_8cpp_source.html#l00038">S_Shield.cpp:38</a></div></div>
+<div class="ttc" id="aclass_s___shield_html_a73765a1d1fefb59bf96a6cb3f4351ec6"><div class="ttname"><a href="../../d1/d8d/class_s___shield.html#a73765a1d1fefb59bf96a6cb3f4351ec6">S_Shield::GetShield</a></div><div class="ttdeci">int GetShield(Engine::Entity *target)</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d85/_s___shield_8cpp_source.html#l00046">S_Shield.cpp:46</a></div></div>
+<div class="ttc" id="aclass_s___shield_html_ab07477e8d45f6e7ae6482c6ba7a8962f"><div class="ttname"><a href="../../d1/d8d/class_s___shield.html#ab07477e8d45f6e7ae6482c6ba7a8962f">S_Shield::RunSystem</a></div><div class="ttdeci">void RunSystem(float dt) override</div><div class="ttdoc">Run les entites.</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d85/_s___shield_8cpp_source.html#l00026">S_Shield.cpp:26</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

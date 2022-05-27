@@ -1,0 +1,4 @@
+<map id="FTP_Training_Hard" name="FTP_Training_Hard">
+<area shape="rect" id="node1" title="classe enfant de Gamemode, represente le mode de jeu &quot;Training_Hard&quot;" alt="" coords="8,80,140,107"/>
+<area shape="rect" id="node2" href="$d0/d92/class_engine_1_1_game_mode.html" title="classe parentes des modes de jeux" alt="" coords="5,5,143,32"/>
+</map>

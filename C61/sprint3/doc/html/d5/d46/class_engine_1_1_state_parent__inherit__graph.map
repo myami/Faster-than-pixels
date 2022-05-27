@@ -1,0 +1,36 @@
+<map id="Engine::StateParent" name="Engine::StateParent">
+<area shape="rect" id="node1" title=" " alt="" coords="5,537,144,564"/>
+<area shape="rect" id="node2" href="$d5/d5a/class_engine_1_1_entity.html" title=" " alt="" coords="208,360,312,387"/>
+<area shape="rect" id="node21" href="$d4/d52/class_engine_1_1_f_s_m___state.html" title="classe enfant de StateParent pour les scenes" alt="" coords="192,563,328,589"/>
+<area shape="rect" id="node3" href="$db/dad/class_asteroid.html" title="classe representant une entite d&#39;asteroid, qui sont une partie de l&#39;environnement qui est dynamique" alt="" coords="394,5,465,32"/>
+<area shape="rect" id="node4" href="$d3/d77/class_building___a.html" title="classe representant une entite de batiment spatial, le joueur doit l&#39;attaquer dans le mode de jeu &quot;At..." alt="" coords="387,56,471,83"/>
+<area shape="rect" id="node5" href="$dd/d2a/class_building___p.html" title="classe representant une entite de batiment, le joueur doit la proteger dans le mode de jeu &quot;Protect t..." alt="" coords="387,107,471,133"/>
+<area shape="rect" id="node6" href="$d1/d24/class_checkpoint.html" title="classe representant une entite de checkpoint, le joueur doit rentrer en collision avec dans le mode d..." alt="" coords="386,157,473,184"/>
+<area shape="rect" id="node7" href="$df/d3d/class_enemie.html" title="classe parent de tout les enemies" alt="" coords="396,208,463,235"/>
+<area shape="rect" id="node12" href="$d9/d89/class_laser.html" title="classe representant une entite de laser, quand le joueur tire avec, celle&#45;ci apparait en jeu et perma..." alt="" coords="402,259,457,285"/>
+<area shape="rect" id="node13" href="$d3/d8d/class_mine.html" title="classe representant une entite de Mine, quand le joueur la pose dans l&#39;espace , celle&#45;ci apparait en ..." alt="" coords="404,309,455,336"/>
+<area shape="rect" id="node14" href="$d5/ded/class_missile.html" title="classe representant une entite de Missile, quand le joueur tire avec, celle&#45;ci apparait en jeu et per..." alt="" coords="398,360,461,387"/>
+<area shape="rect" id="node15" href="$dd/d41/class_planet.html" title=" " alt="" coords="400,411,459,437"/>
+<area shape="rect" id="node16" href="$d8/d53/class_player.html" title="classe representant le joueur" alt="" coords="400,461,459,488"/>
+<area shape="rect" id="node17" href="$d7/d9e/class_punching.html" title="classe representant l&#39;entite Punching, elle apparait au sol et attend d&#39;etre ramasser" alt="" coords="391,512,467,539"/>
+<area shape="rect" id="node18" href="$de/d96/class_survivor.html" title="classe representant une entite de survivant, le joueur doit ramasser se survivant pour le sauver dans..." alt="" coords="396,563,463,589"/>
+<area shape="rect" id="node19" href="$d0/dd2/class_thunder_bolt.html" title="classe representant l&#39;entite ThunderBolt, elle apparait au sol et attend d&#39;etre ramasser" alt="" coords="384,613,475,640"/>
+<area shape="rect" id="node20" href="$d8/d2a/class_wrench.html" title="classe representant l&#39;entite Wrench, elle apparait au sol et attend d&#39;etre ramasser" alt="" coords="396,664,463,691"/>
+<area shape="rect" id="node8" href="$d0/d91/class_bombardier.html" title="classe representant l&#39;entite Bombardier, elle est un ennemie du joueur" alt="" coords="557,132,645,159"/>
+<area shape="rect" id="node9" href="$dc/db6/class_chasseurs.html" title="classe representant l&#39;entite Chasseurs, elle est un ennemie du joueur" alt="" coords="559,183,643,209"/>
+<area shape="rect" id="node10" href="$da/d76/class_intercepteur.html" title="classe representant l&#39;entite Intercepteur, elle est un ennemie du joueur" alt="" coords="555,233,646,260"/>
+<area shape="rect" id="node11" href="$dd/dd0/class_portes_vaiseau.html" title="classe representant l&#39;entite Portes&#45;Vaiseau, elle est un ennemie du joueur" alt="" coords="547,284,654,311"/>
+<area shape="rect" id="node22" href="$d4/dd2/class_engine_1_1_scene.html" title="classe qui le fonctionnement d&#39;une scène." alt="" coords="376,715,483,741"/>
+<area shape="rect" id="node23" href="$da/d1a/class_engine_1_1_blank_scene.html" title=" " alt="" coords="531,715,671,741"/>
+<area shape="rect" id="node24" href="$dd/dfe/class_authentification.html" title="classe enfant de Scene, represente le niveau ou le joueur rentre ces infos pour se connecter au jeu" alt="" coords="735,461,845,488"/>
+<area shape="rect" id="node25" href="$d8/d30/class_compendium.html" title=" " alt="" coords="741,512,839,539"/>
+<area shape="rect" id="node26" href="$d7/d98/class_end_game.html" title="classe enfant de Scene, represente le niveau ou le joueur vois les infos de fin de partie" alt="" coords="750,563,830,589"/>
+<area shape="rect" id="node27" href="$dd/d1f/class_game.html" title="classe enfant de Scene, represente le niveau ou le joueur joue" alt="" coords="761,613,819,640"/>
+<area shape="rect" id="node28" href="$d6/dd6/class_game_mode_selection.html" title=" " alt="" coords="719,664,861,691"/>
+<area shape="rect" id="node29" href="$df/d4c/class_loading.html" title="classe enfant de Scene, represente un menu de chargement" alt="" coords="757,715,823,741"/>
+<area shape="rect" id="node30" href="$d4/d04/class_main_menu.html" title="classe enfant de Scene, represente le menu principale du jeu" alt="" coords="749,765,831,792"/>
+<area shape="rect" id="node31" href="$d1/d35/class_pause.html" title="classe enfant de Scene, represente le menu de pause pendant le jeu" alt="" coords="761,816,819,843"/>
+<area shape="rect" id="node32" href="$d3/d28/class_player_profile.html" title="classe enfant de Scene, represente le menu ou le joueur peux voir ces stat globales" alt="" coords="743,867,837,893"/>
+<area shape="rect" id="node33" href="$db/d2b/class_settings.html" title=" " alt="" coords="755,917,825,944"/>
+<area shape="rect" id="node34" href="$db/de1/class_starting.html" title="classe enfant de Scene, represente la scene de lancement, il y a des splashcreen pour montrer le nom ..." alt="" coords="757,968,823,995"/>
+</map>

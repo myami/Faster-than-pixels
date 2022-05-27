@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Faster than pixel:  Fichier source de FasterThanPixels/src/Scene/Game.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Faster than pixel
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search",'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_02c03db38a580fded92fda78cff56987.html">FasterThanPixels</a></li><li class="navelem"><a class="el" href="../../dir_6a8e090ea90646710d8a5b1ef0bd2e56.html">src</a></li><li class="navelem"><a class="el" href="../../dir_ffda3f02ce82275ea6c5d51703009944.html">Scene</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">Game.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d9/dcd/_game_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="../../de/dcf/_engine_8h.html">Engine.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;box2d/box2d.h&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">class </span><a class="code hl_class" href="../../d1/d5b/class_f_t_p___scene_manager.html">FTP_SceneManager</a>;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">class </span><a class="code hl_class" href="../../de/d15/class_s___mouvement___actif.html">S_Mouvement_Actif</a>;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">class </span><a class="code hl_class" href="../../dd/db7/class_s___health.html">S_Health</a>;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">class </span><a class="code hl_class" href="../../d1/d8d/class_s___shield.html">S_Shield</a>;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">class </span><a class="code hl_class" href="../../d4/d32/class_f_t_p___entity_manager.html">FTP_EntityManager</a>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="../../dd/d1f/class_game.html">   16</a></span><span class="keyword">class </span><a class="code hl_class" href="../../dd/d1f/class_game.html">Game</a> : <span class="keyword">public</span> <a class="code hl_class" href="../../da/d1a/class_engine_1_1_blank_scene.html">Engine::BlankScene</a> {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <a class="code hl_function" href="../../dd/d1f/class_game.html#a514c8900f242f228eeafd8a186dc7952">Game</a>(std::string name, <a class="code hl_class" href="../../d1/d5b/class_f_t_p___scene_manager.html">FTP_SceneManager</a>* refs);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../dd/d1f/class_game.html#acf666956a72aef0da1bb1d837c486412">Tick</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../dd/d1f/class_game.html#a47f6833807d6bb0182cd22a7d7cf5adb">S_Render</a>() <span class="keyword">override</span>; <span class="comment">// fin de frame affiche le resultat de la simulation 4/4</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../dd/d1f/class_game.html#a5c4f0aba014cbbc923a60be16b9748ef">S_ActionTrigger</a>(std::string ActionName) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../dd/d1f/class_game.html#ae12ca68638c3949de43a79af36ffeada">Begin_Play</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../dd/d1f/class_game.html#a16dd6d212ea7ddd6087e66963ff3fc03">S_Input_Mouse</a>(sf::Event event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../dd/d1f/class_game.html#aa06900f6bdd54144c2af182ed084cec2">S_Input_Text</a>(sf::Event event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../dd/d1f/class_game.html#a1b9f968b215bf877679abf6e4505bc08">S_Static_Physic</a>(b2Body* body) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../dd/d1f/class_game.html#a7d7667c1d88572d986a89a12d0f28eb8">S_Dynamic_Physic</a>(b2Body* body) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../dd/d1f/class_game.html#a878b0154bdcfc4c05d5aa0ff995514ed">S_Kynematic_Physic</a>(b2Body* body) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="../../dd/d1f/class_game.html#a6021e768b485da918793fd90663db611">   30</a></span>    sf::RectangleShape <a class="code hl_variable" href="../../dd/d1f/class_game.html#a6021e768b485da918793fd90663db611">shape</a>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="../../dd/d1f/class_game.html#ad4b45872c2afe0b7b5d3cd03108bd96c">   32</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="../../dd/d1f/class_game.html#ad4b45872c2afe0b7b5d3cd03108bd96c">seed</a> = 524524;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="../../dd/d1f/class_game.html#aaf7cd2ee3cba1e735ebc6278c008419a">   34</a></span>    sf::Vector2f <a class="code hl_variable" href="../../dd/d1f/class_game.html#aaf7cd2ee3cba1e735ebc6278c008419a">MapSize</a> = { 8000.f,8000.f };</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="../../dd/d1f/class_game.html#a5f9ada9af176539cab973d4a149a71a6">   37</a></span>    b2Vec2 <a class="code hl_variable" href="../../dd/d1f/class_game.html#a5f9ada9af176539cab973d4a149a71a6">Gravity</a>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="../../dd/d1f/class_game.html#a541e26087a04753316cf8beb35a5477e">   39</a></span>    sf::Vector2i <a class="code hl_variable" href="../../dd/d1f/class_game.html#a541e26087a04753316cf8beb35a5477e">MousePosScreen</a>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="../../dd/d1f/class_game.html#a47e7330a3c9f86a00e8c3d538c2ad962">   40</a></span>    sf::Vector2i <a class="code hl_variable" href="../../dd/d1f/class_game.html#a47e7330a3c9f86a00e8c3d538c2ad962">MousePosWindow</a>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="../../dd/d1f/class_game.html#ad23a6e812b544e84454fdde977d8f42f">   41</a></span>    sf::Vector2f <a class="code hl_variable" href="../../dd/d1f/class_game.html#ad23a6e812b544e84454fdde977d8f42f">MousePosView</a>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="../../dd/d1f/class_game.html#a0bdfd716dd956fbd02a2877e30e217e6">   42</a></span>    sf::Text <a class="code hl_variable" href="../../dd/d1f/class_game.html#a0bdfd716dd956fbd02a2877e30e217e6">text</a>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../dd/d1f/class_game.html#a90647f07febb0470b0d11a59173b9583">InitPlanet</a>();</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../dd/d1f/class_game.html#a03f8c553ee17dd5ee30c5e915de45cd2">InitAsteroid</a>();</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../dd/d1f/class_game.html#a4cad4f92372525c758f6a9acafb255c4">InitPlayer</a>();</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="../../dd/d1f/class_game.html#a5fa0c1ef19165bc65082581d2c75429e">   48</a></span>    std::vector&lt;std::string&gt; <a class="code hl_variable" href="../../dd/d1f/class_game.html#a5fa0c1ef19165bc65082581d2c75429e">AvailablePlanet</a>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="../../dd/d1f/class_game.html#aeed4d2457b88d539d3024c8fc9682b15">   49</a></span>    std::vector&lt;std::string&gt; <a class="code hl_variable" href="../../dd/d1f/class_game.html#aeed4d2457b88d539d3024c8fc9682b15">AvailableAsteroid</a>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../dd/d1f/class_game.html#a1f95a04fc30e17de3519073855389c22">GenerateUI</a>();</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="comment">//UI</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="../../dd/d1f/class_game.html#ad40cbc4ff232475495a2ac7a3d6ea63b">   53</a></span>    sf::Sprite <a class="code hl_variable" href="../../dd/d1f/class_game.html#ad40cbc4ff232475495a2ac7a3d6ea63b">BottomBackground</a>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="../../dd/d1f/class_game.html#af1e69d37451681fd433093714a1b602a">   54</a></span>    sf::Sprite <a class="code hl_variable" href="../../dd/d1f/class_game.html#af1e69d37451681fd433093714a1b602a">LeftBackground</a>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="../../dd/d1f/class_game.html#a950ea6dbed2b2177f48093db559103ac">   56</a></span>    <a class="code hl_class" href="../../d9/d63/class_engine_1_1_hud___bonus.html">Engine::Hud_Bonus</a> <a class="code hl_variable" href="../../dd/d1f/class_game.html#a950ea6dbed2b2177f48093db559103ac">Repair</a>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="../../dd/d1f/class_game.html#a35cbc2690fdefc58bef7c5e3e3c0b07d">   57</a></span>    <a class="code hl_class" href="../../d9/d63/class_engine_1_1_hud___bonus.html">Engine::Hud_Bonus</a> <a class="code hl_variable" href="../../dd/d1f/class_game.html#a35cbc2690fdefc58bef7c5e3e3c0b07d">Mine</a>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="../../dd/d1f/class_game.html#af115a6024169951f40849429b5c4e049">   58</a></span>    <a class="code hl_class" href="../../d9/d63/class_engine_1_1_hud___bonus.html">Engine::Hud_Bonus</a> <a class="code hl_variable" href="../../dd/d1f/class_game.html#af115a6024169951f40849429b5c4e049">Missile</a>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="../../dd/d1f/class_game.html#a976f81c24baa90c935574c156c43206b">   59</a></span>    <a class="code hl_class" href="../../d9/d63/class_engine_1_1_hud___bonus.html">Engine::Hud_Bonus</a> <a class="code hl_variable" href="../../dd/d1f/class_game.html#a976f81c24baa90c935574c156c43206b">Perforation</a>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="../../dd/d1f/class_game.html#ab3f0555b29d084ffcae14b2d30e386f7">   60</a></span>    <a class="code hl_class" href="../../d9/d63/class_engine_1_1_hud___bonus.html">Engine::Hud_Bonus</a> <a class="code hl_variable" href="../../dd/d1f/class_game.html#ab3f0555b29d084ffcae14b2d30e386f7">Cadence</a>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="../../dd/d1f/class_game.html#a265ec5e4e038724ebde5e3d763589952">   62</a></span>    sf::Sprite <a class="code hl_variable" href="../../dd/d1f/class_game.html#a265ec5e4e038724ebde5e3d763589952">BoostIcon</a>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="../../dd/d1f/class_game.html#a31316e5edf52bc8d9bd001391a631367">   64</a></span>    <a class="code hl_class" href="../../d5/d46/class_engine_1_1_slider.html">Engine::Slider</a> <a class="code hl_variable" href="../../dd/d1f/class_game.html#a31316e5edf52bc8d9bd001391a631367">Health</a>;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="../../dd/d1f/class_game.html#a116a1a09a35d0997d7c3c9189e75ea85">   65</a></span>    <a class="code hl_class" href="../../d5/d46/class_engine_1_1_slider.html">Engine::Slider</a> <a class="code hl_variable" href="../../dd/d1f/class_game.html#a116a1a09a35d0997d7c3c9189e75ea85">Shield</a>;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="../../dd/d1f/class_game.html#a4d303d78df4b19e5637878f817904e9b">   66</a></span>    <a class="code hl_class" href="../../d5/d46/class_engine_1_1_slider.html">Engine::Slider</a> <a class="code hl_variable" href="../../dd/d1f/class_game.html#a4d303d78df4b19e5637878f817904e9b">Boost</a>;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="comment">// systeme global</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="../../dd/d1f/class_game.html#a6c990b72e55e29ed4373a807458ebfe8">   69</a></span>    <a class="code hl_class" href="../../de/d15/class_s___mouvement___actif.html">S_Mouvement_Actif</a>* <a class="code hl_variable" href="../../dd/d1f/class_game.html#a6c990b72e55e29ed4373a807458ebfe8">System_Mouvement_Actif</a>;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="../../dd/d1f/class_game.html#ac2c6fe187daec2f95dab48d96e41e401">   70</a></span>    <a class="code hl_class" href="../../dd/db7/class_s___health.html">S_Health</a>* <a class="code hl_variable" href="../../dd/d1f/class_game.html#ac2c6fe187daec2f95dab48d96e41e401">Health_Manager</a>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="../../dd/d1f/class_game.html#aa7c4210b162b3cbd351b2d6921791833">   71</a></span>    <a class="code hl_class" href="../../d1/d8d/class_s___shield.html">S_Shield</a>* <a class="code hl_variable" href="../../dd/d1f/class_game.html#aa7c4210b162b3cbd351b2d6921791833">Shield_Manager</a>;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../dd/d1f/class_game.html#aae8805d1c3456630f7cc27e3ed39a18f">SpawnLaser</a>(<a class="code hl_class" href="../../d5/d5a/class_engine_1_1_entity.html">Engine::Entity</a>* Shooter);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>};</div>
+<div class="ttc" id="a_engine_8h_html"><div class="ttname"><a href="../../de/dcf/_engine_8h.html">Engine.h</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_blank_scene_html"><div class="ttname"><a href="../../da/d1a/class_engine_1_1_blank_scene.html">Engine::BlankScene</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d63/_blank_scene_8h_source.html#l00010">BlankScene.h:10</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_entity_html"><div class="ttname"><a href="../../d5/d5a/class_engine_1_1_entity.html">Engine::Entity</a></div><div class="ttdef"><b>Definition:</b> <a href="../../db/d3a/_entity_8h_source.html#l00018">Entity.h:18</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_hud___bonus_html"><div class="ttname"><a href="../../d9/d63/class_engine_1_1_hud___bonus.html">Engine::Hud_Bonus</a></div><div class="ttdef"><b>Definition:</b> <a href="../../db/de7/_hud___bonus_8h_source.html#l00005">Hud_Bonus.h:5</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_slider_html"><div class="ttname"><a href="../../d5/d46/class_engine_1_1_slider.html">Engine::Slider</a></div><div class="ttdef"><b>Definition:</b> <a href="../../de/d62/_slider_8h_source.html#l00004">Slider.h:4</a></div></div>
+<div class="ttc" id="aclass_f_t_p___entity_manager_html"><div class="ttname"><a href="../../d4/d32/class_f_t_p___entity_manager.html">FTP_EntityManager</a></div><div class="ttdoc">classe enfant de EntityManager</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/de3/_f_t_p___entity_manager_8h_source.html#l00009">FTP_EntityManager.h:9</a></div></div>
+<div class="ttc" id="aclass_f_t_p___scene_manager_html"><div class="ttname"><a href="../../d1/d5b/class_f_t_p___scene_manager.html">FTP_SceneManager</a></div><div class="ttdoc">classe enfant de SceneManager</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/de3/_f_t_p___scene_manager_8h_source.html#l00008">FTP_SceneManager.h:8</a></div></div>
+<div class="ttc" id="aclass_game_html"><div class="ttname"><a href="../../dd/d1f/class_game.html">Game</a></div><div class="ttdoc">classe enfant de Scene, represente le niveau ou le joueur joue</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dcd/_game_8h_source.html#l00016">Game.h:16</a></div></div>
+<div class="ttc" id="aclass_game_html_a03f8c553ee17dd5ee30c5e915de45cd2"><div class="ttname"><a href="../../dd/d1f/class_game.html#a03f8c553ee17dd5ee30c5e915de45cd2">Game::InitAsteroid</a></div><div class="ttdeci">void InitAsteroid()</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/db5/_game_8cpp_source.html#l00253">Game.cpp:253</a></div></div>
+<div class="ttc" id="aclass_game_html_a0bdfd716dd956fbd02a2877e30e217e6"><div class="ttname"><a href="../../dd/d1f/class_game.html#a0bdfd716dd956fbd02a2877e30e217e6">Game::text</a></div><div class="ttdeci">sf::Text text</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dcd/_game_8h_source.html#l00042">Game.h:42</a></div></div>
+<div class="ttc" id="aclass_game_html_a116a1a09a35d0997d7c3c9189e75ea85"><div class="ttname"><a href="../../dd/d1f/class_game.html#a116a1a09a35d0997d7c3c9189e75ea85">Game::Shield</a></div><div class="ttdeci">Engine::Slider Shield</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dcd/_game_8h_source.html#l00065">Game.h:65</a></div></div>
+<div class="ttc" id="aclass_game_html_a16dd6d212ea7ddd6087e66963ff3fc03"><div class="ttname"><a href="../../dd/d1f/class_game.html#a16dd6d212ea7ddd6087e66963ff3fc03">Game::S_Input_Mouse</a></div><div class="ttdeci">void S_Input_Mouse(sf::Event event) override</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/db5/_game_8cpp_source.html#l00197">Game.cpp:197</a></div></div>
+<div class="ttc" id="aclass_game_html_a1b9f968b215bf877679abf6e4505bc08"><div class="ttname"><a href="../../dd/d1f/class_game.html#a1b9f968b215bf877679abf6e4505bc08">Game::S_Static_Physic</a></div><div class="ttdeci">void S_Static_Physic(b2Body *body) override</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/db5/_game_8cpp_source.html#l00205">Game.cpp:205</a></div></div>
+<div class="ttc" id="aclass_game_html_a1f95a04fc30e17de3519073855389c22"><div class="ttname"><a href="../../dd/d1f/class_game.html#a1f95a04fc30e17de3519073855389c22">Game::GenerateUI</a></div><div class="ttdeci">void GenerateUI()</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/db5/_game_8cpp_source.html#l00136">Game.cpp:136</a></div></div>
+<div class="ttc" id="aclass_game_html_a265ec5e4e038724ebde5e3d763589952"><div class="ttname"><a href="../../dd/d1f/class_game.html#a265ec5e4e038724ebde5e3d763589952">Game::BoostIcon</a></div><div class="ttdeci">sf::Sprite BoostIcon</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dcd/_game_8h_source.html#l00062">Game.h:62</a></div></div>
+<div class="ttc" id="aclass_game_html_a31316e5edf52bc8d9bd001391a631367"><div class="ttname"><a href="../../dd/d1f/class_game.html#a31316e5edf52bc8d9bd001391a631367">Game::Health</a></div><div class="ttdeci">Engine::Slider Health</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dcd/_game_8h_source.html#l00064">Game.h:64</a></div></div>
+<div class="ttc" id="aclass_game_html_a35cbc2690fdefc58bef7c5e3e3c0b07d"><div class="ttname"><a href="../../dd/d1f/class_game.html#a35cbc2690fdefc58bef7c5e3e3c0b07d">Game::Mine</a></div><div class="ttdeci">Engine::Hud_Bonus Mine</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dcd/_game_8h_source.html#l00057">Game.h:57</a></div></div>
+<div class="ttc" id="aclass_game_html_a47e7330a3c9f86a00e8c3d538c2ad962"><div class="ttname"><a href="../../dd/d1f/class_game.html#a47e7330a3c9f86a00e8c3d538c2ad962">Game::MousePosWindow</a></div><div class="ttdeci">sf::Vector2i MousePosWindow</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dcd/_game_8h_source.html#l00040">Game.h:40</a></div></div>
+<div class="ttc" id="aclass_game_html_a47f6833807d6bb0182cd22a7d7cf5adb"><div class="ttname"><a href="../../dd/d1f/class_game.html#a47f6833807d6bb0182cd22a7d7cf5adb">Game::S_Render</a></div><div class="ttdeci">void S_Render() override</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/db5/_game_8cpp_source.html#l00038">Game.cpp:38</a></div></div>
+<div class="ttc" id="aclass_game_html_a4cad4f92372525c758f6a9acafb255c4"><div class="ttname"><a href="../../dd/d1f/class_game.html#a4cad4f92372525c758f6a9acafb255c4">Game::InitPlayer</a></div><div class="ttdeci">void InitPlayer()</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/db5/_game_8cpp_source.html#l00282">Game.cpp:282</a></div></div>
+<div class="ttc" id="aclass_game_html_a4d303d78df4b19e5637878f817904e9b"><div class="ttname"><a href="../../dd/d1f/class_game.html#a4d303d78df4b19e5637878f817904e9b">Game::Boost</a></div><div class="ttdeci">Engine::Slider Boost</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dcd/_game_8h_source.html#l00066">Game.h:66</a></div></div>
+<div class="ttc" id="aclass_game_html_a514c8900f242f228eeafd8a186dc7952"><div class="ttname"><a href="../../dd/d1f/class_game.html#a514c8900f242f228eeafd8a186dc7952">Game::Game</a></div><div class="ttdeci">Game(std::string name, FTP_SceneManager *refs)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/db5/_game_8cpp_source.html#l00015">Game.cpp:15</a></div></div>
+<div class="ttc" id="aclass_game_html_a541e26087a04753316cf8beb35a5477e"><div class="ttname"><a href="../../dd/d1f/class_game.html#a541e26087a04753316cf8beb35a5477e">Game::MousePosScreen</a></div><div class="ttdeci">sf::Vector2i MousePosScreen</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dcd/_game_8h_source.html#l00039">Game.h:39</a></div></div>
+<div class="ttc" id="aclass_game_html_a5c4f0aba014cbbc923a60be16b9748ef"><div class="ttname"><a href="../../dd/d1f/class_game.html#a5c4f0aba014cbbc923a60be16b9748ef">Game::S_ActionTrigger</a></div><div class="ttdeci">void S_ActionTrigger(std::string ActionName) override</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/db5/_game_8cpp_source.html#l00102">Game.cpp:102</a></div></div>
+<div class="ttc" id="aclass_game_html_a5f9ada9af176539cab973d4a149a71a6"><div class="ttname"><a href="../../dd/d1f/class_game.html#a5f9ada9af176539cab973d4a149a71a6">Game::Gravity</a></div><div class="ttdeci">b2Vec2 Gravity</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dcd/_game_8h_source.html#l00037">Game.h:37</a></div></div>
+<div class="ttc" id="aclass_game_html_a5fa0c1ef19165bc65082581d2c75429e"><div class="ttname"><a href="../../dd/d1f/class_game.html#a5fa0c1ef19165bc65082581d2c75429e">Game::AvailablePlanet</a></div><div class="ttdeci">std::vector&lt; std::string &gt; AvailablePlanet</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dcd/_game_8h_source.html#l00048">Game.h:48</a></div></div>
+<div class="ttc" id="aclass_game_html_a6021e768b485da918793fd90663db611"><div class="ttname"><a href="../../dd/d1f/class_game.html#a6021e768b485da918793fd90663db611">Game::shape</a></div><div class="ttdeci">sf::RectangleShape shape</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dcd/_game_8h_source.html#l00030">Game.h:30</a></div></div>
+<div class="ttc" id="aclass_game_html_a6c990b72e55e29ed4373a807458ebfe8"><div class="ttname"><a href="../../dd/d1f/class_game.html#a6c990b72e55e29ed4373a807458ebfe8">Game::System_Mouvement_Actif</a></div><div class="ttdeci">S_Mouvement_Actif * System_Mouvement_Actif</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dcd/_game_8h_source.html#l00069">Game.h:69</a></div></div>
+<div class="ttc" id="aclass_game_html_a7d7667c1d88572d986a89a12d0f28eb8"><div class="ttname"><a href="../../dd/d1f/class_game.html#a7d7667c1d88572d986a89a12d0f28eb8">Game::S_Dynamic_Physic</a></div><div class="ttdeci">void S_Dynamic_Physic(b2Body *body) override</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/db5/_game_8cpp_source.html#l00214">Game.cpp:214</a></div></div>
+<div class="ttc" id="aclass_game_html_a878b0154bdcfc4c05d5aa0ff995514ed"><div class="ttname"><a href="../../dd/d1f/class_game.html#a878b0154bdcfc4c05d5aa0ff995514ed">Game::S_Kynematic_Physic</a></div><div class="ttdeci">void S_Kynematic_Physic(b2Body *body) override</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/db5/_game_8cpp_source.html#l00223">Game.cpp:223</a></div></div>
+<div class="ttc" id="aclass_game_html_a90647f07febb0470b0d11a59173b9583"><div class="ttname"><a href="../../dd/d1f/class_game.html#a90647f07febb0470b0d11a59173b9583">Game::InitPlanet</a></div><div class="ttdeci">void InitPlanet()</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/db5/_game_8cpp_source.html#l00227">Game.cpp:227</a></div></div>
+<div class="ttc" id="aclass_game_html_a950ea6dbed2b2177f48093db559103ac"><div class="ttname"><a href="../../dd/d1f/class_game.html#a950ea6dbed2b2177f48093db559103ac">Game::Repair</a></div><div class="ttdeci">Engine::Hud_Bonus Repair</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dcd/_game_8h_source.html#l00056">Game.h:56</a></div></div>
+<div class="ttc" id="aclass_game_html_a976f81c24baa90c935574c156c43206b"><div class="ttname"><a href="../../dd/d1f/class_game.html#a976f81c24baa90c935574c156c43206b">Game::Perforation</a></div><div class="ttdeci">Engine::Hud_Bonus Perforation</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dcd/_game_8h_source.html#l00059">Game.h:59</a></div></div>
+<div class="ttc" id="aclass_game_html_aa06900f6bdd54144c2af182ed084cec2"><div class="ttname"><a href="../../dd/d1f/class_game.html#aa06900f6bdd54144c2af182ed084cec2">Game::S_Input_Text</a></div><div class="ttdeci">void S_Input_Text(sf::Event event) override</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/db5/_game_8cpp_source.html#l00201">Game.cpp:201</a></div></div>
+<div class="ttc" id="aclass_game_html_aa7c4210b162b3cbd351b2d6921791833"><div class="ttname"><a href="../../dd/d1f/class_game.html#aa7c4210b162b3cbd351b2d6921791833">Game::Shield_Manager</a></div><div class="ttdeci">S_Shield * Shield_Manager</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dcd/_game_8h_source.html#l00071">Game.h:71</a></div></div>
+<div class="ttc" id="aclass_game_html_aae8805d1c3456630f7cc27e3ed39a18f"><div class="ttname"><a href="../../dd/d1f/class_game.html#aae8805d1c3456630f7cc27e3ed39a18f">Game::SpawnLaser</a></div><div class="ttdeci">void SpawnLaser(Engine::Entity *Shooter)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/db5/_game_8cpp_source.html#l00188">Game.cpp:188</a></div></div>
+<div class="ttc" id="aclass_game_html_aaf7cd2ee3cba1e735ebc6278c008419a"><div class="ttname"><a href="../../dd/d1f/class_game.html#aaf7cd2ee3cba1e735ebc6278c008419a">Game::MapSize</a></div><div class="ttdeci">sf::Vector2f MapSize</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dcd/_game_8h_source.html#l00034">Game.h:34</a></div></div>
+<div class="ttc" id="aclass_game_html_ab3f0555b29d084ffcae14b2d30e386f7"><div class="ttname"><a href="../../dd/d1f/class_game.html#ab3f0555b29d084ffcae14b2d30e386f7">Game::Cadence</a></div><div class="ttdeci">Engine::Hud_Bonus Cadence</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dcd/_game_8h_source.html#l00060">Game.h:60</a></div></div>
+<div class="ttc" id="aclass_game_html_ac2c6fe187daec2f95dab48d96e41e401"><div class="ttname"><a href="../../dd/d1f/class_game.html#ac2c6fe187daec2f95dab48d96e41e401">Game::Health_Manager</a></div><div class="ttdeci">S_Health * Health_Manager</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dcd/_game_8h_source.html#l00070">Game.h:70</a></div></div>
+<div class="ttc" id="aclass_game_html_acf666956a72aef0da1bb1d837c486412"><div class="ttname"><a href="../../dd/d1f/class_game.html#acf666956a72aef0da1bb1d837c486412">Game::Tick</a></div><div class="ttdeci">void Tick() override</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/db5/_game_8cpp_source.html#l00022">Game.cpp:22</a></div></div>
+<div class="ttc" id="aclass_game_html_ad23a6e812b544e84454fdde977d8f42f"><div class="ttname"><a href="../../dd/d1f/class_game.html#ad23a6e812b544e84454fdde977d8f42f">Game::MousePosView</a></div><div class="ttdeci">sf::Vector2f MousePosView</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dcd/_game_8h_source.html#l00041">Game.h:41</a></div></div>
+<div class="ttc" id="aclass_game_html_ad40cbc4ff232475495a2ac7a3d6ea63b"><div class="ttname"><a href="../../dd/d1f/class_game.html#ad40cbc4ff232475495a2ac7a3d6ea63b">Game::BottomBackground</a></div><div class="ttdeci">sf::Sprite BottomBackground</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dcd/_game_8h_source.html#l00053">Game.h:53</a></div></div>
+<div class="ttc" id="aclass_game_html_ad4b45872c2afe0b7b5d3cd03108bd96c"><div class="ttname"><a href="../../dd/d1f/class_game.html#ad4b45872c2afe0b7b5d3cd03108bd96c">Game::seed</a></div><div class="ttdeci">int seed</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dcd/_game_8h_source.html#l00032">Game.h:32</a></div></div>
+<div class="ttc" id="aclass_game_html_ae12ca68638c3949de43a79af36ffeada"><div class="ttname"><a href="../../dd/d1f/class_game.html#ae12ca68638c3949de43a79af36ffeada">Game::Begin_Play</a></div><div class="ttdeci">void Begin_Play() override</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/db5/_game_8cpp_source.html#l00111">Game.cpp:111</a></div></div>
+<div class="ttc" id="aclass_game_html_aeed4d2457b88d539d3024c8fc9682b15"><div class="ttname"><a href="../../dd/d1f/class_game.html#aeed4d2457b88d539d3024c8fc9682b15">Game::AvailableAsteroid</a></div><div class="ttdeci">std::vector&lt; std::string &gt; AvailableAsteroid</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dcd/_game_8h_source.html#l00049">Game.h:49</a></div></div>
+<div class="ttc" id="aclass_game_html_af115a6024169951f40849429b5c4e049"><div class="ttname"><a href="../../dd/d1f/class_game.html#af115a6024169951f40849429b5c4e049">Game::Missile</a></div><div class="ttdeci">Engine::Hud_Bonus Missile</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dcd/_game_8h_source.html#l00058">Game.h:58</a></div></div>
+<div class="ttc" id="aclass_game_html_af1e69d37451681fd433093714a1b602a"><div class="ttname"><a href="../../dd/d1f/class_game.html#af1e69d37451681fd433093714a1b602a">Game::LeftBackground</a></div><div class="ttdeci">sf::Sprite LeftBackground</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dcd/_game_8h_source.html#l00054">Game.h:54</a></div></div>
+<div class="ttc" id="aclass_s___health_html"><div class="ttname"><a href="../../dd/db7/class_s___health.html">S_Health</a></div><div class="ttdoc">classe systeme pour le component Health, il permait de changer la vie a des entite et checker si il s...</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d56/_s___health_8h_source.html#l00007">S_Health.h:7</a></div></div>
+<div class="ttc" id="aclass_s___mouvement___actif_html"><div class="ttname"><a href="../../de/d15/class_s___mouvement___actif.html">S_Mouvement_Actif</a></div><div class="ttdoc">classe systeme pour le component Mouvement_Actif, Une fois le vector de direction recalculer il chang...</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d43/_s___mouvement_actif_8h_source.html#l00008">S_MouvementActif.h:8</a></div></div>
+<div class="ttc" id="aclass_s___shield_html"><div class="ttname"><a href="../../d1/d8d/class_s___shield.html">S_Shield</a></div><div class="ttdoc">classe systeme pour le component Shied, il permait de gerer les shields des entites</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dff/_s___shield_8h_source.html#l00006">S_Shield.h:6</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

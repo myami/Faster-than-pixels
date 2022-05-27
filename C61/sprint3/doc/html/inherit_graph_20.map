@@ -1,0 +1,8 @@
+<map id="Graphe hiérarchique des classes" name="Graphe hiérarchique des classes">
+<area shape="rect" id="node1" href="$da/d20/class_engine_1_1_state_machine.html" title="classe de statemachine" alt="" coords="5,31,156,57"/>
+<area shape="rect" id="node2" href="$d5/d19/class_engine_1_1_entity_manager.html" title="classe representant toutes les entités de la scène." alt="" coords="218,5,373,32"/>
+<area shape="rect" id="node4" href="$d4/d73/class_engine_1_1_finite_state_machine.html" title=" " alt="" coords="204,56,387,83"/>
+<area shape="rect" id="node3" href="$d4/d32/class_f_t_p___entity_manager.html" title="classe enfant de EntityManager" alt="" coords="445,5,582,32"/>
+<area shape="rect" id="node5" href="$dc/d9b/class_engine_1_1_scene_manager.html" title="classe representant les scenes dans le jeu" alt="" coords="435,56,592,83"/>
+<area shape="rect" id="node6" href="$d1/d5b/class_f_t_p___scene_manager.html" title="classe enfant de SceneManager" alt="" coords="640,56,780,83"/>
+</map>

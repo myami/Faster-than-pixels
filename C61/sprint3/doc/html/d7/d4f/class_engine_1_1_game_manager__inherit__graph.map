@@ -1,0 +1,4 @@
+<map id="Engine::GameManager" name="Engine::GameManager">
+<area shape="rect" id="node1" title="Classe représentant le jeu, elle contient tout les sous&#45;systèmes et gère la gameloop." alt="" coords="5,5,160,32"/>
+<area shape="rect" id="node2" href="$da/d86/class_f_t_p___game_manager.html" title="classe enfant de GameManager" alt="" coords="13,80,152,107"/>
+</map>

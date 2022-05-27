@@ -1,0 +1,12 @@
+<map id="Graphe hiérarchique des classes" name="Graphe hiérarchique des classes">
+<area shape="rect" id="node1" href="$d0/d92/class_engine_1_1_game_mode.html" title="classe parentes des modes de jeux" alt="" coords="5,208,143,235"/>
+<area shape="rect" id="node2" href="$d8/dca/class_f_t_p___attack_the_area.html" title="classe enfant de Gamemode, represente le mode de jeu &quot;Attack the area&quot;" alt="" coords="197,5,335,32"/>
+<area shape="rect" id="node3" href="$d5/d7c/class_f_t_p___fast_action.html" title="classe enfant de Gamemode, represente le mode de jeu &quot;FastAction&quot;" alt="" coords="208,56,324,83"/>
+<area shape="rect" id="node4" href="$d6/d24/class_f_t_p___find_survivor.html" title="classe enfant de Gamemode, represente le mode de jeu &quot;FindSurvivor&quot;" alt="" coords="205,107,327,133"/>
+<area shape="rect" id="node5" href="$d8/d1c/class_f_t_p___last_survivor.html" title="classe enfant de Gamemode, represente le mode de jeu &quot;LastSurvivor&quot;" alt="" coords="205,157,327,184"/>
+<area shape="rect" id="node6" href="$d3/d58/class_f_t_p___protect_the_area.html" title="classe enfant de Gamemode, represente le mode de jeu &quot;ProtectTheArea&quot;" alt="" coords="195,208,337,235"/>
+<area shape="rect" id="node7" href="$d1/df5/class_f_t_p___race.html" title="classe enfant de Gamemode, represente le mode de jeu &quot;Race&quot;" alt="" coords="225,259,307,285"/>
+<area shape="rect" id="node8" href="$d4/df8/class_f_t_p___training___easy.html" title="classe enfant de Gamemode, represente le mode de jeu &quot;Training_Easy&quot;" alt="" coords="199,309,333,336"/>
+<area shape="rect" id="node9" href="$db/dd2/class_f_t_p___training___hard.html" title="classe enfant de Gamemode, represente le mode de jeu &quot;Training_Hard&quot;" alt="" coords="200,360,332,387"/>
+<area shape="rect" id="node10" href="$d8/d62/class_f_t_p___training___medium.html" title="classe enfant de Gamemode, represente le mode de jeu &quot;Training_Medium&quot;" alt="" coords="191,411,341,437"/>
+</map>

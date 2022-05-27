@@ -89,6 +89,7 @@ void Settings::Begin_Play()
 		tmpSoundVolumeParam = SoundVolumeParam;
 		tmpResolutionIndex = ResolutionIndex;
 		tmpFullScreenParam = FullScreenParam;
+		Engine::SerializeData(SettingsParam);
 	}
 
 #pragma endregion

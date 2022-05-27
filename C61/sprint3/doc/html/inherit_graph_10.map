@@ -1,0 +1,4 @@
+<map id="Graphe hiérarchique des classes" name="Graphe hiérarchique des classes">
+<area shape="rect" id="node1" href="$d3/d48/class_engine_1_1_game_manager.html" title="Classe représentant le jeu, elle contient tout les sous&#45;systèmes et gère la gameloop." alt="" coords="5,5,160,32"/>
+<area shape="rect" id="node2" href="$da/d86/class_f_t_p___game_manager.html" title="classe enfant de GameManager" alt="" coords="208,5,347,32"/>
+</map>

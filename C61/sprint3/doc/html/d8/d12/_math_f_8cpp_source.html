@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Faster than pixel:  Fichier source de Engine/src/Utility/MathF.cpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Faster than pixel
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search",'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_0b6ee6e7e9547e675db4add2e5de97da.html">Engine</a></li><li class="navelem"><a class="el" href="../../dir_b6dc9fbf5fd229481ae647194eb362ed.html">src</a></li><li class="navelem"><a class="el" href="../../dir_b83b933dc7ac7ffa8d1621e16ca685eb.html">Utility</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">MathF.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d8/d12/_math_f_8cpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="../../da/db1/_math_f_8h.html">MathF.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="../../d1/db6/namespace_engine.html#a48f7c4d8ce5aaf859ce66f58e3e4812a">    3</a></span><span class="keywordtype">float</span> <a class="code hl_function" href="../../d1/db6/namespace_engine.html#a48f7c4d8ce5aaf859ce66f58e3e4812a">Engine::DistanceBetweenVector</a>(sf::Vector2f origin, sf::Vector2f destination)</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>{</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    <span class="keywordflow">return</span> sqrt(pow(destination.x - origin.x, 2) +</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>        pow(destination.y - origin.y, 2));</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>}</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="../../d1/db6/namespace_engine.html#a955a077d0addbfefb5a40ffb026eb075">    9</a></span><span class="keywordtype">float</span> <a class="code hl_function" href="../../d1/db6/namespace_engine.html#a955a077d0addbfefb5a40ffb026eb075">Engine::AngleBetweenVector</a>(sf::Vector2f origin, sf::Vector2f point1, sf::Vector2f point2)</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>{</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordtype">float</span> a = <a class="code hl_function" href="../../d1/db6/namespace_engine.html#a48f7c4d8ce5aaf859ce66f58e3e4812a">DistanceBetweenVector</a>(origin, point1);</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordtype">float</span> b = <a class="code hl_function" href="../../d1/db6/namespace_engine.html#a48f7c4d8ce5aaf859ce66f58e3e4812a">DistanceBetweenVector</a>(origin, point2);</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keywordtype">float</span> c = <a class="code hl_function" href="../../d1/db6/namespace_engine.html#a48f7c4d8ce5aaf859ce66f58e3e4812a">DistanceBetweenVector</a>(point1, point2);</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordtype">float</span> cosangle = ((pow(a, 2) + pow(b, 2) - pow(c, 2)) / (a * b * 2));</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordflow">return</span> acos(cosangle);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>}</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="../../d1/db6/namespace_engine.html#adfbb5fafd63306b7a3d760a1d45b9073">   20</a></span>sf::Vector2f <a class="code hl_function" href="../../d1/db6/namespace_engine.html#adfbb5fafd63306b7a3d760a1d45b9073">Engine::NormalizeVector</a>(sf::Vector2f origin)</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>{</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordtype">float</span> magnitude = sqrt(origin.x + origin.y);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    sf::Vector2f normalized = sf::Vector2f(origin.x, origin.y) / magnitude;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">return</span> normalized;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>}</div>
+<div class="ttc" id="a_math_f_8h_html"><div class="ttname"><a href="../../da/db1/_math_f_8h.html">MathF.h</a></div></div>
+<div class="ttc" id="anamespace_engine_html_a48f7c4d8ce5aaf859ce66f58e3e4812a"><div class="ttname"><a href="../../d1/db6/namespace_engine.html#a48f7c4d8ce5aaf859ce66f58e3e4812a">Engine::DistanceBetweenVector</a></div><div class="ttdeci">float DistanceBetweenVector(sf::Vector2f origin, sf::Vector2f destination)</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d12/_math_f_8cpp_source.html#l00003">MathF.cpp:3</a></div></div>
+<div class="ttc" id="anamespace_engine_html_a955a077d0addbfefb5a40ffb026eb075"><div class="ttname"><a href="../../d1/db6/namespace_engine.html#a955a077d0addbfefb5a40ffb026eb075">Engine::AngleBetweenVector</a></div><div class="ttdeci">float AngleBetweenVector(sf::Vector2f origin, sf::Vector2f point1, sf::Vector2f point2)</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d12/_math_f_8cpp_source.html#l00009">MathF.cpp:9</a></div></div>
+<div class="ttc" id="anamespace_engine_html_adfbb5fafd63306b7a3d760a1d45b9073"><div class="ttname"><a href="../../d1/db6/namespace_engine.html#adfbb5fafd63306b7a3d760a1d45b9073">Engine::NormalizeVector</a></div><div class="ttdeci">sf::Vector2f NormalizeVector(sf::Vector2f origin)</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d12/_math_f_8cpp_source.html#l00020">MathF.cpp:20</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Faster than pixel:  Fichier source de FasterThanPixels/src/Factory/FTP_SceneManager.cpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Faster than pixel
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search",'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_02c03db38a580fded92fda78cff56987.html">FasterThanPixels</a></li><li class="navelem"><a class="el" href="../../dir_6a8e090ea90646710d8a5b1ef0bd2e56.html">src</a></li><li class="navelem"><a class="el" href="../../dir_7e31ac1c5c9653707e20b536d5eac1b6.html">Factory</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">FTP_SceneManager.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../dc/de0/_f_t_p___scene_manager_8cpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="../../d9/de3/_f_t_p___scene_manager_8h.html">FTP_SceneManager.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;../Scene/Starting.h&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;../Scene/Authentification.h&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;../Scene/MainMenu.h&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;../Scene/Game.h&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;../Scene/GameModeSelection.h&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;../Scene/Settings.h&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;../Scene/Compendium.h&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;../Scene/PlayerProfile.h&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="../../d1/d5b/class_f_t_p___scene_manager.html#ac5fd4165a04c1235510edace1cf9ab69">   11</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/d5b/class_f_t_p___scene_manager.html#ac5fd4165a04c1235510edace1cf9ab69">FTP_SceneManager::Init</a>(std::string FirstScene)</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <a class="code hl_class" href="../../db/de1/class_starting.html">Starting</a>* st = <span class="keyword">new</span> <a class="code hl_class" href="../../db/de1/class_starting.html">Starting</a>(<span class="stringliteral">&quot;Cinematique&quot;</span>, <span class="keyword">this</span>);</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <a class="code hl_class" href="../../dd/dfe/class_authentification.html">Authentification</a>* authentification = <span class="keyword">new</span> <a class="code hl_class" href="../../dd/dfe/class_authentification.html">Authentification</a>(<span class="stringliteral">&quot;Authentification&quot;</span>, <span class="keyword">this</span>);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <a class="code hl_class" href="../../d4/d04/class_main_menu.html">MainMenu</a>* mainmenu = <span class="keyword">new</span> <a class="code hl_class" href="../../d4/d04/class_main_menu.html">MainMenu</a>(<span class="stringliteral">&quot;MainMenu&quot;</span>, <span class="keyword">this</span>);</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_class" href="../../dd/d1f/class_game.html">Game</a>* game = <span class="keyword">new</span> <a class="code hl_class" href="../../dd/d1f/class_game.html">Game</a>(<span class="stringliteral">&quot;Game&quot;</span>, <span class="keyword">this</span>);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <a class="code hl_class" href="../../d6/dd6/class_game_mode_selection.html">GameModeSelection</a>* gms = <span class="keyword">new</span> <a class="code hl_class" href="../../d6/dd6/class_game_mode_selection.html">GameModeSelection</a>(<span class="stringliteral">&quot;GameModeSelection&quot;</span>, <span class="keyword">this</span>);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <a class="code hl_class" href="../../db/d2b/class_settings.html">Settings</a>* settings = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d2b/class_settings.html">Settings</a>(<span class="stringliteral">&quot;Settings&quot;</span>, <span class="keyword">this</span>);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <a class="code hl_class" href="../../d8/d30/class_compendium.html">Compendium</a>* compendium = <span class="keyword">new</span> <a class="code hl_class" href="../../d8/d30/class_compendium.html">Compendium</a>(<span class="stringliteral">&quot;Compendium&quot;</span>, <span class="keyword">this</span>);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <a class="code hl_class" href="../../d3/d28/class_player_profile.html">PlayerProfile</a>* profile = <span class="keyword">new</span> <a class="code hl_class" href="../../d3/d28/class_player_profile.html">PlayerProfile</a>(<span class="stringliteral">&quot;PlayerProfile&quot;</span>, <span class="keyword">this</span>);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <a class="code hl_function" href="../../dc/d9b/class_engine_1_1_scene_manager.html#aca23437be3f7f58d851bd6f8a8907f51">AddScene</a>(st);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <a class="code hl_function" href="../../dc/d9b/class_engine_1_1_scene_manager.html#aca23437be3f7f58d851bd6f8a8907f51">AddScene</a>(authentification);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <a class="code hl_function" href="../../dc/d9b/class_engine_1_1_scene_manager.html#aca23437be3f7f58d851bd6f8a8907f51">AddScene</a>(mainmenu);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <a class="code hl_function" href="../../dc/d9b/class_engine_1_1_scene_manager.html#aca23437be3f7f58d851bd6f8a8907f51">AddScene</a>(game);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <a class="code hl_function" href="../../dc/d9b/class_engine_1_1_scene_manager.html#aca23437be3f7f58d851bd6f8a8907f51">AddScene</a>(gms);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <a class="code hl_function" href="../../dc/d9b/class_engine_1_1_scene_manager.html#aca23437be3f7f58d851bd6f8a8907f51">AddScene</a>(settings);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <a class="code hl_function" href="../../dc/d9b/class_engine_1_1_scene_manager.html#aca23437be3f7f58d851bd6f8a8907f51">AddScene</a>(compendium);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <a class="code hl_function" href="../../dc/d9b/class_engine_1_1_scene_manager.html#aca23437be3f7f58d851bd6f8a8907f51">AddScene</a>(profile);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <a class="code hl_variable" href="../../d4/d73/class_engine_1_1_finite_state_machine.html#ae5244fc70e71041fcb775ac1e5792236">Initial_States</a> = <a class="code hl_function" href="../../dc/d9b/class_engine_1_1_scene_manager.html#a6a66dd83e13bf9dc8f7eeb73d5f60e0a">GetStatesFromScene</a>(<a class="code hl_function" href="../../dc/d9b/class_engine_1_1_scene_manager.html#a5630c155a3ace982d6437d6215c8cf29">GetScene</a>(FirstScene));</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <a class="code hl_function" href="../../dc/d9b/class_engine_1_1_scene_manager.html#a516eaadd56266e4a3d4610bb9bed6d9b">Reset_FSM</a>();</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>}</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="../../d1/d5b/class_f_t_p___scene_manager.html#a34ae86e5820e0d3ed668056d18c85b35">   36</a></span><a class="code hl_function" href="../../d1/d5b/class_f_t_p___scene_manager.html#a34ae86e5820e0d3ed668056d18c85b35">FTP_SceneManager::FTP_SceneManager</a>(<a class="code hl_class" href="../../d3/d48/class_engine_1_1_game_manager.html">Engine::GameManager</a>* gm)</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    :SceneManager(gm)</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>{</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>}</div>
+<div class="ttc" id="a_f_t_p___scene_manager_8h_html"><div class="ttname"><a href="../../d9/de3/_f_t_p___scene_manager_8h.html">FTP_SceneManager.h</a></div></div>
+<div class="ttc" id="aclass_authentification_html"><div class="ttname"><a href="../../dd/dfe/class_authentification.html">Authentification</a></div><div class="ttdoc">classe enfant de Scene, represente le niveau ou le joueur rentre ces infos pour se connecter au jeu</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dd2/_authentification_8h_source.html#l00010">Authentification.h:10</a></div></div>
+<div class="ttc" id="aclass_compendium_html"><div class="ttname"><a href="../../d8/d30/class_compendium.html">Compendium</a></div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/_compendium_8h_source.html#l00012">Compendium.h:12</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_finite_state_machine_html_ae5244fc70e71041fcb775ac1e5792236"><div class="ttname"><a href="../../d4/d73/class_engine_1_1_finite_state_machine.html#ae5244fc70e71041fcb775ac1e5792236">Engine::FiniteStateMachine::Initial_States</a></div><div class="ttdeci">FSM_State * Initial_States</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/df1/_finite_state_machine_8h_source.html#l00017">FiniteStateMachine.h:17</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_game_manager_html"><div class="ttname"><a href="../../d3/d48/class_engine_1_1_game_manager.html">Engine::GameManager</a></div><div class="ttdoc">Classe repr�sentant le jeu, elle contient tout les sous-syst�mes et g�re la gameloop.</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d96/_game_manager_8h_source.html#l00021">GameManager.h:21</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_scene_manager_html_a516eaadd56266e4a3d4610bb9bed6d9b"><div class="ttname"><a href="../../dc/d9b/class_engine_1_1_scene_manager.html#a516eaadd56266e4a3d4610bb9bed6d9b">Engine::SceneManager::Reset_FSM</a></div><div class="ttdeci">void Reset_FSM()</div><div class="ttdoc">Reset.</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d5f/_scene_manager_8cpp_source.html#l00010">SceneManager.cpp:10</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_scene_manager_html_a5630c155a3ace982d6437d6215c8cf29"><div class="ttname"><a href="../../dc/d9b/class_engine_1_1_scene_manager.html#a5630c155a3ace982d6437d6215c8cf29">Engine::SceneManager::GetScene</a></div><div class="ttdeci">Scene * GetScene(std::string name)</div><div class="ttdoc">GetScene.</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d5f/_scene_manager_8cpp_source.html#l00038">SceneManager.cpp:38</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_scene_manager_html_a6a66dd83e13bf9dc8f7eeb73d5f60e0a"><div class="ttname"><a href="../../dc/d9b/class_engine_1_1_scene_manager.html#a6a66dd83e13bf9dc8f7eeb73d5f60e0a">Engine::SceneManager::GetStatesFromScene</a></div><div class="ttdeci">FSM_State * GetStatesFromScene(Scene *sc)</div><div class="ttdoc">GetStatesFromScene.</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d5f/_scene_manager_8cpp_source.html#l00062">SceneManager.cpp:62</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_scene_manager_html_aca23437be3f7f58d851bd6f8a8907f51"><div class="ttname"><a href="../../dc/d9b/class_engine_1_1_scene_manager.html#aca23437be3f7f58d851bd6f8a8907f51">Engine::SceneManager::AddScene</a></div><div class="ttdeci">void AddScene(Scene *scene)</div><div class="ttdoc">AddScene.</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d5f/_scene_manager_8cpp_source.html#l00048">SceneManager.cpp:48</a></div></div>
+<div class="ttc" id="aclass_f_t_p___scene_manager_html_a34ae86e5820e0d3ed668056d18c85b35"><div class="ttname"><a href="../../d1/d5b/class_f_t_p___scene_manager.html#a34ae86e5820e0d3ed668056d18c85b35">FTP_SceneManager::FTP_SceneManager</a></div><div class="ttdeci">FTP_SceneManager(Engine::GameManager *gm)</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de0/_f_t_p___scene_manager_8cpp_source.html#l00036">FTP_SceneManager.cpp:36</a></div></div>
+<div class="ttc" id="aclass_f_t_p___scene_manager_html_ac5fd4165a04c1235510edace1cf9ab69"><div class="ttname"><a href="../../d1/d5b/class_f_t_p___scene_manager.html#ac5fd4165a04c1235510edace1cf9ab69">FTP_SceneManager::Init</a></div><div class="ttdeci">void Init(std::string FirstScene)</div><div class="ttdoc">Initialisation.</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de0/_f_t_p___scene_manager_8cpp_source.html#l00011">FTP_SceneManager.cpp:11</a></div></div>
+<div class="ttc" id="aclass_game_html"><div class="ttname"><a href="../../dd/d1f/class_game.html">Game</a></div><div class="ttdoc">classe enfant de Scene, represente le niveau ou le joueur joue</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dcd/_game_8h_source.html#l00016">Game.h:16</a></div></div>
+<div class="ttc" id="aclass_game_mode_selection_html"><div class="ttname"><a href="../../d6/dd6/class_game_mode_selection.html">GameModeSelection</a></div><div class="ttdef"><b>Definition:</b> <a href="../../de/d4d/_game_mode_selection_8h_source.html#l00009">GameModeSelection.h:9</a></div></div>
+<div class="ttc" id="aclass_main_menu_html"><div class="ttname"><a href="../../d4/d04/class_main_menu.html">MainMenu</a></div><div class="ttdoc">classe enfant de Scene, represente le menu principale du jeu</div><div class="ttdef"><b>Definition:</b> <a href="../../db/db6/_main_menu_8h_source.html#l00009">MainMenu.h:9</a></div></div>
+<div class="ttc" id="aclass_player_profile_html"><div class="ttname"><a href="../../d3/d28/class_player_profile.html">PlayerProfile</a></div><div class="ttdoc">classe enfant de Scene, represente le menu ou le joueur peux voir ces stat globales</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/df3/_player_profile_8h_source.html#l00009">PlayerProfile.h:9</a></div></div>
+<div class="ttc" id="aclass_settings_html"><div class="ttname"><a href="../../db/d2b/class_settings.html">Settings</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d4a/_settings_8h_source.html#l00008">Settings.h:8</a></div></div>
+<div class="ttc" id="aclass_starting_html"><div class="ttname"><a href="../../db/de1/class_starting.html">Starting</a></div><div class="ttdoc">classe enfant de Scene, represente la scene de lancement, il y a des splashcreen pour montrer le nom ...</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/dbc/_starting_8h_source.html#l00009">Starting.h:9</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

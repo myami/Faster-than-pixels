@@ -1,0 +1,703 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Faster than pixel: Référence de la classe Engine::Entity</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Faster than pixel
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search",'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../d1/db6/namespace_engine.html">Engine</a></li><li class="navelem"><a class="el" href="../../d5/d5a/class_engine_1_1_entity.html">Entity</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Fonctions membres publiques</a> &#124;
+<a href="#pub-attribs">Champs de données</a>  </div>
+  <div class="headertitle"><div class="title">Référence de la classe Engine::Entity</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../db/d3a/_entity_8h_source.html">Entity.h</a>&gt;</code></p>
+<div class="dynheader">
+Graphe d'héritage de Engine::Entity:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d0/dce/class_engine_1_1_entity__inherit__graph.png" border="0" usemap="#a_engine_1_1_entity_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_engine_1_1_entity_inherit__map" id="a_engine_1_1_entity_inherit__map">
+<area shape="rect" title=" " alt="" coords="192,335,296,361"/>
+<area shape="rect" href="../../db/dad/class_asteroid.html" title="classe representant une entite d&#39;asteroid, qui sont une partie de l&#39;environnement qui est dynamique" alt="" coords="354,5,425,32"/>
+<area shape="rect" href="../../d3/d77/class_building___a.html" title="classe representant une entite de batiment spatial, le joueur doit l&#39;attaquer dans le mode de jeu &quot;At..." alt="" coords="347,56,431,83"/>
+<area shape="rect" href="../../dd/d2a/class_building___p.html" title="classe representant une entite de batiment, le joueur doit la proteger dans le mode de jeu &quot;Protect t..." alt="" coords="347,107,431,133"/>
+<area shape="rect" href="../../d1/d24/class_checkpoint.html" title="classe representant une entite de checkpoint, le joueur doit rentrer en collision avec dans le mode d..." alt="" coords="346,157,433,184"/>
+<area shape="rect" href="../../df/d3d/class_enemie.html" title="classe parent de tout les enemies" alt="" coords="356,208,423,235"/>
+<area shape="rect" href="../../d9/d89/class_laser.html" title="classe representant une entite de laser, quand le joueur tire avec, celle&#45;ci apparait en jeu et perma..." alt="" coords="362,259,417,285"/>
+<area shape="rect" href="../../d3/d8d/class_mine.html" title="classe representant une entite de Mine, quand le joueur la pose dans l&#39;espace , celle&#45;ci apparait en ..." alt="" coords="364,309,415,336"/>
+<area shape="rect" href="../../d5/ded/class_missile.html" title="classe representant une entite de Missile, quand le joueur tire avec, celle&#45;ci apparait en jeu et per..." alt="" coords="358,360,421,387"/>
+<area shape="rect" href="../../dd/d41/class_planet.html" title=" " alt="" coords="360,411,419,437"/>
+<area shape="rect" href="../../d8/d53/class_player.html" title="classe representant le joueur" alt="" coords="360,461,419,488"/>
+<area shape="rect" href="../../d7/d9e/class_punching.html" title="classe representant l&#39;entite Punching, elle apparait au sol et attend d&#39;etre ramasser" alt="" coords="351,512,427,539"/>
+<area shape="rect" href="../../de/d96/class_survivor.html" title="classe representant une entite de survivant, le joueur doit ramasser se survivant pour le sauver dans..." alt="" coords="356,563,423,589"/>
+<area shape="rect" href="../../d0/dd2/class_thunder_bolt.html" title="classe representant l&#39;entite ThunderBolt, elle apparait au sol et attend d&#39;etre ramasser" alt="" coords="344,613,435,640"/>
+<area shape="rect" href="../../d8/d2a/class_wrench.html" title="classe representant l&#39;entite Wrench, elle apparait au sol et attend d&#39;etre ramasser" alt="" coords="356,664,423,691"/>
+<area shape="rect" href="../../d0/d31/class_engine_1_1_state_parent.html" title=" " alt="" coords="5,335,144,361"/>
+<area shape="rect" href="../../d0/d91/class_bombardier.html" title="classe representant l&#39;entite Bombardier, elle est un ennemie du joueur" alt="" coords="492,132,580,159"/>
+<area shape="rect" href="../../dc/db6/class_chasseurs.html" title="classe representant l&#39;entite Chasseurs, elle est un ennemie du joueur" alt="" coords="494,183,578,209"/>
+<area shape="rect" href="../../da/d76/class_intercepteur.html" title="classe representant l&#39;entite Intercepteur, elle est un ennemie du joueur" alt="" coords="491,233,581,260"/>
+<area shape="rect" href="../../dd/dd0/class_portes_vaiseau.html" title="classe representant l&#39;entite Portes&#45;Vaiseau, elle est un ennemie du joueur" alt="" coords="483,284,589,311"/>
+</map>
+<center><span class="legend">[<a href="../../graph_legend.html">légende</a>]</span></center></div>
+<div class="dynheader">
+Graphe de collaboration de Engine::Entity:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d7/d95/class_engine_1_1_entity__coll__graph.png" border="0" usemap="#a_engine_1_1_entity_coll__map" alt="Collaboration graph"/></div>
+<map name="a_engine_1_1_entity_coll__map" id="a_engine_1_1_entity_coll__map">
+<area shape="rect" title=" " alt="" coords="44,632,148,659"/>
+<area shape="rect" href="../../d0/d31/class_engine_1_1_state_parent.html" title=" " alt="" coords="5,5,144,32"/>
+<area shape="rect" href="../../d4/d52/class_engine_1_1_f_s_m___state.html" title="classe enfant de StateParent pour les scenes" alt="" coords="143,95,279,121"/>
+<area shape="rect" href="../../d4/dd2/class_engine_1_1_scene.html" title="classe qui le fonctionnement d&#39;une scène." alt="" coords="224,543,331,569"/>
+<area shape="rect" href="../../d4/d73/class_engine_1_1_finite_state_machine.html" title=" " alt="" coords="329,199,511,225"/>
+<area shape="rect" href="../../d6/d9a/struct_engine_1_1_f_s_m___param.html" title="struct qui reprensente les parametres de l&#39;etat" alt="" coords="169,5,311,32"/>
+<area shape="rect" href="../../d5/d19/class_engine_1_1_entity_manager.html" title="classe representant toutes les entités de la scène." alt="" coords="381,453,536,480"/>
+<area shape="rect" href="../../da/d20/class_engine_1_1_state_machine.html" title="classe de statemachine" alt="" coords="503,95,654,121"/>
+<area shape="rect" href="../../d3/d48/class_engine_1_1_game_manager.html" title="Classe représentant le jeu, elle contient tout les sous&#45;systèmes et gère la gameloop." alt="" coords="375,364,529,391"/>
+<area shape="rect" href="../../dc/d9b/class_engine_1_1_scene_manager.html" title="classe representant les scenes dans le jeu" alt="" coords="341,275,499,301"/>
+<area shape="rect" href="../../de/daf/class_engine_1_1_asset_manager.html" title="classe representant tout les assets disponible dans le jeux" alt="" coords="163,275,317,301"/>
+</map>
+<center><span class="legend">[<a href="../../graph_legend.html">légende</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Fonctions membres publiques</h2></td></tr>
+<tr class="memitem:af55cadbada3d92f72dd28c5d3abd0871"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d5a/class_engine_1_1_entity.html#af55cadbada3d92f72dd28c5d3abd0871">Entity</a> (int id)</td></tr>
+<tr class="memdesc:af55cadbada3d92f72dd28c5d3abd0871"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur avec un id.  <a href="../../d5/d5a/class_engine_1_1_entity.html#af55cadbada3d92f72dd28c5d3abd0871">Plus de détails...</a><br /></td></tr>
+<tr class="separator:af55cadbada3d92f72dd28c5d3abd0871"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd682e820ae6d28f7c3d215ef48e45a6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d5a/class_engine_1_1_entity.html#acd682e820ae6d28f7c3d215ef48e45a6">Entity</a> ()</td></tr>
+<tr class="memdesc:acd682e820ae6d28f7c3d215ef48e45a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur vide.  <a href="../../d5/d5a/class_engine_1_1_entity.html#acd682e820ae6d28f7c3d215ef48e45a6">Plus de détails...</a><br /></td></tr>
+<tr class="separator:acd682e820ae6d28f7c3d215ef48e45a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac28d9ac710a32819a16d016ba8503382"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d5a/class_engine_1_1_entity.html#ac28d9ac710a32819a16d016ba8503382">Entity</a> (<a class="el" href="../../d4/dd2/class_engine_1_1_scene.html">Scene</a> *sc)</td></tr>
+<tr class="memdesc:ac28d9ac710a32819a16d016ba8503382"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur avec une scene.  <a href="../../d5/d5a/class_engine_1_1_entity.html#ac28d9ac710a32819a16d016ba8503382">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ac28d9ac710a32819a16d016ba8503382"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3053d8d26f743d7e998dae3b85e7ddce"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d5a/class_engine_1_1_entity.html#a3053d8d26f743d7e998dae3b85e7ddce">Entity</a> (<a class="el" href="../../d4/dd2/class_engine_1_1_scene.html">Scene</a> *sc, std::string tag)</td></tr>
+<tr class="memdesc:a3053d8d26f743d7e998dae3b85e7ddce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur avec une scene et un tag.  <a href="../../d5/d5a/class_engine_1_1_entity.html#a3053d8d26f743d7e998dae3b85e7ddce">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a3053d8d26f743d7e998dae3b85e7ddce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac607040204f1d18b75b9fe9fe4782c9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d5a/class_engine_1_1_entity.html#aac607040204f1d18b75b9fe9fe4782c9">Entity</a> (std::string tag)</td></tr>
+<tr class="memdesc:aac607040204f1d18b75b9fe9fe4782c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur avec un tag.  <a href="../../d5/d5a/class_engine_1_1_entity.html#aac607040204f1d18b75b9fe9fe4782c9">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aac607040204f1d18b75b9fe9fe4782c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43e37caba44bd80fe9be202a57cdf9a2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d5a/class_engine_1_1_entity.html#a43e37caba44bd80fe9be202a57cdf9a2">Entity</a> (<a class="el" href="../../d4/dd2/class_engine_1_1_scene.html">Scene</a> *sc, std::string tag, int id)</td></tr>
+<tr class="memdesc:a43e37caba44bd80fe9be202a57cdf9a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur avec une scene , un tag et un id.  <a href="../../d5/d5a/class_engine_1_1_entity.html#a43e37caba44bd80fe9be202a57cdf9a2">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a43e37caba44bd80fe9be202a57cdf9a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cd526dde0529e59e5dd405a3ba3d395"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d5a/class_engine_1_1_entity.html#a2cd526dde0529e59e5dd405a3ba3d395">Begin_Play</a> () override</td></tr>
+<tr class="memdesc:a2cd526dde0529e59e5dd405a3ba3d395"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appeler quand l'entite commence a etre utiliser.  <a href="../../d5/d5a/class_engine_1_1_entity.html#a2cd526dde0529e59e5dd405a3ba3d395">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a2cd526dde0529e59e5dd405a3ba3d395"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7640f718d5fed1c3ddb8305e3b998b96"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d5a/class_engine_1_1_entity.html#a7640f718d5fed1c3ddb8305e3b998b96">Tick</a> () override</td></tr>
+<tr class="memdesc:a7640f718d5fed1c3ddb8305e3b998b96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appeler a chaque tick dans la gameloop.  <a href="../../d5/d5a/class_engine_1_1_entity.html#a7640f718d5fed1c3ddb8305e3b998b96">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a7640f718d5fed1c3ddb8305e3b998b96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af482a27ff38f1d105cd602a3267670aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d5a/class_engine_1_1_entity.html#af482a27ff38f1d105cd602a3267670aa">End_Play</a> () override</td></tr>
+<tr class="memdesc:af482a27ff38f1d105cd602a3267670aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appeler a la fin de sont utilisation.  <a href="../../d5/d5a/class_engine_1_1_entity.html#af482a27ff38f1d105cd602a3267670aa">Plus de détails...</a><br /></td></tr>
+<tr class="separator:af482a27ff38f1d105cd602a3267670aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e0d8d2e9351105ec3c2b5890d6eb8a6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d27/class_engine_1_1_component.html">Engine::Component</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d5a/class_engine_1_1_entity.html#a4e0d8d2e9351105ec3c2b5890d6eb8a6">GetComponent</a> (std::string name)</td></tr>
+<tr class="memdesc:a4e0d8d2e9351105ec3c2b5890d6eb8a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return un component.  <a href="../../d5/d5a/class_engine_1_1_entity.html#a4e0d8d2e9351105ec3c2b5890d6eb8a6">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a4e0d8d2e9351105ec3c2b5890d6eb8a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1826c6e97168099c64dda7b780f792e5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d5a/class_engine_1_1_entity.html#a1826c6e97168099c64dda7b780f792e5">AddComponent</a> (<a class="el" href="../../d2/d27/class_engine_1_1_component.html">Engine::Component</a> *<a class="el" href="../../d2/d27/class_engine_1_1_component.html">Component</a>)</td></tr>
+<tr class="memdesc:a1826c6e97168099c64dda7b780f792e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute un component.  <a href="../../d5/d5a/class_engine_1_1_entity.html#a1826c6e97168099c64dda7b780f792e5">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a1826c6e97168099c64dda7b780f792e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbd9cc0765f3912542ff1e2633fe09a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d5a/class_engine_1_1_entity.html#abbd9cc0765f3912542ff1e2633fe09a3">Reset</a> ()</td></tr>
+<tr class="memdesc:abbd9cc0765f3912542ff1e2633fe09a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appeler pour enlever tout les components d une entite.  <a href="../../d5/d5a/class_engine_1_1_entity.html#abbd9cc0765f3912542ff1e2633fe09a3">Plus de détails...</a><br /></td></tr>
+<tr class="separator:abbd9cc0765f3912542ff1e2633fe09a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5047da0952f827ebfc27ac3bd11dacb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d5a/class_engine_1_1_entity.html#af5047da0952f827ebfc27ac3bd11dacb">DeleteComponent</a> (const std::string name)</td></tr>
+<tr class="memdesc:af5047da0952f827ebfc27ac3bd11dacb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Supprime un composant.  <a href="../../d5/d5a/class_engine_1_1_entity.html#af5047da0952f827ebfc27ac3bd11dacb">Plus de détails...</a><br /></td></tr>
+<tr class="separator:af5047da0952f827ebfc27ac3bd11dacb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_engine_1_1_state_parent"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_engine_1_1_state_parent')"><img src="../../closed.png" alt="-"/>&#160;Fonctions membres publiques hérités de <a class="el" href="../../d0/d31/class_engine_1_1_state_parent.html">Engine::StateParent</a></td></tr>
+<tr class="memitem:a1084efa718225a0d451a1bf83db5a422 inherit pub_methods_class_engine_1_1_state_parent"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d31/class_engine_1_1_state_parent.html#a1084efa718225a0d451a1bf83db5a422">StateParent</a> ()</td></tr>
+<tr class="separator:a1084efa718225a0d451a1bf83db5a422 inherit pub_methods_class_engine_1_1_state_parent"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d669aa3fd42ab9c47f9caab67ecf961 inherit pub_methods_class_engine_1_1_state_parent"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d31/class_engine_1_1_state_parent.html#a2d669aa3fd42ab9c47f9caab67ecf961">Begin_Play</a> ()=0</td></tr>
+<tr class="separator:a2d669aa3fd42ab9c47f9caab67ecf961 inherit pub_methods_class_engine_1_1_state_parent"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07ec7820c13b400daa89cd76a46b3d3f inherit pub_methods_class_engine_1_1_state_parent"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d31/class_engine_1_1_state_parent.html#a07ec7820c13b400daa89cd76a46b3d3f">Tick</a> ()=0</td></tr>
+<tr class="separator:a07ec7820c13b400daa89cd76a46b3d3f inherit pub_methods_class_engine_1_1_state_parent"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afab7559fe5aa114d90be8ee205105287 inherit pub_methods_class_engine_1_1_state_parent"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d31/class_engine_1_1_state_parent.html#afab7559fe5aa114d90be8ee205105287">End_Play</a> ()=0</td></tr>
+<tr class="separator:afab7559fe5aa114d90be8ee205105287 inherit pub_methods_class_engine_1_1_state_parent"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Champs de données</h2></td></tr>
+<tr class="memitem:a26c782e8000da7a9be1bf0c65b4f580c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d5a/class_engine_1_1_entity.html#a26c782e8000da7a9be1bf0c65b4f580c">E_Id</a> = 0</td></tr>
+<tr class="separator:a26c782e8000da7a9be1bf0c65b4f580c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdd5a70d94d9169e46da12978ba032c5"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d5a/class_engine_1_1_entity.html#afdd5a70d94d9169e46da12978ba032c5">E_Tag</a> = &quot;Default&quot;</td></tr>
+<tr class="separator:afdd5a70d94d9169e46da12978ba032c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add4e873fdeffdde21aefab98ef17998d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d5a/class_engine_1_1_entity.html#add4e873fdeffdde21aefab98ef17998d">E_CanBeUsed</a> = true</td></tr>
+<tr class="separator:add4e873fdeffdde21aefab98ef17998d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41e7dce450a8607a3f452f1a8d264d19"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d5a/class_engine_1_1_entity.html#a41e7dce450a8607a3f452f1a8d264d19">E_IsAnimated</a> = false</td></tr>
+<tr class="separator:a41e7dce450a8607a3f452f1a8d264d19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed9008cc908806a0a37c6b6e0ba5bb59"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dd2/class_engine_1_1_scene.html">Scene</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d5a/class_engine_1_1_entity.html#aed9008cc908806a0a37c6b6e0ba5bb59">CurrentScene</a></td></tr>
+<tr class="separator:aed9008cc908806a0a37c6b6e0ba5bb59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ba36b9ddac16793f25753ecadfaecd0"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, std::any &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d5a/class_engine_1_1_entity.html#a7ba36b9ddac16793f25753ecadfaecd0">ValueToChange</a></td></tr>
+<tr class="separator:a7ba36b9ddac16793f25753ecadfaecd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock">
+<p class="definition">Définition à la ligne <a class="el" href="../../db/d3a/_entity_8h_source.html#l00018">18</a> du fichier <a class="el" href="../../db/d3a/_entity_8h_source.html">Entity.h</a>.</p>
+</div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
+<a id="af55cadbada3d92f72dd28c5d3abd0871" name="af55cadbada3d92f72dd28c5d3abd0871"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af55cadbada3d92f72dd28c5d3abd0871">&#9670;&nbsp;</a></span>Entity() <span class="overload">[1/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Engine::Entity::Entity </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructeur avec un id. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">int</td><td>id: id de l'entite </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="../../de/dfc/_entity_8cpp_source.html#l00003">3</a> du fichier <a class="el" href="../../de/dfc/_entity_8cpp_source.html">Entity.cpp</a>.</p>
+
+</div>
+</div>
+<a id="acd682e820ae6d28f7c3d215ef48e45a6" name="acd682e820ae6d28f7c3d215ef48e45a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd682e820ae6d28f7c3d215ef48e45a6">&#9670;&nbsp;</a></span>Entity() <span class="overload">[2/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Engine::Entity::Entity </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructeur vide. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="../../de/dfc/_entity_8cpp_source.html#l00008">8</a> du fichier <a class="el" href="../../de/dfc/_entity_8cpp_source.html">Entity.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ac28d9ac710a32819a16d016ba8503382" name="ac28d9ac710a32819a16d016ba8503382"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac28d9ac710a32819a16d016ba8503382">&#9670;&nbsp;</a></span>Entity() <span class="overload">[3/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Engine::Entity::Entity </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/dd2/class_engine_1_1_scene.html">Scene</a> *&#160;</td>
+          <td class="paramname"><em>sc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructeur avec une scene. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Scene*</td><td>sc: Pointeur vers la scene ou l'entite est utiliesr </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="../../de/dfc/_entity_8cpp_source.html#l00012">12</a> du fichier <a class="el" href="../../de/dfc/_entity_8cpp_source.html">Entity.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a3053d8d26f743d7e998dae3b85e7ddce" name="a3053d8d26f743d7e998dae3b85e7ddce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3053d8d26f743d7e998dae3b85e7ddce">&#9670;&nbsp;</a></span>Entity() <span class="overload">[4/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Engine::Entity::Entity </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/dd2/class_engine_1_1_scene.html">Scene</a> *&#160;</td>
+          <td class="paramname"><em>sc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>tag</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructeur avec une scene et un tag. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Scene*</td><td>sc: Pointeur vers la scene ou l'entite est utiliesr </td></tr>
+    <tr><td class="paramname">std::string</td><td>tag: Tag de l'entite </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="../../de/dfc/_entity_8cpp_source.html#l00017">17</a> du fichier <a class="el" href="../../de/dfc/_entity_8cpp_source.html">Entity.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aac607040204f1d18b75b9fe9fe4782c9" name="aac607040204f1d18b75b9fe9fe4782c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac607040204f1d18b75b9fe9fe4782c9">&#9670;&nbsp;</a></span>Entity() <span class="overload">[5/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Engine::Entity::Entity </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>tag</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructeur avec un tag. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">std::string</td><td>tag: Tag de l'entite </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="../../de/dfc/_entity_8cpp_source.html#l00023">23</a> du fichier <a class="el" href="../../de/dfc/_entity_8cpp_source.html">Entity.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a43e37caba44bd80fe9be202a57cdf9a2" name="a43e37caba44bd80fe9be202a57cdf9a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43e37caba44bd80fe9be202a57cdf9a2">&#9670;&nbsp;</a></span>Entity() <span class="overload">[6/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Engine::Entity::Entity </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/dd2/class_engine_1_1_scene.html">Scene</a> *&#160;</td>
+          <td class="paramname"><em>sc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>tag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructeur avec une scene , un tag et un id. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Scene*</td><td>sc: Pointeur vers la scene ou l'entite est utiliesr </td></tr>
+    <tr><td class="paramname">std::string</td><td>tag: Tag de l'entite </td></tr>
+    <tr><td class="paramname">int</td><td>id: id de l'entite </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="../../de/dfc/_entity_8cpp_source.html#l00028">28</a> du fichier <a class="el" href="../../de/dfc/_entity_8cpp_source.html">Entity.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions membres</h2>
+<a id="a1826c6e97168099c64dda7b780f792e5" name="a1826c6e97168099c64dda7b780f792e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1826c6e97168099c64dda7b780f792e5">&#9670;&nbsp;</a></span>AddComponent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Engine::Entity::AddComponent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d2/d27/class_engine_1_1_component.html">Engine::Component</a> *&#160;</td>
+          <td class="paramname"><em>Component</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ajoute un component. </p>
+<p >Ajoute un component a l'entite dans un map </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="../../d2/d27/class_engine_1_1_component.html" title="classe representant chaque composant que l&#39;entite va avoir">Component</a></td><td>: Le component </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="../../de/dfc/_entity_8cpp_source.html#l00057">57</a> du fichier <a class="el" href="../../de/dfc/_entity_8cpp_source.html">Entity.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a2cd526dde0529e59e5dd405a3ba3d395" name="a2cd526dde0529e59e5dd405a3ba3d395"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cd526dde0529e59e5dd405a3ba3d395">&#9670;&nbsp;</a></span>Begin_Play()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Engine::Entity::Begin_Play </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Appeler quand l'entite commence a etre utiliser. </p>
+
+<p>Implémente <a class="el" href="../../d0/d31/class_engine_1_1_state_parent.html#a2d669aa3fd42ab9c47f9caab67ecf961">Engine::StateParent</a>.</p>
+
+<p>Réimplémentée dans <a class="el" href="../../db/dad/class_asteroid.html#aaefe46d8a71e6613d371dd00b5544da6">Asteroid</a>, <a class="el" href="../../dd/d41/class_planet.html#a078dbc5df341d42191893d2cacabd44a">Planet</a>, <a class="el" href="../../d8/d53/class_player.html#a4641c2cf400454e28727da01f67b9706">Player</a>, et <a class="el" href="../../d9/d89/class_laser.html#af24e0f5b963d0796c0b86de5bb037de3">Laser</a>.</p>
+
+<p class="definition">Définition à la ligne <a class="el" href="../../de/dfc/_entity_8cpp_source.html#l00035">35</a> du fichier <a class="el" href="../../de/dfc/_entity_8cpp_source.html">Entity.cpp</a>.</p>
+
+</div>
+</div>
+<a id="af5047da0952f827ebfc27ac3bd11dacb" name="af5047da0952f827ebfc27ac3bd11dacb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5047da0952f827ebfc27ac3bd11dacb">&#9670;&nbsp;</a></span>DeleteComponent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Engine::Entity::DeleteComponent </td>
+          <td>(</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Supprime un composant. </p>
+<p >Supprime un composant </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">std::string</td><td>name : le nom du component </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="../../de/dfc/_entity_8cpp_source.html#l00078">78</a> du fichier <a class="el" href="../../de/dfc/_entity_8cpp_source.html">Entity.cpp</a>.</p>
+
+</div>
+</div>
+<a id="af482a27ff38f1d105cd602a3267670aa" name="af482a27ff38f1d105cd602a3267670aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af482a27ff38f1d105cd602a3267670aa">&#9670;&nbsp;</a></span>End_Play()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Engine::Entity::End_Play </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Appeler a la fin de sont utilisation. </p>
+
+<p>Implémente <a class="el" href="../../d0/d31/class_engine_1_1_state_parent.html#afab7559fe5aa114d90be8ee205105287">Engine::StateParent</a>.</p>
+
+<p>Réimplémentée dans <a class="el" href="../../db/dad/class_asteroid.html#a4bdc50809e1fff25bb25c20fbe0323dc">Asteroid</a>, <a class="el" href="../../dd/d41/class_planet.html#a9627793c8208148fec1157c0520c6828">Planet</a>, <a class="el" href="../../d8/d53/class_player.html#ad8355182d4b3855a08b13d5b846f65e2">Player</a>, et <a class="el" href="../../d9/d89/class_laser.html#aeab128c01704d9f912f6291f8e9224f9">Laser</a>.</p>
+
+<p class="definition">Définition à la ligne <a class="el" href="../../de/dfc/_entity_8cpp_source.html#l00043">43</a> du fichier <a class="el" href="../../de/dfc/_entity_8cpp_source.html">Entity.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a4e0d8d2e9351105ec3c2b5890d6eb8a6" name="a4e0d8d2e9351105ec3c2b5890d6eb8a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e0d8d2e9351105ec3c2b5890d6eb8a6">&#9670;&nbsp;</a></span>GetComponent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d27/class_engine_1_1_component.html">Engine::Component</a> * Engine::Entity::GetComponent </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return un component. </p>
+<p >Return un <a class="el" href="../../d2/d27/class_engine_1_1_component.html" title="classe representant chaque composant que l&#39;entite va avoir">Component</a> que l'entite a</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>: Le nom du component </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>le component qu'on a besoin </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="../../de/dfc/_entity_8cpp_source.html#l00047">47</a> du fichier <a class="el" href="../../de/dfc/_entity_8cpp_source.html">Entity.cpp</a>.</p>
+
+</div>
+</div>
+<a id="abbd9cc0765f3912542ff1e2633fe09a3" name="abbd9cc0765f3912542ff1e2633fe09a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbd9cc0765f3912542ff1e2633fe09a3">&#9670;&nbsp;</a></span>Reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Engine::Entity::Reset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Appeler pour enlever tout les components d une entite. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="../../de/dfc/_entity_8cpp_source.html#l00069">69</a> du fichier <a class="el" href="../../de/dfc/_entity_8cpp_source.html">Entity.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a7640f718d5fed1c3ddb8305e3b998b96" name="a7640f718d5fed1c3ddb8305e3b998b96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7640f718d5fed1c3ddb8305e3b998b96">&#9670;&nbsp;</a></span>Tick()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Engine::Entity::Tick </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Appeler a chaque tick dans la gameloop. </p>
+
+<p>Implémente <a class="el" href="../../d0/d31/class_engine_1_1_state_parent.html#a07ec7820c13b400daa89cd76a46b3d3f">Engine::StateParent</a>.</p>
+
+<p>Réimplémentée dans <a class="el" href="../../db/dad/class_asteroid.html#a9895321a9a2b004dc43c1b3c033ffbfa">Asteroid</a>, <a class="el" href="../../dd/d41/class_planet.html#a312179a24fb47792e5806d9bca3e48a2">Planet</a>, <a class="el" href="../../d8/d53/class_player.html#ac9010645b179712c09ebd310e5fe48eb">Player</a>, et <a class="el" href="../../d9/d89/class_laser.html#adab40bc175dc48e96498d84d1c030690">Laser</a>.</p>
+
+<p class="definition">Définition à la ligne <a class="el" href="../../de/dfc/_entity_8cpp_source.html#l00039">39</a> du fichier <a class="el" href="../../de/dfc/_entity_8cpp_source.html">Entity.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des champs</h2>
+<a id="aed9008cc908806a0a37c6b6e0ba5bb59" name="aed9008cc908806a0a37c6b6e0ba5bb59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed9008cc908806a0a37c6b6e0ba5bb59">&#9670;&nbsp;</a></span>CurrentScene</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/dd2/class_engine_1_1_scene.html">Scene</a>* Engine::Entity::CurrentScene</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >La scene ou l'entite est utiliesr </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="../../db/d3a/_entity_8h_source.html#l00058">58</a> du fichier <a class="el" href="../../db/d3a/_entity_8h_source.html">Entity.h</a>.</p>
+
+</div>
+</div>
+<a id="add4e873fdeffdde21aefab98ef17998d" name="add4e873fdeffdde21aefab98ef17998d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add4e873fdeffdde21aefab98ef17998d">&#9670;&nbsp;</a></span>E_CanBeUsed</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Engine::Entity::E_CanBeUsed = true</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Si on peux utiliser cette entite ou si elle est utiliser actuellement </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="../../db/d3a/_entity_8h_source.html#l00056">56</a> du fichier <a class="el" href="../../db/d3a/_entity_8h_source.html">Entity.h</a>.</p>
+
+</div>
+</div>
+<a id="a26c782e8000da7a9be1bf0c65b4f580c" name="a26c782e8000da7a9be1bf0c65b4f580c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26c782e8000da7a9be1bf0c65b4f580c">&#9670;&nbsp;</a></span>E_Id</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Engine::Entity::E_Id = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >ID de l'entite </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="../../db/d3a/_entity_8h_source.html#l00054">54</a> du fichier <a class="el" href="../../db/d3a/_entity_8h_source.html">Entity.h</a>.</p>
+
+</div>
+</div>
+<a id="a41e7dce450a8607a3f452f1a8d264d19" name="a41e7dce450a8607a3f452f1a8d264d19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41e7dce450a8607a3f452f1a8d264d19">&#9670;&nbsp;</a></span>E_IsAnimated</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Engine::Entity::E_IsAnimated = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Si l entite est anime </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="../../db/d3a/_entity_8h_source.html#l00057">57</a> du fichier <a class="el" href="../../db/d3a/_entity_8h_source.html">Entity.h</a>.</p>
+
+</div>
+</div>
+<a id="afdd5a70d94d9169e46da12978ba032c5" name="afdd5a70d94d9169e46da12978ba032c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdd5a70d94d9169e46da12978ba032c5">&#9670;&nbsp;</a></span>E_Tag</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Engine::Entity::E_Tag = &quot;Default&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Tag de l'entite </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="../../db/d3a/_entity_8h_source.html#l00055">55</a> du fichier <a class="el" href="../../db/d3a/_entity_8h_source.html">Entity.h</a>.</p>
+
+</div>
+</div>
+<a id="a7ba36b9ddac16793f25753ecadfaecd0" name="a7ba36b9ddac16793f25753ecadfaecd0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ba36b9ddac16793f25753ecadfaecd0">&#9670;&nbsp;</a></span>ValueToChange</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;std::string, std::any&gt; Engine::Entity::ValueToChange</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Valeur a changer sur les variables entity au update de la gameloop(Tag ou CanBeUsed) </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="../../db/d3a/_entity_8h_source.html#l00060">60</a> du fichier <a class="el" href="../../db/d3a/_entity_8h_source.html">Entity.h</a>.</p>
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
+<li>Engine/src/ECS/<a class="el" href="../../db/d3a/_entity_8h_source.html">Entity.h</a></li>
+<li>Engine/src/ECS/<a class="el" href="../../de/dfc/_entity_8cpp_source.html">Entity.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

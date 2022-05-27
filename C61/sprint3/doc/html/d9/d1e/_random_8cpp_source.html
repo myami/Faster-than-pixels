@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Faster than pixel:  Fichier source de Engine/src/Utility/Random.cpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Faster than pixel
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search",'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_0b6ee6e7e9547e675db4add2e5de97da.html">Engine</a></li><li class="navelem"><a class="el" href="../../dir_b6dc9fbf5fd229481ae647194eb362ed.html">src</a></li><li class="navelem"><a class="el" href="../../dir_b83b933dc7ac7ffa8d1621e16ca685eb.html">Utility</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">Random.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d9/d1e/_random_8cpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="../../d0/d80/_random_8h.html">Random.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="../../d2/d7b/class_engine_1_1_random.html#a5bec08541d3dd032f81e1073c049372f">    3</a></span><a class="code hl_function" href="../../d2/d7b/class_engine_1_1_random.html#a5bec08541d3dd032f81e1073c049372f">Engine::Random::Random</a>() : rnGen(seed()) {</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>}</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="../../d2/d7b/class_engine_1_1_random.html#a5a7ba719226499c15b90dbd4da7cf45e">    6</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="../../d2/d7b/class_engine_1_1_random.html#a5a7ba719226499c15b90dbd4da7cf45e">Engine::Random::getIntInRange</a>(<span class="keywordtype">int</span> min, <span class="keywordtype">int</span> max) {</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="keywordflow">return</span> std::uniform_int_distribution&lt;int&gt;(min, max - 1)(rnGen);</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>}</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="../../d2/d7b/class_engine_1_1_random.html#a6d0862da4eb39994325d0e468412e758">   10</a></span><span class="keywordtype">double</span> <a class="code hl_function" href="../../d2/d7b/class_engine_1_1_random.html#a6d0862da4eb39994325d0e468412e758">Engine::Random::getDoubleInRange</a>(<span class="keywordtype">double</span> min, <span class="keywordtype">double</span> max) {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordflow">return</span> std::uniform_real_distribution&lt;double&gt;(min, max)(rnGen);</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>}</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="../../d2/d7b/class_engine_1_1_random.html#a808cd7940ba9c6e1967e6020c4e98f91">   14</a></span><span class="keywordtype">float</span> <a class="code hl_function" href="../../d2/d7b/class_engine_1_1_random.html#a808cd7940ba9c6e1967e6020c4e98f91">Engine::Random::getFloatInRange</a>(<span class="keywordtype">float</span> min, <span class="keywordtype">float</span> max) {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordflow">return</span> std::uniform_real_distribution&lt;float&gt;(min, max)(rnGen);</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>}</div>
+<div class="ttc" id="a_random_8h_html"><div class="ttname"><a href="../../d0/d80/_random_8h.html">Random.h</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_random_html_a5a7ba719226499c15b90dbd4da7cf45e"><div class="ttname"><a href="../../d2/d7b/class_engine_1_1_random.html#a5a7ba719226499c15b90dbd4da7cf45e">Engine::Random::getIntInRange</a></div><div class="ttdeci">int getIntInRange(int min, int max)</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d1e/_random_8cpp_source.html#l00006">Random.cpp:6</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_random_html_a5bec08541d3dd032f81e1073c049372f"><div class="ttname"><a href="../../d2/d7b/class_engine_1_1_random.html#a5bec08541d3dd032f81e1073c049372f">Engine::Random::Random</a></div><div class="ttdeci">Random()</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d1e/_random_8cpp_source.html#l00003">Random.cpp:3</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_random_html_a6d0862da4eb39994325d0e468412e758"><div class="ttname"><a href="../../d2/d7b/class_engine_1_1_random.html#a6d0862da4eb39994325d0e468412e758">Engine::Random::getDoubleInRange</a></div><div class="ttdeci">double getDoubleInRange(double min, double max)</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d1e/_random_8cpp_source.html#l00010">Random.cpp:10</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_random_html_a808cd7940ba9c6e1967e6020c4e98f91"><div class="ttname"><a href="../../d2/d7b/class_engine_1_1_random.html#a808cd7940ba9c6e1967e6020c4e98f91">Engine::Random::getFloatInRange</a></div><div class="ttdeci">float getFloatInRange(float min, float max)</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d1e/_random_8cpp_source.html#l00014">Random.cpp:14</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

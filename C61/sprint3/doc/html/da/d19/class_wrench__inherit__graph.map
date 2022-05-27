@@ -1,0 +1,5 @@
+<map id="Wrench" name="Wrench">
+<area shape="rect" id="node1" title="classe representant l&#39;entite Wrench, elle apparait au sol et attend d&#39;etre ramasser" alt="" coords="41,155,108,181"/>
+<area shape="rect" id="node2" href="$d5/d5a/class_engine_1_1_entity.html" title=" " alt="" coords="23,80,127,107"/>
+<area shape="rect" id="node3" href="$d0/d31/class_engine_1_1_state_parent.html" title=" " alt="" coords="5,5,144,32"/>
+</map>

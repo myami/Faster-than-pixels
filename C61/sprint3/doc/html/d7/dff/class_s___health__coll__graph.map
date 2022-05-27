@@ -1,0 +1,4 @@
+<map id="S_Health" name="S_Health">
+<area shape="rect" id="node1" title="classe systeme pour le component Health, il permait de changer la vie a des entite et checker si il s..." alt="" coords="25,80,100,107"/>
+<area shape="rect" id="node2" href="$d5/de9/class_engine_1_1_system.html" title="classe representant chaque Systeme qui sont lie au component actif" alt="" coords="5,5,120,32"/>
+</map>

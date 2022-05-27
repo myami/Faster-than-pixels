@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Faster than pixel:  Fichier source de FasterThanPixels/src/Scene/Pause.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Faster than pixel
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search",'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_02c03db38a580fded92fda78cff56987.html">FasterThanPixels</a></li><li class="navelem"><a class="el" href="../../dir_6a8e090ea90646710d8a5b1ef0bd2e56.html">src</a></li><li class="navelem"><a class="el" href="../../dir_ffda3f02ce82275ea6c5d51703009944.html">Scene</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">Pause.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d9/d61/_pause_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="../../de/dcf/_engine_8h.html">Engine.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">class </span><a class="code hl_class" href="../../d1/d5b/class_f_t_p___scene_manager.html">FTP_SceneManager</a>;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="../../d1/d35/class_pause.html">    9</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d1/d35/class_pause.html">Pause</a> : <span class="keyword">public</span> <a class="code hl_class" href="../../da/d1a/class_engine_1_1_blank_scene.html">Engine::BlankScene</a> {</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="../../d1/d35/class_pause.html#a49efac368c811575e680dcde82860c58">   11</a></span>    <a class="code hl_function" href="../../d1/d35/class_pause.html#a49efac368c811575e680dcde82860c58">Pause</a>(std::string name, <a class="code hl_class" href="../../d1/d5b/class_f_t_p___scene_manager.html">FTP_SceneManager</a>* refs);</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="../../d1/d35/class_pause.html#ad28799336c378a4e383d2ea90c6b70e8">   12</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/d35/class_pause.html#ad28799336c378a4e383d2ea90c6b70e8">Tick</a>() <span class="keyword">override</span>; <span class="comment">// debut de frame mais a jour tout se qu il doit mettre a jour 1 /4</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="../../d1/d35/class_pause.html#a93ccb6588360790a8aabf1cdc9fbf580">   13</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/d35/class_pause.html#a93ccb6588360790a8aabf1cdc9fbf580">S_Render</a>() <span class="keyword">override</span>; <span class="comment">// fin de frame affiche le resultat de la simulation 4/4</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="../../d1/d35/class_pause.html#a8d2b109df214aa1f97a4927617476b57">   14</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/d35/class_pause.html#a8d2b109df214aa1f97a4927617476b57">S_ActionTrigger</a>(std::string ActionName) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="../../d1/d35/class_pause.html#a0ba7374ed5f46d9539c07d7b32eb9bc0">   15</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/d35/class_pause.html#a0ba7374ed5f46d9539c07d7b32eb9bc0">Begin_Play</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="../../d1/d35/class_pause.html#a3d3180ca3118849e53a120e0c5f99000">   16</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/d35/class_pause.html#a3d3180ca3118849e53a120e0c5f99000">S_Input_Mouse</a>(sf::Event event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>};</div>
+<div class="ttc" id="a_engine_8h_html"><div class="ttname"><a href="../../de/dcf/_engine_8h.html">Engine.h</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_blank_scene_html"><div class="ttname"><a href="../../da/d1a/class_engine_1_1_blank_scene.html">Engine::BlankScene</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d63/_blank_scene_8h_source.html#l00010">BlankScene.h:10</a></div></div>
+<div class="ttc" id="aclass_f_t_p___scene_manager_html"><div class="ttname"><a href="../../d1/d5b/class_f_t_p___scene_manager.html">FTP_SceneManager</a></div><div class="ttdoc">classe enfant de SceneManager</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/de3/_f_t_p___scene_manager_8h_source.html#l00008">FTP_SceneManager.h:8</a></div></div>
+<div class="ttc" id="aclass_pause_html"><div class="ttname"><a href="../../d1/d35/class_pause.html">Pause</a></div><div class="ttdoc">classe enfant de Scene, represente le menu de pause pendant le jeu</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d61/_pause_8h_source.html#l00009">Pause.h:9</a></div></div>
+<div class="ttc" id="aclass_pause_html_a0ba7374ed5f46d9539c07d7b32eb9bc0"><div class="ttname"><a href="../../d1/d35/class_pause.html#a0ba7374ed5f46d9539c07d7b32eb9bc0">Pause::Begin_Play</a></div><div class="ttdeci">void Begin_Play() override</div></div>
+<div class="ttc" id="aclass_pause_html_a3d3180ca3118849e53a120e0c5f99000"><div class="ttname"><a href="../../d1/d35/class_pause.html#a3d3180ca3118849e53a120e0c5f99000">Pause::S_Input_Mouse</a></div><div class="ttdeci">void S_Input_Mouse(sf::Event event) override</div></div>
+<div class="ttc" id="aclass_pause_html_a49efac368c811575e680dcde82860c58"><div class="ttname"><a href="../../d1/d35/class_pause.html#a49efac368c811575e680dcde82860c58">Pause::Pause</a></div><div class="ttdeci">Pause(std::string name, FTP_SceneManager *refs)</div></div>
+<div class="ttc" id="aclass_pause_html_a8d2b109df214aa1f97a4927617476b57"><div class="ttname"><a href="../../d1/d35/class_pause.html#a8d2b109df214aa1f97a4927617476b57">Pause::S_ActionTrigger</a></div><div class="ttdeci">void S_ActionTrigger(std::string ActionName) override</div></div>
+<div class="ttc" id="aclass_pause_html_a93ccb6588360790a8aabf1cdc9fbf580"><div class="ttname"><a href="../../d1/d35/class_pause.html#a93ccb6588360790a8aabf1cdc9fbf580">Pause::S_Render</a></div><div class="ttdeci">void S_Render() override</div></div>
+<div class="ttc" id="aclass_pause_html_ad28799336c378a4e383d2ea90c6b70e8"><div class="ttname"><a href="../../d1/d35/class_pause.html#ad28799336c378a4e383d2ea90c6b70e8">Pause::Tick</a></div><div class="ttdeci">void Tick() override</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

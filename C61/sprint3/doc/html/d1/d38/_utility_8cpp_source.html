@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Faster than pixel:  Fichier source de Engine/src/Utility/Utility.cpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Faster than pixel
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search",'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_0b6ee6e7e9547e675db4add2e5de97da.html">Engine</a></li><li class="navelem"><a class="el" href="../../dir_b6dc9fbf5fd229481ae647194eb362ed.html">src</a></li><li class="navelem"><a class="el" href="../../dir_b83b933dc7ac7ffa8d1621e16ca685eb.html">Utility</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">Utility.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d1/d38/_utility_8cpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="../../db/d2a/_utility_8h.html">Utility.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;filesystem&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;nlohmann/json.hpp&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;../ECS/Entity.h&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;../ECS/Component.h&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;../Factory/EntityManager.h&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="../../d1/db6/namespace_engine.html#ae9ba350b0d4d5fe1536294a4f82451d7">   11</a></span>std::vector&lt;nlohmann::json&gt; <a class="code hl_function" href="../../d1/db6/namespace_engine.html#ae9ba350b0d4d5fe1536294a4f82451d7">Engine::LoadAssetFromFile</a>(std::string path)</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    nlohmann::json j;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    std::vector&lt;std::filesystem::path&gt; fileasset;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    std::vector&lt;nlohmann::json&gt; assets;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; file : std::filesystem::directory_iterator(path)) { <span class="comment">// prend tout les chemins de fichier json dans un vector</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keywordflow">if</span> (!file.is_directory()) {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>            fileasset.push_back(file.path());</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>            std::cout &lt;&lt; <span class="stringliteral">&quot;Json for asset available : &quot;</span> &lt;&lt; file.path() &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        }</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    }</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; fileasset.size(); i++) <span class="comment">// lie les fichier json et enregistre leur contenu dans la memoire</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Loading json assets : &quot;</span> &lt;&lt; fileasset[i] &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        std::ifstream file(fileasset[i]);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        nlohmann::json j;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        file &gt;&gt; j;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        assets.push_back(j);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    }</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordflow">return</span> assets;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>}</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="../../d1/db6/namespace_engine.html#a00f8fac3fca946718d9cf1c7e1e51783">   35</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/db6/namespace_engine.html#a00f8fac3fca946718d9cf1c7e1e51783">Engine::SerializeData</a>(std::map&lt;std::string, int&gt;&amp; params) {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    nlohmann::json settings(params);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    std::string filename = <span class="stringliteral">&quot;./settings.json&quot;</span>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    std::ofstream file(filename);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    file &lt;&lt; settings;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>}</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="../../d1/db6/namespace_engine.html#a8635be5101faabab69ad4ab7889bf107">   42</a></span>std::map&lt;std::string, int&gt; <a class="code hl_function" href="../../d1/db6/namespace_engine.html#a8635be5101faabab69ad4ab7889bf107">Engine::GetInfoFromJSON</a>(std::string path) {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    nlohmann::json j;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    std::map &lt; std::string, int&gt; data;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    std::ifstream settings_file(path);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    settings_file &gt;&gt; j;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    data = j;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordflow">return</span> data;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>}</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="../../d1/db6/namespace_engine.html#ac9a4ef6f059077db152861b36ff0b7b2">   52</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="../../d1/db6/namespace_engine.html#ac9a4ef6f059077db152861b36ff0b7b2">Engine::FileExists</a>(std::string path)</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>{</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordflow">return</span> std::filesystem::exists(path);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>}</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="../../d1/db6/namespace_engine.html#a901660a11dc3dbc8fe4dea2698d9a444">   57</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/db6/namespace_engine.html#a901660a11dc3dbc8fe4dea2698d9a444">Engine::GeneratePhysicBody</a>(<a class="code hl_class" href="../../d5/d19/class_engine_1_1_entity_manager.html">Engine::EntityManager</a>* entman, <span class="keywordtype">int</span> identity, sf::Vector2f position, sf::Vector2f bound, b2BodyType type, <span class="keywordtype">int</span> scale, b2World* World)</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>{</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    b2BodyDef BodyDef = b2BodyDef();</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    BodyDef.position = b2Vec2(position.x / scale, position.y / scale);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    BodyDef.type = type;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    b2Body* Body = World-&gt;CreateBody(&amp;BodyDef);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    b2CircleShape circle;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    circle.m_p.Set(bound.x, bound.y);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    circle.m_radius = bound.x;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    b2FixtureDef FixtureDef;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    FixtureDef.density = 100.f;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    FixtureDef.friction = 0.f;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    FixtureDef.shape = &amp;circle;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    Body-&gt;CreateFixture(&amp;FixtureDef);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    entman-&gt;<a class="code hl_variable" href="../../d5/d19/class_engine_1_1_entity_manager.html#a69de8cd6a04df6de09ae57a68b1e5276">M_PhysicMap</a>.insert({ Body,identity });</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>}</div>
+<div class="ttc" id="a_utility_8h_html"><div class="ttname"><a href="../../db/d2a/_utility_8h.html">Utility.h</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_entity_manager_html"><div class="ttname"><a href="../../d5/d19/class_engine_1_1_entity_manager.html">Engine::EntityManager</a></div><div class="ttdoc">classe representant toutes les entit�s de la sc�ne.</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dba/_entity_manager_8h_source.html#l00034">EntityManager.h:34</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_entity_manager_html_a69de8cd6a04df6de09ae57a68b1e5276"><div class="ttname"><a href="../../d5/d19/class_engine_1_1_entity_manager.html#a69de8cd6a04df6de09ae57a68b1e5276">Engine::EntityManager::M_PhysicMap</a></div><div class="ttdeci">std::map&lt; b2Body *, int &gt; M_PhysicMap</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dba/_entity_manager_8h_source.html#l00038">EntityManager.h:38</a></div></div>
+<div class="ttc" id="anamespace_engine_html_a00f8fac3fca946718d9cf1c7e1e51783"><div class="ttname"><a href="../../d1/db6/namespace_engine.html#a00f8fac3fca946718d9cf1c7e1e51783">Engine::SerializeData</a></div><div class="ttdeci">void SerializeData(std::map&lt; std::string, int &gt; &amp;map)</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d38/_utility_8cpp_source.html#l00035">Utility.cpp:35</a></div></div>
+<div class="ttc" id="anamespace_engine_html_a8635be5101faabab69ad4ab7889bf107"><div class="ttname"><a href="../../d1/db6/namespace_engine.html#a8635be5101faabab69ad4ab7889bf107">Engine::GetInfoFromJSON</a></div><div class="ttdeci">std::map&lt; std::string, int &gt; GetInfoFromJSON(std::string path)</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d38/_utility_8cpp_source.html#l00042">Utility.cpp:42</a></div></div>
+<div class="ttc" id="anamespace_engine_html_a901660a11dc3dbc8fe4dea2698d9a444"><div class="ttname"><a href="../../d1/db6/namespace_engine.html#a901660a11dc3dbc8fe4dea2698d9a444">Engine::GeneratePhysicBody</a></div><div class="ttdeci">void GeneratePhysicBody(Engine::EntityManager *entman, int identity, sf::Vector2f position, sf::Vector2f bound, b2BodyType type, int scale, b2World *World)</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d38/_utility_8cpp_source.html#l00057">Utility.cpp:57</a></div></div>
+<div class="ttc" id="anamespace_engine_html_ac9a4ef6f059077db152861b36ff0b7b2"><div class="ttname"><a href="../../d1/db6/namespace_engine.html#ac9a4ef6f059077db152861b36ff0b7b2">Engine::FileExists</a></div><div class="ttdeci">bool FileExists(std::string path)</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d38/_utility_8cpp_source.html#l00052">Utility.cpp:52</a></div></div>
+<div class="ttc" id="anamespace_engine_html_ae9ba350b0d4d5fe1536294a4f82451d7"><div class="ttname"><a href="../../d1/db6/namespace_engine.html#ae9ba350b0d4d5fe1536294a4f82451d7">Engine::LoadAssetFromFile</a></div><div class="ttdeci">std::vector&lt; nlohmann::json &gt; LoadAssetFromFile(std::string Path)</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d38/_utility_8cpp_source.html#l00011">Utility.cpp:11</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<map id="Engine/src/Factory/EntityManager.h" name="Engine/src/Factory/EntityManager.h">
+<area shape="rect" id="node1" title=" " alt="" coords="521,5,653,47"/>
+<area shape="rect" id="node2" href="$db/d3a/_entity_8h.html" title="Entite qui apparait dans le jeu, il contient les composants." alt="" coords="277,95,388,121"/>
+<area shape="rect" id="node5" title=" " alt="" coords="5,259,52,285"/>
+<area shape="rect" id="node8" title=" " alt="" coords="560,259,615,285"/>
+<area shape="rect" id="node10" title=" " alt="" coords="738,95,845,121"/>
+<area shape="rect" id="node11" href="$df/dcf/_state_machine_8h.html" title=" " alt="" coords="512,169,663,211"/>
+<area shape="rect" id="node3" title=" " alt="" coords="242,177,314,203"/>
+<area shape="rect" id="node4" title=" " alt="" coords="446,259,502,285"/>
+<area shape="rect" id="node6" href="$dc/d20/_component_8h.html" title="Composant d une entite qui sauvegarde des variables." alt="" coords="338,177,437,203"/>
+<area shape="rect" id="node9" href="$d8/d3b/_state_parent_8h.html" title=" " alt="" coords="67,169,217,211"/>
+<area shape="rect" id="node7" title=" " alt="" coords="366,259,409,285"/>
+</map>

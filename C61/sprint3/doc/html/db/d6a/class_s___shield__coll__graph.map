@@ -1,0 +1,4 @@
+<map id="S_Shield" name="S_Shield">
+<area shape="rect" id="node1" title="classe systeme pour le component Shied, il permait de gerer les shields des entites" alt="" coords="25,80,100,107"/>
+<area shape="rect" id="node2" href="$d5/de9/class_engine_1_1_system.html" title="classe representant chaque Systeme qui sont lie au component actif" alt="" coords="5,5,120,32"/>
+</map>

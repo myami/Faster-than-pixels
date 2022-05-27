@@ -1,0 +1,4 @@
+<map id="FTP_GameManager" name="FTP_GameManager">
+<area shape="rect" id="node1" title="classe enfant de GameManager" alt="" coords="13,80,152,107"/>
+<area shape="rect" id="node2" href="$d3/d48/class_engine_1_1_game_manager.html" title="Classe représentant le jeu, elle contient tout les sous&#45;systèmes et gère la gameloop." alt="" coords="5,5,160,32"/>
+</map>

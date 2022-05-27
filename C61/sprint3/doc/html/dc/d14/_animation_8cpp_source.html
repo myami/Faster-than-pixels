@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Faster than pixel:  Fichier source de Engine/src/Utility/Animation.cpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Faster than pixel
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search",'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_0b6ee6e7e9547e675db4add2e5de97da.html">Engine</a></li><li class="navelem"><a class="el" href="../../dir_b6dc9fbf5fd229481ae647194eb362ed.html">src</a></li><li class="navelem"><a class="el" href="../../dir_b83b933dc7ac7ffa8d1621e16ca685eb.html">Utility</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">Animation.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../dc/d14/_animation_8cpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="../../dc/d8b/_animation_8h.html">Animation.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="../../d0/d80/_random_8h.html">Random.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">// inspirer de https://github.com/darienmiller88/Animation-SFML</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="../../d2/d55/class_engine_1_1_animation.html#a91dfd574c9f426fc302d6de48eb11670">    6</a></span><a class="code hl_function" href="../../d2/d55/class_engine_1_1_animation.html#a91dfd574c9f426fc302d6de48eb11670">Engine::Animation::Animation</a>()</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>}</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="../../d2/d55/class_engine_1_1_animation.html#adf55910e5a12b51a64e14fcc43256ae1">   10</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d2/d55/class_engine_1_1_animation.html#adf55910e5a12b51a64e14fcc43256ae1">Engine::Animation::updateSprites</a>(<span class="keywordtype">float</span> deltaTime) {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    currentTime = clock.getElapsedTime().asSeconds();</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keywordflow">if</span> (currentTime &gt;= SPRITE_LENGTH_TIME) {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        currentTime -= SPRITE_LENGTH_TIME;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        clock.restart();</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keywordflow">if</span> (++currentFrame &gt;= spritesToAnimate.size())</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>            currentFrame = 0;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    }</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="comment">//spritesToAnimate[currentFrame].move(direction);</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>}</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="../../d2/d55/class_engine_1_1_animation.html#a674bcbfbb857ccb949f27c8d137b3241">   23</a></span>sf::Sprite <a class="code hl_function" href="../../d2/d55/class_engine_1_1_animation.html#a674bcbfbb857ccb949f27c8d137b3241">Engine::Animation::FrameToDraw</a>()</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>{</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordflow">return</span> spritesToAnimate[currentFrame];</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="../../d2/d55/class_engine_1_1_animation.html#ad3c4d1620ae48f37dd541b65527466b7">   28</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d2/d55/class_engine_1_1_animation.html#ad3c4d1620ae48f37dd541b65527466b7">Engine::Animation::scaleSpriteSheet</a>(<span class="keyword">const</span> sf::Vector2u&amp; numSprites) {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordflow">if</span> (spritesToAnimate[currentFrame].getTexture()-&gt;getSize().x % numSprites.x != 0 or spritesToAnimate[currentFrame].getTexture()-&gt;getSize().y % numSprites.y != 0) {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="comment">//If the width and height of the sprite sheet aren&#39;t perfectly disivible the number of sprites, cast the result</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="comment">//to an int, and multiply the result by the number of sprites. This will give us the exact window width and</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="comment">//height needed to resize the spritesheet to allow it to be divisible by the number of sprites.</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keywordtype">int</span> newSpriteSheetWidth = (spritesToAnimate[currentFrame].getTexture()-&gt;getSize().x / numSprites.x) * numSprites.x;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordtype">int</span> newSpriteSheetHeight = (spritesToAnimate[currentFrame].getTexture()-&gt;getSize().y / numSprites.y) * numSprites.y;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="keywordtype">float</span> xScale = newSpriteSheetWidth / spritesToAnimate[currentFrame].getTexture()-&gt;getSize().x;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keywordtype">float</span> yScale = newSpriteSheetHeight / spritesToAnimate[currentFrame].getTexture()-&gt;getSize().y;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    }</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>}</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="../../d2/d55/class_engine_1_1_animation.html#a081b66f8e908dd582743864ddd5480cd">   41</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d2/d55/class_engine_1_1_animation.html#a081b66f8e908dd582743864ddd5480cd">Engine::Animation::SetupAnimation</a>(sf::Texture&amp; textures, <span class="keywordtype">float</span> DureeAnimation, <span class="keyword">const</span> sf::Vector2u&amp; numSprites, sf::Vector2f InitialPosition)</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>{</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="comment">//spriteTexture = textures;</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    SPRITE_LENGTH_TIME = DureeAnimation;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    currentTime = 0.f;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    currentFrame = 0;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    sf::Vector2u spriteSize;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="comment">//On the sprite sheet image that was read into &quot;spriteTexture&quot;, it is a numSprites.x by numSprites.y sheet, so to get the</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="comment">//length and width of each sprite, I have to divide the length and width of the sprite sheet by the number of sprites</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="comment">//on each dimension.</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    spriteSize.x = textures.getSize().x / numSprites.x;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    spriteSize.y = textures.getSize().y / numSprites.y;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> y = 0; y &lt; numSprites.y; y++) {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x = 0; x &lt; numSprites.x; x++) {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            <span class="comment">//Using the sprite sheet, we will slice a rectangle into each of the sprites, and push it into the vector</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            <span class="comment">//of sprites, going row by row, left to right.</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            spritesToAnimate.push_back(sf::Sprite(textures, sf::IntRect(spriteSize.x * x,</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                spriteSize.y * y, spriteSize.x, spriteSize.y)));</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            spritesToAnimate.back().setPosition(InitialPosition);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        }</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    }</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>}</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="../../d2/d55/class_engine_1_1_animation.html#a6117fa7cdf283820f3feaad99e8e1ad3">   68</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d2/d55/class_engine_1_1_animation.html#a6117fa7cdf283820f3feaad99e8e1ad3">Engine::Animation::MoveSprite</a>(<span class="keyword">const</span> sf::Vector2f&amp; direction)</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>{</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; sprite : spritesToAnimate)</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        sprite.move(direction);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>}</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="../../d2/d55/class_engine_1_1_animation.html#a7af1e779eed7dad99adcf7e432c6686a">   74</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d2/d55/class_engine_1_1_animation.html#a7af1e779eed7dad99adcf7e432c6686a">Engine::Animation::ScaleAnimation</a>(<span class="keywordtype">float</span> sc)</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>{</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; sprite : spritesToAnimate)</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        sprite.setScale({ sc,sc });</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>}</div>
+<div class="ttc" id="a_animation_8h_html"><div class="ttname"><a href="../../dc/d8b/_animation_8h.html">Animation.h</a></div></div>
+<div class="ttc" id="a_random_8h_html"><div class="ttname"><a href="../../d0/d80/_random_8h.html">Random.h</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_animation_html_a081b66f8e908dd582743864ddd5480cd"><div class="ttname"><a href="../../d2/d55/class_engine_1_1_animation.html#a081b66f8e908dd582743864ddd5480cd">Engine::Animation::SetupAnimation</a></div><div class="ttdeci">void SetupAnimation(sf::Texture &amp;textures, float DureeAnimation, const sf::Vector2u &amp;numSprites, sf::Vector2f InitialPosition)</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d14/_animation_8cpp_source.html#l00041">Animation.cpp:41</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_animation_html_a6117fa7cdf283820f3feaad99e8e1ad3"><div class="ttname"><a href="../../d2/d55/class_engine_1_1_animation.html#a6117fa7cdf283820f3feaad99e8e1ad3">Engine::Animation::MoveSprite</a></div><div class="ttdeci">void MoveSprite(const sf::Vector2f &amp;direction)</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d14/_animation_8cpp_source.html#l00068">Animation.cpp:68</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_animation_html_a674bcbfbb857ccb949f27c8d137b3241"><div class="ttname"><a href="../../d2/d55/class_engine_1_1_animation.html#a674bcbfbb857ccb949f27c8d137b3241">Engine::Animation::FrameToDraw</a></div><div class="ttdeci">sf::Sprite FrameToDraw()</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d14/_animation_8cpp_source.html#l00023">Animation.cpp:23</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_animation_html_a7af1e779eed7dad99adcf7e432c6686a"><div class="ttname"><a href="../../d2/d55/class_engine_1_1_animation.html#a7af1e779eed7dad99adcf7e432c6686a">Engine::Animation::ScaleAnimation</a></div><div class="ttdeci">void ScaleAnimation(float sc)</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d14/_animation_8cpp_source.html#l00074">Animation.cpp:74</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_animation_html_a91dfd574c9f426fc302d6de48eb11670"><div class="ttname"><a href="../../d2/d55/class_engine_1_1_animation.html#a91dfd574c9f426fc302d6de48eb11670">Engine::Animation::Animation</a></div><div class="ttdeci">Animation()</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d14/_animation_8cpp_source.html#l00006">Animation.cpp:6</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_animation_html_ad3c4d1620ae48f37dd541b65527466b7"><div class="ttname"><a href="../../d2/d55/class_engine_1_1_animation.html#ad3c4d1620ae48f37dd541b65527466b7">Engine::Animation::scaleSpriteSheet</a></div><div class="ttdeci">void scaleSpriteSheet(const sf::Vector2u &amp;numSprites)</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d14/_animation_8cpp_source.html#l00028">Animation.cpp:28</a></div></div>
+<div class="ttc" id="aclass_engine_1_1_animation_html_adf55910e5a12b51a64e14fcc43256ae1"><div class="ttname"><a href="../../d2/d55/class_engine_1_1_animation.html#adf55910e5a12b51a64e14fcc43256ae1">Engine::Animation::updateSprites</a></div><div class="ttdeci">void updateSprites(float deltaTime)</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d14/_animation_8cpp_source.html#l00010">Animation.cpp:10</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>
